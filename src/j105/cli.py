@@ -42,7 +42,7 @@ def counts(source: str | None = None) -> None:
 
 def show_hull(sail: str) -> None:
     """Every result for one hull across all sources, oldest first."""
-    want = hull(sail)
+    want = sail if "-" in sail else hull(sail)  # split hulls ("89-exit-strategy") as given
     rows = []
     for name in SOURCES:
         for e in read_json(RAW / f"{_short(name)}_events.json", []):

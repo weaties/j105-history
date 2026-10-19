@@ -166,6 +166,9 @@ function prep(d) {
 }
 
 // ---------- shared pieces
+// Split hulls ("89-exit-strategy") share a printed number with another boat.
+const sailLabel = k => /^\d+-/.test(k) ? `Sail number ${k.split("-")[0]} (shared)` : /^\d+$/.test(k) ? `Sail number ${k}` : "Sail number unknown";
+const sailShort = k => /^\d+-/.test(k) ? k.split("-")[0] + "*" : /^\d+$/.test(k) ? k : "?";
 const hullLink = (k, label) => `<a href="#hull-${tok(k)}">${esc(label ?? "#" + k)}</a>`;
 const evLink = e => `<a href="#event-${e.id}">${esc(e.name)}</a>`;
 const official = e => `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(SRC[e.source].name)}</a>` +
@@ -241,7 +244,8 @@ function hullView(key) {
   const scored = h.years.filter(y => y.score != null);
   return `
   <section>
-    <div class="eyebrow">Sail number ${esc(h.key)} · ${years(h.first, h.last)}</div>
+    <div class="eyebrow">${esc(sailLabel(h.key))} · ${years(h.first, h.last)}</div>
+    ${/-/.test(h.key) ? `<p class="hint">Another boat raced under the same number in the same years, so this boat is kept separate from it.</p>` : ""}
     <h1>${esc(h.name)}</h1>
     <div class="names">${names.map(n => `<span>${esc(n.name)}<i>${years(n.from, n.to)}</i></span>`).join("")}</div>
     ${D.notes[h.key] ? `<p class="hint">${esc(D.notes[h.key])}</p>` : ""}
@@ -294,7 +298,7 @@ function eventView(id) {
     <p class="hint">Official results: ${official(e)}. Race scores are the official points; brackets mark throwouts.</p>
   </section>
   <section><div class="card"><table><thead><tr><th>Place</th><th class="t">Sail</th><th class="t">Boat</th><th class="t">Skipper</th><th class="t">Club</th><th class="t">Races</th><th>Points</th><th>Score</th></tr></thead><tbody>
-    ${e.rows.map(r => `<tr><td>${r.place}</td><td class="t">${r.h ? hullLink(r.h, r.h) : `<span class="sub">not printed</span>`}</td>
+    ${e.rows.map(r => `<tr><td>${r.place}</td><td class="t">${r.h ? hullLink(r.h, sailShort(r.h)) : `<span class="sub">not printed</span>`}</td>
       <td class="t">${esc(r.boat)}</td><td class="t">${esc(r.sk)}</td><td class="t">${esc(r.club)}</td>
       <td class="t">${esc(r.races)}</td><td>${r.net ?? "–"}</td><td>${e.counts ? pct(r.score) : "–"}</td></tr>`).join("")}
   </tbody></table></div></section>`;
@@ -323,7 +327,7 @@ function seasonView(year) {
     <p class="hint">Season score is the share of the fleet beaten, averaged over the boat's scored events that year. Region is where the boat raced most that year.</p>
   </section>
   <section>${rows.length ? `<div class="card"><table><thead><tr><th>#</th><th class="t">Sail</th><th class="t">Boat · skipper of record</th><th class="t">Region</th><th>Events</th><th>Wins</th><th>Score</th></tr></thead><tbody>
-    ${rows.map((r, i) => `<tr><td>${i + 1}</td><td class="t">${hullLink(r.h.key, r.h.key)}</td><td class="t wrap">${esc(r.y.name)}<small>${esc(r.y.skipper)}</small></td>
+    ${rows.map((r, i) => `<tr><td>${i + 1}</td><td class="t">${hullLink(r.h.key, sailShort(r.h.key))}</td><td class="t wrap">${esc(r.y.name)}<small>${esc(r.y.skipper)}</small></td>
       <td class="t">${esc(r.y.region)}</td><td>${r.y.n}</td><td>${r.y.wins}</td><td><span style="${heat(r.y.score)};padding:2px 6px;border-radius:3px">${pct(r.y.score)}</span></td></tr>`).join("")}
   </tbody></table></div>` : `<p class="empty">No boats with ${ST.min} or more scored events${ST.region !== "All" ? " in " + esc(ST.region) : ""} in ${year}. Lower the minimum or pick another region.</p>`}</section>`;
 }
@@ -384,7 +388,7 @@ function search(q) {
     .sort((a, b) => (digits ? (a.key === t ? -1 : 0) - (b.key === t ? -1 : 0) : 0) || b.n - a.n).slice(0, 12);
   const es = digits ? [] : EV.filter(e => norm(e.name).includes(t)).slice(-6).reverse();
   box.hidden = false;
-  box.innerHTML = `<div class="results">${hs.map(h => `<a href="#hull-${tok(h.key)}"><b>${esc(h.key)}</b>${esc(h.name)}<span>${years(h.first, h.last)} · ${h.n} results · ${esc(h.years.at(-1).skipper)}</span></a>`).join("")}
+  box.innerHTML = `<div class="results">${hs.map(h => `<a href="#hull-${tok(h.key)}"><b>${esc(sailShort(h.key))}</b>${esc(h.name)}<span>${years(h.first, h.last)} · ${h.n} results · ${esc(h.years.at(-1).skipper)}</span></a>`).join("")}
     ${es.map(e => `<a href="#event-${e.id}"><b>${e.year}</b>${esc(e.name)}<span>${esc(e.class)} · ${e.fleet} J/105s</span></a>`).join("")}
     ${hs.length + es.length ? "" : `<p class="empty">Nothing matches “${esc(q)}”. Try a sail number, or part of a boat or skipper name.</p>`}</div>`;
 }

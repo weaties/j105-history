@@ -14,6 +14,7 @@ Tables in `data/identity/` are reviewed by a human; every row needs a reason.
 | `shared_boats.csv` | boat, note | club boats; skipper changes aren't ownership changes |
 | `hull_notes.csv` | hull, note, source | facts confirmed by the user (moves, sales); shown on hull pages |
 | `split_numbers.csv` | sail, boat, hull, reason | one number carried by two hulls; `boat` prefix picks the hull |
+| `unnumbered.csv` | event, boat, hull, reason | results printed without a sail, matched by boat name |
 | `optout.csv` | printed, action (remove/replace), replacement, requested, note | see `privacy` |
 
 Code: `src/j105/identity.py` (`sail_key`, `hull`, `person`).
@@ -40,6 +41,7 @@ Across all `data/raw/*_events.json`, group results by `sail_key(sail)` and look 
   Write the reason. Run `uv run pytest` (a test requires reasons).
 - Anything ambiguous: list it for the user with the evidence (events, years, URLs) and leave the
   records separate.
+- Co-skipper cells ("A / B", "A & B") credit every named skipper (user, 2026-10-19).
 - Confirmed by the user: Creative is hull 422 (it also races as PHRF 51911). Hull 32 sailed in
   SF (Jitterbug, Melilani) and was sold into the Seattle fleet (Counterpoint). Record new
   confirmations in `hull_notes.csv`.

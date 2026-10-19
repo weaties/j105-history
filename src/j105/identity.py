@@ -45,6 +45,12 @@ def splits() -> dict[str, list[tuple[str, str]]]:
 
 
 @cache
+def unnumbered() -> dict[tuple[str, str], str]:
+    """(``source:event_id``, normalized boat) -> hull, for results printed without a sail."""
+    return {(r["event"], _norm(r["boat"])): r["hull"] for r in _rows("unnumbered.csv")}
+
+
+@cache
 def nicknames() -> dict[str, str]:
     return {r["printed"].lower(): r["name"] for r in _rows("nicknames.csv")}
 
