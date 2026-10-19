@@ -1,3 +1,4 @@
+<meta charset="utf-8">
 <title>J/105 Class History</title>
 <meta name="claude:viewport-fit-sides" content="cover">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -19,9 +20,9 @@
   --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
   --bar:#5fb0f0; --heat:#3c8fd4; --heatink:#06121c; --mark:#ff6a4d; --link:#5fb0f0; color-scheme:dark}
 body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
-.wrap{max-width:1180px;margin:0 auto;padding-block:28px 48px;
+.page{max-width:1180px;margin:0 auto;padding-block:28px 48px;
   padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
-  display:grid;gap:24px}
+  display:grid;gap:18px;grid-template-columns:minmax(0,1fr)}
 header{display:grid;gap:12px}
 .eyebrow{font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
 h1{font:700 clamp(30px,5vw,44px)/1 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance}
@@ -36,14 +37,18 @@ h2{font:600 22px/1.1 var(--display);margin:0;letter-spacing:.02em;text-wrap:bala
 .seg :first-child{border-left:0}
 .seg [aria-current="page"],.seg [aria-pressed="true"]{background:var(--ink);color:var(--bg)}
 .lab{font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+select{max-width:min(260px,100%)}
 input[type="search"],select{font:14px var(--body);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:6px 10px}
 input[type="search"]{width:min(340px,100%)}
 a{color:var(--link)}
 a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
-section{display:grid;gap:10px;min-width:0}
+section{display:grid;gap:8px;min-width:0;grid-template-columns:minmax(0,1fr)}
 .head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
 .hint{color:var(--muted);font-size:13px;margin:0;max-width:80ch}
 .card{background:var(--panel);border:1px solid var(--rule);border-radius:6px;overflow-x:auto;min-width:0}
+/* Tables take the width their columns need, not the whole page. */
+.card:has(> table){width:fit-content;max-width:100%}
+td.t,th.t{padding-right:18px}
 svg{display:block;width:100%;height:auto}
 svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
 svg .grid{stroke:var(--rule);stroke-width:1}
@@ -55,7 +60,7 @@ th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--rule);white
 th{font:600 11.5px/1.2 var(--body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--panel)}
 td{font:13px/1.3 var(--mono)}
 td.t,th.t{text-align:left;font-family:var(--body)}
-td.wrap{white-space:normal;min-width:16ch}
+td.stack{white-space:normal;min-width:22ch;max-width:44ch}
 td small,.sub{display:block;color:var(--muted);font:12px/1.3 var(--body);white-space:normal}
 .heat td.c{padding:3px;min-width:34px}
 .heat .cell{display:block;border-radius:3px;padding:5px 2px;text-align:center;font-size:11.5px}
@@ -81,7 +86,7 @@ footer p{margin:0}
 @media (prefers-reduced-motion:no-preference){.view{animation:in .18s ease-out}@keyframes in{from{opacity:.4}to{opacity:1}}}
 </style>
 
-<div class="wrap">
+<div class="page">
   <header>
     <div class="eyebrow" id="eyebrow">J/105 · North America · results history</div>
     <div class="bar-row">
@@ -213,7 +218,7 @@ function overview() {
   return `
   <section>
     <h1>Every J/105 result we could find</h1>
-    <p class="lede">${scored.length.toLocaleString()} scored J/105 fleets from ${Object.keys(SRC).length} scoring systems and the class archive, ${YEARS[0]} to ${YEARS.at(-1)}. Look up a boat by sail number, name, skipper or club, or browse a season or the events list. Every result links to its official page.</p>
+    <p class="lede">${scored.length.toLocaleString()} scored J/105 fleets from ${Object.keys(SRC).length - 1} scoring systems and the class archive, ${YEARS[0]} to ${YEARS.at(-1)}. Look up a boat by sail number, name, skipper or club, or browse a season or the events list. Every result links to its official page.</p>
     <div class="summary">
       <span><b>${scored.length.toLocaleString()}</b>scored fleets</span>
       <span><b>${scored.reduce((s, e) => s + e.fleet, 0).toLocaleString()}</b>boat results</span>
@@ -278,8 +283,8 @@ function hullView(key) {
     <h2>Every result</h2>
     <div class="card"><table><thead><tr><th class="t">Date</th><th class="t">Event</th><th class="t">Boat · skipper</th><th>Place</th><th>Score</th><th class="t">Races</th><th class="t">Official results</th></tr></thead><tbody>
     ${h.res.slice().reverse().map(r => `<tr><td class="t">${r.e.date}</td>
-      <td class="t wrap">${evLink(r.e)}${mixedPill(r.e)}${notCounted(r.e)}<small>${esc(r.e.class)} · ${esc(r.e.region)}</small></td>
-      <td class="t wrap">${esc(r.boat)}<small>${esc(r.sk)}</small></td>
+      <td class="t stack">${evLink(r.e)}${mixedPill(r.e)}${notCounted(r.e)}<small>${esc(r.e.class)} · ${esc(r.e.region)}</small></td>
+      <td class="t stack">${esc(r.boat)}<small>${esc(r.sk)}</small></td>
       <td>${placeCell(r)}</td><td>${r.e.counts ? pct(r.score) : "–"}</td><td class="t">${esc(r.races)}</td><td class="t">${official(r.e)}</td></tr>`).join("")}
     </tbody></table></div>
   </section>`;
@@ -327,7 +332,7 @@ function seasonView(year) {
     <p class="hint">Season score is the share of the fleet beaten, averaged over the boat's scored events that year. Region is where the boat raced most that year.</p>
   </section>
   <section>${rows.length ? `<div class="card"><table><thead><tr><th>#</th><th class="t">Sail</th><th class="t">Boat · skipper of record</th><th class="t">Region</th><th>Events</th><th>Wins</th><th>Score</th></tr></thead><tbody>
-    ${rows.map((r, i) => `<tr><td>${i + 1}</td><td class="t">${hullLink(r.h.key, sailShort(r.h.key))}</td><td class="t wrap">${esc(r.y.name)}<small>${esc(r.y.skipper)}</small></td>
+    ${rows.map((r, i) => `<tr><td>${i + 1}</td><td class="t">${hullLink(r.h.key, sailShort(r.h.key))}</td><td class="t stack">${esc(r.y.name)}<small>${esc(r.y.skipper)}</small></td>
       <td class="t">${esc(r.y.region)}</td><td>${r.y.n}</td><td>${r.y.wins}</td><td><span style="${heat(r.y.score)};padding:2px 6px;border-radius:3px">${pct(r.y.score)}</span></td></tr>`).join("")}
   </tbody></table></div>` : `<p class="empty">No boats with ${ST.min} or more scored events${ST.region !== "All" ? " in " + esc(ST.region) : ""} in ${year}. Lower the minimum or pick another region.</p>`}</section>`;
 }
@@ -351,7 +356,7 @@ function eventsView() {
     </div>
   </section>
   <section><div class="card"><table><thead><tr><th class="t">Date</th><th class="t">Event</th><th class="t">Region</th><th>J/105s</th><th class="t">Official results</th></tr></thead><tbody>
-    ${list.slice(0, EF.shown).map(e => `<tr><td class="t">${e.date}</td><td class="t wrap">${evLink(e)}${mixedPill(e)}${notCounted(e)}<small>${esc(e.class)}${e.host ? " · " + esc(e.host) : ""}</small></td>
+    ${list.slice(0, EF.shown).map(e => `<tr><td class="t">${e.date}</td><td class="t stack">${evLink(e)}${mixedPill(e)}${notCounted(e)}<small>${esc(e.class)}${e.host ? " · " + esc(e.host) : ""}</small></td>
       <td class="t">${esc(e.region)}</td><td>${e.fleet}</td><td class="t">${official(e)}</td></tr>`).join("") || `<tr><td class="t" colspan="5">No events match these filters.</td></tr>`}
   </tbody></table></div>
   ${list.length > EF.shown ? `<button type="button" class="more" id="more">Show ${Math.min(150, list.length - EF.shown)} more of ${(list.length - EF.shown).toLocaleString()}</button>` : ""}</section>`;
