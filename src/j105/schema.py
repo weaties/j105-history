@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import datetime as dt
 import re
-from typing import NotRequired, TypedDict
+from typing import Any, NotRequired, TypedDict
 
 # Scorers' practice and copied events, e.g. RN "Test Rosenblum" (skippers "Kim Kardashian" ...).
 TEST_EVENT = re.compile(r"(?i)\btest\b|cloned")
@@ -23,6 +23,8 @@ class Result(TypedDict):
     built: NotRequired[int | None]
     ys_boat: NotRequired[int | None]
     races_sailed: NotRequired[int]
+    # Per race, in race order: [points or None, letter code ("DNF", ""), dropped as a throwout].
+    race_scores: NotRequired[list[list[Any]]]
 
 
 # Functional form because the JSON key ``class`` is a Python keyword.
@@ -74,3 +76,20 @@ def rank(results: list[Result], key: str = "net") -> list[Result]:
     for i, r in enumerate(out, 1):
         r["place"] = i
     return out
+
+
+def race_cell(text: str) -> list[Any]:
+    """A printed race score -> ``[points, code, dropped]``.
+
+    ``"3"``, ``"(7.0)"``, ``"[9/DNC]"``, ``"8.0 DSQ"``, ``"(5 DNC)"``, ``"9.9/TIE"``. A time such
+    as ``"1:02:33"`` (handicap pages) is not points: ``[None, "", False]``.
+    """
+    t = text.strip()
+    dropped = len(t) > 1 and t[0] in "([" and t[-1] in ")]"
+    t = t.strip("()[] ")
+    if re.fullmatch(r"\d+:\d+(:\d+)?", t):
+        return [None, "", dropped]
+    pts = re.search(r"\d+(?:\.\d+)?", t)
+    code = re.search(r"\b([A-Z]{2,5})\b", t.upper())
+    c = code.group(1) if code and code.group(1) not in ("AOK", "TIE") else ""
+    return [float(pts.group()) if pts else None, c, dropped]

@@ -112,3 +112,16 @@ def test_yachtscoring_class_kinds() -> None:
     assert _kind(bl("PHRF A", "J/105", "J 109")) == "mixed"
     assert _kind(bl("PHRF A", "J 109", "Farr 30")) == ""
     assert _kind(bl("PHRF-3 J105", "J105", "J/105")) == "one-design"
+
+
+def test_race_cell() -> None:
+    from j105.schema import race_cell
+
+    assert race_cell("3") == [3.0, "", False]
+    assert race_cell("(7.0)") == [7.0, "", True]
+    assert race_cell("[9/DNC]") == [9.0, "DNC", True]
+    assert race_cell("8.0 DSQ") == [8.0, "DSQ", False]
+    assert race_cell("(5 DNC)") == [5.0, "DNC", True]
+    assert race_cell("9.9/TIE") == [9.9, "", False]
+    assert race_cell("1:02:33") == [None, "", False]
+    assert race_cell("") == [None, "", False]

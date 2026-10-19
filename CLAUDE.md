@@ -63,7 +63,8 @@ cloned events (`schema.TEST_EVENT`) are skipped.
 
 `{source, event_id, class_id, class, name, start, end, city, state, country, region?, location?,
 host, url, fleet, races, scored, mixed?, division_size?, results: [{sail, sail_country, boat,
-skipper, club, home?, built?, ys_boat?, net, total?, place, races_sailed?}]}`
+skipper, club, home?, built?, ys_boat?, net, total?, place, races_sailed?,
+race_scores?: [[points, code, dropped], ...]}]}` — race scores must add up to `net` (check per source).
 
 - `url` is the official results page: always keep it and link to it from the site.
 - `place` is the official place; unbroken ties repeat a place (10, 10, 10).

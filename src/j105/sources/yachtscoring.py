@@ -191,8 +191,32 @@ def _row(b: dict[str, Any], info: dict[str, Any], place: int) -> Result:
         "ys_boat": info.get("boatId"),
         "net": _num(b.get("raceTotal")),
         "races_sailed": sum(1 for r in recs if (r.get("finishStatus") or "") == "AOK"),
+        "race_scores": _race_scores(b),
         "place": place,
     }
+
+
+def _race_scores(b: dict[str, Any]) -> list[list[Any]]:
+    """``[points, code, dropped]`` per race. ``throwOutN`` holds the points dropped, not a race
+    number: mark the last race scored with those points (checked: total = sum - throwouts)."""
+    recs = sorted(b.get("records") or [], key=lambda r: r.get("raceNumber") or 0)
+    out = [
+        [
+            _num(r.get("raceValue")),
+            "" if r.get("finishStatus") == "AOK" else r.get("finishStatus") or "",
+            False,
+        ]
+        for r in recs
+    ]
+    for i in range(1, 8):
+        d = _num(b.get(f"throwOut{i}"))
+        if d is None:
+            continue
+        for sc in reversed(out):
+            if not sc[2] and sc[0] is not None and abs(sc[0] - d) < 0.01:
+                sc[2] = True
+                break
+    return out
 
 
 def standings_for(f: Fetcher, x: dict[str, Any]) -> list[Event]:

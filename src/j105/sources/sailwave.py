@@ -26,7 +26,7 @@ from typing import Any
 from bs4 import BeautifulSoup, Tag
 
 from j105.http import RAW, ROOT, Fetcher, pmap, read_json, write_json
-from j105.schema import Event, Result
+from j105.schema import Event, Result, race_cell
 
 log = logging.getLogger(__name__)
 
@@ -122,6 +122,9 @@ def parse_page(html: str, meta: dict[str, Any]) -> list[Event]:
                     "skipper": r[helm] if helm is not None else "",
                     "club": r[club] if club is not None else "",
                     "net": _num(r[net]) if net is not None else None,
+                    "race_scores": [
+                        race_cell(r[i]) for i, h in enumerate(header) if re.fullmatch(r"r\d+", h)
+                    ],
                     "place": place,
                 }
             )

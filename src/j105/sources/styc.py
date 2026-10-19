@@ -26,7 +26,7 @@ from typing import Any
 from bs4 import BeautifulSoup, Tag
 
 from j105.http import RAW, Fetcher, pmap, read_json, write_json
-from j105.schema import Event, Result
+from j105.schema import Event, Result, race_cell
 
 log = logging.getLogger(__name__)
 
@@ -153,6 +153,7 @@ def parse_page(html: str, meta: dict[str, Any]) -> list[Event]:
                     "skipper": c[col["Skipper"]] if "Skipper" in col else "",
                     "club": c[col["Club"]] if "Club" in col else "",
                     "net": _num(c[net_col]),
+                    "race_scores": _race_scores(c, header, col),
                     "place": place if p is not None else len(j105),
                 }
             )
@@ -187,6 +188,18 @@ def parse_page(html: str, meta: dict[str, Any]) -> list[Event]:
             e["division_size"] = len(rows)
         out.append(e)
     return out
+
+
+def _race_scores(c: list[str], header: list[str], col: dict[str, int]) -> list[list[Any]]:
+    """Series pages: the "Race n" cells. A race page: the class place, with a finish code."""
+    cells = [race_cell(c[i]) for i, h in enumerate(header) if re.fullmatch(r"Race \d+", h)]
+    if cells or "Total" in col:
+        return cells
+    sc = race_cell(c[col["Place"]])
+    fin = c[col["Finish"]] if "Finish" in col else ""
+    if re.fullmatch(r"[A-Z]{2,5}", fin):
+        sc[1] = fin
+    return [sc]
 
 
 def _series_dates(f: Fetcher, url: str, html: str, refresh: bool) -> tuple[str, str]:

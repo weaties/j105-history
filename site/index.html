@@ -125,7 +125,9 @@ function prep(d) {
   const shared = new Set((d.shared || []).map(norm));
   for (const e of EV) {
     e.year = +e.date.slice(0, 4); BYID.set(e.id, e);
-    e.rows = e.results.map(([h, boat, sk, place, net, club]) => ({e, h, boat, sk, place, net, club,
+    e.rows = e.results.map(([h, boat, sk, place, net, club, races]) => ({e, h, boat, sk, place, net, club, races: races || "",
+      // A race win: first (1 point) in a one-design J/105 fleet of 3 or more.
+      raceWins: !e.mixed && e.fleet >= 3 ? (races || "").split(" ").filter(c => /^\(?1\)?$/.test(c)).length : 0,
       score: e.fleet > 1 ? (e.fleet - place) / (e.fleet - 1) : null}));
     for (const r of e.rows) if (r.h) {
       if (!H.has(r.h)) { H.set(r.h, {key: r.h, res: []}); HTOK.set(tok(r.h), r.h); }
@@ -156,6 +158,8 @@ function prep(d) {
     });
     h.n = h.res.filter(r => r.e.counts).length;
     h.wins = h.res.filter(r => r.e.counts && r.place === 1).length;
+    h.raceWins = h.res.reduce((s, r) => s + r.raceWins, 0);
+    h.races = h.res.filter(r => !r.e.mixed && r.e.fleet >= 3).reduce((s, r) => s + (r.races ? r.races.split(" ").length : 0), 0);
     h.first = h.years[0].year; h.last = h.years.at(-1).year;
     h.search = norm([h.key, ...new Set(h.res.map(r => r.boat)), ...new Set(h.res.map(r => r.sk)), ...new Set(h.res.map(r => r.club))].join(" "));
   }
@@ -244,7 +248,8 @@ function hullView(key) {
     ${h.isShared ? `<p class="hint">Club or shared boat: skippers change often, so no skipper of record changes are shown.</p>` : ""}
     <div class="summary">
       <span><b>${h.n}</b>scored results</span>
-      <span><b>${h.wins}</b>wins</span>
+      <span><b>${h.wins}</b>regatta and series wins</span>
+      ${h.races ? `<span><b>${h.raceWins}</b>race wins in ${h.races} one-design races</span>` : ""}
       <span><b>${scored.length ? pct(scored.reduce((s, y) => s + y.score, 0) / scored.length) : "–"}</b>mean season score</span>
       ${best ? `<span><b>${best.place}/${best.e.fleet}</b>best: ${esc(best.e.name)} ${best.e.year}</span>` : ""}
     </div>
@@ -267,11 +272,11 @@ function hullView(key) {
   </section>
   <section>
     <h2>Every result</h2>
-    <div class="card"><table><thead><tr><th class="t">Date</th><th class="t">Event</th><th class="t">Boat · skipper</th><th>Place</th><th>Score</th><th class="t">Official results</th></tr></thead><tbody>
+    <div class="card"><table><thead><tr><th class="t">Date</th><th class="t">Event</th><th class="t">Boat · skipper</th><th>Place</th><th>Score</th><th class="t">Races</th><th class="t">Official results</th></tr></thead><tbody>
     ${h.res.slice().reverse().map(r => `<tr><td class="t">${r.e.date}</td>
       <td class="t wrap">${evLink(r.e)}${mixedPill(r.e)}${notCounted(r.e)}<small>${esc(r.e.class)} · ${esc(r.e.region)}</small></td>
       <td class="t wrap">${esc(r.boat)}<small>${esc(r.sk)}</small></td>
-      <td>${placeCell(r)}</td><td>${r.e.counts ? pct(r.score) : "–"}</td><td class="t">${official(r.e)}</td></tr>`).join("")}
+      <td>${placeCell(r)}</td><td>${r.e.counts ? pct(r.score) : "–"}</td><td class="t">${esc(r.races)}</td><td class="t">${official(r.e)}</td></tr>`).join("")}
     </tbody></table></div>
   </section>`;
 }
@@ -286,12 +291,12 @@ function eventView(id) {
     <h1>${esc(e.name)}</h1>
     <p class="lede">${esc(e.class)}${place ? " · " + esc(place) : ""}. ${e.races ? e.races + " race" + (e.races === 1 ? "" : "s") + ", " : ""}${e.fleet} J/105${e.fleet === 1 ? "" : "s"}.</p>
     ${e.mixed ? `<p class="hint">The J/105s raced in a mixed class of ${e.division} boats. They are ranked here among the J/105s only; points are the official class points.${e.counts ? "" : ` Fewer than ${D.min_mixed} J/105s, so this event isn't in season scores.`}</p>` : ""}
-    <p class="hint">Official results: ${official(e)}</p>
+    <p class="hint">Official results: ${official(e)}. Race scores are the official points; brackets mark throwouts.</p>
   </section>
-  <section><div class="card"><table><thead><tr><th>Place</th><th class="t">Sail</th><th class="t">Boat</th><th class="t">Skipper</th><th class="t">Club</th><th>Points</th><th>Score</th></tr></thead><tbody>
+  <section><div class="card"><table><thead><tr><th>Place</th><th class="t">Sail</th><th class="t">Boat</th><th class="t">Skipper</th><th class="t">Club</th><th class="t">Races</th><th>Points</th><th>Score</th></tr></thead><tbody>
     ${e.rows.map(r => `<tr><td>${r.place}</td><td class="t">${r.h ? hullLink(r.h, r.h) : `<span class="sub">not printed</span>`}</td>
       <td class="t">${esc(r.boat)}</td><td class="t">${esc(r.sk)}</td><td class="t">${esc(r.club)}</td>
-      <td>${r.net ?? "–"}</td><td>${e.counts ? pct(r.score) : "–"}</td></tr>`).join("")}
+      <td class="t">${esc(r.races)}</td><td>${r.net ?? "–"}</td><td>${e.counts ? pct(r.score) : "–"}</td></tr>`).join("")}
   </tbody></table></div></section>`;
 }
 

@@ -21,7 +21,7 @@ from typing import Any
 from bs4 import BeautifulSoup, Tag
 
 from j105.http import RAW, Fetcher, pmap, read_json, write_json
-from j105.schema import TEST_EVENT, Event, Result
+from j105.schema import TEST_EVENT, Event, Result, race_cell
 
 log = logging.getLogger(__name__)
 
@@ -204,6 +204,8 @@ def _result(div: dict[str, Any], cells: list[str]) -> Result:
         "skipper": _clean_name(cells[skip_i]) if skip_i is not None else "",
         "club": cells[club_i] if club_i is not None else "",
         "net": _num(cells[total_i]) if total_i is not None else None,
+        # Race columns are headed "1", "2", ...: "3", "[5]" (dropped), "9/DNC".
+        "race_scores": [race_cell(cells[i]) for i, x in enumerate(h) if x.isdigit()],
         "place": int(re.match(r"\d+", cells[0]).group()),  # type: ignore[union-attr]
     }
 

@@ -98,6 +98,12 @@ def standings_for(f: Fetcher, x: dict[str, Any]) -> Event:
             "club": (ro.get("clubName") or "").strip(),
             "net": float(s.get("net") or 0),
             "total": float(s.get("total") or 0),
+            "race_scores": [
+                [z.get("points"), z.get("letterScore") or "", bool(z.get("throwout"))]
+                for z in sorted(
+                    s.get("scoring_data") or [], key=lambda z: z.get("race_number") or 0
+                )
+            ],
             "place": 0,
         }
         if r["sail"] or r["boat"]:

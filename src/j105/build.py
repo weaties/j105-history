@@ -54,6 +54,16 @@ def _skipper(s: str) -> str:
     return person(" ".join(words))
 
 
+def _races(scores: list[list[Any]]) -> str:
+    """Race scores as one compact string: ``"1 2 (3) 9/DNF"``; parentheses mark throwouts."""
+    out = []
+    for pts, code, dropped in scores:
+        p = "" if pts is None else (f"{pts:g}")
+        cell = "/".join(x for x in (p, code) if x) or "–"
+        out.append(f"({cell})" if dropped else cell)
+    return " ".join(out)
+
+
 def _kind(name: str) -> str:
     for label, rx in KINDS:
         if re.search(rx, name, re.I):
@@ -93,6 +103,7 @@ def _event(e: dict[str, Any]) -> dict[str, Any]:
                 r["place"],
                 r.get("net"),
                 _clean(r.get("club") or ""),
+                _races(r.get("race_scores") or []),
             ]
         )
     fleet = e["fleet"]
