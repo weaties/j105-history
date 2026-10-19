@@ -16,6 +16,7 @@ uv run j105 discover yachtscoring --designs  # J/105s in PHRF/ORC classes of oth
 uv run j105 collect <source|all>     # standings -> data/raw/<src>_events.json, then counts
 uv run j105 counts [source]          # events / boat results per year and region
 uv run j105 hosts                    # host -> state seed rows; events still without a state
+uv run j105 build                    # site data: identity, dedupe, scores -> site/data/events.json
 uv run j105 hull <sail>              # one hull's results across all sources
 uv run j105 identity                 # alias / split candidates for review
 uv run j105 verify                   # consistency checks + random events to spot-check by hand
@@ -39,6 +40,8 @@ Sources: `clubspot`, `yachtscoring`, `regattanetwork`. Skills in `.claude/skills
 - `data/raw/puget_sound/` — verified Puget Sound-era data. `collect/legacy/` — Puget Sound
   scripts, reference only (some import `helmlog`); port code out, don't edit. Not linted.
 - `site/reference/` — local copies of four earlier artifacts (style reference; see `publish`).
+- `src/j105/build.py` (`j105 build`) → `site/data/events.json`; `site/index.html` reads it. Published
+  (private) as https://claude.ai/artifact/6oLL8NvvMpLP1QhCeUYE8D — update in place, never a new URL.
 
 ## Sources (status and quirks: see the `collect` and `add-source` skills for detail)
 

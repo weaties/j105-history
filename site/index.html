@@ -1,0 +1,444 @@
+<title>J/105 Class History</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column. Header with search and view switch, then one view at a time:
+   overview, a hull's history, an event, a season's rankings, the events list, coverage. */
+:root{
+  --bg:#f5f7f9; --panel:#ffffff; --ink:#0f1d2b; --muted:#5d6b78; --rule:#d9e0e6; --line:#b9c4ce; --day:#eef2f5;
+  --bar:#1f6fb2; --heat:#16507f; --heatink:#ffffff; --mark:#d6402b; --link:#1f6fb2;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
+  --bar:#5fb0f0; --heat:#3c8fd4; --heatink:#06121c; --mark:#ff6a4d; --link:#5fb0f0; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
+  --bar:#5fb0f0; --heat:#3c8fd4; --heatink:#06121c; --mark:#ff6a4d; --link:#5fb0f0; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;gap:24px}
+header{display:grid;gap:12px}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(30px,5vw,44px)/1 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance}
+h2{font:600 22px/1.1 var(--display);margin:0;letter-spacing:.02em;text-wrap:balance}
+.lede{color:var(--muted);max-width:74ch;margin:0}
+.summary{display:flex;flex-wrap:wrap;gap:12px 32px;font-variant-numeric:tabular-nums}
+.summary b{font:600 26px/1 var(--display)}
+.summary span{display:grid;gap:3px;color:var(--muted);font-size:13px;max-width:30ch}
+.bar-row{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:5px;overflow:hidden;background:var(--panel)}
+.seg a,.seg button{font:500 13px var(--body);color:var(--muted);background:var(--panel);border:0;border-left:1px solid var(--rule);padding:6px 12px;cursor:pointer;text-decoration:none}
+.seg :first-child{border-left:0}
+.seg [aria-current="page"],.seg [aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lab{font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+input[type="search"],select{font:14px var(--body);color:var(--ink);background:var(--panel);border:1px solid var(--line);border-radius:5px;padding:6px 10px}
+input[type="search"]{width:min(340px,100%)}
+a{color:var(--link)}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible{outline:2px solid var(--link);outline-offset:2px}
+section{display:grid;gap:10px;min-width:0}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+.hint{color:var(--muted);font-size:13px;margin:0;max-width:80ch}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:6px;overflow-x:auto;min-width:0}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+svg .grid{stroke:var(--rule);stroke-width:1}
+svg .mark{fill:var(--bar)}
+svg .hit{fill:transparent;cursor:default}
+svg .hit:hover+.mark,svg .mark.on{fill:var(--heat)}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{font:600 11.5px/1.2 var(--body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--panel)}
+td{font:13px/1.3 var(--mono)}
+td.t,th.t{text-align:left;font-family:var(--body)}
+td.wrap{white-space:normal;min-width:16ch}
+td small,.sub{display:block;color:var(--muted);font:12px/1.3 var(--body);white-space:normal}
+.heat td.c{padding:3px;min-width:34px}
+.heat .cell{display:block;border-radius:3px;padding:5px 2px;text-align:center;font-size:11.5px}
+.pill{display:inline-block;font:500 11px/1 var(--body);padding:3px 6px;border-radius:3px;border:1px solid var(--line);color:var(--muted);margin-left:6px;vertical-align:1px;white-space:nowrap}
+.pill.mark{border-color:var(--mark);color:var(--mark)}
+.flag{color:var(--mark);font:600 11px var(--body);letter-spacing:.04em;text-transform:uppercase;margin-left:6px}
+.tip{position:fixed;z-index:20;pointer-events:none;background:var(--ink);color:var(--bg);font:12px/1.35 var(--body);padding:6px 8px;border-radius:4px;max-width:260px}
+.results{display:grid;gap:4px}
+.results a{display:flex;flex-wrap:wrap;gap:4px 12px;padding:8px 10px;border-bottom:1px solid var(--rule);text-decoration:none;color:var(--ink)}
+.results a:hover{background:var(--day)}
+.results a b{font-family:var(--mono);font-weight:500;min-width:5ch}
+.results a span{color:var(--muted);font-size:13px}
+.empty{color:var(--muted);padding:16px}
+.more{justify-self:start;font:500 13px var(--body);background:var(--panel);color:var(--ink);border:1px solid var(--line);border-radius:5px;padding:6px 12px;cursor:pointer}
+.names{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:14px}
+.names span{white-space:nowrap}
+.names i{font-style:normal;color:var(--muted);font:12px var(--mono);margin-left:4px}
+.legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:13px;color:var(--muted)}
+.ramp{display:inline-flex;align-items:center;gap:6px;font:12px var(--mono)}
+.ramp i{display:inline-block;width:110px;height:10px;border-radius:2px;background:linear-gradient(90deg,color-mix(in srgb,var(--heat) 8%,var(--panel)),var(--heat))}
+footer{color:var(--muted);font-size:13px;max-width:84ch;display:grid;gap:6px}
+footer p{margin:0}
+@media (prefers-reduced-motion:no-preference){.view{animation:in .18s ease-out}@keyframes in{from{opacity:.4}to{opacity:1}}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow" id="eyebrow">J/105 · North America · results history</div>
+    <div class="bar-row">
+      <nav class="seg" aria-label="Views" id="nav">
+        <a href="#overview">Overview</a><a href="#seasons">Seasons</a><a href="#events">Events</a><a href="#coverage">Sources</a>
+      </nav>
+      <input type="search" id="q" placeholder="Sail number, boat, skipper or club" aria-label="Search boats, skippers, clubs and events" autocomplete="off">
+    </div>
+    <div class="card" id="found" hidden></div>
+  </header>
+  <main id="view" class="view"><p class="empty">Loading results…</p></main>
+  <footer>
+    <p>Scores are the share of the fleet beaten: (fleet − place) ÷ (fleet − 1), so first is 100% and last is 0%. A season score is the mean over that year's events. Where J/105s raced in a mixed handicap class they are ranked among the J/105s only and marked "mixed"; those count toward season scores only with at least 3 J/105s.</p>
+    <p>Hulls are followed by sail number. Typos and PHRF numbers are mapped onto hulls only with a recorded reason; some numbers are still shared by more than one boat and are under review. Names are as printed in each event's results. Every result links to its official page.</p>
+    <p id="built"></p>
+  </footer>
+</div>
+<div class="tip" id="tip" hidden></div>
+
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const norm = s => String(s || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+const pct = x => x == null ? "–" : Math.round(x * 100) + "%";
+// Same person across spellings ("Dan" / "Daniel Weatbrook"): surname + first initial.
+const personKey = s => { const w = String(s || "").toLowerCase().replace(/[^a-z ,]/g, "").split(/[ ,]+/).filter(Boolean); return w.length > 1 ? w.at(-1) + " " + w[0][0] : norm(s); };
+const tok = k => String(k).replace(/[^A-Za-z0-9._~-]/g, "_");
+let D, EV, BYID, H, HTOK, SRC, YEARS, REGIONS;
+
+function mode(list, key = norm) {
+  const c = new Map();
+  for (const v of list) { if (!v) continue; const k = key(v); const o = c.get(k) || {n: 0, f: new Map()}; o.n++; o.f.set(v, (o.f.get(v) || 0) + 1); c.set(k, o); }
+  let best = null;
+  for (const o of c.values()) if (!best || o.n > best.n) best = o;
+  if (!best) return "";
+  return [...best.f.entries()].sort((a, b) => b[1] - a[1])[0][0];
+}
+
+function prep(d) {
+  D = d; EV = d.events; SRC = d.sources; BYID = new Map(); H = new Map(); HTOK = new Map();
+  const shared = new Set((d.shared || []).map(norm));
+  for (const e of EV) {
+    e.year = +e.date.slice(0, 4); BYID.set(e.id, e);
+    e.rows = e.results.map(([h, boat, sk, place, net, club]) => ({e, h, boat, sk, place, net, club,
+      score: e.fleet > 1 ? (e.fleet - place) / (e.fleet - 1) : null}));
+    for (const r of e.rows) if (r.h) {
+      if (!H.has(r.h)) { H.set(r.h, {key: r.h, res: []}); HTOK.set(tok(r.h), r.h); }
+      H.get(r.h).res.push(r);
+    }
+  }
+  YEARS = [...new Set(EV.map(e => e.year))].sort((a, b) => a - b);
+  REGIONS = [...new Set(EV.map(e => e.region))].filter(r => r !== "Unknown").sort().concat(["Unknown"]);
+  for (const h of H.values()) {
+    h.res.sort((a, b) => a.e.date.localeCompare(b.e.date));
+    const by = new Map();
+    for (const r of h.res) { if (!by.has(r.e.year)) by.set(r.e.year, []); by.get(r.e.year).push(r); }
+    h.years = [...by.entries()].map(([year, rs]) => {
+      const c = rs.filter(r => r.e.counts);
+      return {year, rs, n: c.length, score: c.length ? c.reduce((s, r) => s + r.score, 0) / c.length : null,
+        name: mode(rs.map(r => r.boat)), skipper: mode(rs.map(r => r.sk), personKey),
+        region: mode(rs.map(r => r.e.region), x => x), wins: c.filter(r => r.place === 1).length};
+    });
+    h.name = h.years.at(-1).name;
+    h.isShared = h.years.some(y => shared.has(norm(y.name)));
+    // Rename: the year's most common name changes. New skipper of record: the year's most
+    // frequent skipper changes and still holds the next season (never for club boats).
+    h.years.forEach((y, i) => {
+      const p = h.years[i - 1], n = h.years[i + 1];
+      y.renamed = !!p && norm(p.name) !== norm(y.name);
+      y.newSkipper = !!p && !h.isShared && personKey(p.skipper) !== personKey(y.skipper) && !!n && personKey(n.skipper) === personKey(y.skipper);
+    });
+    h.n = h.res.filter(r => r.e.counts).length;
+    h.wins = h.res.filter(r => r.e.counts && r.place === 1).length;
+    h.first = h.years[0].year; h.last = h.years.at(-1).year;
+    h.search = norm([h.key, ...new Set(h.res.map(r => r.boat)), ...new Set(h.res.map(r => r.sk)), ...new Set(h.res.map(r => r.club))].join(" "));
+  }
+}
+
+// ---------- shared pieces
+const hullLink = (k, label) => `<a href="#hull-${tok(k)}">${esc(label ?? "#" + k)}</a>`;
+const evLink = e => `<a href="#event-${e.id}">${esc(e.name)}</a>`;
+const official = e => `<a href="${esc(e.url)}" target="_blank" rel="noopener">${esc(SRC[e.source].name)}</a>` +
+  e.also.map(a => ` · <a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(SRC[a.source].name)}</a>`).join("");
+const placeCell = (r) => `${r.place}<small>of ${r.e.fleet}</small>`;
+const mixedPill = e => e.mixed ? `<span class="pill" title="J/105s raced in a mixed class of ${e.division} boats and are ranked among J/105s only">mixed · ${e.fleet} of ${e.division}</span>` : "";
+const notCounted = e => !e.counts && e.fleet > 1 ? `<span class="pill" title="Mixed class with fewer than ${D.min_mixed} J/105s: listed, not in season scores">not scored</span>` : "";
+const years = (a, b) => a === b ? `${a}` : `${a}–${b}`;
+const heat = x => x == null ? "" : `background:color-mix(in srgb,var(--heat) ${Math.round(8 + 92 * x)}%,var(--panel));color:${x > .55 ? "var(--heatink)" : "var(--ink)"}`;
+
+function barChart(points, {max, fmt, tip, h = 200}) {
+  // points: [{x(label), v(number|null)}]; one bar per point, one scale, hover tooltip per bar.
+  const W = 1000, L = 44, R = 8, T = 10, B = 24, n = points.length, bw = (W - L - R) / n;
+  const y = v => T + (h - T - B) * (1 - v / max);
+  const ticks = [0, max / 2, max];
+  let s = `<svg viewBox="0 0 ${W} ${h}" role="img">`;
+  for (const t of ticks) s += `<line class="grid" x1="${L}" x2="${W - R}" y1="${y(t)}" y2="${y(t)}"/><text x="${L - 6}" y="${y(t) + 4}" text-anchor="end">${fmt(t)}</text>`;
+  const every = Math.ceil(n / 16);
+  points.forEach((p, i) => {
+    const x = L + i * bw, w = Math.max(2, bw - 2);
+    if (p.v != null) {
+      const top = y(p.v), hgt = Math.max(1, y(0) - top);
+      s += `<rect class="hit" x="${x}" y="${T}" width="${bw}" height="${h - T - B}" data-tip="${esc(tip(p))}"/>`;
+      s += `<path class="mark" d="M${x + 1},${y(0)}V${top + Math.min(4, hgt)}q0,-4 4,-4h${w - 8}q4,0 4,4V${y(0)}Z"/>`;
+    }
+    if (i % every === 0) s += `<text x="${x + bw / 2}" y="${h - 6}" text-anchor="middle">${esc(p.x)}</text>`;
+  });
+  return s + `</svg>`;
+}
+
+// ---------- views
+function overview() {
+  const scored = EV.filter(e => e.counts);
+  const hy = new Map(YEARS.map(y => [y, new Set()]));
+  const ry = new Map(REGIONS.map(r => [r, new Map(YEARS.map(y => [y, new Set()]))]));
+  for (const e of scored) for (const r of e.rows) if (r.h) { hy.get(e.year).add(r.h); ry.get(e.region).get(e.year).add(r.h); }
+  const evy = new Map(YEARS.map(y => [y, scored.filter(e => e.year === y).length]));
+  const max = Math.max(...[...hy.values()].map(s => s.size));
+  const nice = Math.ceil(max / 50) * 50;
+  const regMax = Math.max(...[...ry.values()].flatMap(m => [...m.values()].map(s => s.size)));
+  $("#eyebrow").textContent = `J/105 · North America · ${YEARS[0]}–${YEARS.at(-1)}`;
+  return `
+  <section>
+    <h1>Every J/105 result we could find</h1>
+    <p class="lede">${scored.length.toLocaleString()} scored J/105 fleets from ${Object.keys(SRC).length} scoring systems and the class archive, ${YEARS[0]} to ${YEARS.at(-1)}. Look up a boat by sail number, name, skipper or club, or browse a season or the events list. Every result links to its official page.</p>
+    <div class="summary">
+      <span><b>${scored.length.toLocaleString()}</b>scored fleets</span>
+      <span><b>${scored.reduce((s, e) => s + e.fleet, 0).toLocaleString()}</b>boat results</span>
+      <span><b>${H.size.toLocaleString()}</b>sail numbers</span>
+      <span><b>${YEARS.length}</b>seasons</span>
+    </div>
+  </section>
+  <section>
+    <div class="head"><h2>Boats racing each year</h2><span class="hint">Distinct sail numbers with a scored result that year</span></div>
+    <div class="card" data-chart>${barChart(YEARS.map(y => ({x: y, v: hy.get(y).size})), {max: nice, fmt: v => Math.round(v), tip: p => `${p.x}: ${p.v} boats in ${evy.get(p.x)} scored fleets`})}</div>
+  </section>
+  <section>
+    <div class="head"><h2>Where they raced</h2><span class="hint">Boats per region and year. Tap a year for that season's rankings.</span></div>
+    <div class="card"><table class="heat"><thead><tr><th class="t">Region</th>${YEARS.map(y => `<th><a href="#season-${y}">${String(y).slice(2)}</a></th>`).join("")}</tr></thead><tbody>
+      ${REGIONS.map(rg => `<tr><td class="t">${esc(rg)}</td>${YEARS.map(y => { const n = ry.get(rg).get(y).size; return `<td class="c"><span class="cell" style="${n ? heat(n / regMax) : ""}" title="${esc(rg)} ${y}: ${n} boats">${n || ""}</span></td>`; }).join("")}</tr>`).join("")}
+    </tbody></table></div>
+    <div class="legend"><span>Boats</span><span class="ramp">1<i></i>${regMax}</span></div>
+  </section>`;
+}
+
+function hullView(key) {
+  const h = H.get(key);
+  if (!h) return `<p class="empty">No results for sail number ${esc(key)}.</p>`;
+  const yrs = []; for (let y = h.first; y <= h.last; y++) yrs.push(y);
+  const yi = new Map(h.years.map(y => [y.year, y]));
+  const names = []; for (const y of h.years) { const l = names.at(-1); if (l && norm(l.name) === norm(y.name)) l.to = y.year; else names.push({name: y.name, from: y.year, to: y.year}); }
+  const best = h.res.filter(r => r.e.counts).sort((a, b) => b.score - a.score || b.e.fleet - a.e.fleet)[0];
+  const scored = h.years.filter(y => y.score != null);
+  return `
+  <section>
+    <div class="eyebrow">Sail number ${esc(h.key)} · ${years(h.first, h.last)}</div>
+    <h1>${esc(h.name)}</h1>
+    <div class="names">${names.map(n => `<span>${esc(n.name)}<i>${years(n.from, n.to)}</i></span>`).join("")}</div>
+    ${D.notes[h.key] ? `<p class="hint">${esc(D.notes[h.key])}</p>` : ""}
+    ${h.isShared ? `<p class="hint">Club or shared boat: skippers change often, so no skipper of record changes are shown.</p>` : ""}
+    <div class="summary">
+      <span><b>${h.n}</b>scored results</span>
+      <span><b>${h.wins}</b>wins</span>
+      <span><b>${scored.length ? pct(scored.reduce((s, y) => s + y.score, 0) / scored.length) : "–"}</b>mean season score</span>
+      ${best ? `<span><b>${best.place}/${best.e.fleet}</b>best: ${esc(best.e.name)} ${best.e.year}</span>` : ""}
+    </div>
+  </section>
+  ${scored.length > 1 ? `<section>
+    <div class="head"><h2>Season score</h2><span class="hint">Share of the fleet beaten, averaged over each year's scored events</span></div>
+    <div class="card">${barChart(yrs.map(y => ({x: y, v: yi.get(y)?.score ?? null, y: yi.get(y)})), {max: 1, fmt: pct, h: 180,
+      tip: p => `${p.x}: ${pct(p.v)} over ${p.y.n} event${p.y.n === 1 ? "" : "s"} · ${p.y.name} · ${p.y.skipper}`})}</div>
+  </section>` : ""}
+  <section>
+    <h2>By season</h2>
+    <div class="card"><table><thead><tr><th>Year</th><th class="t">Name</th><th class="t">Skipper of record</th><th class="t">Region</th><th>Events</th><th>Wins</th><th>Score</th></tr></thead><tbody>
+    ${h.years.slice().reverse().map(y => `<tr><td><a href="#season-${y.year}">${y.year}</a></td>
+      <td class="t">${esc(y.name)}${y.renamed ? `<span class="flag">renamed</span>` : ""}</td>
+      <td class="t">${esc(y.skipper)}${y.newSkipper ? `<span class="flag">new</span>` : ""}</td>
+      <td class="t">${esc(y.region)}</td><td>${y.n}</td><td>${y.wins}</td>
+      <td><span class="cell" style="${heat(y.score)};padding:2px 6px;border-radius:3px">${pct(y.score)}</span></td></tr>`).join("")}
+    </tbody></table></div>
+    <p class="hint">Skipper of record is the skipper named most often that year; "new" marks a change that held into the next season. Ownership isn't recorded here.</p>
+  </section>
+  <section>
+    <h2>Every result</h2>
+    <div class="card"><table><thead><tr><th class="t">Date</th><th class="t">Event</th><th class="t">Boat · skipper</th><th>Place</th><th>Score</th><th class="t">Official results</th></tr></thead><tbody>
+    ${h.res.slice().reverse().map(r => `<tr><td class="t">${r.e.date}</td>
+      <td class="t wrap">${evLink(r.e)}${mixedPill(r.e)}${notCounted(r.e)}<small>${esc(r.e.class)} · ${esc(r.e.region)}</small></td>
+      <td class="t wrap">${esc(r.boat)}<small>${esc(r.sk)}</small></td>
+      <td>${placeCell(r)}</td><td>${r.e.counts ? pct(r.score) : "–"}</td><td class="t">${official(r.e)}</td></tr>`).join("")}
+    </tbody></table></div>
+  </section>`;
+}
+
+function eventView(id) {
+  const e = BYID.get(id);
+  if (!e) return `<p class="empty">That event isn't in the data.</p>`;
+  const place = [e.host, e.state, e.region !== "Unknown" ? e.region : ""].filter(Boolean).join(" · ");
+  return `
+  <section>
+    <div class="eyebrow">${e.date}${e.end && e.end !== e.date ? " to " + e.end : ""} · ${esc(e.kind)}</div>
+    <h1>${esc(e.name)}</h1>
+    <p class="lede">${esc(e.class)}${place ? " · " + esc(place) : ""}. ${e.races ? e.races + " race" + (e.races === 1 ? "" : "s") + ", " : ""}${e.fleet} J/105${e.fleet === 1 ? "" : "s"}.</p>
+    ${e.mixed ? `<p class="hint">The J/105s raced in a mixed class of ${e.division} boats. They are ranked here among the J/105s only; points are the official class points.${e.counts ? "" : ` Fewer than ${D.min_mixed} J/105s, so this event isn't in season scores.`}</p>` : ""}
+    <p class="hint">Official results: ${official(e)}</p>
+  </section>
+  <section><div class="card"><table><thead><tr><th>Place</th><th class="t">Sail</th><th class="t">Boat</th><th class="t">Skipper</th><th class="t">Club</th><th>Points</th><th>Score</th></tr></thead><tbody>
+    ${e.rows.map(r => `<tr><td>${r.place}</td><td class="t">${r.h ? hullLink(r.h, r.h) : `<span class="sub">not printed</span>`}</td>
+      <td class="t">${esc(r.boat)}</td><td class="t">${esc(r.sk)}</td><td class="t">${esc(r.club)}</td>
+      <td>${r.net ?? "–"}</td><td>${e.counts ? pct(r.score) : "–"}</td></tr>`).join("")}
+  </tbody></table></div></section>`;
+}
+
+const ST = {region: "All", min: 3};
+function seasonView(year) {
+  year = year || YEARS.at(-1);
+  const rows = [];
+  for (const h of H.values()) {
+    const y = h.years.find(y => y.year === year);
+    if (!y || y.score == null || y.n < ST.min) continue;
+    if (ST.region !== "All" && y.region !== ST.region) continue;
+    rows.push({h, y});
+  }
+  rows.sort((a, b) => b.y.score - a.y.score || b.y.n - a.y.n);
+  return `
+  <section>
+    <div class="eyebrow">Season rankings</div>
+    <h1>${year}</h1>
+    <div class="bar-row">
+      <label class="lab" for="sy">Year</label><select id="sy">${YEARS.slice().reverse().map(y => `<option${y === year ? " selected" : ""}>${y}</option>`).join("")}</select>
+      <label class="lab" for="sr">Region</label><select id="sr">${["All", ...REGIONS].map(r => `<option${r === ST.region ? " selected" : ""}>${esc(r)}</option>`).join("")}</select>
+      <span class="lab">Min. events</span><div class="seg" id="smin">${[1, 3, 5, 10].map(n => `<button type="button" aria-pressed="${n === ST.min}" data-n="${n}">${n}</button>`).join("")}</div>
+    </div>
+    <p class="hint">Season score is the share of the fleet beaten, averaged over the boat's scored events that year. Region is where the boat raced most that year.</p>
+  </section>
+  <section>${rows.length ? `<div class="card"><table><thead><tr><th>#</th><th class="t">Sail</th><th class="t">Boat · skipper of record</th><th class="t">Region</th><th>Events</th><th>Wins</th><th>Score</th></tr></thead><tbody>
+    ${rows.map((r, i) => `<tr><td>${i + 1}</td><td class="t">${hullLink(r.h.key, r.h.key)}</td><td class="t wrap">${esc(r.y.name)}<small>${esc(r.y.skipper)}</small></td>
+      <td class="t">${esc(r.y.region)}</td><td>${r.y.n}</td><td>${r.y.wins}</td><td><span style="${heat(r.y.score)};padding:2px 6px;border-radius:3px">${pct(r.y.score)}</span></td></tr>`).join("")}
+  </tbody></table></div>` : `<p class="empty">No boats with ${ST.min} or more scored events${ST.region !== "All" ? " in " + esc(ST.region) : ""} in ${year}. Lower the minimum or pick another region.</p>`}</section>`;
+}
+
+const EF = {year: "All", region: "All", source: "All", kind: "All", text: "", shown: 150};
+function eventsView() {
+  const t = norm(EF.text);
+  const list = EV.filter(e => (EF.year === "All" || e.year === +EF.year) && (EF.region === "All" || e.region === EF.region)
+    && (EF.source === "All" || e.source === EF.source) && (EF.kind === "All" || e.kind === EF.kind) && (!t || norm(e.name + e.host + e.class).includes(t))).reverse();
+  const opt = (id, cur, vals, label = v => v) => `<select id="${id}">${["All", ...vals].map(v => `<option value="${esc(v)}"${String(v) === String(cur) ? " selected" : ""}>${esc(v === "All" ? "All" : label(v))}</option>`).join("")}</select>`;
+  return `
+  <section>
+    <div class="eyebrow">Events</div>
+    <h1>${list.length.toLocaleString()} J/105 fleets</h1>
+    <div class="bar-row">
+      <label class="lab" for="fy">Year</label>${opt("fy", EF.year, YEARS.slice().reverse())}
+      <label class="lab" for="fr">Region</label>${opt("fr", EF.region, REGIONS)}
+      <label class="lab" for="fk">Type</label>${opt("fk", EF.kind, [...new Set(EV.map(e => e.kind))].sort())}
+      <label class="lab" for="fs">Source</label>${opt("fs", EF.source, Object.keys(SRC), k => SRC[k].name)}
+      <input type="search" id="ft" placeholder="Event, host or class" aria-label="Filter events by name, host or class" value="${esc(EF.text)}">
+    </div>
+  </section>
+  <section><div class="card"><table><thead><tr><th class="t">Date</th><th class="t">Event</th><th class="t">Region</th><th>J/105s</th><th class="t">Official results</th></tr></thead><tbody>
+    ${list.slice(0, EF.shown).map(e => `<tr><td class="t">${e.date}</td><td class="t wrap">${evLink(e)}${mixedPill(e)}${notCounted(e)}<small>${esc(e.class)}${e.host ? " · " + esc(e.host) : ""}</small></td>
+      <td class="t">${esc(e.region)}</td><td>${e.fleet}</td><td class="t">${official(e)}</td></tr>`).join("") || `<tr><td class="t" colspan="5">No events match these filters.</td></tr>`}
+  </tbody></table></div>
+  ${list.length > EF.shown ? `<button type="button" class="more" id="more">Show ${Math.min(150, list.length - EF.shown)} more of ${(list.length - EF.shown).toLocaleString()}</button>` : ""}</section>`;
+}
+
+function coverageView() {
+  const srcs = Object.keys(SRC);
+  const c = new Map(srcs.map(s => [s, new Map()]));
+  for (const e of EV) if (e.counts) c.get(e.source).set(e.year, (c.get(e.source).get(e.year) || 0) + 1);
+  const max = Math.max(...[...c.values()].flatMap(m => [...m.values()]));
+  const merged = EV.filter(e => e.also.length).length;
+  const nos = EV.reduce((s, e) => s + e.rows.filter(r => !r.h).length, 0);
+  return `
+  <section>
+    <div class="eyebrow">Sources</div>
+    <h1>Where the results come from</h1>
+    <p class="lede">Scored J/105 fleets per source and year. ${merged} events held by two sources are shown once, with both links.</p>
+  </section>
+  <section><div class="card"><table class="heat"><thead><tr><th class="t">Source</th>${YEARS.map(y => `<th>${String(y).slice(2)}</th>`).join("")}<th>Total</th></tr></thead><tbody>
+    ${srcs.map(s => `<tr><td class="t"><a href="${esc(SRC[s].home)}" target="_blank" rel="noopener">${esc(SRC[s].name)}</a></td>${YEARS.map(y => { const n = c.get(s).get(y) || 0; return `<td class="c"><span class="cell" style="${n ? heat(n / max) : ""}" title="${esc(SRC[s].name)} ${y}: ${n}">${n || ""}</span></td>`; }).join("")}<td>${[...c.get(s).values()].reduce((a, b) => a + b, 0)}</td></tr>`).join("")}
+  </tbody></table></div></section>
+  <section>
+    <h2>Known gaps</h2>
+    <p class="hint">The class archive (1996–2008) is hand-made HTML: some blocks couldn't be read, and ${nos.toLocaleString()} results print no sail number, so they appear in their events but not in boat histories. Sloop Tavern YC (Seattle) results are being collected. Sailwave pages are included only when listed by hand. Jibeset (SF Bay) isn't included: its site asks crawlers not to collect it. Events outside North America are left out.</p>
+  </section>`;
+}
+
+// ---------- search
+function search(q) {
+  const box = $("#found"), t = norm(q);
+  if (!t) { box.hidden = true; box.innerHTML = ""; return; }
+  const digits = /^\d+$/.test(t);
+  const hs = [...H.values()].filter(h => digits ? h.key.startsWith(t) : h.search.includes(t))
+    .sort((a, b) => (digits ? (a.key === t ? -1 : 0) - (b.key === t ? -1 : 0) : 0) || b.n - a.n).slice(0, 12);
+  const es = digits ? [] : EV.filter(e => norm(e.name).includes(t)).slice(-6).reverse();
+  box.hidden = false;
+  box.innerHTML = `<div class="results">${hs.map(h => `<a href="#hull-${tok(h.key)}"><b>${esc(h.key)}</b>${esc(h.name)}<span>${years(h.first, h.last)} · ${h.n} results · ${esc(h.years.at(-1).skipper)}</span></a>`).join("")}
+    ${es.map(e => `<a href="#event-${e.id}"><b>${e.year}</b>${esc(e.name)}<span>${esc(e.class)} · ${e.fleet} J/105s</span></a>`).join("")}
+    ${hs.length + es.length ? "" : `<p class="empty">Nothing matches “${esc(q)}”. Try a sail number, or part of a boat or skipper name.</p>`}</div>`;
+}
+
+// ---------- routing
+function route() {
+  const hash = location.hash.slice(1) || "overview";
+  let html, nav = "overview";
+  if (hash.startsWith("hull-")) { html = hullView(HTOK.get(hash.slice(5)) ?? hash.slice(5)); nav = ""; }
+  else if (hash.startsWith("event-")) { html = eventView(hash.slice(6)); nav = "events"; }
+  else if (hash.startsWith("season")) { html = seasonView(+hash.split("-")[1] || 0); nav = "seasons"; }
+  else if (hash === "events") { html = eventsView(); nav = "events"; }
+  else if (hash === "coverage") { html = coverageView(); nav = "coverage"; }
+  else html = overview();
+  for (const a of $("#nav").children) {
+    if (a.getAttribute("href") === "#" + nav) a.setAttribute("aria-current", "page"); else a.removeAttribute("aria-current");
+  }
+  const v = $("#view"); v.innerHTML = html; v.classList.remove("view"); void v.offsetWidth; v.classList.add("view");
+  $("#q").value = ""; search("");
+  window.scrollTo(0, 0);
+  wire(hash);
+}
+
+function wire(hash) {
+  const sy = $("#sy"); if (sy) {
+    sy.onchange = () => location.hash = "season-" + sy.value;
+    $("#sr").onchange = e => { ST.region = e.target.value; route(); };
+    $("#smin").onclick = e => { const n = e.target.dataset?.n; if (n) { ST.min = +n; route(); } };
+  }
+  const fy = $("#fy"); if (fy) {
+    const upd = () => { EF.year = fy.value; EF.region = $("#fr").value; EF.kind = $("#fk").value; EF.source = $("#fs").value; EF.shown = 150; redraw(); };
+    for (const id of ["#fy", "#fr", "#fk", "#fs"]) $(id).onchange = upd;
+    const ft = $("#ft"); ft.oninput = () => { EF.text = ft.value; EF.shown = 150; redraw(true); };
+    const more = $("#more"); if (more) more.onclick = () => { EF.shown += 150; redraw(); };
+  }
+}
+function redraw(keepFocus) {
+  const pos = keepFocus ? $("#ft").selectionStart : null;
+  $("#view").innerHTML = eventsView(); wire("events");
+  if (keepFocus) { const ft = $("#ft"); ft.focus(); ft.setSelectionRange(pos, pos); }
+}
+
+// tooltip for chart bars
+const tipEl = $("#tip");
+document.addEventListener("pointermove", ev => {
+  const t = ev.target.closest?.("[data-tip]");
+  if (!t) { tipEl.hidden = true; return; }
+  tipEl.textContent = t.dataset.tip; tipEl.hidden = false;
+  const r = tipEl.getBoundingClientRect();
+  tipEl.style.left = Math.min(ev.clientX + 12, innerWidth - r.width - 8) + "px";
+  tipEl.style.top = Math.max(8, ev.clientY - r.height - 12) + "px";
+});
+
+$("#q").addEventListener("input", e => search(e.target.value));
+$("#q").addEventListener("keydown", e => { if (e.key === "Enter") { const a = $("#found a"); if (a) location.hash = a.getAttribute("href").slice(1); } });
+window.addEventListener("hashchange", route);
+
+fetch("data/events.json").then(r => { if (!r.ok) throw new Error(r.status); return r.json(); }).then(d => {
+  prep(d);
+  $("#built").textContent = `Built ${d.generated} from ${Object.values(d.sources).map(s => s.name).join(", ")}.`;
+  route();
+}).catch(err => { $("#view").innerHTML = `<p class="empty">The results data didn't load (${esc(err.message)}). Reload the page to try again.</p>`; });
+</script>

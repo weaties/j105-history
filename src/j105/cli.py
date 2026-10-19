@@ -144,6 +144,7 @@ def main() -> None:
     )
     c = sub.add_parser("counts")
     c.add_argument("source", nargs="?", choices=list(SOURCES))
+    sub.add_parser("build")
     sub.add_parser("hosts")
     sub.add_parser("identity")
     sub.add_parser("hull").add_argument("sail")
@@ -156,6 +157,11 @@ def main() -> None:
     )
     if a.cmd == "counts":
         counts(a.source)
+        return
+    if a.cmd == "build":
+        from j105.build import build
+
+        build()
         return
     if a.cmd == "hull":
         show_hull(a.sail)
