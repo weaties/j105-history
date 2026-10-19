@@ -33,8 +33,8 @@ The work started in the HelmLog project (the user's boat logger, `~/src/helmlog`
 | Source | Discovery | Standings | Status |
 |---|---|---|---|
 | Clubspot | `collect/discover_clubspot.py` → `data/raw/clubspot_index.json`: 250 J/105 classes in 244 regattas | `collect/clubspot_all.py` → `data/raw/clubspot_events.json` | **Done**: 153 scored events, 1,770 boat results, 226 sail numbers, 2019–2026 |
-| Yacht Scoring | `collect/discover_ys.py` scans all ~7,450 events' `/splits` → `data/raw/ys_index.json` | `collect/ys_all.py` (written, **not yet run**) → `data/raw/ys_events.json` | The scan was running at handoff, finding about 10% of events with J/105 (~700 expected). If `ys_index.json` is missing or short, rerun discovery (it isn't resumable yet; make it so). |
-| Regatta Network | `collect/discover_rn.py`: year lists 2008–2026, then every results page; J/105 pages saved to `data/raw/rn_pages/<id>.html` and indexed in `data/raw/rn_index.json` | **No parser yet** | The scan was running at handoff, with pages cached as they're found, so a rerun skips cached ones. Write the standings parser. |
+| Yacht Scoring | `collect/discover_ys.py` scans all ~7,450 events' `/splits` → `data/raw/ys_index.json` | `collect/ys_all.py` (written, **not yet run**) → `data/raw/ys_events.json` | **Discovery done**: 676 events with a J/105 class, 2006–2026. Next, run `ys_all.py`. Discovery isn't resumable yet; make it so before rerunning. |
+| Regatta Network | `collect/discover_rn.py`: year lists 2008–2026, then every results page; J/105 pages saved to `data/raw/rn_pages/<id>.html` and indexed in `data/raw/rn_index.json` | **No parser yet** | **Discovery done**: 482 of 13,686 results pages (2008–2026) have a J/105 division, listed in `rn_index.json`. The raw pages (~135 MB) are git-ignored; `discover_rn.py` re-fetches them and skips any already cached. Write the standings parser next. |
 | STYC (Seattle) | known URLs | `collect/legacy/styc.py` | Ballard Cup 2014–2026 done for Puget Sound; STYC also hosts other series |
 | j105.org archive | `https://archive.j105.org/j105results{1996..2008}.html` | none | Hand-made HTML tables, several formats per page (Pl, Sail #, Skipper, Boat, race scores, T). Valuable for 1996–2008 history. |
 | Jibeset (SF Bay) | `https://www.jibeset.net/regattaall.php` (current year only); per club `ourregatta.php?A00=yes&A11=yes&CLUB=<code>` | none | The SF J/105 fleet (Fleet 1, the largest) mostly scores on Clubspot now; Jibeset may hold older YRA and club results. |
@@ -137,4 +137,4 @@ Keep the official results URL on every event and link to it from the site.
 - Commit with clear messages; ask before any push. Don't commit secrets.
 - When you're unsure whether two records are the same boat or person, leave them separate and list the question for the user.
 
-Start by doing the setup (CLAUDE.md, skills, project scaffolding). Then check whether `data/raw/ys_index.json` and `data/raw/rn_index.json` are complete, run `collect/ys_all.py`, write the Regatta Network parser, and report counts before building the site.
+Start by doing the setup (CLAUDE.md, skills, project scaffolding). Then run `collect/ys_all.py`, write the Regatta Network parser, and report counts before building the site.
