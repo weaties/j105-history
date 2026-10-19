@@ -27,6 +27,14 @@ def test_sail_key_and_aliases() -> None:
     table = {"404": "403"}
     assert identity.hull("404", table) == "403"
     assert identity.hull("CAN 89", table) == "89"
+    assert identity.hull("54965", {"54965": "54865", "54865": "8"}) == "8"  # chains
+    assert identity.hull("1", {"1": "2", "2": "1"}) in {"1", "2"}  # a loop ends
+
+
+def test_split_number_by_boat(monkeypatch) -> None:
+    monkeypatch.setattr(identity, "splits", lambda: {"7105": [("speedplay", "7105-speedplay")]})
+    assert identity.hull("7105", {}, boat="SpeedPlay") == "7105-speedplay"
+    assert identity.hull("7105", {}, boat="Allegiance") == "7105"
 
 
 def test_alias_table_has_reasons() -> None:

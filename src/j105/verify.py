@@ -13,7 +13,9 @@ from typing import Any
 from j105.http import RAW, read_json
 from j105.identity import sail_key
 
-FILES = {"clubspot": "clubspot", "yachtscoring": "ys", "regattanetwork": "rn"}
+FILES = {"clubspot": "clubspot", "yachtscoring": "ys", "regattanetwork": "rn", "styc": "styc",
+         "sailwave": "sailwave",
+         "j105org": "j105org"}  # fmt: skip
 
 
 def check_event(e: dict[str, Any]) -> list[str]:

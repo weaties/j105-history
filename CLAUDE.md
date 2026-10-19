@@ -45,9 +45,13 @@ Sources: `clubspot`, `yachtscoring`, `regattanetwork`. Skills in `.claude/skills
 | Clubspot | 2019– | No place field: rank by net, then total (tiebreaks hidden). Skip test/"CLONED". |
 | Yacht Scoring | 2006– | `cumulative-result` boats are in official order, each with a `design`; `/boats` adds club, build year, `boatId`. J/105s in PHRF/ORC classes: `discover yachtscoring --designs`. The event listing shifts while paging: dedupe ids. |
 | Regatta Network | 2006– | HTML; no city/state (state via `host_clubs.csv`). J/105s can be mixed into PHRF. |
-| STYC, j105.org archive (1996–2008), Jibeset, Sailwave | — | Not yet collected. |
+| STYC | 2014– | race.styc.org via each race page's results list; 10 s crawl delay. PHRF classes: J/105s by `Boat Type`. |
+| Sailwave | curated | Only pages listed in `data/sources/sailwave.csv` (user decision: no scan of sailwave.com/results). |
+| j105.org archive | 1996–2008 | Hand-made HTML; sail numbers often missing. |
+| Jibeset | — | Skipped: robots.txt disallows all crawlers but Googlebot (user decision). |
 
-Unscored events (0 races, cancelled, entry list only) are kept with `scored: false`. Test and
+Unscored events (0 races, cancelled, entry list only) are kept with `scored: false`. Events outside
+North America are listed in `data/identity/excluded_events.csv` (with reason) and dropped at build time. Test and
 cloned events (`schema.TEST_EVENT`) are skipped.
 
 ## Common event schema (`src/j105/schema.py`)
@@ -78,6 +82,8 @@ skipper, club, home?, built?, ys_boat?, net, total?, place, races_sailed?}]}`
 - Event score = share of fleet beaten: `(fleet − place) / (fleet − 1)`. Season score = mean
   over the boat's events that year. Always show place and fleet size next to scores.
 - Mixed-class events (common before 2018 in Puget Sound): rank among J/105s only, and say so.
+  A mixed event counts toward season scores only with **at least 3 J/105s** (user decision);
+  smaller ones are still listed with place and division size.
 - Region from event state/province (`regions.py`) and the boat's most frequent venue.
 
 ## Privacy (see the `privacy` skill)

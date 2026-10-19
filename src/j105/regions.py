@@ -33,6 +33,7 @@ REGIONS = {
     "Southeast": {"NC", "SC", "GA", "FL"},
     "Atlantic Canada & Quebec": {"NS", "QC"},
     "Bermuda": {"BM"},
+    "Caribbean": {"USVI", "VI", "PR"},
 }
 _BY_STATE = {s: r for r, states in REGIONS.items() for s in states}
 
@@ -88,3 +89,15 @@ def event_state(e: dict[str, Any]) -> str:
     return by_event.get(f"{e['source']}:{e['event_id']}") or by_host.get(
         host_key(e.get("host") or ""), ""
     )
+
+
+@cache
+def excluded() -> dict[str, str]:
+    """``source:event_id`` -> reason, from the reviewed ``excluded_events.csv``."""
+    from j105.identity import _rows
+
+    return {r["event"]: r["reason"] for r in _rows("excluded_events.csv")}
+
+
+def in_scope(e: dict[str, Any]) -> bool:
+    return f"{e['source']}:{e['event_id']}" not in excluded()

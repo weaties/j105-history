@@ -1,4 +1,4 @@
-"""Command line: ``j105 discover|collect <source>`` and ``j105 counts|hosts|verify``."""
+"""Command line: ``j105 discover|collect <source>``, ``j105 counts|hosts|identity|verify``."""
 
 from __future__ import annotations
 
@@ -9,14 +9,18 @@ from collections.abc import Callable
 from typing import Any
 
 from j105.http import RAW, read_json
-from j105.regions import event_state, host_key, host_table, region, state_code
-from j105.sources import clubspot, regattanetwork, yachtscoring
+from j105.identity import candidates
+from j105.regions import event_state, host_key, host_table, in_scope, region, state_code
+from j105.sources import clubspot, j105org, regattanetwork, sailwave, styc, yachtscoring
 from j105.verify import verify
 
 SOURCES: dict[str, Any] = {
     "clubspot": clubspot,
     "yachtscoring": yachtscoring,
     "regattanetwork": regattanetwork,
+    "styc": styc,
+    "sailwave": sailwave,
+    "j105org": j105org,
 }
 
 
@@ -34,6 +38,23 @@ def counts(source: str | None = None) -> None:
         )
         _table("year", evs, lambda e: (e.get("start") or "????")[:4])
         _table("region", evs, lambda e: region(event_state(e)) or "unknown")
+
+
+def identity_report() -> None:
+    """Alias candidates for review (see the ``identity`` skill); nothing is merged."""
+    evs = [e for name in SOURCES for e in read_json(RAW / f"{_short(name)}_events.json", [])]
+    for kind, items in candidates(evs).items():
+        print(f"\n== {kind}: {len(items)}")
+        if kind == "unnumbered":
+            for x in items:
+                hulls = x["hulls"] or "?"
+                print(f"  {x['year']} {x['boat']} / {x['skipper']} -> {hulls}  {x['event']}")
+            continue
+        for x in items:
+            label = x.get("ys_boat") or f"{x.get('key', '')} {x.get('year', '')}".strip()
+            print(f"  {label}  e.g. {x['example']}")
+            for key, lines in x["keys"].items():
+                print(f"    {key:>9}  " + " ; ".join(lines))
 
 
 def hosts() -> None:
@@ -71,7 +92,7 @@ def hosts() -> None:
 
 
 def _usable(e: dict[str, Any]) -> bool:
-    return bool(e.get("scored")) and e.get("fleet", 0) > 1
+    return bool(e.get("scored")) and e.get("fleet", 0) > 1 and in_scope(e)
 
 
 def _table(label: str, evs: list[dict[str, Any]], key: Callable[[dict[str, Any]], str]) -> None:
@@ -103,6 +124,7 @@ def main() -> None:
     c = sub.add_parser("counts")
     c.add_argument("source", nargs="?", choices=list(SOURCES))
     sub.add_parser("hosts")
+    sub.add_parser("identity")
     sub.add_parser("verify")
     a = p.parse_args()
     logging.basicConfig(
@@ -112,6 +134,9 @@ def main() -> None:
     )
     if a.cmd == "counts":
         counts(a.source)
+        return
+    if a.cmd == "identity":
+        identity_report()
         return
     if a.cmd == "hosts":
         hosts()

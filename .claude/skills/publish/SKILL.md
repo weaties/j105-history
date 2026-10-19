@@ -44,3 +44,8 @@ participation over time (boats per year per region) · Data coverage (sources, y
 
 Show place and fleet size next to every score, mark mixed-class results, and credit each
 source with a link on every event.
+
+Build-time rules: drop events in `data/identity/excluded_events.csv` (outside North America);
+a mixed event counts toward season scores only with at least 3 J/105s (list smaller ones,
+with "J/105s: n of division_size", but leave them out of averages); fill missing states from
+`host_clubs.csv` (`regions.event_state`).
