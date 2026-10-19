@@ -1,7 +1,12 @@
-# Raw Regatta Network result pages (~135 MB, third-party HTML).
-# Re-fetch with: python3 collect/discover_rn.py  (data/raw/rn_index.json lists the ids)
-data/raw/rn_pages/
+# Raw third-party responses (~230 MB): Regatta Network pages, Yacht Scoring and Clubspot JSON.
+# Not redistributed until each source's terms are checked; rebuild with `uv run j105 discover|collect`.
+data/raw/cache/
 
+# Python / tooling
 __pycache__/
 .venv/
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
 .DS_Store
+*.tmp

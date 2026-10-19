@@ -1,0 +1,49 @@
+"""State/province normalisation and the region each one belongs to.
+
+Regions are broad sailing areas used for filters and participation charts. J/105 class fleet
+numbers (e.g. Fleet 1 = San Francisco) go in ``data/identity/fleets.csv`` once confirmed.
+"""
+
+from __future__ import annotations
+
+import re
+
+NAMES = {
+    "alabama": "AL", "california": "CA", "connecticut": "CT", "delaware": "DE", "florida": "FL",
+    "georgia": "GA", "hawaii": "HI", "illinois": "IL", "indiana": "IN", "louisiana": "LA",
+    "maine": "ME", "maryland": "MD", "massachusetts": "MA", "michigan": "MI", "minnesota": "MN",
+    "new hampshire": "NH", "hampshire": "NH", "new jersey": "NJ", "new york": "NY",
+    "north carolina": "NC", "ohio": "OH", "oregon": "OR", "pennsylvania": "PA",
+    "rhode island": "RI", "south carolina": "SC", "texas": "TX", "virginia": "VA",
+    "washington": "WA", "wisconsin": "WI", "british columbia": "BC", "nova scotia": "NS",
+    "ontario": "ON", "quebec": "QC", "bermuda": "BM",
+}  # fmt: skip
+
+REGIONS = {
+    "Pacific Northwest": {"WA", "OR", "BC"},
+    "California": {"CA", "HI"},
+    "Gulf & Texas": {"TX", "LA", "AL"},
+    "Great Lakes": {"IL", "IN", "MI", "MN", "OH", "WI", "ON", "PA"},
+    "New England": {"MA", "ME", "NH", "RI"},
+    "Long Island Sound & NY/NJ": {"CT", "NY", "NJ"},
+    "Chesapeake": {"MD", "VA", "DE"},
+    "Southeast": {"NC", "SC", "GA", "FL"},
+    "Atlantic Canada & Quebec": {"NS", "QC"},
+    "Bermuda": {"BM"},
+}
+_BY_STATE = {s: r for r, states in REGIONS.items() for s in states}
+
+
+def state_code(state: str) -> str:
+    """``"Illinois"`` -> ``"IL"``; ``"NY NJ"`` -> ``"NY"``; unknown text is returned upper-cased."""
+    s = re.sub(r"\s+", " ", state).strip().strip(".")
+    if not s:
+        return ""
+    if s.lower() in NAMES:
+        return NAMES[s.lower()]
+    first = s.split()[0].upper()
+    return first if len(first) == 2 else s.upper()
+
+
+def region(state: str) -> str:
+    return _BY_STATE.get(state_code(state), "")
