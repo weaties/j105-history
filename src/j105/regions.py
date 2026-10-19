@@ -18,7 +18,8 @@ NAMES = {
     "north carolina": "NC", "ohio": "OH", "oregon": "OR", "pennsylvania": "PA",
     "rhode island": "RI", "south carolina": "SC", "texas": "TX", "virginia": "VA",
     "washington": "WA", "wisconsin": "WI", "british columbia": "BC", "nova scotia": "NS",
-    "ontario": "ON", "quebec": "QC", "bermuda": "BM",
+    "ontario": "ON", "quebec": "QC", "bermuda": "BM", "puerto rico": "PR",
+    "virgin islands": "USVI", "us virgin islands": "USVI", "vi": "USVI",
 }  # fmt: skip
 
 REGIONS = {
@@ -33,19 +34,19 @@ REGIONS = {
     "Southeast": {"NC", "SC", "GA", "FL"},
     "Atlantic Canada & Quebec": {"NS", "QC"},
     "Bermuda": {"BM"},
-    "Caribbean": {"USVI", "VI", "PR"},
+    "Caribbean": {"USVI", "PR"},
 }
 _BY_STATE = {s: r for r, states in REGIONS.items() for s in states}
 
 
 def state_code(state: str) -> str:
     """``"Illinois"`` -> ``"IL"``; ``"NY NJ"`` -> ``"NY"``; unknown text is returned upper-cased."""
-    s = re.sub(r"\s+", " ", state).strip().strip(".")
+    s = re.sub(r"\s+", " ", state.replace(".", "")).strip()
     if not s:
         return ""
     if s.lower() in NAMES:
         return NAMES[s.lower()]
-    first = s.split()[0].upper()
+    first = re.split(r"[ ,/]+", s)[0].upper()
     return first if len(first) == 2 else s.upper()
 
 

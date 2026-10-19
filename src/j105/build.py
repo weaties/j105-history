@@ -15,7 +15,7 @@ import re
 from typing import Any
 
 from j105.http import RAW, ROOT, read_json, write_json
-from j105.identity import _rows, hull, person, tidy
+from j105.identity import PLACEHOLDER, _rows, hull, person, tidy
 from j105.regions import event_state, in_scope, region
 
 log = logging.getLogger(__name__)
@@ -83,7 +83,8 @@ def _event(e: dict[str, Any]) -> dict[str, Any]:
     st = event_state(e)
     results = []
     for r in e["results"]:
-        h = hull(r["sail"], boat=r["boat"]) if r["sail"] else ""
+        sail = r["sail"].strip()
+        h = hull(sail, boat=r["boat"]) if sail and not PLACEHOLDER.match(sail) else ""
         results.append(
             [
                 h,
