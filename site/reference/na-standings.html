@@ -1,0 +1,357 @@
+<title>J/105 NAs 2026 Standings</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column — header + fleet scope + boat picker, then position chart, points chart, head-to-head, finish heatmap */
+:root{
+  --bg:#f5f7f9; --panel:#ffffff; --ink:#0f1d2b; --muted:#5d6b78; --rule:#d9e0e6; --line:#b9c4ce; --day:#eef2f5;
+  --base:#d6402b; --c1:#1f6fb2; --c2:#2a8a57; --c3:#8a4fbf; --c4:#b7791f; --c5:#0f8a8a;
+  --heat:#16507f; --heatink:#ffffff;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
+  --base:#ff6a4d; --c1:#5fb0f0; --c2:#54c48a; --c3:#b78cf0; --c4:#e8b04a; --c5:#4fd0cf;
+  --heat:#3c8fd4; --heatink:#06121c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
+  --base:#ff6a4d; --c1:#5fb0f0; --c2:#54c48a; --c3:#b78cf0; --c4:#e8b04a; --c5:#4fd0cf;
+  --heat:#3c8fd4; --heatink:#06121c; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+.wrap{max-width:1080px;margin:0 auto;padding-block:28px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;gap:28px}
+header{display:grid;gap:10px}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(30px,5vw,44px)/1 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance}
+h2{font:600 22px/1.1 var(--display);margin:0;letter-spacing:.02em}
+.lede{color:var(--muted);max-width:70ch;margin:0}
+.summary{display:flex;flex-wrap:wrap;gap:12px 32px;font-variant-numeric:tabular-nums;min-height:52px}
+.summary b{font:600 26px/1 var(--display)}
+.summary span{display:grid;gap:3px;color:var(--muted);font-size:13px}
+.summary .hl b{color:var(--base)}
+.controls{display:grid;gap:10px;background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:12px}
+.ctlrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.ctlrow .lab{font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);min-width:64px}
+.seg{display:inline-flex;border:1px solid var(--rule);border-radius:5px;overflow:hidden}
+.seg button{font:500 13px var(--body);color:var(--muted);background:var(--panel);border:0;padding:6px 12px;cursor:pointer}
+.seg button+button{border-left:1px solid var(--rule)}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 12.5px/1 var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:999px;padding:6px 10px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.chip .sw{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.chip[aria-pressed="true"]{border-color:var(--sel);box-shadow:inset 0 0 0 1px var(--sel)}
+.chip[aria-pressed="true"] .sw{background:var(--sel)}
+.chip em{font:600 9.5px/1 var(--body);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--sel)}
+button.clear{font:500 13px var(--body);color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:5px 10px;cursor:pointer}
+button:focus-visible,tr:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+.note{color:var(--muted);font-size:13px;margin:0}
+section{display:grid;gap:10px}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+.hint{color:var(--muted);font-size:13px}
+.chart{background:var(--panel);border:1px solid var(--rule);border-radius:6px;overflow-x:auto}
+svg{display:block;min-width:720px;width:100%;height:auto}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+svg .lbl{font-family:var(--body);font-size:11.5px;cursor:pointer}
+svg .lbl.sel{font-weight:600}
+svg .lbl.dim{opacity:.45}
+svg .day{fill:var(--day)}
+svg .dayt{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.06em;fill:var(--muted)}
+svg .grid{stroke:var(--rule);stroke-width:1}
+svg .zero{stroke:var(--ink);stroke-width:1;opacity:.5}
+svg path.boat{fill:none;stroke:var(--line);stroke-width:1.4}
+svg path.boat.dim{opacity:.35}
+svg path.boat.sel{stroke-width:2.8}
+svg path.hit{fill:none;stroke:transparent;stroke-width:10;cursor:pointer}
+svg path.cut{fill:none;stroke:var(--ink);stroke-width:1.5;stroke-dasharray:5 4;opacity:.6}
+svg circle{fill:var(--panel);stroke-width:2}
+svg .code{font-family:var(--mono);font-size:9.5px;font-weight:500}
+svg .leadt{font-family:var(--body);font-size:11px;fill:var(--ink)}
+svg .side{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)}
+.h2h{background:var(--panel);border:1px solid var(--rule);border-radius:6px;overflow-x:auto}
+.tablewrap{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+#sheet{min-width:780px}
+th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{font:600 12px/1.2 var(--body);letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+td{font:13px/1.2 var(--mono)}
+td.name,th.name{text-align:left;font-family:var(--body)}
+#sheet tr{cursor:pointer}
+#sheet tr.dim{opacity:.4}
+#sheet tr.sel td.name,#sheet tr.sel td.total,#sheet tr.sel td.pl{color:var(--sel);font-weight:600}
+#sheet tr.sel td.name{box-shadow:inset 3px 0 0 var(--sel)}
+td.total{font-weight:600}
+td.cell{text-align:center;min-width:38px;padding:7px 4px}
+td.cell small{display:block;font-size:8.5px;line-height:1;margin-top:2px;opacity:.85}
+th.r{text-align:center}
+.tag{display:inline-block;font:600 10px/1 var(--body);letter-spacing:.06em;text-transform:uppercase;padding:3px 6px;border-radius:3px;border:1px solid var(--rule)}
+.tag.local{color:var(--ink);background:var(--day)}
+.tag.away{color:var(--muted);border-style:dashed}
+td.tagc{text-align:left}
+.h2h td.name b{color:var(--sel)}
+.h2h .w{color:var(--c2)} .h2h .l{color:var(--base)}
+.legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:13px;color:var(--muted)}
+.legend .dash{display:inline-block;width:18px;border-top:2px dashed var(--ink);opacity:.6;vertical-align:middle;margin-right:6px}
+.ramp{display:inline-flex;align-items:center;gap:6px;font:12px var(--mono)}
+.ramp i{display:inline-block;width:120px;height:10px;border-radius:2px;background:linear-gradient(90deg,var(--heat),color-mix(in srgb,var(--heat) 8%,var(--panel)))}
+footer{color:var(--muted);font-size:13px;max-width:76ch;display:grid;gap:6px}
+footer p{margin:0}
+@media (prefers-reduced-motion:no-preference){svg path.boat,#sheet tr{transition:opacity .15s}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">J/105 North American Championship · Seattle · Oct 15–18, 2026</div>
+    <h1>Standings after every race</h1>
+    <p class="lede">23 boats, 11 races, low point scoring with no throwout. Switch to the local fleet to see the 14 Puget Sound boats scored among themselves. Pick boats to follow them; the first boat you pick is the baseline the others are compared against.</p>
+    <div class="summary" id="summary"></div>
+  </header>
+
+  <div class="controls">
+    <div class="ctlrow"><span class="lab">Fleet</span>
+      <div class="seg" role="group" aria-label="Fleet">
+        <button type="button" id="viewAll" aria-pressed="true">All 23 boats</button>
+        <button type="button" id="viewLocal" aria-pressed="false">Local fleet (14)</button>
+      </div>
+      <button class="clear" id="clear" type="button">Clear picks</button>
+    </div>
+    <div class="ctlrow"><span class="lab">Boats</span><div class="chips" id="chips"></div></div>
+    <p class="note" id="pickNote"></p>
+  </div>
+
+  <section>
+    <div class="head"><h2 id="rankTitle">Position in the series</h2><span class="hint" id="rankHint"></span></div>
+    <div class="chart"><svg id="rank" role="img" aria-label="Series position of each boat after each race"></svg></div>
+  </section>
+
+  <section>
+    <div class="head"><h2 id="ptsTitle">Points behind the leader</h2><span class="hint" id="ptsHint"></span></div>
+    <div class="chart"><svg id="points" role="img" aria-label="Points gap after each race"></svg></div>
+    <div class="legend" id="ptsLegend"></div>
+  </section>
+
+  <section id="h2hSec" hidden>
+    <div class="head"><h2 id="h2hTitle">Head to head</h2><span class="hint" id="h2hHint"></span></div>
+    <div class="h2h"><table id="h2h"></table></div>
+  </section>
+
+  <section>
+    <div class="head"><h2>Finishes, race by race</h2><span class="hint" id="heatHint"></span></div>
+    <div class="tablewrap"><table id="sheet"></table></div>
+    <div class="legend"><span>Finish</span><span class="ramp" id="ramp"></span><span><span class="tag local">Local</span> raced in Puget Sound series before PSSC</span><span><span class="tag away">Out of town</span></span></div>
+  </section>
+
+  <footer>
+    <p>Results from Clubspot as imported into HelmLog on Oct 19. Codes: ZFP 20% penalty, SCP scoring penalty, SRS redress or scoring adjustment, UFD black flag, DSQ disqualified.</p>
+    <p>Local fleet: the 14 boats that sailed in Puget Sound series before PSSC (CYC Wednesdays, Ballard Cup, Race to the Straits, Race Week). *WarCanoe is a local boat that had not raced those series this year, so it is left out of the local comparison. The local view re-ranks each race among those 14 boats by the official points, penalties included, and scores 1 point per place.</p>
+    <p>Ties on total are broken by RRS A8.1 (best scores compared in order), then A8.2 (most recent race).</p>
+  </footer>
+</div>
+
+<script>
+const DATA={"boats":[{"name":"Arbitrage","pts":[2.0,5.0,3.0,7.0,3.0,1.0,3.0,11.8,2.0,2.0,11.0],"code":[null,null,null,null,null,null,null,"ZFP",null,null,null]},{"name":"Asterix","pts":[23.0,20.0,22.0,23.0,21.0,23.0,23.0,17.0,21.0,23.0,22.0],"code":[null,null,null,null,null,null,null,null,null,null,null]},{"name":"Blue Flash","pts":[8.0,11.0,19.0,8.0,13.0,10.0,22.0,24.0,12.0,4.0,8.0],"code":[null,null,null,null,null,null,null,"UFD",null,null,null]},{"name":"Bluelight","pts":[22.0,24.0,16.0,22.0,19.0,20.0,20.0,24.0,7.0,20.0,21.0],"code":[null,"ZFP",null,null,null,null,null,"UFD",null,null,null]},{"name":"Chao Pescao","pts":[5.0,15.0,12.0,14.0,17.0,15.0,14.0,24.0,19.0,14.0,16.0],"code":[null,null,null,null,null,null,null,"SRS",null,null,null]},{"name":"Corvo 105","pts":[9.0,13.0,24.0,16.0,20.0,3.0,8.0,13.0,13.0,10.0,15.0],"code":[null,null,"SCP30%",null,null,null,null,null,null,null,null]},{"name":"Creative","pts":[7.0,8.0,15.2,15.0,12.0,13.0,13.0,23.6,15.0,17.0,19.0],"code":[null,null,"SCP",null,null,null,null,"SRS",null,null,null]},{"name":"Debonair","pts":[10.0,22.8,13.0,19.0,16.0,18.0,10.0,24.0,9.0,16.0,20.0],"code":[null,"ZFP",null,null,null,null,null,"SRS",null,null,null]},{"name":"Deja Voodoo","pts":[4.0,1.0,24.0,2.0,2.0,5.0,1.0,3.0,5.0,3.0,3.0],"code":[null,null,"DSQ",null,null,null,null,null,null,null,null]},{"name":"Insubordination","pts":[20.0,12.0,20.0,11.0,18.0,22.0,16.0,24.0,22.0,15.0,18.0],"code":[null,null,null,null,null,null,null,"UFD",null,null,null]},{"name":"Jaded","pts":[14.0,16.0,7.0,18.0,9.0,14.0,19.0,15.0,16.0,19.0,14.0],"code":[null,null,null,null,null,null,null,null,null,null,null]},{"name":"Kinderspel²","pts":[15.0,17.0,11.0,10.0,8.0,9.0,9.0,10.0,17.0,21.0,17.0],"code":[null,null,null,null,null,null,null,null,null,null,null]},{"name":"Kinetic","pts":[12.0,7.0,5.0,5.0,10.0,6.0,6.0,12.0,4.0,7.0,9.0],"code":[null,null,null,null,null,null,null,null,null,null,null]},{"name":"LiftOff","pts":[16.0,14.0,9.0,12.0,15.0,20.8,12.0,14.8,8.0,16.2,13.0],"code":[null,null,null,null,null,"ZFP",null,"ZFP",null,"SCP30%",null]},{"name":"Mazu","pts":[17.0,21.0,17.0,21.0,23.0,17.0,7.0,21.8,23.0,18.0,6.0],"code":[null,null,null,null,null,null,null,"ZFP",null,null,null]},{"name":"Moose Unknown","pts":[3.0,4.0,10.0,13.0,11.0,11.0,15.0,11.0,14.0,13.0,7.0],"code":[null,null,null,null,null,null,null,null,null,null,null]},{"name":"Ne*Ne","pts":[1.0,9.0,6.0,1.0,1.0,8.0,4.0,10.8,1.0,5.0,1.0],"code":[null,null,null,null,null,null,null,"ZFP",null,null,null]},{"name":"Niuhi","pts":[11.0,3.0,2.0,3.0,5.0,2.0,2.0,2.0,6.0,1.0,2.0],"code":[null,null,null,null,null,null,null,null,null,null,null]},{"name":"Paladin","pts":[21.0,22.0,21.0,6.0,22.0,19.0,21.0,24.0,20.0,22.0,23.0],"code":[null,null,null,null,null,null,null,"ZFP",null,null,null]},{"name":"Panic","pts":[19.0,10.0,14.0,17.0,14.0,7.0,11.0,7.0,10.0,12.0,5.0],"code":[null,null,null,null,null,null,null,null,null,null,null]},{"name":"Peer Gynt","pts":[13.0,6.0,4.0,9.0,7.0,24.0,18.0,4.0,18.0,8.0,12.0],"code":[null,null,null,null,null,"ZFP",null,null,null,null,null]},{"name":"Puff","pts":[18.0,19.0,15.0,20.0,4.0,12.0,17.0,8.0,11.0,11.0,10.0],"code":[null,null,null,null,null,null,null,null,null,null,null]},{"name":"WarCanoe","pts":[6.0,2.0,1.0,4.0,6.0,4.0,5.0,1.0,3.0,6.0,4.0],"code":[null,null,null,null,null,null,null,null,null,null,null]}]};
+const N=11;
+const DAYS=[{label:"DAY 1",from:0,to:2},{label:"DAY 2",from:3,to:4},{label:"DAY 3",from:5,to:7},{label:"DAY 4",from:8,to:10}];
+const AWAY=new Set(["Niuhi","Ne*Ne","Arbitrage","Deja Voodoo","Chao Pescao","Blue Flash","Kinetic","Kinderspel²"]);
+const STAR="WarCanoe";
+const COLORS=["var(--base)","var(--c1)","var(--c2)","var(--c3)","var(--c4)","var(--c5)"];
+const boats=DATA.boats.map(b=>({...b,away:AWAY.has(b.name),local:!AWAY.has(b.name)&&b.name!==STAR,sc:{}}));
+const disp=n=>n===STAR?n+"*":n;
+const slug=n=>n.toLowerCase().replace(/²/g,"2").replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const fmt=v=>String(+v.toFixed(1)).replace(/\.0$/,"");
+const ord=n=>n+(n%100>=11&&n%100<=13?"th":({1:"st",2:"nd",3:"rd"}[n%10]||"th"));
+
+// Score each fleet. all: official points. local: 1 point per place among the 14 local boats.
+const SCOPES={all:boats,local:boats.filter(b=>b.local)};
+for(const [key,list] of Object.entries(SCOPES)){
+  list.forEach(b=>{b.sc[key]={fin:[],race:[],cum:[],rank:[]}});
+  for(let k=0;k<N;k++)[...list].sort((a,b)=>a.pts[k]-b.pts[k]||a.name.localeCompare(b.name)).forEach((b,i)=>{
+    const s=b.sc[key];s.fin[k]=i+1;s.race[k]=key==="all"?b.pts[k]:i+1;s.cum[k]=+((k?s.cum[k-1]:0)+s.race[k]).toFixed(1);
+  });
+  for(let k=0;k<N;k++)[...list].sort((a,b)=>tie(a.sc[key],b.sc[key],k)).forEach((b,i)=>{b.sc[key].rank[k]=i+1});
+}
+function tie(a,b,k){
+  const d=a.cum[k]-b.cum[k];if(Math.abs(d)>1e-9)return d;
+  const sa=a.race.slice(0,k+1).sort((x,y)=>x-y),sb=b.race.slice(0,k+1).sort((x,y)=>x-y);
+  for(let i=0;i<sa.length;i++)if(sa[i]!==sb[i])return sa[i]-sb[i];
+  for(let i=k;i>=0;i--)if(a.race[i]!==b.race[i])return a.race[i]-b.race[i];
+  return 0;
+}
+
+let scope="all", picks=[];
+const members=()=>SCOPES[scope];
+const S=b=>b.sc[scope];
+const finalOrder=()=>[...members()].sort((a,b)=>S(a).rank[N-1]-S(b).rank[N-1]);
+const colorOf=b=>{const i=picks.indexOf(b.name);return i<0?null:COLORS[i%COLORS.length]};
+const baseline=()=>{const b=boats.find(x=>x.name===picks[0]);return b&&b.sc[scope]?b:null};
+
+const NS="http://www.w3.org/2000/svg";
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e};
+function frame(svg,W,H,m){
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.innerHTML="";
+  const x=i=>m.l+i*(W-m.l-m.r)/(N-1);
+  DAYS.forEach((d,j)=>{
+    const x0=j?(x(d.from)+x(d.from-1))/2:m.l-14,x1=j<DAYS.length-1?(x(d.to)+x(d.to+1))/2:W-m.r+14;
+    if(j%2===0)el("rect",{x:x0,y:m.t-26,width:x1-x0,height:H-m.t-m.b+26,class:"day"},svg);
+    el("text",{x:(x0+x1)/2,y:m.t-10,"text-anchor":"middle",class:"dayt"},svg).textContent=d.label;
+  });
+  for(let i=0;i<N;i++)el("text",{x:x(i),y:H-m.b+18,"text-anchor":"middle"},svg).textContent="R"+(i+1);
+  return x;
+}
+function spread(items,gap,lo,hi){
+  items.sort((a,b)=>a.y-b.y);
+  for(let i=1;i<items.length;i++)if(items[i].y<items[i-1].y+gap)items[i].y=items[i-1].y+gap;
+  const over=items.length?items[items.length-1].y-hi:0;
+  if(over>0){items[items.length-1].y-=over;for(let i=items.length-2;i>=0;i--)if(items[i].y>items[i+1].y-gap)items[i].y=items[i+1].y-gap}
+  return items;
+}
+// Draw lines for every boat in scope: unpicked first and dimmed when anything is picked.
+function lines(svg,x,valueOf,yOf,codes){
+  const any=picks.length>0;
+  [...members()].sort((a,b)=>(colorOf(a)?1:0)-(colorOf(b)?1:0)||picks.indexOf(b.name)-picks.indexOf(a.name)).forEach(b=>{
+    const v=valueOf(b),col=colorOf(b);
+    const d=v.map((val,i)=>(i?"L":"M")+x(i)+" "+yOf(val)).join(" ");
+    const p=el("path",{d,class:"boat "+(col?"sel":any?"dim":"")},svg);
+    if(col){p.style.stroke=col;v.forEach((val,i)=>{el("circle",{cx:x(i),cy:yOf(val),r:3.2,stroke:col},svg);
+      if(codes&&scope==="all"&&b.code[i])el("text",{x:x(i)+6,y:yOf(val)-7,class:"code",fill:col},svg).textContent=b.code[i]})}
+    el("path",{d,class:"hit","data-boat":b.name},svg);
+  });
+}
+function endLabel(svg,x,b,y,text){
+  const col=colorOf(b),t=el("text",{x:x(N-1)+16,y,class:"lbl "+(col?"sel":picks.length?"dim":""),"data-boat":b.name},svg);
+  if(col)t.style.fill=col;else t.style.fill="var(--ink)";
+  t.textContent=text;
+}
+
+function drawRank(){
+  const svg=document.getElementById("rank"),n=members().length,W=1040,H=n>15?560:440,m={l:40,r:190,t:44,b:30};
+  const x=frame(svg,W,H,m),y=r=>m.t+(r-1)*(H-m.t-m.b)/(n-1);
+  [...new Set([1,5,10,15,20,n])].filter(r=>r<=n).forEach(r=>{el("line",{x1:m.l-14,x2:W-m.r+14,y1:y(r),y2:y(r),class:"grid"},svg);el("text",{x:m.l-22,y:y(r)+4,"text-anchor":"end"},svg).textContent=r});
+  lines(svg,x,b=>S(b).rank,y,false);
+  finalOrder().forEach(b=>endLabel(svg,x,b,y(S(b).rank[N-1])+4,S(b).rank[N-1]+"  "+disp(b.name)));
+  document.getElementById("rankTitle").textContent=scope==="all"?"Position in the series":"Position in the local fleet";
+  document.getElementById("rankHint").textContent=(scope==="all"?"Overall place out of 23":"Place among the 14 local boats")+" after each race · 1st at top";
+}
+
+function drawPoints(){
+  const svg=document.getElementById("points"),W=1040,H=540,m={l:56,r:190,t:64,b:30},base=baseline();
+  const x=frame(svg,W,H,m),cum=b=>S(b).cum;
+  const leg=document.getElementById("ptsLegend");
+  if(base){
+    // Points relative to the baseline: ahead (fewer points) above the zero line.
+    const diff=b=>cum(b).map((v,k)=>+(v-cum(base)[k]).toFixed(1));
+    const show=members().filter(b=>colorOf(b)||!picks.length);
+    const ext=Math.max(10,...members().flatMap(b=>diff(b).map(Math.abs)));
+    const lim=Math.ceil(ext/20)*20,y=v=>m.t+(H-m.t-m.b)*((v+lim)/(2*lim));
+    const step=lim>100?50:lim>40?20:10;
+    for(let v=-lim;v<=lim;v+=step){el("line",{x1:m.l-14,x2:W-m.r+14,y1:y(v),y2:y(v),class:v?"grid":"zero"},svg);el("text",{x:m.l-22,y:y(v)+4,"text-anchor":"end"},svg).textContent=v?(v<0?"−"+(-v):"+"+v):"0"}
+    el("text",{x:W-m.r+14,y:m.t+12,"text-anchor":"end",class:"side"},svg).textContent="AHEAD OF "+disp(base.name).toUpperCase();
+    el("text",{x:W-m.r+14,y:H-m.b-6,"text-anchor":"end",class:"side"},svg).textContent="BEHIND";
+    lines(svg,x,diff,y,true);
+    spread(finalOrder().map(b=>({b,y:y(diff(b)[N-1])+4})),13,m.t,H-m.b).forEach(({b,y:yy})=>{
+      const d=diff(b)[N-1];endLabel(svg,x,b,yy,(d?(d<0?"−"+fmt(-d):"+"+fmt(d)):"0")+"  "+disp(b.name))});
+    document.getElementById("ptsTitle").textContent="Points vs "+disp(base.name);
+    document.getElementById("ptsHint").textContent=(scope==="all"?"Official points":"Local points")+" gained or lost against the baseline after each race · fewer points is better";
+    leg.innerHTML="";
+  }else{
+    const lead=Array.from({length:N},(_,k)=>Math.min(...members().map(b=>cum(b)[k])));
+    const gap=b=>cum(b).map((v,k)=>+(v-lead[k]).toFixed(1));
+    const top=Math.ceil(Math.max(...members().map(b=>gap(b)[N-1]))/25)*25,y=v=>m.t+(H-m.t-m.b)*(v/top);
+    const step=top>100?50:25;
+    for(let v=0;v<=top;v+=step){el("line",{x1:m.l-14,x2:W-m.r+14,y1:y(v),y2:y(v),class:"grid"},svg);el("text",{x:m.l-22,y:y(v)+4,"text-anchor":"end"},svg).textContent=v?"+"+v:"0"}
+    let prev=null;
+    for(let k=0;k<N;k++){const l=members().find(b=>S(b).rank[k]===1);if(l!==prev)el("text",{x:x(k),y:m.t-30,"text-anchor":k?"middle":"start",class:"leadt"},svg).textContent=disp(l.name)+" leads";prev=l}
+    const cutAt=scope==="all"?10:5;
+    const cut=Array.from({length:N},(_,k)=>gap(members().find(b=>S(b).rank[k]===cutAt))[k]);
+    el("path",{d:cut.map((v,i)=>(i?"L":"M")+x(i)+" "+y(v)).join(" "),class:"cut"},svg);
+    lines(svg,x,gap,y,true);
+    spread(finalOrder().map(b=>({b,y:y(gap(b)[N-1])+4})),13,m.t,H-m.b).forEach(({b,y:yy})=>{
+      const g=gap(b)[N-1];endLabel(svg,x,b,yy,(g?"+"+fmt(g):"0")+"  "+disp(b.name))});
+    document.getElementById("ptsTitle").textContent="Points behind the leader";
+    document.getElementById("ptsHint").textContent=(scope==="all"?"Official points":"Local points")+" behind whoever led after each race · leader on the top line";
+    leg.innerHTML=`<span><span class="dash"></span>${ord(cutAt)} place</span>`;
+  }
+}
+
+function drawH2H(){
+  const sec=document.getElementById("h2hSec"),base=baseline();
+  const others=picks.slice(1).map(n=>boats.find(b=>b.name===n)).filter(b=>b&&b.sc[scope]);
+  if(!base||!others.length){sec.hidden=true;return}
+  sec.hidden=false;
+  document.getElementById("h2hTitle").textContent="Head to head with "+disp(base.name);
+  document.getElementById("h2hHint").textContent="Races where each boat finished ahead of the baseline, and the final points gap";
+  let h=`<thead><tr><th class=name>Boat</th><th>Beat ${disp(base.name)}</th><th>Lost to</th><th>Final ${scope==="all"?"points":"local pts"}</th><th>Gap</th><th>Place</th></tr></thead><tbody>`;
+  others.forEach(b=>{
+    let w=0,l=0;for(let k=0;k<N;k++){if(b.pts[k]<base.pts[k])w++;else if(b.pts[k]>base.pts[k])l++}
+    const d=+(S(b).cum[N-1]-S(base).cum[N-1]).toFixed(1);
+    h+=`<tr style="--sel:${colorOf(b)}"><td class=name><b>${disp(b.name)}</b></td><td class=w>${w}</td><td class=l>${l}</td><td>${fmt(S(b).cum[N-1])}</td>`+
+      `<td>${d===0?"level":(d<0?fmt(-d)+" ahead":fmt(d)+" behind")}</td><td>${ord(S(b).rank[N-1])}</td></tr>`;
+  });
+  document.getElementById("h2h").innerHTML=h+"</tbody>";
+}
+
+function heat(p,n){const pct=Math.round(88-80*(p-1)/(n-1));return `background:color-mix(in srgb,var(--heat) ${pct}%,var(--panel));color:${pct>48?"var(--heatink)":"var(--ink)"}`}
+function drawSheet(){
+  const n=members().length,local=scope==="local";
+  document.getElementById("heatHint").textContent=local
+    ?"Place among the 14 local boats in each race · total is the sum of local places · darker is better"
+    :"Finishing place in each race out of 23 · total is official points · darker is better";
+  document.getElementById("ramp").innerHTML=`1<i></i>${n}`;
+  let h="<thead><tr><th>Pl</th><th class=name>Boat</th><th class=name>Fleet</th>"+Array.from({length:N},(_,i)=>`<th class=r>R${i+1}</th>`).join("")+`<th>${local?"Local pts":"Points"}</th></tr></thead><tbody>`;
+  finalOrder().forEach(b=>{
+    const col=colorOf(b),s=S(b);
+    h+=`<tr class="${col?"sel":picks.length?"dim":""}" style="${col?"--sel:"+col:""}" data-boat="${b.name}" tabindex="0"><td class=pl>${s.rank[N-1]}</td><td class=name>${disp(b.name)}</td>`+
+      `<td class=tagc><span class="tag ${b.away?"away":"local"}">${b.away?"Out of town":b.name===STAR?"Local*":"Local"}</span></td>`+
+      s.fin.map((p,i)=>`<td class=cell style="${heat(p,n)}">${p}${!local&&b.code[i]?`<small>${b.code[i]}</small>`:""}</td>`).join("")+
+      `<td class=total>${fmt(s.cum[N-1])}</td></tr>`;
+  });
+  document.getElementById("sheet").innerHTML=h+"</tbody>";
+}
+
+function drawChips(){
+  document.getElementById("chips").innerHTML=finalOrder().map(b=>{
+    const col=colorOf(b),i=picks.indexOf(b.name);
+    return `<button type="button" class="chip" data-boat="${b.name}" aria-pressed="${!!col}" style="${col?"--sel:"+col:""}"><span class="sw"></span>${disp(b.name)}${i===0?"<em>baseline</em>":""}</button>`;
+  }).join("");
+  const out=picks.filter(n=>!boats.find(b=>b.name===n).sc[scope]);
+  document.getElementById("pickNote").textContent=!picks.length
+    ?"Tap a boat here, on a chart line, or in the table. The first boat you pick becomes the baseline."
+    :(out.length?disp(out.join(", "))+" "+(out.length>1?"are":"is")+" not in the local fleet and hidden in this view. ":"")+"Tap a picked boat again to drop it.";
+}
+
+function drawSummary(){
+  const base=baseline(),el2=document.getElementById("summary");
+  const all=SCOPES.all,loc=SCOPES.local;
+  const win=all.find(b=>b.sc.all.rank[N-1]===1),lwin=loc.find(b=>b.sc.local.rank[N-1]===1);
+  if(!base){
+    let changes=0;for(let k=1;k<N;k++)if(all.find(b=>b.sc.all.rank[k]===1)!==all.find(b=>b.sc.all.rank[k-1]===1))changes++;
+    const second=all.find(b=>b.sc.all.rank[N-1]===2);
+    el2.innerHTML=`<span><b>${disp(win.name)}</b>Champion · ${fmt(win.sc.all.cum[N-1])} pts, ${fmt(second.sc.all.cum[N-1]-win.sc.all.cum[N-1])} ahead of ${disp(second.name)}</span>`+
+      `<span><b>${lwin.name}</b>Top local boat · ${ord(lwin.sc.all.rank[N-1])} overall</span>`+
+      `<span><b>${changes}</b>Changes of series leader</span>`;
+    return;
+  }
+  const a=base.sc.all,best=Math.min(...a.rank),top=Math.min(...base.pts);
+  el2.innerHTML=`<span class=hl><b>${ord(a.rank[N-1])} of 23</b>${disp(base.name)} overall · ${fmt(a.cum[N-1])} pts</span>`+
+    (base.sc.local?`<span class=hl><b>${ord(base.sc.local.rank[N-1])} of 14</b>In the local fleet</span>`:`<span><b>${base.away?"Out of town":"Local*"}</b>Not in the local comparison</span>`)+
+    `<span><b>${ord(base.sc.all.fin[base.pts.indexOf(top)])}</b>Best finish (R${base.pts.indexOf(top)+1})</span>`+
+    `<span><b>${ord(best)}</b>Best series position, after R${a.rank.indexOf(best)+1}</span>`;
+}
+
+function redraw(){drawSummary();drawChips();drawRank();drawPoints();drawH2H();drawSheet();
+  try{history.replaceState(null,"",picks.length?"#"+picks.map(slug).join("~"):location.pathname+location.search)}catch(e){}}
+function toggle(name){if(!name)return;const i=picks.indexOf(name);i<0?picks.push(name):picks.splice(i,1);redraw()}
+function setScope(v){scope=v;document.getElementById("viewAll").setAttribute("aria-pressed",v==="all");document.getElementById("viewLocal").setAttribute("aria-pressed",v==="local");redraw()}
+document.addEventListener("click",e=>{const n=e.target.closest("[data-boat]");if(n)toggle(n.getAttribute("data-boat"))});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("tr[data-boat]")){e.preventDefault();toggle(e.target.dataset.boat)}});
+document.getElementById("clear").addEventListener("click",()=>{picks=[];redraw()});
+document.getElementById("viewAll").addEventListener("click",()=>setScope("all"));
+document.getElementById("viewLocal").addEventListener("click",()=>setScope("local"));
+// Picks can arrive in the link: #corvo-105~puff
+const want=decodeURIComponent((location.hash||"").slice(1)).split("~").filter(Boolean);
+picks=want.map(s=>boats.find(b=>slug(b.name)===s)).filter(Boolean).map(b=>b.name);
+redraw();
+</script>

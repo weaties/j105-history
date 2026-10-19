@@ -1,0 +1,2002 @@
+[
+{
+"regatta": "SHkq6s3OCx",
+"class_id": "5CBPcmGRJw",
+"class": "J/105",
+"name": "Spring One Design",
+"start": "2020-03-13",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "BpQfCevFWv",
+"class_id": "1BEvEAeEz8",
+"class": "J105",
+"name": "SYC/RegattaPRO Winter One Design",
+"start": "2019-11-08",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "MoBAIM6Uio",
+"class_id": "BwR7xtF4Do",
+"class": "J 105",
+"name": "2019 MRA Series 1",
+"start": "2019-05-31",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "RMSCvgkII4",
+"class_id": "RKJXjvXT5d",
+"class": "J/105",
+"name": "J/Stop",
+"start": "2020-05-29",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "uPqYm8PKJ8",
+"class_id": "RHMDofeB1F",
+"class": "J 105",
+"name": "2019 MRA Series 2",
+"start": "2019-06-28",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "STdaSGX8Cu",
+"class_id": "e61TUnDisT",
+"class": "J 105",
+"name": "2019 MRA Spring One-Design Regatta",
+"start": "2019-05-24",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "wlXF19EiID",
+"class_id": "cr1ZH6hz9f",
+"class": "J 105",
+"name": "2019 MRA Series 4 Labor Day Regatta",
+"start": "2019-08-30",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "NQT4vm6VYE",
+"class_id": "iG4qZiufw0",
+"class": "J/105",
+"name": "MRA 2020 SEASON PASS",
+"start": "2020-07-17",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "TDWMNF5GVh",
+"class_id": "phzVeSCba4",
+"class": "J 105",
+"name": "2019 MRA Series 3",
+"start": "2019-08-02",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "KCcFCn9RvN",
+"class_id": "725ibIshB8",
+"class": "J105",
+"name": "RegattaPRO Winter One Design 2020",
+"start": "2020-11-13",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "IObc5RNd56",
+"class_id": "nyBdwC2hRN",
+"class": "J/105",
+"name": "J/GO Regatta",
+"start": "2021-03-19",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "6P8WaTFda8",
+"class_id": "0ymCQEu2um",
+"class": "J105",
+"name": "2021 Marblehead Racing Association Series",
+"start": "2021-05-29",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "kDlwlyAITS",
+"class_id": "4ITYtQOUJE",
+"class": "J/105",
+"name": "Test Event",
+"start": "2021-05-14",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "HSDHHaxPvW",
+"class_id": "Tw7Wo0hkHY",
+"class": "J 105",
+"name": "BYC Wednesday Night Racing 2021",
+"start": "2021-05-18",
+"club": "UJc3bDCcED"
+},
+{
+"regatta": "5ibTEUzJ2I",
+"class_id": "FF0Pi08dvD",
+"class": "J/105",
+"name": "2021 Spring Fest",
+"start": "2021-05-21",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "MaCb733XZu",
+"class_id": "sxmIaDKVv1",
+"class": "J/105",
+"name": "2021 SFYC Club Championship Series",
+"start": "2021-06-18",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "6FXozgZFJR",
+"class_id": "9VYm2MkJL9",
+"class": "J/105",
+"name": "SFYC Knarr and J/105 Regatta",
+"start": "2021-06-11",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "Gb4rX0v0aF",
+"class_id": "nPyIDedhqN",
+"class": "J/105",
+"name": "SFYC Knarr and J/105 Regatta",
+"start": "2021-06-11",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "fjFFfJTkZD",
+"class_id": "hbvtPz4Cx4",
+"class": "J/105",
+"name": "Summer Keelboat Regatta",
+"start": "2021-08-06",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "glMusvAA8f",
+"class_id": "V4fkYAISQM",
+"class": "J/105",
+"name": "The 216 Regatta 2021",
+"start": "2021-10-01",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "q1BG4YuACp",
+"class_id": "FixltH1KkQ",
+"class": "J/105",
+"name": "2021 Fall Invitational - Joe Logan",
+"start": "2021-09-24",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "qzHUmnlaTG",
+"class_id": "Q8f18teVHL",
+"class": "J105 Fleet",
+"name": "SYC/RegattaPRO Winter One Design",
+"start": "2021-11-12",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "D9SxxlqaiU",
+"class_id": "3Vckb66O06",
+"class": "J 105",
+"name": "Fleet Captain's Race",
+"start": "2022-05-13",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "rPftcSwPCT",
+"class_id": "fNreZzFvMc",
+"class": "J/105",
+"name": "SFYC Club Championsnhip Series",
+"start": "2022-03-18",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "r7fL0tQZ0z",
+"class_id": "JtSeHWM8gG",
+"class": "J105",
+"name": "J105 Clinic",
+"start": "2022-05-06",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "HCSgpfj9GI",
+"class_id": "4VewIW7yhq",
+"class": "J105",
+"name": "Founder's Regatta",
+"start": "2022-06-03",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "fZsc5AyWKG",
+"class_id": "sEaK1lr9qc",
+"class": "J105",
+"name": "J105 Women's Championship",
+"start": "2022-08-19",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "JGVg5chLtD",
+"class_id": "T9CTbapKUX",
+"class": "J105",
+"name": "J105 Canadians",
+"start": "2022-09-22",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "HCh1NMUXpA",
+"class_id": "ciaPggfK99",
+"class": "J105",
+"name": "Royal Weekend",
+"start": "2022-09-23",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "1ATFZvvQtA",
+"class_id": "oj4oLfLTlB",
+"class": "J105",
+"name": "Founders Regatta",
+"start": "2022-05-31",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "vuTeqZXcQy",
+"class_id": "15Tt17m0Iu",
+"class": "J/105",
+"name": "2022 Spring Fest",
+"start": "2022-04-08",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "6XsBaYv7x2",
+"class_id": "MwNJSefyhG",
+"class": "J/105",
+"name": "2022 SF Bay J/105 Women Skipper Invitational",
+"start": "2022-05-20",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "ehRDSaz6Ku",
+"class_id": "dUA2US8yUM",
+"class": "J 105",
+"name": "BYC Wednesday Night Racing 2022",
+"start": "2022-05-17",
+"club": "UJc3bDCcED"
+},
+{
+"regatta": "4bFDIcqLwO",
+"class_id": "EWRpxPfgm0",
+"class": "J/105",
+"name": "Elite Keelboat Regatta",
+"start": "2022-05-13",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "soV2TLKG88",
+"class_id": "2rQGuaBfpb",
+"class": "J105",
+"name": "Tuesday Midweek Racing 2022",
+"start": "2022-05-09",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "6JcH59Sz6B",
+"class_id": "GCzCzyBpPO",
+"class": "J105",
+"name": "2022 Marblehead Racing Association Season",
+"start": "2022-05-27",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "6HEtYNxCjD",
+"class_id": "HLIxcZ4otW",
+"class": "J/105",
+"name": "J/105 & Knarr Regatta",
+"start": "2022-06-03",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "y95U8ty1Ep",
+"class_id": "CvyM31ftQy",
+"class": "J105",
+"name": "Club Racing",
+"start": "2022-05-14",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "ylx88x2Sc5",
+"class_id": "HnZVvIrSjH",
+"class": "J105",
+"name": "Derek's Test Regatta",
+"start": "2022-05-05",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "Us95OR3iC1",
+"class_id": "BUSroHdsLD",
+"class": "J105",
+"name": "RCYC Open",
+"start": "2022-06-17",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "aTt04Yj5xt",
+"class_id": "GOmKQHAgNG",
+"class": "J/105",
+"name": "Summer Keelboat Regatta",
+"start": "2022-08-05",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "dxt5Y3hq4Y",
+"class_id": "uK3h2l3Kfa",
+"class": "J/105",
+"name": "Midnight Moonlight Maritime Marathon",
+"start": "2022-07-08",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "3UlVx3H3P4",
+"class_id": "Gl1x5OBzZt",
+"class": "J/105",
+"name": "The 216 Regatta 2022",
+"start": "2022-10-07",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "roe4qDGdzv",
+"class_id": "KE4q8FC7bP",
+"class": "J105",
+"name": "SYC/RegattaPRO Winter One Design",
+"start": "2022-11-11",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "g2hj45wiJF",
+"class_id": "hdAxTEsCYb",
+"class": "J105",
+"name": "2023 EYC Club Race Program",
+"start": "2023-05-13",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "uRetpnwKcU",
+"class_id": "m5OF6EJbfp",
+"class": "J105",
+"name": "2023 Marblehead Racing Association Season",
+"start": "2023-05-26",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "W6B3OTCWm4",
+"class_id": "aVHwPVOLcO",
+"class": "J/105",
+"name": "2023 Spring Fest",
+"start": "2023-04-21",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "aJA1IoRPa6",
+"class_id": "jzJFeKgZPv",
+"class": "J/105",
+"name": "2023 SF Bay J/105 Women Skipper Invitational",
+"start": "2023-05-12",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "yGJsiFevRd",
+"class_id": "QWigiCDjqt",
+"class": "J 105",
+"name": "BYC Wednesday Night Racing 2023",
+"start": "2023-05-16",
+"club": "UJc3bDCcED"
+},
+{
+"regatta": "z1HNabV7eC",
+"class_id": "mwBnzCsk9S",
+"class": "J105",
+"name": "2023 Cleveland Race Week One Design",
+"start": "2023-06-15",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "riDq3PqSmf",
+"class_id": "FW3QKuOXYl",
+"class": "E - J88 & J105",
+"name": "Friday Night Spring Series 2023",
+"start": "2023-05-25",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "MZJPtKfodU",
+"class_id": "rUSr7iCRwc",
+"class": "J/105",
+"name": "J-Stop Regatta",
+"start": "2023-06-23",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "YGfGhio3Se",
+"class_id": "PHk5U1CiPk",
+"class": "J/105",
+"name": "Elite Fleet Invitational Regatta",
+"start": "2023-05-19",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "DHAkphMYpX",
+"class_id": "HikYqvF56b",
+"class": "J/105",
+"name": "Tuesday Midweek Racing",
+"start": "2023-05-08",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "4tjBqakXNU",
+"class_id": "pM7fDqEftn",
+"class": "J/105",
+"name": "Founder's Regatta",
+"start": "2023-06-02",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "7pMeI2wM1s",
+"class_id": "ObNse7effv",
+"class": "J/105",
+"name": "RCYC Open",
+"start": "2023-06-16",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "4shAPn8hNE",
+"class_id": "aEi9pfIxC7",
+"class": "J/105",
+"name": "J/105 Women's Championship",
+"start": "2023-08-18",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "b60d3YfUyt",
+"class_id": "3x9iFxzn41",
+"class": "J/105",
+"name": "Royal Weekend",
+"start": "2023-08-31",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "OLJ2HM4g6C",
+"class_id": "K79RXoYu56",
+"class": "Echo - J 88 and J 105",
+"name": "Summer Friday Night Race Series",
+"start": "2023-06-29",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "dl3dnZfCbr",
+"class_id": "hljSrzKs4u",
+"class": "E - J88 & J105",
+"name": "Summer Friday Night Series 2023",
+"start": "2023-06-29",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "X6dHs5bDWQ",
+"class_id": "Vhtn4fdWdd",
+"class": "J/105",
+"name": "2023 Cleveland Race Week Offshore",
+"start": "2023-06-21",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "jxmrhelLNd",
+"class_id": "Na2ipyzchE",
+"class": "J105",
+"name": "2023 Long Beach Race Week",
+"start": "2023-06-22",
+"club": "DaIzj27wUs"
+},
+{
+"regatta": "Ef4MBra9GR",
+"class_id": "6Gpl3OCRIM",
+"class": "J/105",
+"name": "Warm, Wet & Windy Regatta",
+"start": "2023-08-04",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "b9duOG67y3",
+"class_id": "is8kwaah8R",
+"class": "J105",
+"name": "The 216 Regatta 2023",
+"start": "2023-09-22",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "Cq4PqSCs9y",
+"class_id": "fj6nyNjqjV",
+"class": "J105",
+"name": "North Coast Invitational",
+"start": "2023-08-17",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "O2LCflCFhH",
+"class_id": "eT8mOrfz7v",
+"class": "J/105",
+"name": "J/105 Canadians",
+"start": "2023-09-21",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "U0IlO5bDzp",
+"class_id": "rvNGyRLCKU",
+"class": "J105",
+"name": "SYC/RegattaPRO Winter One Design",
+"start": "2023-11-10",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "KA0uBJVDTj",
+"class_id": "G2stUiDOhH",
+"class": "J/105",
+"name": "2024 Spring Fest (incl. Stone Cup)",
+"start": "2024-04-05",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "Xq68efp2kn",
+"class_id": "CeaG5JKCLX",
+"class": "J/105",
+"name": "2024 SF Bay J/105 Women's Skipper Invitational",
+"start": "2024-05-10",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "Nx0SriOVgO",
+"class_id": "pSKec4A9p5",
+"class": "J/105",
+"name": "2024 Phyllis Kleinman Swiftsure",
+"start": "2024-08-16",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "m006yxBnIg",
+"class_id": "0XEkykcnzB",
+"class": "J/105",
+"name": "Racing: 2024 Center Sound Series - All 3 Events",
+"start": "2024-03-01",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "6Ce9epP8sr",
+"class_id": "YYQOCxBGB9",
+"class": "J/105",
+"name": "CSS#1 - Blakely Rock ONLY",
+"start": "2024-03-01",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "zMvaMfJuRK",
+"class_id": "TTfqBlfRDM",
+"class": "J/105",
+"name": "CSS#2 - Possession Point ONLY",
+"start": "2024-03-08",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "6vRgNYdT8h",
+"class_id": "Sd1B69kVLo",
+"class": "J/105",
+"name": "CSS#3 - Three Tree Point Race ONLY",
+"start": "2024-03-22",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "X7YnRP10Lg",
+"class_id": "TW1wmL4aMb",
+"class": "J/105",
+"name": "J World Thursday Night Racing 2024",
+"start": "2024-05-08",
+"club": "5y4l6Nhy8B"
+},
+{
+"regatta": "Dg0BZk4bJ3",
+"class_id": "a19NpgtHZa",
+"class": "J/105",
+"name": "The Great PRO Test Race!",
+"start": "2024-02-05",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "Wi8Gc3iQNt",
+"class_id": "lEcb05qKNP",
+"class": "J105",
+"name": "2024 216 Regatta",
+"start": "2024-09-20",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "Gs74RZsXdQ",
+"class_id": "DmUt0zGFGt",
+"class": "E - J88 & J105",
+"name": "Friday Night Spring Series 2024",
+"start": "2024-04-18",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "MEUS2CWt8R",
+"class_id": "DVMvtpAwQn",
+"class": "J105",
+"name": "2024 Cleveland Race Week One Design",
+"start": "2024-06-13",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "kPIAMOVbGb",
+"class_id": "HQyl58BAnc",
+"class": "J-105",
+"name": "J/Stop J88, J105 Invitational",
+"start": "2024-06-21",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "mZT3ODGvuc",
+"class_id": "zsggijJuCa",
+"class": "J105",
+"name": "2024 EYC Club Race Program",
+"start": "2024-05-18",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "2p78zbMEaF",
+"class_id": "hDyhrIN8ap",
+"class": "J 105",
+"name": "BYC Wednesday Night Racing 2024",
+"start": "2024-05-14",
+"club": "UJc3bDCcED"
+},
+{
+"regatta": "2FiT8Sf3xl",
+"class_id": "puOiZL4GBs",
+"class": "J/105",
+"name": "Racing: CYC Spring Regatta - Big Boat - 2024",
+"start": "2024-04-19",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "nSJ96Heb5Y",
+"class_id": "FtERwDYGes",
+"class": "J/105",
+"name": "Racing: Sound Wednesday Night Series - 2024",
+"start": "2024-04-09",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "cw3XQIncKE",
+"class_id": "ARPWrLjeG1",
+"class": "J105",
+"name": "2024 Marblehead Racing Association Season",
+"start": "2024-05-24",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "z4nuGwBZvM",
+"class_id": "aSfqaVqmIF",
+"class": "J/105",
+"name": "TEST ABYC Open Regatta",
+"start": "2024-05-24",
+"club": "fbBtErmunr"
+},
+{
+"regatta": "ZXEDEwjCvB",
+"class_id": "X94gxFZTFd",
+"class": "J/105",
+"name": "ABYC Open Regatta 2024",
+"start": "2024-05-24",
+"club": "fbBtErmunr"
+},
+{
+"regatta": "Fd6qiQNS51",
+"class_id": "p8jOqNNJOp",
+"class": "J/105",
+"name": "Elite Fleet Regatta",
+"start": "2024-05-17",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "HIYJzyLOXy",
+"class_id": "pDYCuXdsmh",
+"class": "J105",
+"name": "2024 Cleveland Race Week Double-handed, Women's & VX One",
+"start": "2024-06-17",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "0N2LZWoRkV",
+"class_id": "F2LxwDIDxB",
+"class": "J/105",
+"name": "Tuesday Midweek Racing - Spring Series",
+"start": "2024-05-13",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "yTHVc3zLIm",
+"class_id": "oSp18el3l8",
+"class": "J/105",
+"name": "RCYC Open",
+"start": "2024-06-14",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "CjUyaw7THj",
+"class_id": "FLnU3ZIbOS",
+"class": "J/105",
+"name": "Tuesday Midweek Racing - Summer Series",
+"start": "2024-06-24",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "2Hq5icK4Gs",
+"class_id": "wXNL3Fls63",
+"class": "J/105",
+"name": "Founder's Regatta",
+"start": "2024-07-19",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "PCNCphJz6y",
+"class_id": "7ZTLwJEbHC",
+"class": "J/105",
+"name": "Tuesday Midweek Racing - Fall Series",
+"start": "2024-08-12",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "lTkCP15Rir",
+"class_id": "kp5h8HsotV",
+"class": "J/105",
+"name": "J/105 Women's Championship",
+"start": "2024-08-16",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "ivoHYu0Eq8",
+"class_id": "BUyvCuFMoA",
+"class": "J/105",
+"name": "J/105 Canadian Championship",
+"start": "2024-09-12",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "wQru5t83wB",
+"class_id": "b6wB4z0ZHZ",
+"class": "J/105",
+"name": "Racing: PSSC - Big Boat - 2024",
+"start": "2024-10-11",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "wdUHjvsDGw",
+"class_id": "1SV9Cfvx6Z",
+"class": "J/105",
+"name": "Charley's Test: Sound Wednesday Night Series",
+"start": "2024-03-27",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "ik8vZ1uSpP",
+"class_id": "KQJ82dyxk8",
+"class": "J/105",
+"name": "Summer Keelboat Regatta",
+"start": "2024-07-26",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "zGqBnYg3pw",
+"class_id": "6eclELDZ0Y",
+"class": "J105",
+"name": "2024 Cleveland Race Week Offshore",
+"start": "2024-06-19",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "YnGdkaKiaw",
+"class_id": "npxXJ1NgWb",
+"class": "J105",
+"name": "2024 North Coast Invitational hosted by NCWSA",
+"start": "2024-08-15",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "cpgUfitdEW",
+"class_id": "MM1BNT2VWC",
+"class": "J/105",
+"name": "Royal Weekend",
+"start": "2024-08-30",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "wsrnqEr19n",
+"class_id": "jagO19ipt7",
+"class": "J 105",
+"name": "BBYC Fall One Design Regatta",
+"start": "2024-10-04",
+"club": "oqgzFuGk2z"
+},
+{
+"regatta": "REZ48Pf2pV",
+"class_id": "UjQWlD7t01",
+"class": "J/105",
+"name": "J/105  North Americans",
+"start": "2025-09-23",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "xsrlUKI4Ql",
+"class_id": "gU3fGimQet",
+"class": "J105",
+"name": "2024 FINAL GUN",
+"start": "2024-10-05",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "bAO7PbRCRz",
+"class_id": "nKCQLL0pdX",
+"class": "J105",
+"name": "2024 SEADOG",
+"start": "2024-10-04",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "g1toldJVH1",
+"class_id": "bNYRei1bih",
+"class": "J105 Fleet",
+"name": "Sausalito YC/RegattaPRO Winter One Design",
+"start": "2024-11-08",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "9PSD74bDkm",
+"class_id": "lPXYKnoOc5",
+"class": "J/105",
+"name": "J World Thursday Night Racing 2025",
+"start": "2025-05-08",
+"club": "5y4l6Nhy8B"
+},
+{
+"regatta": "AqZcXanp0w",
+"class_id": "HTfHcUbHtL",
+"class": "J/105",
+"name": "2025 Spring Fest",
+"start": "2025-04-05",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "ocCkidKwej",
+"class_id": "2h1noR6wSD",
+"class": "J/105",
+"name": "2025 SF Bay J/105 Women Skipper Invitational",
+"start": "2025-05-10",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "o6R0Lhevbp",
+"class_id": "C1K3UJowGZ",
+"class": "J/105",
+"name": "2025 Rolex Big Boat Series",
+"start": "2025-09-11",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "1faJj2wWXl",
+"class_id": "T0pcUu3qPC",
+"class": "J/105",
+"name": "2025 Phyllis Kleinman Swiftsure",
+"start": "2025-08-22",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "EkjDBsHN3h",
+"class_id": "sgk42hRLhZ",
+"class": "J/105",
+"name": "TEST - Beer Can",
+"start": "2025-01-01",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "yhgHRyv6rt",
+"class_id": "YK1bdAyhGm",
+"class": "J/105",
+"name": "2025 CYC Verve Cup Offshore",
+"start": "2025-08-08",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "2PiCT3rApR",
+"class_id": "mBFrHckMKC",
+"class": "J/105",
+"name": "2025 Verve Cup Offshore Tour of Chicago Distance Race",
+"start": "2025-08-09",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "OESrr3pbG1",
+"class_id": "kVybm6WwJp",
+"class": "J/105",
+"name": "Racing: CYC Puget Sound Spring Regatta - ORC/PHRF & Dinghies",
+"start": "2025-04-12",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "Ft5GoDMHVf",
+"class_id": "CAG6nvlQ6l",
+"class": "J105",
+"name": "ORC Demo regatta",
+"start": "2026-02-06",
+"club": "GTKaJKeque"
+},
+{
+"regatta": "F38HZpAt3E",
+"class_id": "KzFjtIMNOw",
+"class": "J/105 & B36.7",
+"name": "2025 CYC Monroe Skyline Series",
+"start": "2025-05-21",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "Dj3q6f8615",
+"class_id": "yHiAnPiV7L",
+"class": "J/105",
+"name": "Race Committee Practice",
+"start": "2025-02-14",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "c7RF6u5Rjw",
+"class_id": "YD97DZxdLX",
+"class": "One Design - J30, J-105, Melges 24",
+"name": "2025 Hammond Cup Regatta",
+"start": "2025-09-07",
+"club": "Rw6hCWQdl9"
+},
+{
+"regatta": "20t5dBJmh7",
+"class_id": "LtBg6lDNNJ",
+"class": "J105",
+"name": "CYC Midwinters",
+"start": "2025-01-18",
+"club": "cAXVL2v9yW"
+},
+{
+"regatta": "QcKU3JXvKG",
+"class_id": "olAQHkCtGL",
+"class": "J/105",
+"name": "2025 Chicago Beer Can Series",
+"start": "2025-05-21",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "QcKU3JXvKG",
+"class_id": "M5Bu6KF84d",
+"class": "J/105",
+"name": "2025 Chicago Beer Can Series",
+"start": "2025-05-21",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "h3c7itFOCJ",
+"class_id": "zXAcRIklBu",
+"class": "J/105",
+"name": "J/105 North American Championship",
+"start": "2025-09-17",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "bU5r8Zu1FK",
+"class_id": "rSP7hL9G0F",
+"class": "Buoy J/105",
+"name": "Columbia Cup 2025",
+"start": "2025-08-02",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "ueeOn9VRev",
+"class_id": "CsRCGQqXoF",
+"class": "J/105",
+"name": "Racing: Sound Wednesday Night Series - 2025",
+"start": "2025-04-09",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "Rj6zD6EXfE",
+"class_id": "luOa5wdLwY",
+"class": "Buoy J/105",
+"name": "TEST - 2 Circle Event",
+"start": "2026-04-10",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "6KF7c9JE6B",
+"class_id": "gMF0hc2b8y",
+"class": "J/105",
+"name": "Racing: CYC Pacific NW One Design Regatta (POD)",
+"start": "2025-03-29",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "hcpzk3AtIC",
+"class_id": "2IjJFpZCZ6",
+"class": "J/105 One Design",
+"name": "Summer Series II",
+"start": "2025-07-09",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "T5201A6alb",
+"class_id": "noeomcTYyH",
+"class": "Buoy J/105",
+"name": "COLYC COLORS 2025",
+"start": "2025-05-31",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "ATflXPEp5V",
+"class_id": "wQeOXCmBuF",
+"class": "J105",
+"name": "2025 EDGEWATER RACE PROGRAM",
+"start": "2025-05-18",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "9fz1PFCcER",
+"class_id": "yWUi8BQjZM",
+"class": "J/105",
+"name": "Elite Fleet Regatta",
+"start": "2025-05-17",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "RhGkUfRCoT",
+"class_id": "sE4EORaFlb",
+"class": "J105 Fleet",
+"name": "Fall Harbor",
+"start": "2025-10-04",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "YepnlMfbin",
+"class_id": "lDcwYrJL18",
+"class": "J105",
+"name": "2025 Marblehead Racing Association Season",
+"start": "2025-05-24",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "Ukf2sN9uJW",
+"class_id": "eJhPTrFho8",
+"class": "J105 Fleet",
+"name": "Spring Harbor",
+"start": "2025-04-06",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "Ojjp9e0Nel",
+"class_id": "yWfE0EVzh7",
+"class": "J105 Fleet",
+"name": "Femme Fatale",
+"start": "2025-06-07",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "fLCV9ITE3H",
+"class_id": "eIFCeoWkMn",
+"class": "J105",
+"name": "NCWSA's North Coast Invitational",
+"start": "2025-08-22",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "Nl2Q6uDNWr",
+"class_id": "MaYJz3qv7h",
+"class": "J/105 One Design",
+"name": "Summer Series I",
+"start": "2025-05-14",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "aQVFYRtXoP",
+"class_id": "DTWMGUaHfc",
+"class": "J105",
+"name": "2025 Cleveland Race Week One Design",
+"start": "2025-06-20",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "7jLEGWYQwI",
+"class_id": "KL7OqwvkaE",
+"class": "J/105",
+"name": "ABYC Open Regatta 2025",
+"start": "2025-05-24",
+"club": "fbBtErmunr"
+},
+{
+"regatta": "aaXDXt0GuS",
+"class_id": "nxY9cJFTCG",
+"class": "J105",
+"name": "2025 Cleveland Race Week Offshore",
+"start": "2025-06-26",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "Dof0LKr5MC",
+"class_id": "8YOWhLePLV",
+"class": "J - 105",
+"name": "SBYC  J Stop",
+"start": "2025-06-21",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "kZXgrcsX4i",
+"class_id": "JGgiZFppNR",
+"class": "J - 105",
+"name": "J-Stop Invitational Regatta",
+"start": "2025-06-21",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "F38HZpAt3E",
+"class_id": "AbpHZ37p96",
+"class": "Beneteau 36.7 & J105",
+"name": "2025 CYC Monroe Skyline Series",
+"start": "2025-05-21",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "F38HZpAt3E",
+"class_id": "FF52rWsPVU",
+"class": "J/105",
+"name": "2025 CYC Monroe Skyline Series",
+"start": "2025-05-21",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "7S2dw4lqxg",
+"class_id": "cb5XgTwJkN",
+"class": "J/105",
+"name": "Tuesday Midweek Racing",
+"start": "2025-05-13",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "T7r1K7BSwU",
+"class_id": "NIwrLOfHLx",
+"class": "D - Spinn PHRF 78 J105",
+"name": "Friday Night Spring Series 2025",
+"start": "2025-04-25",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "T7r1K7BSwU",
+"class_id": "cr3ZfEvOSY",
+"class": "E - Spinn PHRF 78 J105",
+"name": "Friday Night Spring Series 2025",
+"start": "2025-04-25",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "Mk0CuT4xXi",
+"class_id": "Wc7VWpQHrw",
+"class": "J/105",
+"name": "Test Regatta",
+"start": "2025-05-17",
+"club": "ztHZiORMBr"
+},
+{
+"regatta": "lle3EN48Xe",
+"class_id": "07eAMUBwDe",
+"class": "J/105",
+"name": "2025 Chicago to St. Joe",
+"start": "2025-08-29",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "tm4QD4X4Io",
+"class_id": "UXV2N3D4oa",
+"class": "J105",
+"name": "2025 Charleston Yacht Club Open Regatta",
+"start": "2025-07-19",
+"club": "OGQVAIkVgm"
+},
+{
+"regatta": "khkgjC9D0F",
+"class_id": "LRJaCgI1ZH",
+"class": "J/105",
+"name": "RCYC Open",
+"start": "2025-06-14",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "YHK8AH0JVf",
+"class_id": "UVSkq9jO6O",
+"class": "J/105",
+"name": "2025 Chicago - Michigan City - Chicago Race",
+"start": "2025-06-27",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "xFi5jUVjc8",
+"class_id": "1gZJ0aFJ3f",
+"class": "E - Spinn PHRF 78 J105",
+"name": "Friday Night Summer Series 2025",
+"start": "2025-06-20",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "soH2hHDRTy",
+"class_id": "2pViR1781W",
+"class": "J/105",
+"name": "J/105 Canadian Championship",
+"start": "2025-09-13",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "8a1Q5A2dgI",
+"class_id": "tv3Gf4A0UM",
+"class": "Start E - J105",
+"name": "TEST - Friday Night Race",
+"start": "2025-04-11",
+"club": "cAXVL2v9yW"
+},
+{
+"regatta": "8a1Q5A2dgI",
+"class_id": "gcMe4n1Cg3",
+"class": "Start E - J105",
+"name": "TEST - Friday Night Race",
+"start": "2025-04-11",
+"club": "cAXVL2v9yW"
+},
+{
+"regatta": "wqLpI6vi0N",
+"class_id": "33OfzAlBVb",
+"class": "J/105",
+"name": "2025 Oxford Regatta - Solomons to Oxford Race",
+"start": "2025-08-08",
+"club": "Rw6hCWQdl9"
+},
+{
+"regatta": "zsumEis7yC",
+"class_id": "X0WvtvnFkz",
+"class": "J/105",
+"name": "Founders Regatta",
+"start": "2025-07-26",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "ECOdPnrJ99",
+"class_id": "h18dPJP8G9",
+"class": "J/105",
+"name": "J/80 & J/105 Canadian Championships",
+"start": "2025-09-13",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "wE73W3yBCL",
+"class_id": "DOHraaaM1J",
+"class": "J/105",
+"name": "Summer Keelboat Regatta",
+"start": "2025-08-09",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "XzVytH4Dzu",
+"class_id": "Vz4RS5nTqL",
+"class": "J/105",
+"name": "Racing: PSSC - Big Boat - 2025",
+"start": "2025-10-11",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "qH7eApyrFG",
+"class_id": "ApTthd7hGT",
+"class": "Racing Spin J/105",
+"name": "Alliance for the Great Lakes Regatta",
+"start": "2025-08-23",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "TnwVMwoAZt",
+"class_id": "9DWHIRJloG",
+"class": "J/105",
+"name": "J/105 Women's Championship",
+"start": "2025-08-16",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "Q0vd4md3PH",
+"class_id": "ZQv9I61xHa",
+"class": "J/105",
+"name": "Royal Weekend",
+"start": "2025-08-30",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "FZr64A1zko",
+"class_id": "8LRfNq5iwf",
+"class": "J/105",
+"name": "2025 Verve Cup Offshore Tour of Chicago Distance Race -SCORING ONLY",
+"start": "2025-08-09",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "mwaV17QOSf",
+"class_id": "G1LWZwBb5C",
+"class": "J/105",
+"name": "2025 216 Regatta",
+"start": "2025-09-20",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "HqE7ex6TM6",
+"class_id": "E5sBvAHFYz",
+"class": "J/105",
+"name": "2025 J/Fest Southwest Regatta",
+"start": "2025-10-25",
+"club": "AeAwRAbvTl"
+},
+{
+"regatta": "F7EQieXYn1",
+"class_id": "RrNESf4MPE",
+"class": "J/105",
+"name": "2026 J/105 North American Championships",
+"start": "2026-10-13",
+"club": "PRwab8xntJ"
+},
+{
+"regatta": "CP4QrBHrrK",
+"class_id": "cG0lIuAUjo",
+"class": "J105",
+"name": "2025 BBYC One Design Fall Regatta",
+"start": "2025-10-04",
+"club": "oqgzFuGk2z"
+},
+{
+"regatta": "97c12t2Q9g",
+"class_id": "0jiSRohTt0",
+"class": "J/105",
+"name": "2025 James Liston Turkey Day Regatta",
+"start": "2025-11-14",
+"club": "2VIitLY03J"
+},
+{
+"regatta": "loIU4PUhgd",
+"class_id": "yGvn0JPmHL",
+"class": "J/105",
+"name": "2026 Chicago Beer Can Series",
+"start": "2026-05-20",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "gcNp6qlwlH",
+"class_id": "o3RoXohRtp",
+"class": "J/105",
+"name": "2026 Rolex Big Boat Series",
+"start": "2026-09-16",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "YFdBvek6aa",
+"class_id": "JurVNRIzSK",
+"class": "J105 Fleet",
+"name": "Turkey Regatta",
+"start": "2025-11-29",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "35Ym8PLimK",
+"class_id": "TKKB2TEhFW",
+"class": "J-105",
+"name": "2026 Cleveland Race Week One Design",
+"start": "2026-06-19",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "m2Og13NrAS",
+"class_id": "gpfyE8MUjP",
+"class": "J105 Fleet",
+"name": "Sausalito YC/RegattaPRO Winter One Design",
+"start": "2026-11-14",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "LTBNL3Y4e0",
+"class_id": "lWACMDbHlF",
+"class": "J105",
+"name": "NCWSA'S NORTH COAST INVITATIONAL",
+"start": "2026-08-21",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "oTdiZ1pbHj",
+"class_id": "xH1PkfZbPG",
+"class": "J105",
+"name": "2026 J/105 Mid-Winter Championship",
+"start": "2026-03-13",
+"club": "OGQVAIkVgm"
+},
+{
+"regatta": "DKNCJoS5Hw",
+"class_id": "z7fQI2fQMx",
+"class": "J/105",
+"name": "2026 Spring Fest",
+"start": "2026-04-11",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "1OuVW68pxB",
+"class_id": "DxGtgbFZn1",
+"class": "J/105",
+"name": "2026 SF Bay J/105 Women Skipper Invitational",
+"start": "2026-05-09",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "onC4pTzwP4",
+"class_id": "zTM1E3Zj9S",
+"class": "J/105",
+"name": "2026 Phyllis Kleinman Swiftsure Regatta",
+"start": "2026-08-29",
+"club": "xy4o21Zzfw"
+},
+{
+"regatta": "CepT6vGO0t",
+"class_id": "kShWINaH3T",
+"class": "J/105 (Sat-Sun)",
+"name": "ABYC Open Regatta 2026 / J24 Ontario Championships",
+"start": "2026-05-23",
+"club": "fbBtErmunr"
+},
+{
+"regatta": "3tZaGme9mQ",
+"class_id": "bOXoGbRr2m",
+"class": "J/105",
+"name": "Beneteau 36.7 North American Championships 2026",
+"start": "2026-08-20",
+"club": "fbBtErmunr"
+},
+{
+"regatta": "BOLrksdoVp",
+"class_id": "NI3N7ploJq",
+"class": "J105 Fleet",
+"name": "2026 Hangover Race - Frostbite 1",
+"start": "2026-01-01",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "9Y6TfsKxnf",
+"class_id": "zV8ceczAnC",
+"class": "J105 Fleet",
+"name": "2026 Frostbite 2",
+"start": "2026-01-17",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "jskp4BMGQ7",
+"class_id": "oYvTPqlZLR",
+"class": "J105 Fleet",
+"name": "2026 Frostbite 3",
+"start": "2026-01-31",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "xzzqolTTri",
+"class_id": "AM86HMrzJB",
+"class": "J105 Fleet",
+"name": "2026 Frostbite 4",
+"start": "2026-02-28",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "H2kBo46buZ",
+"class_id": "ZaWMd6FYHm",
+"class": "J/105",
+"name": "Clubspot Spring Series",
+"start": "2030-05-11",
+"club": "ecNpKgrusD"
+},
+{
+"regatta": "hmUv1OKXFY",
+"class_id": "wfBjWmbD9v",
+"class": "J105 Class",
+"name": "Sheriff\u2019s Cup \u2014 Day 1",
+"start": "2026-03-28",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "CNipkLWuYn",
+"class_id": "hvZFOcatsa",
+"class": "J/105",
+"name": "2026 CYC Verve Cup Offshore",
+"start": "2026-08-07",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "7CAONPr2dQ",
+"class_id": "fQ9hq2tECF",
+"class": "J/105 One Design",
+"name": "Summer Series I",
+"start": "2026-05-13",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "2gllRmW0Gl",
+"class_id": "tV7VMVKEFZ",
+"class": "J/105 One Design",
+"name": "Summer Series II",
+"start": "2026-06-24",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "PVI3oepIaB",
+"class_id": "mq08P6TwNB",
+"class": "J105 Fleet",
+"name": "Turkey Regatta",
+"start": "2026-11-28",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "FQ5VE61pk1",
+"class_id": "AU4xQR14aY",
+"class": "J105 Fleet",
+"name": "Fall Harbor",
+"start": "2026-10-03",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "8MoqtDSe80",
+"class_id": "QnzSklKb9C",
+"class": "J105 Fleet",
+"name": "Femme Fatale",
+"start": "2026-06-06",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "Sr3eFbVsYv",
+"class_id": "XQ2YnEnzGr",
+"class": "J105 Fleet",
+"name": "CLONED | Spring Harbor",
+"start": "2025-04-06",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "PVI3oepIaB",
+"class_id": "3Dg6YSRGvJ",
+"class": "J105",
+"name": "Turkey Regatta",
+"start": "2026-11-28",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "bleUwa5B6x",
+"class_id": "IDPX4pJuC3",
+"class": "Buoy J/105",
+"name": "COLYC COLORS 2026",
+"start": "2026-05-30",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "CEKiAe99ew",
+"class_id": "kDDG7FMD42",
+"class": "J/105",
+"name": "2026 Encinal One Design Invitational",
+"start": "2026-06-06",
+"club": "dTDuJHTcBe"
+},
+{
+"regatta": "YQa54zApAH",
+"class_id": "xv7OPkxqOs",
+"class": "J105 Fleet",
+"name": "Spring Harbor",
+"start": "2026-04-11",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "Ys7EPUbBr0",
+"class_id": "aHTK7UQyFg",
+"class": "J105",
+"name": "2026 Marblehead Racing Association Season",
+"start": "2026-05-23",
+"club": "nOVDXRs7tf"
+},
+{
+"regatta": "24GdW5KBdT",
+"class_id": "AOuRwFGg2F",
+"class": "Buoy J/105",
+"name": "COLUMBIA CUP 2026",
+"start": "2026-08-01",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "YPATPBR230",
+"class_id": "DZdB8y5Zcb",
+"class": "J105",
+"name": "Rolex Ruger St Small Boat",
+"start": "2026-01-15",
+"club": "GTKaJKeque"
+},
+{
+"regatta": "c5YwGfLEab",
+"class_id": "qOP4oBrxSh",
+"class": "One Design - J30, J-105, Melges 24",
+"name": "2026 Hammond Cup Regatta",
+"start": "2026-09-13",
+"club": "Rw6hCWQdl9"
+},
+{
+"regatta": "gXLfpIFfLV",
+"class_id": "IpyxAp8iDS",
+"class": "J105",
+"name": "AEL DYC Open Regatta 2026",
+"start": "2026-05-30",
+"club": "0asZeHJKEC"
+},
+{
+"regatta": "dFPKVa2b6b",
+"class_id": "mB3FAcevGb",
+"class": "J105",
+"name": "2026 EDGEWATER RACE PROGRAM",
+"start": "2026-05-16",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "kz2k5ZSde9",
+"class_id": "UVKmxWs1Gm",
+"class": "J105 Fleet",
+"name": "2026 Frostbite Series",
+"start": "2026-02-28",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "s5ZUzT5FQv",
+"class_id": "BtcX2isuOU",
+"class": "J105",
+"name": "2026 ChYC J-105 Women\u2019s Regatta",
+"start": "2026-03-21",
+"club": "OGQVAIkVgm"
+},
+{
+"regatta": "tCigjwehTt",
+"class_id": "C4UJH7oPZP",
+"class": "J/105",
+"name": "Racing: CYC Puget Sound Spring Regatta - ORC/PHRF & Dinghies",
+"start": "2026-04-18",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "ojIHr9lXBO",
+"class_id": "YWGRPxR0X7",
+"class": "J/105",
+"name": "2026 SCOR",
+"start": "2026-02-13",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "3NwYI1GmE8",
+"class_id": "X8uBVQXxZA",
+"class": "J-105",
+"name": "2027 J-105 North American Championships",
+"start": "2027-09-29",
+"club": "AeAwRAbvTl"
+},
+{
+"regatta": "K9jKnrpJ2a",
+"class_id": "ie0c1m3LG3",
+"class": "Beneteau 36.7 & J105",
+"name": "2026 CYC Monroe Skyline Series",
+"start": "2026-05-13",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "7Z0bQJQMnF",
+"class_id": "L8V8j0ozc6",
+"class": "Buoy Racing J/105",
+"name": "2026 Sheldon Clark Regatta",
+"start": "2026-09-19",
+"club": "9Ga5tip2pQ"
+},
+{
+"regatta": "dor0SAZcTH",
+"class_id": "bR8CMbCo0f",
+"class": "J/105",
+"name": "Racing: CYC Pacific NW One Design Regatta (POD)",
+"start": "2026-03-28",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "wYFzQvmG4R",
+"class_id": "7q1o9ikhPH",
+"class": "J/105",
+"name": "Racing: Sound Wednesday Night Series - 2026",
+"start": "2026-04-08",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "DBBwKrtrOI",
+"class_id": "yLk7tubFIW",
+"class": "E - Spinn J88, J105",
+"name": "Friday Night Spring Series 2026",
+"start": "2026-04-24",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "7RxmhqAXaq",
+"class_id": "oy8TEMrjxp",
+"class": "J/105",
+"name": "2026 Shoe Regatta",
+"start": "2026-05-16",
+"club": "AeAwRAbvTl"
+},
+{
+"regatta": "3j4CrRdJiE",
+"class_id": "Pgtxv3sCnQ",
+"class": "J/105",
+"name": "J/105 Women's Championship",
+"start": "2026-08-15",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "lI9E4dfXDm",
+"class_id": "M5svlRLZ3d",
+"class": "J/105",
+"name": "J/80 & J/105 Canadian Championships",
+"start": "2026-09-25",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "VTFg5FxbKw",
+"class_id": "qoNlGNyLI0",
+"class": "J/105",
+"name": "SFYC Club Series Championship",
+"start": "2026-03-14",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "ISfchRBE7K",
+"class_id": "whnCUxt4fG",
+"class": "J/105",
+"name": "Elite Fleet Regatta",
+"start": "2026-05-16",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "yebVeq2H6O",
+"class_id": "2nj3wB91Hk",
+"class": "J-105",
+"name": "2026 216 Regatta",
+"start": "2026-09-26",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "HPKV8YVRRe",
+"class_id": "KUb2QeuRjH",
+"class": "J/105",
+"name": "18th Hour Sailing Endurance Regatta & Shrimp Boil",
+"start": "2026-05-23",
+"club": "8LIiUrqF7e"
+},
+{
+"regatta": "juRYjrletC",
+"class_id": "mEeYORbp52",
+"class": "J105",
+"name": "Tuesday Midweek Racing",
+"start": "2026-05-05",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "r5SJhoSONO",
+"class_id": "YWnIhGNEf3",
+"class": "J/105",
+"name": "RCYC Open",
+"start": "2026-06-13",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "lVUetV7rOG",
+"class_id": "qQUK4P4sHm",
+"class": "J105",
+"name": "Founders Regatta",
+"start": "2026-07-18",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "KBjIi25Wik",
+"class_id": "vXfMQzaZrZ",
+"class": "J/105",
+"name": "2026 Chicago - Michigan City - Chicago Race",
+"start": "2026-06-26",
+"club": "4iIhzIioLb"
+},
+{
+"regatta": "VKhBYnFRbK",
+"class_id": "Dq8HN6UkMR",
+"class": "Delta - J-105 Class",
+"name": "2026 J-Stop Regatta",
+"start": "2026-06-20",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "U4fWyFczHO",
+"class_id": "S4WV5WSyYL",
+"class": "J105",
+"name": "2026 Surfin' Safari Regatta",
+"start": "2026-06-06",
+"club": "tO7mGwBAsl"
+},
+{
+"regatta": "KS5O2PW9gy",
+"class_id": "fWCzGhFr79",
+"class": "J/105",
+"name": "2026 Battleship Texas Regatta",
+"start": "2026-06-12",
+"club": "2VIitLY03J"
+},
+{
+"regatta": "xH9HvWpNg2",
+"class_id": "MaUtzhLDoH",
+"class": "J/105",
+"name": "CLONED | Clubspot Spring Series",
+"start": "2030-05-11",
+"club": "ecNpKgrusD"
+},
+{
+"regatta": "AHulvEUpop",
+"class_id": "zUh8rZFj8E",
+"class": "J105",
+"name": "2026 Charleston Yacht Club Open Regatta",
+"start": "2026-07-18",
+"club": "OGQVAIkVgm"
+},
+{
+"regatta": "PA8VBneGwK",
+"class_id": "wU0wffFjK3",
+"class": "J/105",
+"name": "Military Salute Regatta Presented by Blackbaud",
+"start": "2026-05-30",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "1oslz26rAi",
+"class_id": "cRMUO30Cdk",
+"class": "J 105",
+"name": "64th Annual Navy Regatta",
+"start": "2026-08-01",
+"club": "tO7mGwBAsl"
+},
+{
+"regatta": "z2TnDSSvm7",
+"class_id": "7UrceeikKZ",
+"class": "E - Spinn J88, J105",
+"name": "Friday Night Summer Series 2026",
+"start": "2026-06-26",
+"club": "q9IgHDvJHq"
+},
+{
+"regatta": "kGo4d3tmWV",
+"class_id": "bCZDgR1JOi",
+"class": "J105",
+"name": "2026 BBYC One Design Fall Regatta",
+"start": "2026-10-03",
+"club": "oqgzFuGk2z"
+},
+{
+"regatta": "j79ZqcjuH6",
+"class_id": "S0aJ1pA2T9",
+"class": "J105",
+"name": "Mahone Bay Challenge Cup One Design Regatta",
+"start": "2026-08-01",
+"club": "GFfhoSHQsy"
+},
+{
+"regatta": "7R9t0OZyvM",
+"class_id": "ogE96J0tfx",
+"class": "J/105",
+"name": "2026 Cleveland Race Week Offshore",
+"start": "2026-06-25",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "ATGqR7l1yv",
+"class_id": "3kIUmNOeS2",
+"class": "J/105",
+"name": "Summer Keelboat Regatta",
+"start": "2026-08-08",
+"club": "k4n0LTtsSo"
+},
+{
+"regatta": "8BiWDPudk9",
+"class_id": "2ARx0TTaun",
+"class": "J-105",
+"name": "2027 Cleveland Race Week One Design",
+"start": "2027-06-18",
+"club": "3FQt0tG9Df"
+},
+{
+"regatta": "NKc0pyFIV0",
+"class_id": "5C4ZBnHdnr",
+"class": "J-105",
+"name": "Hollings Cup Information",
+"start": "2026-09-12",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "Qly2O1TMqZ",
+"class_id": "wWMwqHqk9k",
+"class": "J/105",
+"name": "Racing: PSSC - Big Boat - 2026",
+"start": "2026-10-10",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "k6Mj4HE2Pk",
+"class_id": "iYI9xZe5zD",
+"class": "J/105",
+"name": "Arden Regatta",
+"start": "2026-09-05",
+"club": "lrmjE2yiwk"
+},
+{
+"regatta": "QpmTUZDXAq",
+"class_id": "HVMGnpXus3",
+"class": "J/105",
+"name": "Royal Weekend",
+"start": "2026-09-05",
+"club": "iUWG9IxDld"
+},
+{
+"regatta": "RWSuzNDiqT",
+"class_id": "wWMR6CXz03",
+"class": "J105",
+"name": "CLONED | Mahone Bay Challenge Cup One Design Regatta",
+"start": "2026-08-01",
+"club": "GFfhoSHQsy"
+},
+{
+"regatta": "CB5uZC5mQ4",
+"class_id": "uThiZ5b5zv",
+"class": "J/105",
+"name": "Racing: PSSC - Small Boat & J/Fest",
+"start": "2026-09-26",
+"club": "7D66rAJH5A"
+},
+{
+"regatta": "c6OIWaBhkA",
+"class_id": "lfUhM92626",
+"class": "J105 Fleet",
+"name": "CLONED | Fall Harbor",
+"start": "2026-10-04",
+"club": "Q7PH54UkCR"
+},
+{
+"regatta": "DbG31dPnWY",
+"class_id": "eY6zHufNJC",
+"class": "J105",
+"name": "Polaris Block Trophy 2026",
+"start": "2026-09-07",
+"club": "oqgzFuGk2z"
+},
+{
+"regatta": "eNAv0mdqsz",
+"class_id": "Lvpeg2lmUs",
+"class": "J105 Fleet",
+"name": "Sausalito YC/RegattaPRO Winter One Design",
+"start": "2026-11-14",
+"club": "dLYKSqZh6b"
+},
+{
+"regatta": "orzjEkAK76",
+"class_id": "5nnnjbZFBq",
+"class": "E - Spinn J88, J105",
+"name": "test regatta",
+"start": "2026-10-06",
+"club": "q9IgHDvJHq"
+}
+]

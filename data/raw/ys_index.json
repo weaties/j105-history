@@ -1,0 +1,8154 @@
+[
+{
+"id": 50575,
+"name": "2026 J/105 Chesapeake Bay Championship",
+"start": "2026-10-17",
+"classes": [
+{
+"id": 2004419,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50760,
+"name": "2026 American Yacht Club Fall Regatta",
+"start": "2026-09-26",
+"classes": [
+{
+"id": 2004400,
+"name": "J/105 (10/3-4)",
+"num": 4
+}
+]
+},
+{
+"id": 50628,
+"name": "2026 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2026-10-09",
+"classes": [
+{
+"id": 2004782,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 9571,
+"name": "2019 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2019-10-12",
+"classes": [
+{
+"id": 29992,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 50641,
+"name": "2026 Hospice Cup XLV",
+"start": "2026-09-19",
+"classes": [
+{
+"id": 2003456,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50711,
+"name": "2026 Liberty Cup Regatta",
+"start": "2026-09-19",
+"classes": [
+{
+"id": 2003178,
+"name": "J105",
+"num": 4
+}
+]
+},
+{
+"id": 50606,
+"name": "2026 A2C Lighthouse Challenge",
+"start": "2026-08-22",
+"classes": [
+{
+"id": 2003141,
+"name": "J/105",
+"num": 26
+}
+]
+},
+{
+"id": 15812,
+"name": "2023 Phyllis Kleinman Swiftsure Regatta",
+"start": "2023-08-18",
+"classes": [
+{
+"id": 51899,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 50607,
+"name": "2026 Labor Day Invitational",
+"start": "2026-09-05",
+"classes": [
+{
+"id": 2003364,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50584,
+"name": "2026 EYC Open -  LYRA Race Week - Course Racing",
+"start": "2026-08-28",
+"classes": [
+{
+"id": 2004312,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 50595,
+"name": "2026 Fawcett's Friday Night Beer Cans Series",
+"start": "2026-05-08",
+"classes": [
+{
+"id": 2002553,
+"name": "J/105",
+"num": 15
+}
+]
+},
+{
+"id": 50577,
+"name": "2026/2027 AYC Frostbite Series 1",
+"start": "2026-11-15",
+"classes": [
+{
+"id": 2004797,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 50638,
+"name": "Atlantic Yacht Sales Chester Race Week 2026",
+"start": "2026-08-12",
+"classes": [
+{
+"id": 2002997,
+"name": "J105",
+"num": 4
+}
+]
+},
+{
+"id": 50605,
+"name": "2026 CRAB Cup",
+"start": "2026-08-15",
+"classes": [
+{
+"id": 2002789,
+"name": "J/105",
+"num": 14
+}
+]
+},
+{
+"id": 50851,
+"name": "89th Annual Falcon Cup Race / 30th Annual Sundance Trophy Race",
+"start": "2026-08-08",
+"classes": [
+{
+"id": 2004360,
+"name": "J-105",
+"num": 4
+}
+]
+},
+{
+"id": 50568,
+"name": "2026 AYC Wednesday Night - Series 2",
+"start": "2026-06-03",
+"classes": [
+{
+"id": 2003791,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 50877,
+"name": "2026 AHYC Blue Water Regatta",
+"start": "2026-08-01",
+"classes": [
+{
+"id": 2004257,
+"name": "J-105",
+"num": 2
+}
+]
+},
+{
+"id": 50573,
+"name": "2026 Fall Race To Solomons",
+"start": "2026-09-26",
+"classes": [
+{
+"id": 2004369,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 50881,
+"name": "2026 NYC Open",
+"start": "2026-08-08",
+"classes": [
+{
+"id": 2003957,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50664,
+"name": "2026 Ted Hood Regatta",
+"start": "2026-08-13",
+"classes": [
+{
+"id": 2002983,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 50726,
+"name": "2026 80th Red Grant Regatta / J/105 East Coast Championship",
+"start": "2026-07-11",
+"classes": [
+{
+"id": 2003193,
+"name": "J/105 ECC",
+"num": 3
+}
+]
+},
+{
+"id": 50583,
+"name": "2026 Race Week Bellingham",
+"start": "2026-07-20",
+"classes": [
+{
+"id": 2002693,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 50906,
+"name": "2027 ORC North American Offshore Championships and One Design Regatta",
+"start": "2027-11-14",
+"classes": [
+{
+"id": 2004122,
+"name": "J105",
+"num": 5
+}
+]
+},
+{
+"id": 50642,
+"name": "2026 J/105 Women\u2019s Regatta",
+"start": "2026-08-29",
+"classes": [
+{
+"id": 2003898,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50512,
+"name": "2026 Helly Hansen Sailing World Regatta Series - Marblehead",
+"start": "2026-07-23",
+"classes": [
+{
+"id": 2004239,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 50569,
+"name": "2026 AYC Wednesday Night - Series 3",
+"start": "2026-07-22",
+"classes": [
+{
+"id": 2004194,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 50604,
+"name": "2026 Boomerang Race",
+"start": "2026-07-10",
+"classes": [
+{
+"id": 2002772,
+"name": "J/105",
+"num": 36
+}
+]
+},
+{
+"id": 50566,
+"name": "2026 AYC Wednesday Night - Series 1",
+"start": "2026-04-22",
+"classes": [
+{
+"id": 2002858,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50608,
+"name": "2026 Fall Brawl Invitational",
+"start": "2026-10-24",
+"classes": [
+{
+"id": 2003317,
+"name": "J/105 - Overall",
+"num": 12
+},
+{
+"id": 2003316,
+"name": "J/105 - Visitor",
+"num": 11
+},
+{
+"id": 2003315,
+"name": "J/105 - Local",
+"num": 10
+}
+]
+},
+{
+"id": 50827,
+"name": "2026 PCYC Open Event",
+"start": "2026-07-04",
+"classes": [
+{
+"id": 2003753,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 50602,
+"name": "2026 One-Design Classic",
+"start": "2026-06-20",
+"classes": [
+{
+"id": 2002569,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50621,
+"name": "2026 Annapolis to Miles River Race",
+"start": "2026-05-23",
+"classes": [
+{
+"id": 2003292,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50627,
+"name": "2026 Race to the Lighthouses",
+"start": "2026-04-25",
+"classes": [
+{
+"id": 2002736,
+"name": "J/105",
+"num": 37
+}
+]
+},
+{
+"id": 50565,
+"name": "2026 AYC Spring One Design Regatta",
+"start": "2026-04-25",
+"classes": [
+{
+"id": 2002844,
+"name": "J/105",
+"num": 8
+}
+]
+},
+{
+"id": 50644,
+"name": "2026 SCC EWE Spirit Cup",
+"start": "2026-05-16",
+"classes": [
+{
+"id": 2003101,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 50643,
+"name": "2026 Ted Osius Memorial Twilight Regatta",
+"start": "2026-06-06",
+"classes": [
+{
+"id": 2003534,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 50572,
+"name": "2026 Navy Fall Race to Oxford",
+"start": "2026-09-12",
+"classes": [
+{
+"id": 2003809,
+"name": "J/105",
+"num": 9
+}
+]
+},
+{
+"id": 50001,
+"name": "Atlantic Yacht Sales Chester Race Week 2025",
+"start": "2025-08-13",
+"classes": [
+{
+"id": 2001775,
+"name": "PHRF-NS A - J105",
+"num": 3
+}
+]
+},
+{
+"id": 50446,
+"name": "2025/2026 AYC Frostbite Series 2",
+"start": "2026-02-01",
+"classes": [
+{
+"id": 2002637,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 17014,
+"name": "2025/2026 AYC Frostbite Series 1",
+"start": "2025-11-02",
+"classes": [
+{
+"id": 56752,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 50582,
+"name": "2026 AYC Hangover Bowl",
+"start": "2026-01-01",
+"classes": [
+{
+"id": 2002584,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50575,
+"name": "2026 J/105 Chesapeake Bay Championship",
+"start": "2026-10-17",
+"classes": [
+{
+"id": 2004419,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50760,
+"name": "2026 American Yacht Club Fall Regatta",
+"start": "2026-09-26",
+"classes": [
+{
+"id": 2004400,
+"name": "J/105 (10/3-4)",
+"num": 4
+}
+]
+},
+{
+"id": 50628,
+"name": "2026 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2026-10-09",
+"classes": [
+{
+"id": 2004782,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 9571,
+"name": "2019 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2019-10-12",
+"classes": [
+{
+"id": 29992,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 50641,
+"name": "2026 Hospice Cup XLV",
+"start": "2026-09-19",
+"classes": [
+{
+"id": 2003456,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50711,
+"name": "2026 Liberty Cup Regatta",
+"start": "2026-09-19",
+"classes": [
+{
+"id": 2003178,
+"name": "J105",
+"num": 4
+}
+]
+},
+{
+"id": 50606,
+"name": "2026 A2C Lighthouse Challenge",
+"start": "2026-08-22",
+"classes": [
+{
+"id": 2003141,
+"name": "J/105",
+"num": 26
+}
+]
+},
+{
+"id": 15812,
+"name": "2023 Phyllis Kleinman Swiftsure Regatta",
+"start": "2023-08-18",
+"classes": [
+{
+"id": 51899,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 50607,
+"name": "2026 Labor Day Invitational",
+"start": "2026-09-05",
+"classes": [
+{
+"id": 2003364,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50584,
+"name": "2026 EYC Open -  LYRA Race Week - Course Racing",
+"start": "2026-08-28",
+"classes": [
+{
+"id": 2004312,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 50595,
+"name": "2026 Fawcett's Friday Night Beer Cans Series",
+"start": "2026-05-08",
+"classes": [
+{
+"id": 2002553,
+"name": "J/105",
+"num": 15
+}
+]
+},
+{
+"id": 50577,
+"name": "2026/2027 AYC Frostbite Series 1",
+"start": "2026-11-15",
+"classes": [
+{
+"id": 2004797,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 50638,
+"name": "Atlantic Yacht Sales Chester Race Week 2026",
+"start": "2026-08-12",
+"classes": [
+{
+"id": 2002997,
+"name": "J105",
+"num": 4
+}
+]
+},
+{
+"id": 50605,
+"name": "2026 CRAB Cup",
+"start": "2026-08-15",
+"classes": [
+{
+"id": 2002789,
+"name": "J/105",
+"num": 14
+}
+]
+},
+{
+"id": 50851,
+"name": "89th Annual Falcon Cup Race / 30th Annual Sundance Trophy Race",
+"start": "2026-08-08",
+"classes": [
+{
+"id": 2004360,
+"name": "J-105",
+"num": 4
+}
+]
+},
+{
+"id": 50568,
+"name": "2026 AYC Wednesday Night - Series 2",
+"start": "2026-06-03",
+"classes": [
+{
+"id": 2003791,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 50877,
+"name": "2026 AHYC Blue Water Regatta",
+"start": "2026-08-01",
+"classes": [
+{
+"id": 2004257,
+"name": "J-105",
+"num": 2
+}
+]
+},
+{
+"id": 50573,
+"name": "2026 Fall Race To Solomons",
+"start": "2026-09-26",
+"classes": [
+{
+"id": 2004369,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 50881,
+"name": "2026 NYC Open",
+"start": "2026-08-08",
+"classes": [
+{
+"id": 2003957,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50664,
+"name": "2026 Ted Hood Regatta",
+"start": "2026-08-13",
+"classes": [
+{
+"id": 2002983,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 50726,
+"name": "2026 80th Red Grant Regatta / J/105 East Coast Championship",
+"start": "2026-07-11",
+"classes": [
+{
+"id": 2003193,
+"name": "J/105 ECC",
+"num": 3
+}
+]
+},
+{
+"id": 50583,
+"name": "2026 Race Week Bellingham",
+"start": "2026-07-20",
+"classes": [
+{
+"id": 2002693,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 50906,
+"name": "2027 ORC North American Offshore Championships and One Design Regatta",
+"start": "2027-11-14",
+"classes": [
+{
+"id": 2004122,
+"name": "J105",
+"num": 5
+}
+]
+},
+{
+"id": 50642,
+"name": "2026 J/105 Women\u2019s Regatta",
+"start": "2026-08-29",
+"classes": [
+{
+"id": 2003898,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50512,
+"name": "2026 Helly Hansen Sailing World Regatta Series - Marblehead",
+"start": "2026-07-23",
+"classes": [
+{
+"id": 2004239,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 50569,
+"name": "2026 AYC Wednesday Night - Series 3",
+"start": "2026-07-22",
+"classes": [
+{
+"id": 2004194,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 50604,
+"name": "2026 Boomerang Race",
+"start": "2026-07-10",
+"classes": [
+{
+"id": 2002772,
+"name": "J/105",
+"num": 36
+}
+]
+},
+{
+"id": 50566,
+"name": "2026 AYC Wednesday Night - Series 1",
+"start": "2026-04-22",
+"classes": [
+{
+"id": 2002858,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50608,
+"name": "2026 Fall Brawl Invitational",
+"start": "2026-10-24",
+"classes": [
+{
+"id": 2003317,
+"name": "J/105 - Overall",
+"num": 12
+},
+{
+"id": 2003316,
+"name": "J/105 - Visitor",
+"num": 11
+},
+{
+"id": 2003315,
+"name": "J/105 - Local",
+"num": 10
+}
+]
+},
+{
+"id": 50827,
+"name": "2026 PCYC Open Event",
+"start": "2026-07-04",
+"classes": [
+{
+"id": 2003753,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 50602,
+"name": "2026 One-Design Classic",
+"start": "2026-06-20",
+"classes": [
+{
+"id": 2002569,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50621,
+"name": "2026 Annapolis to Miles River Race",
+"start": "2026-05-23",
+"classes": [
+{
+"id": 2003292,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50627,
+"name": "2026 Race to the Lighthouses",
+"start": "2026-04-25",
+"classes": [
+{
+"id": 2002736,
+"name": "J/105",
+"num": 37
+}
+]
+},
+{
+"id": 50565,
+"name": "2026 AYC Spring One Design Regatta",
+"start": "2026-04-25",
+"classes": [
+{
+"id": 2002844,
+"name": "J/105",
+"num": 8
+}
+]
+},
+{
+"id": 50644,
+"name": "2026 SCC EWE Spirit Cup",
+"start": "2026-05-16",
+"classes": [
+{
+"id": 2003101,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 50643,
+"name": "2026 Ted Osius Memorial Twilight Regatta",
+"start": "2026-06-06",
+"classes": [
+{
+"id": 2003534,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 50572,
+"name": "2026 Navy Fall Race to Oxford",
+"start": "2026-09-12",
+"classes": [
+{
+"id": 2003809,
+"name": "J/105",
+"num": 9
+}
+]
+},
+{
+"id": 50001,
+"name": "Atlantic Yacht Sales Chester Race Week 2025",
+"start": "2025-08-13",
+"classes": [
+{
+"id": 2001775,
+"name": "PHRF-NS A - J105",
+"num": 3
+}
+]
+},
+{
+"id": 50446,
+"name": "2025/2026 AYC Frostbite Series 2",
+"start": "2026-02-01",
+"classes": [
+{
+"id": 2002637,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 17014,
+"name": "2025/2026 AYC Frostbite Series 1",
+"start": "2025-11-02",
+"classes": [
+{
+"id": 56752,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 50582,
+"name": "2026 AYC Hangover Bowl",
+"start": "2026-01-01",
+"classes": [
+{
+"id": 2002584,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50260,
+"name": "Sheldon Clark Regatta - 2025",
+"start": "2025-09-13",
+"classes": [
+{
+"id": 2000944,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 50051,
+"name": "2025 AYC Fall Series",
+"start": "2025-09-27",
+"classes": [
+{
+"id": 2001741,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 16998,
+"name": "2025 Race Week Bellingham",
+"start": "2025-07-21",
+"classes": [
+{
+"id": 56630,
+"name": "J105",
+"num": 4
+}
+]
+},
+{
+"id": 50498,
+"name": "2025 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2025-10-10",
+"classes": [
+{
+"id": 2002275,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 50455,
+"name": "2025 American Yacht Club Fall Regatta",
+"start": "2025-09-27",
+"classes": [
+{
+"id": 2001996,
+"name": "Fall Series (10/4-5) J/105",
+"num": 4
+}
+]
+},
+{
+"id": 17013,
+"name": "2025 J/105 Chesapeake Bay Championship",
+"start": "2025-10-18",
+"classes": [
+{
+"id": 56749,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50139,
+"name": "2025 Fall Brawl & J/105 Invitational",
+"start": "2025-10-25",
+"classes": [
+{
+"id": 2000714,
+"name": "J/105 - Overall",
+"num": 6
+},
+{
+"id": 2000713,
+"name": "J/105 - Visitor",
+"num": 5
+},
+{
+"id": 2000625,
+"name": "J/105 - Local",
+"num": 4
+}
+]
+},
+{
+"id": 50292,
+"name": "2025 Queen City Yacht Club Open Regatta",
+"start": "2025-09-06",
+"classes": [
+{
+"id": 2002022,
+"name": "J105",
+"num": 6
+}
+]
+},
+{
+"id": 50375,
+"name": "Liberty Cup Regatta & J105 NJYRA Championships",
+"start": "2025-09-13",
+"classes": [
+{
+"id": 2001475,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 50020,
+"name": "2025 Hospice Cup XLIV",
+"start": "2025-09-13",
+"classes": [
+{
+"id": 2001932,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50131,
+"name": "2025 Fawcett's Friday Night Beer Cans Series",
+"start": "2025-05-09",
+"classes": [
+{
+"id": 2000493,
+"name": "J/105",
+"num": 15
+}
+]
+},
+{
+"id": 50166,
+"name": "2025 AYC Wednesday Night - Series 2",
+"start": "2025-06-04",
+"classes": [
+{
+"id": 2001264,
+"name": "J/105",
+"num": 11
+}
+]
+},
+{
+"id": 17011,
+"name": "2025 Fall Race To Solomons",
+"start": "2025-09-20",
+"classes": [
+{
+"id": 56731,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 50257,
+"name": "Bi-State - St. Joseph to Chicago - 2025",
+"start": "2025-08-31",
+"classes": [
+{
+"id": 2000917,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 50259,
+"name": "Tri-State: Michigan City to Chicago - 2025",
+"start": "2025-09-01",
+"classes": [
+{
+"id": 2000935,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 50019,
+"name": "2025 J/105 Women\u2019s Regatta",
+"start": "2025-08-31",
+"classes": [
+{
+"id": 2001305,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 17007,
+"name": "2025 AYC Spring One Design Regatta",
+"start": "2025-04-26",
+"classes": [
+{
+"id": 56704,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 50223,
+"name": "2025 EYC Open",
+"start": "2025-08-23",
+"classes": [
+{
+"id": 2000781,
+"name": "J105",
+"num": 2
+}
+]
+},
+{
+"id": 50340,
+"name": "2025 NYC Open",
+"start": "2025-08-09",
+"classes": [
+{
+"id": 2001308,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 50136,
+"name": "2025 CRAB Cup",
+"start": "2025-08-16",
+"classes": [
+{
+"id": 2000609,
+"name": "J/105",
+"num": 15
+}
+]
+},
+{
+"id": 50164,
+"name": "2025 Mahone Bay Challenge Cup",
+"start": "2025-08-02",
+"classes": [
+{
+"id": 2001145,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 50398,
+"name": "21st Annual YRALIS Championship Regatta (PHRF and One-Design)",
+"start": "2025-08-02",
+"classes": [
+{
+"id": 2001579,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 50399,
+"name": "CYC Summer Regatta",
+"start": "2025-07-25",
+"classes": [
+{
+"id": 2001598,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 50071,
+"name": "2025 79th Annual Red Grant Regatta",
+"start": "2025-07-12",
+"classes": [
+{
+"id": 2000318,
+"name": "J/105 OD",
+"num": 3
+}
+]
+},
+{
+"id": 50073,
+"name": "127th Larchmont Race Week",
+"start": "2025-07-12",
+"classes": [
+{
+"id": 2001606,
+"name": "Cruising Boats J/105 One Design",
+"num": 11
+}
+]
+},
+{
+"id": 50142,
+"name": "2025 PCYC Open",
+"start": "2025-07-05",
+"classes": [
+{
+"id": 2001406,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 50134,
+"name": "2025 Boomerang Race",
+"start": "2025-06-27",
+"classes": [
+{
+"id": 2000522,
+"name": "J/105",
+"num": 21
+}
+]
+},
+{
+"id": 16844,
+"name": "2025 Storm Trysail Club Block Island Race Week",
+"start": "2025-06-23",
+"classes": [
+{
+"id": 56456,
+"name": "J/105 East Coast Championship",
+"num": 13
+}
+]
+},
+{
+"id": 50133,
+"name": "2025 One-Design Classic",
+"start": "2025-06-21",
+"classes": [
+{
+"id": 2000503,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50132,
+"name": "2025 Maryland Cures Cancer Regatta",
+"start": "2025-06-14",
+"classes": [
+{
+"id": 2000564,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 50165,
+"name": "2025 AYC Wednesday Night - Series 1",
+"start": "2025-04-23",
+"classes": [
+{
+"id": 2000666,
+"name": "J/105",
+"num": 11
+}
+]
+},
+{
+"id": 50018,
+"name": "2025 Ted Osius Memorial Twilight Regatta",
+"start": "2025-06-07",
+"classes": [
+{
+"id": 2001292,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 50301,
+"name": "2025 Bill Volk Memorial Regatta",
+"start": "2025-06-07",
+"classes": [
+{
+"id": 2001118,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 50209,
+"name": "2025 Annapolis to Miles River Race",
+"start": "2025-05-24",
+"classes": [
+{
+"id": 2000954,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 50017,
+"name": "2025 SCC EWE Spirit Cup",
+"start": "2025-05-17",
+"classes": [
+{
+"id": 2000693,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 50077,
+"name": "2025 American Yacht Club Spring Regatta",
+"start": "2025-05-02",
+"classes": [
+{
+"id": 2000336,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 16986,
+"name": "Charleston Yacht Club J105 Women's Regatta",
+"start": "2025-04-26",
+"classes": [
+{
+"id": 56535,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 16997,
+"name": "2025 AYC Hangover Bowl",
+"start": "2025-01-01",
+"classes": [
+{
+"id": 56616,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 50138,
+"name": "2025 Labor Day Regatta",
+"start": "2025-08-30",
+"classes": [
+{
+"id": 2000792,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 50236,
+"name": "2025 Great Lakes Intercollegiate Offshore Regatta (GLIOR)",
+"start": "2025-09-06",
+"classes": [
+{
+"id": 2002111,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 16807,
+"name": "20th  Annual YRALIS Championships Regatta (PHRF and One-Design)",
+"start": "2024-08-03",
+"classes": [
+{
+"id": 55313,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 16361,
+"name": "2024/2025 AYC Frostbite Series 1",
+"start": "2024-11-03",
+"classes": [
+{
+"id": 52967,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 2714,
+"name": "Eastport Yacht Club",
+"start": "2016-06-04",
+"classes": [
+{
+"id": 11813,
+"name": "J 105",
+"num": 15
+}
+]
+},
+{
+"id": 1340,
+"name": "Eastport Yacht Club",
+"start": "2015-05-30",
+"classes": [
+{
+"id": 8512,
+"name": "J 105",
+"num": 21
+}
+]
+},
+{
+"id": 16411,
+"name": "2025 Southernmost Regatta",
+"start": "2025-01-20",
+"classes": [
+{
+"id": 53211,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 4620,
+"name": "2018 Can One Thursday Night Series",
+"start": "2018-05-10",
+"classes": [
+{
+"id": 22018,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 1451,
+"name": "117th Larchmont Race Week",
+"start": "2015-07-11",
+"classes": [
+{
+"id": 9390,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 6240,
+"name": "121st Larchmont Race Week",
+"start": "2019-07-13",
+"classes": [
+{
+"id": 25098,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 14655,
+"name": "123rd Larchmont Race Week",
+"start": "2021-07-10",
+"classes": [
+{
+"id": 41655,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 15729,
+"name": "125th Larchmont Race Week",
+"start": "2023-07-15",
+"classes": [
+{
+"id": 49366,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 4660,
+"name": "120th Larchmont Race Week",
+"start": "2018-07-14",
+"classes": [
+{
+"id": 21596,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 2808,
+"name": "118th Larchmont Race Week",
+"start": "2016-07-16",
+"classes": [
+{
+"id": 12237,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 1658,
+"name": "2016 Stella Artois J 105 North American Championships",
+"start": "2016-10-19",
+"classes": [
+{
+"id": 10475,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 832,
+"name": "115th Larchmont Race Week",
+"start": "2013-07-13",
+"classes": [
+{
+"id": 7082,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 585,
+"name": "114th Larchmont Race Week",
+"start": "2012-07-12",
+"classes": [
+{
+"id": 5447,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 417,
+"name": "2010 Storm Trysail Club - Intercollegiate Offshore Regatta",
+"start": "2010-10-09",
+"classes": [
+{
+"id": 2094,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 226,
+"name": "2008 Storm Trysail Club - Intercollegiate Offshore Regatta",
+"start": "2008-10-11",
+"classes": [
+{
+"id": 838,
+"name": "Class 5 J/105",
+"num": 5
+}
+]
+},
+{
+"id": 162,
+"name": "2007 Storm Trysail Club - Intercollegiate Offshore Regatta",
+"start": "2007-10-06",
+"classes": [
+{
+"id": 375,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 105,
+"name": "2006 Storm Trysail Club - Intercollegiate Offshore Regatta",
+"start": "2006-10-07",
+"classes": [
+{
+"id": 79,
+"name": "J105",
+"num": 4
+}
+]
+},
+{
+"id": 4236,
+"name": "119th Larchmont Race Week",
+"start": "2017-07-15",
+"classes": [
+{
+"id": 16804,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 302,
+"name": "2009 Storm Trysail Club - Intercollegiate Offshore Regatta",
+"start": "2009-10-10",
+"classes": [
+{
+"id": 1406,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 13059,
+"name": "122nd Larchmont Race Week",
+"start": "2020-07-11",
+"classes": [
+{
+"id": 35414,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 15079,
+"name": "2022 A2C Lighthouse Challenge",
+"start": "2022-08-27",
+"classes": [
+{
+"id": 44038,
+"name": "J 105",
+"num": 36
+}
+]
+},
+{
+"id": 15957,
+"name": "2023 Maryland Cures Cancer Regatta",
+"start": "2023-06-24",
+"classes": [
+{
+"id": 48208,
+"name": "J/105",
+"num": 8
+}
+]
+},
+{
+"id": 16904,
+"name": "2024 J/Fest Southwest Regatta",
+"start": "2024-11-02",
+"classes": [
+{
+"id": 56053,
+"name": "j 105",
+"num": 4
+}
+]
+},
+{
+"id": 16938,
+"name": "2024 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2024-10-12",
+"classes": [
+{
+"id": 56255,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 16937,
+"name": "44th Annual George C. O\u2019Connell Fall Bay Regatta",
+"start": "2024-10-05",
+"classes": [
+{
+"id": 56244,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 16359,
+"name": "2024 AYC Fall Series - Lippincott Memorial Star Class Regatta",
+"start": "2024-09-28",
+"classes": [
+{
+"id": 52957,
+"name": "J/105",
+"num": 11
+}
+]
+},
+{
+"id": 16646,
+"name": "2024 Polonia Cup Regatta - CASRA",
+"start": "2024-09-15",
+"classes": [
+{
+"id": 54589,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 16418,
+"name": "2024 Rolex Big Boat Series",
+"start": "2024-09-11",
+"classes": [
+{
+"id": 53276,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 16406,
+"name": "2024 Sheldon Clark Regatta - CASRA",
+"start": "2024-09-14",
+"classes": [
+{
+"id": 53123,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 16653,
+"name": "2024 Hospice Cup XLIII",
+"start": "2024-09-14",
+"classes": [
+{
+"id": 54663,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 16627,
+"name": "2024 Queen City Yacht Club Open Regatta",
+"start": "2024-09-07",
+"classes": [
+{
+"id": 54419,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 16791,
+"name": "2024 Liberty Cup Regatta",
+"start": "2024-09-07",
+"classes": [
+{
+"id": 55238,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 16867,
+"name": "Navy Fall Race to Cambridge",
+"start": "2024-09-07",
+"classes": [
+{
+"id": 55729,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 16342,
+"name": "2024 J105 North American Championship",
+"start": "2024-09-24",
+"classes": [
+{
+"id": 52828,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 16643,
+"name": "2024 Bi-State: St Joe to Chicago - CASRA",
+"start": "2024-09-01",
+"classes": [
+{
+"id": 54556,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 16574,
+"name": "2024 EYC Open",
+"start": "2024-08-24",
+"classes": [
+{
+"id": 54162,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 16835,
+"name": "2024 Labor Day Invitational",
+"start": "2024-08-31",
+"classes": [
+{
+"id": 55490,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 16360,
+"name": "2024 J/105 Chesapeake Bay Championship",
+"start": "2024-10-19",
+"classes": [
+{
+"id": 52962,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 16314,
+"name": "2024 American Yacht Club Fall Regatta",
+"start": "2024-09-28",
+"classes": [
+{
+"id": 52680,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 16757,
+"name": "2024 Queen City / Mayor's Cup Regatta",
+"start": "2024-08-17",
+"classes": [
+{
+"id": 55064,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 16419,
+"name": "2024 Phyllis Kleinman Swiftsure Regatta",
+"start": "2024-08-17",
+"classes": [
+{
+"id": 55031,
+"name": "J/105",
+"num": 11
+}
+]
+},
+{
+"id": 16501,
+"name": "2024 CRAB Cup",
+"start": "2024-08-17",
+"classes": [
+{
+"id": 55848,
+"name": "J/105",
+"num": 23
+}
+]
+},
+{
+"id": 16560,
+"name": "2024 Seafarers Regatta - CANCELLED",
+"start": "2024-09-21",
+"classes": [
+{
+"id": 54135,
+"name": "J/105",
+"num": 23
+}
+]
+},
+{
+"id": 16847,
+"name": "87th Annual Falcon Cup Race / 28th Annual Sundance Trophy Race",
+"start": "2024-08-10",
+"classes": [
+{
+"id": 55614,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 16408,
+"name": "2024 Helly Hansen Chester Race Week",
+"start": "2024-08-14",
+"classes": [
+{
+"id": 55877,
+"name": "J 105",
+"num": 17
+}
+]
+},
+{
+"id": 16878,
+"name": "57th Annual Regatta for The Dorade Trophy",
+"start": "2024-08-05",
+"classes": [
+{
+"id": 55833,
+"name": "Class 2 J-105",
+"num": 2
+}
+]
+},
+{
+"id": 16263,
+"name": "2024 Helly Hansen Sailing World Regatta Series - Marblehead",
+"start": "2024-07-25",
+"classes": [
+{
+"id": 52324,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 16349,
+"name": "2024 AYC Wednesday Night - Series 3",
+"start": "2024-07-24",
+"classes": [
+{
+"id": 52895,
+"name": "J/105",
+"num": 14
+}
+]
+},
+{
+"id": 16311,
+"name": "2024 Super Mac Race",
+"start": "2024-07-13",
+"classes": [
+{
+"id": 55602,
+"name": "CYC - J105",
+"num": 11
+}
+]
+},
+{
+"id": 16348,
+"name": "2024 AYC Wednesday Night - Series 2",
+"start": "2024-06-05",
+"classes": [
+{
+"id": 52878,
+"name": "J/105",
+"num": 14
+}
+]
+},
+{
+"id": 16810,
+"name": "2024 Ted Hood Regatta",
+"start": "2024-08-16",
+"classes": [
+{
+"id": 55334,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 16691,
+"name": "2024 PCYC Open",
+"start": "2024-07-06",
+"classes": [
+{
+"id": 54764,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 16798,
+"name": "2024 CYC Charity Cup",
+"start": "2024-07-25",
+"classes": [
+{
+"id": 55268,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 15768,
+"name": "2023 Tri-State: Chicago to St. Joe",
+"start": "2023-09-01",
+"classes": [
+{
+"id": 47497,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 16538,
+"name": "2024 Boomerang Race",
+"start": "2024-06-28",
+"classes": [
+{
+"id": 53914,
+"name": "J/105",
+"num": 21
+}
+]
+},
+{
+"id": 16637,
+"name": "Chicago - Michigan City - Chicago",
+"start": "2024-06-28",
+"classes": [
+{
+"id": 54497,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 16743,
+"name": "2024 Halyard Hustle Race",
+"start": "2024-06-16",
+"classes": [
+{
+"id": 55011,
+"name": "Performance J/105",
+"num": 3
+}
+]
+},
+{
+"id": 16347,
+"name": "2024 AYC Wednesday Night - Series 1",
+"start": "2024-04-24",
+"classes": [
+{
+"id": 52861,
+"name": "J/105",
+"num": 14
+}
+]
+},
+{
+"id": 16398,
+"name": "J FEST Seattle 2024",
+"start": "2024-06-15",
+"classes": [
+{
+"id": 54753,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 16262,
+"name": "2024 Helly Hansen Sailing World Regatta Series - Chicago",
+"start": "2024-06-07",
+"classes": [
+{
+"id": 52316,
+"name": "J/105",
+"num": 13
+}
+]
+},
+{
+"id": 16737,
+"name": "2024 Ted Osius Memorial Twilight Regatta",
+"start": "2024-06-08",
+"classes": [
+{
+"id": 54945,
+"name": "J/105",
+"num": 11
+}
+]
+},
+{
+"id": 16353,
+"name": "2024 AYC Annual Regatta",
+"start": "2024-07-27",
+"classes": [
+{
+"id": 52920,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 16633,
+"name": "2024 Spring Opener - CASRA",
+"start": "2024-05-25",
+"classes": [
+{
+"id": 54439,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 16427,
+"name": "SCC EWE Spirit Cup",
+"start": "2024-05-18",
+"classes": [
+{
+"id": 55089,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 16357,
+"name": "2024 Fall Race To Solomons",
+"start": "2024-09-21",
+"classes": [
+{
+"id": 55830,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 16761,
+"name": "2024 Great Lakes Intercollegiate Offshore Regatta (GLIOR)",
+"start": "2024-09-21",
+"classes": [
+{
+"id": 55098,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 16400,
+"name": "2024 CYC Monroe Skyline Series",
+"start": "2024-05-15",
+"classes": [
+{
+"id": 55127,
+"name": "J105 & 36.7",
+"num": 5
+}
+]
+},
+{
+"id": 16636,
+"name": "2024 Waukegan to Chicago - CASRA",
+"start": "2024-06-23",
+"classes": [
+{
+"id": 54488,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 16635,
+"name": "2024 Chicago to Waukegan - CASRA",
+"start": "2024-06-22",
+"classes": [
+{
+"id": 54479,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 16415,
+"name": "2024 Chicago Beer Can Series",
+"start": "2024-05-22",
+"classes": [
+{
+"id": 55101,
+"name": "J/105",
+"num": 10
+}
+]
+},
+{
+"id": 16650,
+"name": "2024 Blue Water Regatta",
+"start": "2024-08-03",
+"classes": [
+{
+"id": 54627,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 15741,
+"name": "2024 Southernmost Regatta",
+"start": "2024-01-15",
+"classes": [
+{
+"id": 47952,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 16424,
+"name": "2024 Spring Fest",
+"start": "2024-04-06",
+"classes": [
+{
+"id": 54242,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 16426,
+"name": "2024 J/105 Women\u2019s Regatta",
+"start": "2024-09-01",
+"classes": [
+{
+"id": 53340,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 16374,
+"name": "2024 Cedar Point One Design Regatta - Keelboat",
+"start": "2024-06-01",
+"classes": [
+{
+"id": 52993,
+"name": "J105",
+"num": 2
+}
+]
+},
+{
+"id": 16525,
+"name": "2024 Fawcett's Friday Night Beer Can Series",
+"start": "2024-05-17",
+"classes": [
+{
+"id": 53811,
+"name": "J/105",
+"num": 14
+}
+]
+},
+{
+"id": 16453,
+"name": "2024 78th Annual Red Grant Regatta",
+"start": "2024-07-13",
+"classes": [
+{
+"id": 53787,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 16477,
+"name": "2024 One-Design Classic",
+"start": "2024-06-22",
+"classes": [
+{
+"id": 53586,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 16412,
+"name": "74th Down the Bay Race for the Virginia Cruising Cup",
+"start": "2024-05-24",
+"classes": [
+{
+"id": 53225,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 15586,
+"name": "Charleston Yacht Club J105 Women's Regatta",
+"start": "2024-04-27",
+"classes": [
+{
+"id": 46771,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 16303,
+"name": "2024 Race Week Anacortes",
+"start": "2024-06-24",
+"classes": [
+{
+"id": 55495,
+"name": "J105",
+"num": 25
+}
+]
+},
+{
+"id": 16350,
+"name": "2024 AYC Spring One Design Regatta",
+"start": "2024-04-27",
+"classes": [
+{
+"id": 52904,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 16312,
+"name": "2024 American Yacht Club Spring Regatta",
+"start": "2024-05-03",
+"classes": [
+{
+"id": 52663,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 16346,
+"name": "2023/2024 AYC Frostbite Series 2",
+"start": "2024-02-04",
+"classes": [
+{
+"id": 52846,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 15848,
+"name": "2023 J/105 Chesapeake Bay Championship",
+"start": "2023-10-21",
+"classes": [
+{
+"id": 47968,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 15883,
+"name": "2023 Can One Thursday Night Series",
+"start": "2023-05-11",
+"classes": [
+{
+"id": 47925,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 15663,
+"name": "2023/2024 AYC Frostbite Series 1",
+"start": "2023-11-05",
+"classes": [
+{
+"id": 52415,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 16268,
+"name": "2023 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2023-10-07",
+"classes": [
+{
+"id": 52378,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 15597,
+"name": "The British Virgin Islands 2023 J/105 North American Championship",
+"start": "2023-10-05",
+"classes": [
+{
+"id": 46758,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 15670,
+"name": "2023 American Yacht Club Fall Regatta, J/88 Long Island Sound Championship and J/109 East Coast Championship",
+"start": "2023-09-23",
+"classes": [
+{
+"id": 51142,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 16166,
+"name": "2023 Hospice Cup XLII",
+"start": "2023-09-16",
+"classes": [
+{
+"id": 51589,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 15807,
+"name": "2023 Rolex Big Boat Series",
+"start": "2023-09-14",
+"classes": [
+{
+"id": 48132,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 15860,
+"name": "2023 Queen City Yacht Club Open Regatta",
+"start": "2023-09-09",
+"classes": [
+{
+"id": 47836,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 16007,
+"name": "2023 Annapolis Labor Day Regatta",
+"start": "2023-09-02",
+"classes": [
+{
+"id": 50838,
+"name": "J/105",
+"num": 20
+}
+]
+},
+{
+"id": 15769,
+"name": "2023 Bi-State: St Joe to Chicago - CASRA",
+"start": "2023-09-03",
+"classes": [
+{
+"id": 47768,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 16239,
+"name": "43rd Annual George C. O\u2019Connell Fall Bay Regatta",
+"start": "2023-09-23",
+"classes": [
+{
+"id": 52095,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 15948,
+"name": "2023 CRAB Cup",
+"start": "2023-08-19",
+"classes": [
+{
+"id": 48172,
+"name": "J/105",
+"num": 32
+}
+]
+},
+{
+"id": 15803,
+"name": "2023 Verve Cup Offshore Regatta",
+"start": "2023-08-11",
+"classes": [
+{
+"id": 47614,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 16151,
+"name": "19th Annual YRALIS Championships Regatta (PHRF and One-Design)",
+"start": "2023-08-05",
+"classes": [
+{
+"id": 51502,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 16196,
+"name": "2023 EYC Open",
+"start": "2023-08-26",
+"classes": [
+{
+"id": 51797,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 16146,
+"name": "2023 Ted Hood Regatta",
+"start": "2023-08-18",
+"classes": [
+{
+"id": 51425,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 15654,
+"name": "2023 AYC Wednesday Night - Series 3",
+"start": "2023-07-26",
+"classes": [
+{
+"id": 51130,
+"name": "J/105",
+"num": 13
+}
+]
+},
+{
+"id": 16100,
+"name": "56th Annual Regatta for The Dorade Trophy",
+"start": "2023-08-07",
+"classes": [
+{
+"id": 51073,
+"name": "Class 2 J-105",
+"num": 2
+}
+]
+},
+{
+"id": 15658,
+"name": "2023 AYC Annual Regatta",
+"start": "2023-07-22",
+"classes": [
+{
+"id": 47686,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 16169,
+"name": "86th Annual Falcon Cup Race / 27th Annual Sundance Trophy Race",
+"start": "2023-08-12",
+"classes": [
+{
+"id": 51619,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 16143,
+"name": "2023 J/Fest Southwest Regatta",
+"start": "2023-10-07",
+"classes": [
+{
+"id": 51406,
+"name": "j 105",
+"num": 4
+}
+]
+},
+{
+"id": 16090,
+"name": "2023 CYC Charity Cup",
+"start": "2023-07-27",
+"classes": [
+{
+"id": 51013,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 15806,
+"name": "2023 Aldo Alessio Race",
+"start": "2023-08-18",
+"classes": [
+{
+"id": 51891,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 15965,
+"name": "2023 Great Lakes Intercollegiate Offshore Regatta (GLIOR)",
+"start": "2023-09-22",
+"classes": [
+{
+"id": 48224,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 16107,
+"name": "2023 PCYC Open & J/70 Canadian Championship",
+"start": "2023-07-08",
+"classes": [
+{
+"id": 51166,
+"name": "J 105",
+"num": 10
+}
+]
+},
+{
+"id": 15653,
+"name": "2023 AYC Wednesday Night - Series 2",
+"start": "2023-06-07",
+"classes": [
+{
+"id": 51104,
+"name": "J/105",
+"num": 13
+}
+]
+},
+{
+"id": 16073,
+"name": "2023 Red Grant Regatta",
+"start": "2023-07-08",
+"classes": [
+{
+"id": 50861,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 15506,
+"name": "2023 Helly Hansen Sailing World Regatta Series - Annapolis",
+"start": "2023-05-05",
+"classes": [
+{
+"id": 47098,
+"name": "J/105",
+"num": 34
+}
+]
+},
+{
+"id": 16018,
+"name": "2023 Liberty Cup Regatta",
+"start": "2023-09-09",
+"classes": [
+{
+"id": 49563,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 15652,
+"name": "2023 AYC Wednesday Night - Series 1",
+"start": "2023-04-26",
+"classes": [
+{
+"id": 47025,
+"name": "J/105",
+"num": 13
+}
+]
+},
+{
+"id": 15655,
+"name": "2023 AYC Spring One Design Regatta",
+"start": "2023-04-29",
+"classes": [
+{
+"id": 46975,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 15669,
+"name": "2023 American Yacht Club Spring Regatta",
+"start": "2023-05-05",
+"classes": [
+{
+"id": 47127,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 16002,
+"name": "2023 Boomerang Race",
+"start": "2023-07-08",
+"classes": [
+{
+"id": 49517,
+"name": "J/105",
+"num": 22
+}
+]
+},
+{
+"id": 15662,
+"name": "2023 AYC Fall Series",
+"start": "2023-09-30",
+"classes": [
+{
+"id": 49439,
+"name": "J/105",
+"num": 11
+}
+]
+},
+{
+"id": 15867,
+"name": "2023 Fawcett's Friday Night Beer Can Series",
+"start": "2023-05-19",
+"classes": [
+{
+"id": 47977,
+"name": "J/105",
+"num": 14
+}
+]
+},
+{
+"id": 15866,
+"name": "2023 One-Design Classic",
+"start": "2023-06-17",
+"classes": [
+{
+"id": 47863,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 15101,
+"name": "2022 Race to the Lighthouses",
+"start": "2022-04-23",
+"classes": [
+{
+"id": 44530,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 15771,
+"name": "2023 Tri-State: Michigan City - Chicago - CASRA",
+"start": "2023-09-04",
+"classes": [
+{
+"id": 47759,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 15452,
+"name": "2022 Halyard Hustle Race",
+"start": "2022-08-27",
+"classes": [
+{
+"id": 46074,
+"name": "J 105",
+"num": 10
+}
+]
+},
+{
+"id": 15762,
+"name": "2023 Waukegan to Chicago - CASRA",
+"start": "2023-06-25",
+"classes": [
+{
+"id": 51331,
+"name": "MWPHRF-J-105 One Design",
+"num": 7
+}
+]
+},
+{
+"id": 15761,
+"name": "2023 Chicago to Waukegan - CASRA",
+"start": "2023-06-24",
+"classes": [
+{
+"id": 51294,
+"name": "MWPHRF-J105 One Design",
+"num": 7
+}
+]
+},
+{
+"id": 15737,
+"name": "2023 J/105 Women\u2019s Regatta",
+"start": "2023-09-03",
+"classes": [
+{
+"id": 47244,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 14910,
+"name": "2022/2023 AYC Frostbite Series 2",
+"start": "2023-02-05",
+"classes": [
+{
+"id": 46854,
+"name": "J/105",
+"num": 9
+}
+]
+},
+{
+"id": 15736,
+"name": "2023 J/105 Midwinter Regatta",
+"start": "2023-03-09",
+"classes": [
+{
+"id": 47243,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 15690,
+"name": "2023 Blue Water Regatta",
+"start": "2023-08-05",
+"classes": [
+{
+"id": 47109,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 15681,
+"name": "2023 Helly Hansen Chester Race Week",
+"start": "2023-08-16",
+"classes": [
+{
+"id": 51831,
+"name": "J105",
+"num": 16
+}
+]
+},
+{
+"id": 15526,
+"name": "2023 Cedar Point One Design Regatta - Keelboat",
+"start": "2023-06-03",
+"classes": [
+{
+"id": 46775,
+"name": "J105",
+"num": 4
+}
+]
+},
+{
+"id": 15582,
+"name": "2023 Race Week Anacortes",
+"start": "2023-06-26",
+"classes": [
+{
+"id": 46815,
+"name": "3--J105",
+"num": 3
+}
+]
+},
+{
+"id": 14908,
+"name": "2022 J/105 Chesapeake Bay Championship",
+"start": "2022-10-22",
+"classes": [
+{
+"id": 45981,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 15291,
+"name": "2022 J/Fest Southwest Regatta",
+"start": "2022-10-22",
+"classes": [
+{
+"id": 45120,
+"name": "j 105",
+"num": 4
+}
+]
+},
+{
+"id": 15491,
+"name": "2022 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2022-10-08",
+"classes": [
+{
+"id": 46392,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 14909,
+"name": "2022/2023 AYC Frostbite Series 1",
+"start": "2022-11-06",
+"classes": [
+{
+"id": 46425,
+"name": "J/105",
+"num": 9
+}
+]
+},
+{
+"id": 14898,
+"name": "2022 Fall Race To Solomons",
+"start": "2022-09-24",
+"classes": [
+{
+"id": 44653,
+"name": "J/105",
+"num": 11
+}
+]
+},
+{
+"id": 15171,
+"name": "2022 Sheldon Clark Regatta - CASRA",
+"start": "2022-09-17",
+"classes": [
+{
+"id": 44496,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 15026,
+"name": "2022 Rolex Big Boat Series",
+"start": "2022-09-14",
+"classes": [
+{
+"id": 43674,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 14896,
+"name": "2022 Annapolis Labor Day Regatta",
+"start": "2022-09-03",
+"classes": [
+{
+"id": 44694,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 15165,
+"name": "2022 Tri-State: Chicago to St. Joe - CASRA",
+"start": "2022-09-02",
+"classes": [
+{
+"id": 44452,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 15400,
+"name": "2022 Aldo Alessio Race & Phyllis Kleinman Swiftsure Regatta",
+"start": "2022-08-19",
+"classes": [
+{
+"id": 45724,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 15294,
+"name": "2022 Ted Hood Regatta",
+"start": "2022-08-19",
+"classes": [
+{
+"id": 45177,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 15369,
+"name": "2022 Verve Cup Offshore Regatta",
+"start": "2022-08-19",
+"classes": [
+{
+"id": 45905,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 15021,
+"name": "2022 American Yacht Club Fall Regatta, Leukemia Cup, and J/105 New England Championship",
+"start": "2022-09-24",
+"classes": [
+{
+"id": 46468,
+"name": "J 105 New England Championship",
+"num": 4
+},
+{
+"id": 43653,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14940,
+"name": "2022 Columbia Cup Regatta",
+"start": "2022-08-06",
+"classes": [
+{
+"id": 43280,
+"name": "Buoy J/105",
+"num": 3
+}
+]
+},
+{
+"id": 15168,
+"name": "2022 Tri-State: Michigan City - Chicago - CASRA",
+"start": "2022-09-05",
+"classes": [
+{
+"id": 44479,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 15359,
+"name": "2022 Blue Water Regatta",
+"start": "2022-08-06",
+"classes": [
+{
+"id": 45511,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 15401,
+"name": "55th Annual Regatta for The Dorade Trophy",
+"start": "2022-08-08",
+"classes": [
+{
+"id": 45829,
+"name": "Class 3 J-105 / J-109",
+"num": 3
+}
+]
+},
+{
+"id": 15019,
+"name": "2022 Hospice Cup XLI",
+"start": "2022-09-17",
+"classes": [
+{
+"id": 45946,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 15010,
+"name": "2022 J/105 North American Championship",
+"start": "2022-09-26",
+"classes": [
+{
+"id": 45126,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 14804,
+"name": "2022 Helly Hansen Sailing World Regatta Series - Marblehead",
+"start": "2022-07-28",
+"classes": [
+{
+"id": 45200,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 14895,
+"name": "2022 AYC Annual Regatta",
+"start": "2022-07-23",
+"classes": [
+{
+"id": 43584,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 14993,
+"name": "2022 I-LYA BAYWEEK SAIL REGATTA",
+"start": "2022-08-05",
+"classes": [
+{
+"id": 45929,
+"name": "PHRF J-105",
+"num": 6
+}
+]
+},
+{
+"id": 15122,
+"name": "2022 Long Island Sound Championship",
+"start": "2022-09-17",
+"classes": [
+{
+"id": 44211,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 15409,
+"name": "2022 EYC Open",
+"start": "2022-08-27",
+"classes": [
+{
+"id": 45747,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14988,
+"name": "2022 ABYC J Fest",
+"start": "2022-07-23",
+"classes": [
+{
+"id": 43333,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 15160,
+"name": "2022 Chicago to Michigan City to Chicago - CASRA",
+"start": "2022-07-07",
+"classes": [
+{
+"id": 45649,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 15399,
+"name": "2022 New Rochelle/La Rochelle Mayors' Cup Regatta",
+"start": "2022-08-21",
+"classes": [
+{
+"id": 45704,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 15383,
+"name": "85th Annual Falcon Cup Race / 26th Annual Sundance Trophy Race",
+"start": "2022-08-13",
+"classes": [
+{
+"id": 45954,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 15179,
+"name": "2022 Cleveland Race Week - Offshore Regatta",
+"start": "2022-06-21",
+"classes": [
+{
+"id": 45549,
+"name": "PHRF C J 105",
+"num": 6
+},
+{
+"id": 44741,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 15356,
+"name": "2022 PCYC Open",
+"start": "2022-07-09",
+"classes": [
+{
+"id": 45497,
+"name": "J 105",
+"num": 10
+}
+]
+},
+{
+"id": 15082,
+"name": "2022 Boomerang Race",
+"start": "2022-07-09",
+"classes": [
+{
+"id": 44076,
+"name": "J 105",
+"num": 29
+}
+]
+},
+{
+"id": 15076,
+"name": "2022 One-Design Classic",
+"start": "2022-06-18",
+"classes": [
+{
+"id": 43988,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 15221,
+"name": "2022 Great Lakes Intercollegiate Offshore Regatta (GLIOR)",
+"start": "2022-09-23",
+"classes": [
+{
+"id": 44756,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 14925,
+"name": "2022 Race Week Anacortes",
+"start": "2022-06-20",
+"classes": [
+{
+"id": 43015,
+"name": "J105",
+"num": 6
+}
+]
+},
+{
+"id": 15317,
+"name": "2022 Liberty Cup Regatta",
+"start": "2022-09-10",
+"classes": [
+{
+"id": 45276,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 15284,
+"name": "2022 CYC Belmont Skyline Series",
+"start": "2022-05-18",
+"classes": [
+{
+"id": 45039,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14482,
+"name": "2021 Great Lakes Intercollegiate Offshore Regatta",
+"start": "2021-09-24",
+"classes": [
+{
+"id": 42579,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 15209,
+"name": "2022 Queen City Yacht Club Open Regatta",
+"start": "2022-09-10",
+"classes": [
+{
+"id": 44722,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 14890,
+"name": "2022 AYC Spring One Design Regatta",
+"start": "2022-04-30",
+"classes": [
+{
+"id": 43580,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 14765,
+"name": "2021 EYC Open",
+"start": "2021-08-28",
+"classes": [
+{
+"id": 42531,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 14983,
+"name": "2022 American Yacht Club Spring Regatta",
+"start": "2022-04-23",
+"classes": [
+{
+"id": 43359,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 14697,
+"name": "84th Annual Falcon Cup Race / 25th Annual Sundance Trophy Race",
+"start": "2021-08-07",
+"classes": [
+{
+"id": 42298,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 15213,
+"name": "2022 Can One Thursday Night Series",
+"start": "2022-05-05",
+"classes": [
+{
+"id": 44898,
+"name": "J/105",
+"num": 6
+}
+]
+},
+{
+"id": 14512,
+"name": "2021 Tri-State: Michigan City - Chicago - CASRA",
+"start": "2021-09-06",
+"classes": [
+{
+"id": 40843,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14307,
+"name": "2021/2022 AYC Frostbite Series 2",
+"start": "2022-02-06",
+"classes": [
+{
+"id": 43077,
+"name": "J/105",
+"num": 9
+}
+]
+},
+{
+"id": 13152,
+"name": "2021 J/105 North American Championship",
+"start": "2021-10-28",
+"classes": [
+{
+"id": 36877,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 15087,
+"name": "2022 J/105 Women\u2019s Regatta",
+"start": "2022-06-25",
+"classes": [
+{
+"id": 44096,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 15159,
+"name": "2022 Waukegan to Chicago - CASRA",
+"start": "2022-06-26",
+"classes": [
+{
+"id": 44424,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 14776,
+"name": "2021 J 105 Canadian Championships",
+"start": "2021-09-24",
+"classes": [
+{
+"id": 42391,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 15180,
+"name": "2022 Cleveland Race Week - One Design",
+"start": "2022-06-17",
+"classes": [
+{
+"id": 44738,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 15070,
+"name": "2022 Maryland Leukemia Cup Regatta",
+"start": "2022-06-04",
+"classes": [
+{
+"id": 44021,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 15068,
+"name": "2022 Helly Hansen Chester Race Week",
+"start": "2022-08-10",
+"classes": [
+{
+"id": 45797,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 15012,
+"name": "2022 Fawcett's Friday Night Beer Can Series",
+"start": "2022-05-07",
+"classes": [
+{
+"id": 45190,
+"name": "J 105",
+"num": 12
+}
+]
+},
+{
+"id": 14556,
+"name": "2021 Herb Kaczmarek Regatta - CASRA",
+"start": "2021-10-02",
+"classes": [
+{
+"id": 41062,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14292,
+"name": "2021 American Yacht Club Fall Regatta",
+"start": "2021-09-25",
+"classes": [
+{
+"id": 42736,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14771,
+"name": "2021 J/Fest Southwest Regatta",
+"start": "2021-10-02",
+"classes": [
+{
+"id": 42353,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 14931,
+"name": "2022 Cedar Point One Design Regatta - Keelboat",
+"start": "2022-06-04",
+"classes": [
+{
+"id": 43035,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 14306,
+"name": "2021/2022 AYC Frostbite Series 1, Hangover Bowl",
+"start": "2021-11-07",
+"classes": [
+{
+"id": 42803,
+"name": "J/105",
+"num": 9
+}
+]
+},
+{
+"id": 14282,
+"name": "CHROMA 2021 Ol' Man of the Sea Regatta",
+"start": "2021-10-15",
+"classes": [
+{
+"id": 41601,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 14515,
+"name": "2021 J 105 NA Dust-Up",
+"start": "2021-10-17",
+"classes": [
+{
+"id": 41559,
+"name": "j 105",
+"num": 1
+}
+]
+},
+{
+"id": 14505,
+"name": "2021 Waukegan to Chicago - CASRA",
+"start": "2021-06-20",
+"classes": [
+{
+"id": 40803,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14418,
+"name": "2021 Can One Thursday Night Series",
+"start": "2021-05-06",
+"classes": [
+{
+"id": 41241,
+"name": "J/88 + J/105",
+"num": 4
+}
+]
+},
+{
+"id": 14374,
+"name": "2021 AYC Doublehanded Distance Race",
+"start": "2021-10-02",
+"classes": [
+{
+"id": 39131,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 14304,
+"name": "2021 AYC Fall Series",
+"start": "2021-10-02",
+"classes": [
+{
+"id": 39174,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 11807,
+"name": "2021 Storm Trysail Club / Larchmont Yacht Club - Intercollegiate Offshore Regatta",
+"start": "2021-10-09",
+"classes": [
+{
+"id": 33213,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 14309,
+"name": "2021 AYC Wednesday Night - Series 3",
+"start": "2021-07-28",
+"classes": [
+{
+"id": 39162,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 14308,
+"name": "2021 AYC Wednesday Night - Series 2",
+"start": "2021-06-02",
+"classes": [
+{
+"id": 39150,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 14652,
+"name": "2021 Chicago Regatta - Buoy, Distance and DF65 Races",
+"start": "2021-09-11",
+"classes": [
+{
+"id": 42647,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 14602,
+"name": "2021 Liberty Cup Regatta",
+"start": "2021-09-18",
+"classes": [
+{
+"id": 41285,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 14453,
+"name": "2021 Rolex Big Boat Series",
+"start": "2021-09-15",
+"classes": [
+{
+"id": 39569,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 14275,
+"name": "2021 Long Island Sound Championship",
+"start": "2021-09-18",
+"classes": [
+{
+"id": 40945,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 14459,
+"name": "2021 Chicago Beer Can Series",
+"start": "2021-05-19",
+"classes": [
+{
+"id": 39610,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 14431,
+"name": "2021 Annapolis Labor Day Regatta",
+"start": "2021-09-04",
+"classes": [
+{
+"id": 39453,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 14508,
+"name": "2021 Tri-State: Chicago to St. Joe - CASRA",
+"start": "2021-09-03",
+"classes": [
+{
+"id": 40815,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14514,
+"name": "2021 100 Boats on a Beercan",
+"start": "2021-08-10",
+"classes": [
+{
+"id": 40853,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14694,
+"name": "2021 Aldo Alessio; Phyllis Kleinman Swiftsure Cup; Santa Cruz 27 National Championship",
+"start": "2021-08-20",
+"classes": [
+{
+"id": 41942,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14401,
+"name": "2021 Helly Hansen Chester Race Week",
+"start": "2021-08-11",
+"classes": [
+{
+"id": 39560,
+"name": "J105 PHRF - Inshore",
+"num": 13
+}
+]
+},
+{
+"id": 14617,
+"name": "2021 Verve Cup Offshore Regatta",
+"start": "2021-08-13",
+"classes": [
+{
+"id": 41380,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 14696,
+"name": "2021 Mentor Harbor Yachting Club Invitational Regatta",
+"start": "2021-08-08",
+"classes": [
+{
+"id": 41955,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 14724,
+"name": "54th Annual Regatta for The Dorade Trophy",
+"start": "2021-08-09",
+"classes": [
+{
+"id": 42115,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 14676,
+"name": "2021 Blue Water Regatta",
+"start": "2021-08-07",
+"classes": [
+{
+"id": 41834,
+"name": "J/105",
+"num": 10
+}
+]
+},
+{
+"id": 14552,
+"name": "2021 Hobelman Regatta - CASRA",
+"start": "2021-07-31",
+"classes": [
+{
+"id": 41030,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14707,
+"name": "2021 J Fest Great Lakes Regatta",
+"start": "2021-07-24",
+"classes": [
+{
+"id": 42045,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 14301,
+"name": "2021 AYC Annual Regatta",
+"start": "2021-07-24",
+"classes": [
+{
+"id": 38787,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 13228,
+"name": "2021 Helly Hansen NOOD Regatta Marblehead",
+"start": "2021-07-22",
+"classes": [
+{
+"id": 41463,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 14503,
+"name": "2021 Third Coast Cup - CASRA",
+"start": "2021-07-03",
+"classes": [
+{
+"id": 40785,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14333,
+"name": "2021 Red Grant Regatta",
+"start": "2021-07-16",
+"classes": [
+{
+"id": 39244,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 13078,
+"name": "16th Annual YRALIS Championships Regatta (PHRF and One-Design)",
+"start": "2020-08-01",
+"classes": [
+{
+"id": 35538,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14265,
+"name": "2021 Race Week Anacortes",
+"start": "2021-06-21",
+"classes": [
+{
+"id": 41540,
+"name": "J105",
+"num": 6
+}
+]
+},
+{
+"id": 14387,
+"name": "2021 One-Design Classic",
+"start": "2021-06-05",
+"classes": [
+{
+"id": 39024,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 12983,
+"name": "2021 Cedar Point One Design Regatta - Keelboat",
+"start": "2021-06-05",
+"classes": [
+{
+"id": 35048,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 14458,
+"name": "2021 NYYC Leukemia Cup Regatta",
+"start": "2021-06-05",
+"classes": [
+{
+"id": 39597,
+"name": "J 105",
+"num": 15
+}
+]
+},
+{
+"id": 14300,
+"name": "2021 Spring Race to Oxford",
+"start": "2021-05-08",
+"classes": [
+{
+"id": 38802,
+"name": "J 105",
+"num": 16
+}
+]
+},
+{
+"id": 14298,
+"name": "2021 AYC Spring One Design Regatta",
+"start": "2021-04-25",
+"classes": [
+{
+"id": 38722,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 14291,
+"name": "2021 American Yacht Club Spring Regatta and Melges IC37 East Coast Championship",
+"start": "2021-04-24",
+"classes": [
+{
+"id": 41103,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 14281,
+"name": "2021 FWBC Annual Regatta",
+"start": "2021-04-23",
+"classes": [
+{
+"id": 39251,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 13213,
+"name": "2020/2021 AYC Frostbite Series 2",
+"start": "2021-02-07",
+"classes": [
+{
+"id": 37277,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 13225,
+"name": "2021 Helly Hansen NOOD Regatta San Diego",
+"start": "2021-03-19",
+"classes": [
+{
+"id": 38662,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 14324,
+"name": "2021 J/105 Midwinter Regatta",
+"start": "2021-03-11",
+"classes": [
+{
+"id": 38736,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 13229,
+"name": "J Fest 1 - 2021",
+"start": "2021-01-22",
+"classes": [
+{
+"id": 37357,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 13212,
+"name": "2020/2021 AYC Frostbite Series 1",
+"start": "2020-11-08",
+"classes": [
+{
+"id": 37267,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 12907,
+"name": "2020 FWBC Annual Regatta",
+"start": "2020-10-30",
+"classes": [
+{
+"id": 34708,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 13156,
+"name": "2020 J/105 Chesapeake Bay Championship",
+"start": "2020-10-31",
+"classes": [
+{
+"id": 36888,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 11748,
+"name": "2020 AYC Fall Series",
+"start": "2020-10-03",
+"classes": [
+{
+"id": 32960,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 11749,
+"name": "2020 Annapolis Y.C. Double Handed Distance Race",
+"start": "2020-10-03",
+"classes": [
+{
+"id": 32971,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 13049,
+"name": "2020 J/Fest Southwest Regatta",
+"start": "2020-10-10",
+"classes": [
+{
+"id": 35360,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 13193,
+"name": "2020 216 Regatta",
+"start": "2020-10-03",
+"classes": [
+{
+"id": 37111,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 13165,
+"name": "2020 Herb Kaczmarek Buoy - CASRA",
+"start": "2020-10-03",
+"classes": [
+{
+"id": 37247,
+"name": "J-105",
+"num": 2
+}
+]
+},
+{
+"id": 13197,
+"name": "42nd Annual Manhasset Bay Y.C. Fall Series",
+"start": "2020-10-03",
+"classes": [
+{
+"id": 37138,
+"name": "j105",
+"num": 3
+}
+]
+},
+{
+"id": 13075,
+"name": "2020 CYC Belmont Skyline Series",
+"start": "2020-07-15",
+"classes": [
+{
+"id": 35473,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 12910,
+"name": "2020 Long Island Sound Championship",
+"start": "2020-09-19",
+"classes": [
+{
+"id": 34726,
+"name": "Class 4-J 105",
+"num": 4
+}
+]
+},
+{
+"id": 11828,
+"name": "2020 J 105 Canadian Championships",
+"start": "2020-09-18",
+"classes": [
+{
+"id": 33370,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 13178,
+"name": "2020 Sheldon Clark Regatta - CASRA",
+"start": "2020-09-19",
+"classes": [
+{
+"id": 36986,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 12933,
+"name": "2020 Can One Thursday Night Series",
+"start": "2020-05-07",
+"classes": [
+{
+"id": 34864,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 12918,
+"name": "2020 Chicago Beer Can Series",
+"start": "2020-07-15",
+"classes": [
+{
+"id": 34779,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 13124,
+"name": "2020 Liberty Cup Regatta",
+"start": "2020-09-12",
+"classes": [
+{
+"id": 35740,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 9673,
+"name": "2020 Helly Hansen NOOD Regatta Annapolis",
+"start": "2020-08-28",
+"classes": [
+{
+"id": 33335,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 13130,
+"name": "JFest Chicago 2020",
+"start": "2020-08-29",
+"classes": [
+{
+"id": 35762,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 13097,
+"name": "Lunenburg Yacht Club Welcome Back Regatta 2020",
+"start": "2020-08-20",
+"classes": [
+{
+"id": 35626,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 12937,
+"name": "2020 Ted Hood Regatta",
+"start": "2020-08-21",
+"classes": [
+{
+"id": 35184,
+"name": "Line 1 EYC J 105",
+"num": 19
+}
+]
+},
+{
+"id": 11864,
+"name": "2020 Great Lakes Intercollegiate Offshore Regatta",
+"start": "2020-09-25",
+"classes": [
+{
+"id": 33546,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 12885,
+"name": "2020 Rolex Big Boat Series",
+"start": "2020-09-17",
+"classes": [
+{
+"id": 34612,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 13024,
+"name": "2020 Aldo Alessio & Phyllis Kleinman Swiftsure Cup",
+"start": "2020-08-21",
+"classes": [
+{
+"id": 35215,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 13102,
+"name": "2020 100 Boats on a Beercan",
+"start": "2020-08-05",
+"classes": [
+{
+"id": 35652,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 13060,
+"name": "2020 CASRA Social Distancing Series",
+"start": "2020-07-05",
+"classes": [
+{
+"id": 35514,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 13047,
+"name": "2020 AYC Two Bridge Fiasco Race",
+"start": "2020-08-02",
+"classes": [
+{
+"id": 35713,
+"name": "J/105",
+"num": 10
+}
+]
+},
+{
+"id": 13090,
+"name": "2020 COLORS Columbia Cup Regatta",
+"start": "2020-08-01",
+"classes": [
+{
+"id": 35582,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 11745,
+"name": "2020 AYC Annual Regatta",
+"start": "2020-07-25",
+"classes": [
+{
+"id": 32939,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 6184,
+"name": "2019 Ted Hood Regatta",
+"start": "2019-08-22",
+"classes": [
+{
+"id": 24794,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 12887,
+"name": "2020 Boomerang Race",
+"start": "2020-07-11",
+"classes": [
+{
+"id": 34630,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 11806,
+"name": "2020 Red Grant Regatta CoronaV Edition July 11th only",
+"start": "2020-07-10",
+"classes": [
+{
+"id": 33208,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 6212,
+"name": "2019 Hospice Cup XXXVIII",
+"start": "2019-09-14",
+"classes": [
+{
+"id": 25140,
+"name": "J 105",
+"num": 24
+}
+]
+},
+{
+"id": 11836,
+"name": "2020 One-Design Classic",
+"start": "2020-06-27",
+"classes": [
+{
+"id": 33569,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 9657,
+"name": "2020 Cedar Point One Design Regatta - Keelboat",
+"start": "2020-05-30",
+"classes": [
+{
+"id": 30577,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 11742,
+"name": "2020 AYC Spring One Design Regatta",
+"start": "2020-05-03",
+"classes": [
+{
+"id": 32930,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 11812,
+"name": "2020 American Yacht Club Spring Regatta",
+"start": "2020-04-25",
+"classes": [
+{
+"id": 33246,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 9676,
+"name": "2020 Sperry Charleston Race Week",
+"start": "2020-04-23",
+"classes": [
+{
+"id": 30675,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 11768,
+"name": "2020 J/105 Midwinter Regatta",
+"start": "2020-03-19",
+"classes": [
+{
+"id": 33066,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 9649,
+"name": "J Fest 2020",
+"start": "2020-01-23",
+"classes": [
+{
+"id": 30501,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 9577,
+"name": "2019 J/Fest Southwest Regatta",
+"start": "2019-10-26",
+"classes": [
+{
+"id": 30055,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 6234,
+"name": "2019 J/105 Chesapeake Bay Championship & J/35 Mid-Atlantic Championship",
+"start": "2019-10-26",
+"classes": [
+{
+"id": 26709,
+"name": "J/105",
+"num": 1
+}
+]
+},
+{
+"id": 6231,
+"name": "2019 AYC Fall Series",
+"start": "2019-09-28",
+"classes": [
+{
+"id": 27819,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 6133,
+"name": "2019 American Yacht Club Fall Regatta",
+"start": "2019-09-28",
+"classes": [
+{
+"id": 30362,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 9485,
+"name": "2019 Commodore Stein Regatta - CASRA",
+"start": "2019-09-15",
+"classes": [
+{
+"id": 29377,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 6243,
+"name": "2019 J105 Canadian Championships",
+"start": "2019-09-27",
+"classes": [
+{
+"id": 25171,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 9531,
+"name": "2019 Annapolis Y.C. Double Handed Distance Race",
+"start": "2019-09-28",
+"classes": [
+{
+"id": 29725,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 6232,
+"name": "2019 Fall Race To Solomons",
+"start": "2019-09-21",
+"classes": [
+{
+"id": 27843,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 9542,
+"name": "2019 Cleveland (216) Regatta",
+"start": "2019-09-21",
+"classes": [
+{
+"id": 29816,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 9652,
+"name": "2019 Great Lakes Intercollegiate Offshore Regatta",
+"start": "2019-09-20",
+"classes": [
+{
+"id": 30553,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 7359,
+"name": "2019 Can One Thursday Night Series",
+"start": "2019-05-09",
+"classes": [
+{
+"id": 26720,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 7368,
+"name": "2019 Chicago Beer Can Series",
+"start": "2019-05-15",
+"classes": [
+{
+"id": 29419,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 7364,
+"name": "2019 Long Island Sound Championship",
+"start": "2019-09-14",
+"classes": [
+{
+"id": 26745,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 6241,
+"name": "2019 Rolex Big Boat Series",
+"start": "2019-09-11",
+"classes": [
+{
+"id": 25155,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 9583,
+"name": "2019 Liberty Cup Regatta",
+"start": "2019-09-14",
+"classes": [
+{
+"id": 30090,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 9642,
+"name": "2019 Raritan Yacht Club Fall Regatta",
+"start": "2019-09-07",
+"classes": [
+{
+"id": 30466,
+"name": "PHRF - J 105 Spinnaker One Design",
+"num": 1
+}
+]
+},
+{
+"id": 6023,
+"name": "2019 J 105 North American Championship",
+"start": "2019-09-04",
+"classes": [
+{
+"id": 24056,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 9481,
+"name": "2019 Sheldon Clark Buoy - CASRA",
+"start": "2019-09-07",
+"classes": [
+{
+"id": 29362,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 9433,
+"name": "2019 Annapolis Labor Day Regatta",
+"start": "2019-08-31",
+"classes": [
+{
+"id": 29137,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 9477,
+"name": "2019 Tri State: Chicago to St. Joe - CASRA",
+"start": "2019-08-30",
+"classes": [
+{
+"id": 29345,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 9478,
+"name": "2019 Bi State: St Joe to Chicago - CASRA",
+"start": "2019-09-01",
+"classes": [
+{
+"id": 29352,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 9475,
+"name": "2019 Hobelman Regatta - CASRA",
+"start": "2019-08-25",
+"classes": [
+{
+"id": 29327,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 6202,
+"name": "2019 Helly Hansen Chester Race Week",
+"start": "2019-08-15",
+"classes": [
+{
+"id": 24915,
+"name": "Inshore 1 - J105",
+"num": 20
+}
+]
+},
+{
+"id": 9554,
+"name": "100 Boats on a Beercan",
+"start": "2019-08-06",
+"classes": [
+{
+"id": 30293,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 9592,
+"name": "2019 52nd Annual Regatta for The Dorade Trophy",
+"start": "2019-08-12",
+"classes": [
+{
+"id": 30129,
+"name": "Class 1 J105",
+"num": 1
+}
+]
+},
+{
+"id": 6142,
+"name": "2019 Whidbey Island Race Week",
+"start": "2019-07-23",
+"classes": [
+{
+"id": 24578,
+"name": "J 105 (PINK)",
+"num": 4
+}
+]
+},
+{
+"id": 9460,
+"name": "2019 Herb Kaczmarek Long Distance - CASRA",
+"start": "2019-07-27",
+"classes": [
+{
+"id": 29262,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 6230,
+"name": "2019 AYC Annual Regatta",
+"start": "2019-07-27",
+"classes": [
+{
+"id": 27808,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 7296,
+"name": "2019 J/Fest Great Lakes Regatta",
+"start": "2019-07-20",
+"classes": [
+{
+"id": 26402,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 6117,
+"name": "2019 Landsail Tyres J-Cup",
+"start": "2019-07-18",
+"classes": [
+{
+"id": 30142,
+"name": "Small IRC - J/32, J/80, J/97, J/105",
+"num": 5
+}
+]
+},
+{
+"id": 9555,
+"name": "2019 73rd Annual Red Grant Regatta",
+"start": "2019-07-12",
+"classes": [
+{
+"id": 29904,
+"name": "J105 - One Design",
+"num": 1
+}
+]
+},
+{
+"id": 9455,
+"name": "2019 Boomerang Race",
+"start": "2019-07-13",
+"classes": [
+{
+"id": 29248,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 9457,
+"name": "2019 Webb Memorial Regatta - CASRA",
+"start": "2019-07-06",
+"classes": [
+{
+"id": 29251,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 9446,
+"name": "2019 Chicago to Waukegan - CASRA",
+"start": "2019-06-22",
+"classes": [
+{
+"id": 29842,
+"name": "J/105",
+"num": 12
+}
+]
+},
+{
+"id": 9447,
+"name": "2019 Waukegan to Chicago - CASRA",
+"start": "2019-06-23",
+"classes": [
+{
+"id": 29563,
+"name": "J105",
+"num": 12
+}
+]
+},
+{
+"id": 5943,
+"name": "2019 Storm Trysail Club Block Island Race Week",
+"start": "2019-06-23",
+"classes": [
+{
+"id": 24462,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 6099,
+"name": "2019 Cedar Point One Design Regatta - Keelboat",
+"start": "2019-06-01",
+"classes": [
+{
+"id": 24567,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 7297,
+"name": "2019 Founders Regatta",
+"start": "2019-06-01",
+"classes": [
+{
+"id": 26408,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 6227,
+"name": "2019 AYC Spring One-Design Regatta",
+"start": "2019-04-28",
+"classes": [
+{
+"id": 26704,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 7308,
+"name": "2019 FWBC Annual Regatta",
+"start": "2019-04-27",
+"classes": [
+{
+"id": 26505,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 6132,
+"name": "2019 American Yacht Club Spring Series",
+"start": "2019-04-27",
+"classes": [
+{
+"id": 26426,
+"name": "Class 3 J 105",
+"num": 3
+}
+]
+},
+{
+"id": 6095,
+"name": "2019 J 105 Midwinter Championship",
+"start": "2019-03-07",
+"classes": [
+{
+"id": 24454,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 6029,
+"name": "2018 40th Annual Manhasset Bay Y.C. Fall Series",
+"start": "2018-10-13",
+"classes": [
+{
+"id": 24154,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 4684,
+"name": "2018 J/105 Chesapeake Bay Championship & J/35 Mid-Atlantics",
+"start": "2018-10-27",
+"classes": [
+{
+"id": 21231,
+"name": "J 105 Chesapeake Bay Championship",
+"num": 1
+}
+]
+},
+{
+"id": 4682,
+"name": "2018 AYC Fall Series",
+"start": "2018-09-29",
+"classes": [
+{
+"id": 21294,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 4664,
+"name": "2018 American Yacht Club Fall Regatta",
+"start": "2018-09-22",
+"classes": [
+{
+"id": 21746,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 5979,
+"name": "2018 Storm Trysail Foundation - Intercollegiate Offshore Regatta",
+"start": "2018-10-06",
+"classes": [
+{
+"id": 23717,
+"name": "Class 5 J/105",
+"num": 5
+}
+]
+},
+{
+"id": 4668,
+"name": "2018 Helly Hansen Chester Race Week",
+"start": "2018-08-15",
+"classes": [
+{
+"id": 23726,
+"name": "Inshore 2 - J105",
+"num": 3
+}
+]
+},
+{
+"id": 4671,
+"name": "2018 J 105 Canadian Championships",
+"start": "2018-09-20",
+"classes": [
+{
+"id": 21125,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 4828,
+"name": "2018 Sheldon Clark Buoy - CASRA",
+"start": "2018-09-22",
+"classes": [
+{
+"id": 21911,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 4863,
+"name": "2018 Hospice Cup XXXVII",
+"start": "2018-09-15",
+"classes": [
+{
+"id": 22056,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 4584,
+"name": "2018 Long Island Sound Championship",
+"start": "2018-09-15",
+"classes": [
+{
+"id": 20710,
+"name": "Class 5 J 105",
+"num": 5
+}
+]
+},
+{
+"id": 4670,
+"name": "2018 Rolex Big Boat Series",
+"start": "2018-09-12",
+"classes": [
+{
+"id": 21114,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 4827,
+"name": "2018 Herb Kaczmarek Long Distance - CASRA",
+"start": "2018-09-15",
+"classes": [
+{
+"id": 21873,
+"name": "J105",
+"num": 12
+}
+]
+},
+{
+"id": 6032,
+"name": "2018 Raritan Yacht Club Fall Regatta",
+"start": "2018-09-08",
+"classes": [
+{
+"id": 24227,
+"name": "PHRF - J/105 Spinnaker One Design ",
+"num": 2
+}
+]
+},
+{
+"id": 4820,
+"name": "2018 Tri State: Chicago to St. Joe - CASRA",
+"start": "2018-08-31",
+"classes": [
+{
+"id": 24107,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 4821,
+"name": "2018 Bi State: St Joe to Chicago - CASRA",
+"start": "2018-09-02",
+"classes": [
+{
+"id": 23736,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 4697,
+"name": "2018 Ted Hood Regatta",
+"start": "2018-08-24",
+"classes": [
+{
+"id": 21809,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 5940,
+"name": "2018 Aldo Alessio & Phyllis Kleinman Swiftsure Cup",
+"start": "2018-08-17",
+"classes": [
+{
+"id": 23488,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 4819,
+"name": "2018 Hobelman Long Distance - CASRA",
+"start": "2018-08-19",
+"classes": [
+{
+"id": 21867,
+"name": "J105",
+"num": 12
+}
+]
+},
+{
+"id": 4818,
+"name": "2018 Hobelman Regatta - CASRA",
+"start": "2018-08-19",
+"classes": [
+{
+"id": 21859,
+"name": "J105",
+"num": 12
+}
+]
+},
+{
+"id": 5999,
+"name": "80th Annual Falcon Cup Race / 22nd Annual Sundance Trophy Race",
+"start": "2018-08-11",
+"classes": [
+{
+"id": 24038,
+"name": "J-105",
+"num": 7
+}
+]
+},
+{
+"id": 4700,
+"name": "2018 Verve Cup Offshore Regatta",
+"start": "2018-08-09",
+"classes": [
+{
+"id": 21266,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 5985,
+"name": "2018 51st Annual Regatta for The Dorade Trophy",
+"start": "2018-08-13",
+"classes": [
+{
+"id": 23742,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 5895,
+"name": "2018 Little Traverse Yacht Club - J 105 Summer Series",
+"start": "2018-06-24",
+"classes": [
+{
+"id": 23177,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 5921,
+"name": "2018 Columbia Cup - Distance Race",
+"start": "2018-08-04",
+"classes": [
+{
+"id": 23339,
+"name": "J 105",
+"num": 14
+}
+]
+},
+{
+"id": 4856,
+"name": "2018 Columbia Cup - Buoy Races",
+"start": "2018-08-04",
+"classes": [
+{
+"id": 23325,
+"name": "J 105",
+"num": 14
+}
+]
+},
+{
+"id": 4475,
+"name": "2018 Helly Hansen NOOD Regatta Marblehead",
+"start": "2018-07-26",
+"classes": [
+{
+"id": 22129,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 4490,
+"name": "2018 J 105 North American Championship",
+"start": "2018-07-28",
+"classes": [
+{
+"id": 20238,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 4546,
+"name": "2018 Whidbey Island Race Week",
+"start": "2018-07-19",
+"classes": [
+{
+"id": 20510,
+"name": "4 - J-105",
+"num": 4
+}
+]
+},
+{
+"id": 4680,
+"name": "2018 AYC Annual Regatta",
+"start": "2018-07-21",
+"classes": [
+{
+"id": 21207,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 4703,
+"name": "2018 72nd Annual Red Grant Regatta - J105 East Coast Championships - J24 Garden State Parkway Circuit - District 4",
+"start": "2018-07-07",
+"classes": [
+{
+"id": 21300,
+"name": "J 105 East Coast Championships",
+"num": 2
+}
+]
+},
+{
+"id": 4817,
+"name": "2018 Webb Memorial Regatta - CASRA",
+"start": "2018-07-08",
+"classes": [
+{
+"id": 21969,
+"name": "J105",
+"num": 6
+}
+]
+},
+{
+"id": 4567,
+"name": "2018 Cleveland Race Week - Offshore Regatta",
+"start": "2018-06-21",
+"classes": [
+{
+"id": 23621,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 4774,
+"name": "2018 Liberty Cup Regatta",
+"start": "2018-06-23",
+"classes": [
+{
+"id": 21624,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 4566,
+"name": "2018 Cleveland Race Week - One Design",
+"start": "2018-06-15",
+"classes": [
+{
+"id": 20636,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 4812,
+"name": "2018 Chicago - Waukegan Race - CASRA",
+"start": "2018-06-16",
+"classes": [
+{
+"id": 21843,
+"name": "J105",
+"num": 12
+}
+]
+},
+{
+"id": 4813,
+"name": "2018 Waukegan - Chicago Race - CASRA",
+"start": "2018-06-17",
+"classes": [
+{
+"id": 21851,
+"name": "J105",
+"num": 12
+}
+]
+},
+{
+"id": 1218,
+"name": "2015 Storm Trysail Club Block Island Race Week XXVI",
+"start": "2015-06-24",
+"classes": [
+{
+"id": 7722,
+"name": "J 105 OD",
+"num": 28
+}
+]
+},
+{
+"id": 2954,
+"name": "2017 Storm Trysail Club Block Island Race Week",
+"start": "2017-06-21",
+"classes": [
+{
+"id": 14654,
+"name": "J 105 New England Championship",
+"num": 25
+}
+]
+},
+{
+"id": 4538,
+"name": "2018 Cedar Point One Design Regatta",
+"start": "2018-06-01",
+"classes": [
+{
+"id": 20471,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 4676,
+"name": "2018 Founders Regatta",
+"start": "2018-06-02",
+"classes": [
+{
+"id": 21142,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 4708,
+"name": "26th Annual Annapolis Leukemia Cup Regatta",
+"start": "2018-06-02",
+"classes": [
+{
+"id": 21334,
+"name": "J 105",
+"num": 16
+}
+]
+},
+{
+"id": 4677,
+"name": "2018 AYC Spring One Design Regatta",
+"start": "2018-04-29",
+"classes": [
+{
+"id": 21191,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 4663,
+"name": "2018 American Yacht Club Spring Series",
+"start": "2018-04-28",
+"classes": [
+{
+"id": 21065,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 1507,
+"name": "2017 AYC Spring One Design Regatta",
+"start": "2017-04-29",
+"classes": [
+{
+"id": 11823,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 4452,
+"name": "2017 Storm Trysail Foundation - Intercollegiate Offshore Regatta",
+"start": "2017-10-07",
+"classes": [
+{
+"id": 19174,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 4472,
+"name": "2018 Helly Hansen NOOD Regatta San Diego",
+"start": "2018-03-16",
+"classes": [
+{
+"id": 20458,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 4111,
+"name": "2017 Cleveland Race Week - Offshore Regatta",
+"start": "2017-06-22",
+"classes": [
+{
+"id": 16195,
+"name": "J 105",
+"num": 16
+}
+]
+},
+{
+"id": 3035,
+"name": "2017 J/105 East Coast Championship *** J/35 Mid-Atlantic Championship",
+"start": "2017-10-28",
+"classes": [
+{
+"id": 14740,
+"name": "J 105 East Coast Championship",
+"num": 2
+}
+]
+},
+{
+"id": 4445,
+"name": "2017 39th Annual Manhasset Bay Y.C. Fall Series",
+"start": "2017-10-14",
+"classes": [
+{
+"id": 20345,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 3033,
+"name": "2017 AYC Fall Series",
+"start": "2017-09-30",
+"classes": [
+{
+"id": 14748,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 2994,
+"name": "2017 American Yacht Club Fall Regatta & Leukemia Cup",
+"start": "2017-09-23",
+"classes": [
+{
+"id": 16535,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 3006,
+"name": "2017 Helly Hansen NOOD Regatta San Diego",
+"start": "2017-03-17",
+"classes": [
+{
+"id": 14600,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 4105,
+"name": "2017 Rolex Big Boat Series",
+"start": "2017-09-13",
+"classes": [
+{
+"id": 16169,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 4067,
+"name": "2017 Long Island Sound Championship",
+"start": "2017-09-16",
+"classes": [
+{
+"id": 15985,
+"name": "Class 6 - J 105",
+"num": 6
+}
+]
+},
+{
+"id": 4459,
+"name": "2017 J 105 Canadian Championships",
+"start": "2017-09-21",
+"classes": [
+{
+"id": 18046,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 4310,
+"name": "2017 Sheldon Clark Regatta - CASRA",
+"start": "2017-09-16",
+"classes": [
+{
+"id": 17231,
+"name": "J-105 OD",
+"num": 8
+}
+]
+},
+{
+"id": 1156,
+"name": "2014 Storm Trysail Foundation - Intercollegiate Offshore Regatta",
+"start": "2014-10-11",
+"classes": [
+{
+"id": 7692,
+"name": "Class 5 J/105",
+"num": 5
+}
+]
+},
+{
+"id": 4465,
+"name": "2017 Melges 20 Canadians & Fall Keelboat Regatta",
+"start": "2017-09-09",
+"classes": [
+{
+"id": 18086,
+"name": " J 105",
+"num": 1
+}
+]
+},
+{
+"id": 4306,
+"name": "2017 Chicago to St. Joe - Bi-State / Tri-State Regatta - CASRA",
+"start": "2017-09-01",
+"classes": [
+{
+"id": 18050,
+"name": "J/105",
+"num": 2
+}
+]
+},
+{
+"id": 4332,
+"name": "2017 St. Joe to Chicago - Bi-State Regatta - CASRA",
+"start": "2017-09-03",
+"classes": [
+{
+"id": 18069,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 3000,
+"name": "2017 Ted Hood Regatta",
+"start": "2017-08-25",
+"classes": [
+{
+"id": 18030,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 4402,
+"name": "2017 Aldo Alessio & Phyllis Kleinman Swiftsure Cup",
+"start": "2017-08-18",
+"classes": [
+{
+"id": 17696,
+"name": "J/105",
+"num": 10
+}
+]
+},
+{
+"id": 4051,
+"name": "2017 New Rochelle/La Rochelle Mayors' Cup Regatta",
+"start": "2017-08-12",
+"classes": [
+{
+"id": 16124,
+"name": "J105",
+"num": 7
+}
+]
+},
+{
+"id": 4431,
+"name": "2017 50th Annual Regatta for The Dorade Trophy",
+"start": "2017-08-14",
+"classes": [
+{
+"id": 17897,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 3025,
+"name": "2017 J/Fest New England",
+"start": "2017-08-11",
+"classes": [
+{
+"id": 14705,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 4055,
+"name": "2017 Verve Cup Offshore Regatta",
+"start": "2017-08-11",
+"classes": [
+{
+"id": 15930,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 2805,
+"name": "2017 Buzzards Bay Regatta",
+"start": "2017-08-04",
+"classes": [
+{
+"id": 17361,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 4317,
+"name": "2017 Little Traverse Yacht Club - J 105 Summer Series",
+"start": "2017-06-25",
+"classes": [
+{
+"id": 17189,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 4301,
+"name": "2017 Columbia Cup -- Buoy Race",
+"start": "2017-08-05",
+"classes": [
+{
+"id": 17666,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 4409,
+"name": "2017 Columbia Cup -- Distance Race",
+"start": "2017-08-06",
+"classes": [
+{
+"id": 17727,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 4141,
+"name": "13th Annual YRALIS Championships Regatta (PHRF and One-Design) Including the Soverel  33 Nationals",
+"start": "2017-08-06",
+"classes": [
+{
+"id": 17745,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 2986,
+"name": "2017 Little Traverse Yacht Club Regatta - Ugotta Regatta",
+"start": "2017-07-28",
+"classes": [
+{
+"id": 16419,
+"name": "J 105",
+"num": 21
+}
+]
+},
+{
+"id": 3013,
+"name": "2017 Whidbey Island Race Week",
+"start": "2017-07-09",
+"classes": [
+{
+"id": 14683,
+"name": "Class 5 - J 105",
+"num": 5
+}
+]
+},
+{
+"id": 4121,
+"name": "2017 71st Annual Red Grant Regatta",
+"start": "2017-07-08",
+"classes": [
+{
+"id": 16250,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 4294,
+"name": "2017 Chicago - Waukegan - Chicago - CASRA",
+"start": "2017-06-17",
+"classes": [
+{
+"id": 17208,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 4205,
+"name": "2017 Founders Regatta",
+"start": "2017-06-03",
+"classes": [
+{
+"id": 16631,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 4145,
+"name": "2017 Columbia Y.C. COLORS Regatta",
+"start": "2017-06-03",
+"classes": [
+{
+"id": 16388,
+"name": "J 105",
+"num": 12
+}
+]
+},
+{
+"id": 2999,
+"name": "2017 Cedar Point One Design Regatta",
+"start": "2017-06-03",
+"classes": [
+{
+"id": 14542,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 4167,
+"name": "2017 The Manhattan Regatta",
+"start": "2017-05-20",
+"classes": [
+{
+"id": 16460,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 2993,
+"name": "2017 American Yacht Club Spring Series",
+"start": "2017-04-29",
+"classes": [
+{
+"id": 16056,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 2997,
+"name": "2017 Sperry Charleston Race Week",
+"start": "2017-04-20",
+"classes": [
+{
+"id": 16092,
+"name": "J 105",
+"num": 17
+}
+]
+},
+{
+"id": 233,
+"name": "2009 Charleston Race Week",
+"start": "2009-04-16",
+"classes": [
+{
+"id": 957,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 1634,
+"name": "2016 70th Annual Red Grant Regatta",
+"start": "2016-07-09",
+"classes": [
+{
+"id": 10389,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 1607,
+"name": "2016 Whidbey Island Race Week",
+"start": "2016-07-10",
+"classes": [
+{
+"id": 10071,
+"name": "Fleet 5-J 105",
+"num": 5
+}
+]
+},
+{
+"id": 2971,
+"name": "2016 J/105 Chesapeake Bay *** J/35 Mid-Atlantic Championships",
+"start": "2016-10-29",
+"classes": [
+{
+"id": 14357,
+"name": "J 105 Chesapeake Bay Championship",
+"num": 1
+}
+]
+},
+{
+"id": 2937,
+"name": "2016 AYC Fall Series",
+"start": "2016-10-01",
+"classes": [
+{
+"id": 13107,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 2938,
+"name": "2016 38th Annual Manhasset Bay Y.C. Fall Series",
+"start": "2016-10-15",
+"classes": [
+{
+"id": 13120,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 1378,
+"name": "2016 Storm Trysail Foundation - Intercollegiate Offshore Regatta",
+"start": "2016-10-08",
+"classes": [
+{
+"id": 9667,
+"name": "Class 5 J/105",
+"num": 5
+}
+]
+},
+{
+"id": 2958,
+"name": "2016 Raritan Yacht Club Fall Regatta",
+"start": "2016-10-01",
+"classes": [
+{
+"id": 14398,
+"name": "J 105 (Saturday Only)",
+"num": 10
+}
+]
+},
+{
+"id": 1621,
+"name": "2016 Long Island Sound Championship",
+"start": "2016-09-17",
+"classes": [
+{
+"id": 10271,
+"name": "Class 7 - J 105",
+"num": 7
+}
+]
+},
+{
+"id": 2722,
+"name": "2016 CYC Belmont Skyline Series",
+"start": "2016-05-18",
+"classes": [
+{
+"id": 11861,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 1620,
+"name": "2016 Rolex Big Boat Series",
+"start": "2016-09-15",
+"classes": [
+{
+"id": 10262,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 2875,
+"name": "2016 Annapolis Labor Day Regatta",
+"start": "2016-09-03",
+"classes": [
+{
+"id": 12727,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 2837,
+"name": "2016 Annual Regatta for The Dorade Trophy",
+"start": "2016-08-15",
+"classes": [
+{
+"id": 12436,
+"name": "J 105 OD",
+"num": 1
+}
+]
+},
+{
+"id": 2894,
+"name": "2016 Phyllis Kleinman Swiftsure Cup & Aldo Alessio Regatta",
+"start": "2016-08-19",
+"classes": [
+{
+"id": 12817,
+"name": "J 105",
+"num": 10
+}
+]
+},
+{
+"id": 1463,
+"name": "2016 J/Fest New England",
+"start": "2016-08-12",
+"classes": [
+{
+"id": 9914,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 1649,
+"name": "2016 Verve Cup Offshore Regatta",
+"start": "2016-08-12",
+"classes": [
+{
+"id": 13152,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 2802,
+"name": "80th AYC Annual Regatta",
+"start": "2016-06-11",
+"classes": [
+{
+"id": 12212,
+"name": "J 105",
+"num": 19
+}
+]
+},
+{
+"id": 1599,
+"name": "Helly Hansen Marblehead NOOD Regatta 2016",
+"start": "2016-07-28",
+"classes": [
+{
+"id": 12478,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 2780,
+"name": "2016 85th Stratford Shoal Race",
+"start": "2016-06-25",
+"classes": [
+{
+"id": 12090,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 1617,
+"name": "2016 Columbia Y.C. Goose Island COLORS Regatta",
+"start": "2016-06-04",
+"classes": [
+{
+"id": 10225,
+"name": "J 105",
+"num": 14
+}
+]
+},
+{
+"id": 1269,
+"name": "2015 Columbia Y.C. Goose Island COLORS Regatta",
+"start": "2015-06-05",
+"classes": [
+{
+"id": 8156,
+"name": "J 105",
+"num": 14
+}
+]
+},
+{
+"id": 1568,
+"name": "2016 Cedar Point One Design Regatta",
+"start": "2016-06-04",
+"classes": [
+{
+"id": 9893,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 1624,
+"name": "2016 The Manhattan Regatta",
+"start": "2016-05-21",
+"classes": [
+{
+"id": 10286,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 1644,
+"name": "2016 American Yacht Club Spring Series",
+"start": "2016-04-23",
+"classes": [
+{
+"id": 10430,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 1590,
+"name": "Helly Hansen Annapolis NOOD Regatta 2016",
+"start": "2016-04-29",
+"classes": [
+{
+"id": 10501,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 1589,
+"name": "Helly Hansen San Diego NOOD Regatta 2016",
+"start": "2016-03-18",
+"classes": [
+{
+"id": 10236,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 311,
+"name": "2010 Youngstown Level Regatta",
+"start": "2010-07-24",
+"classes": [
+{
+"id": 1874,
+"name": "J 105",
+"num": 22
+}
+]
+},
+{
+"id": 603,
+"name": "2012 The Manhattan Regatta",
+"start": "2012-05-19",
+"classes": [
+{
+"id": 3319,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 833,
+"name": "2013 The Manhattan Regatta",
+"start": "2013-05-18",
+"classes": [
+{
+"id": 4875,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 262,
+"name": "2009 Super Mac",
+"start": "2009-07-18",
+"classes": [
+{
+"id": 1236,
+"name": "J 105",
+"num": 15
+}
+]
+},
+{
+"id": 301,
+"name": "2010 Charleston Race Week",
+"start": "2010-04-08",
+"classes": [
+{
+"id": 1437,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 161,
+"name": "2008 Charleston Race Week",
+"start": "2008-04-17",
+"classes": [
+{
+"id": 384,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 115,
+"name": "2007 Charleston Race Week",
+"start": "2007-04-12",
+"classes": [
+{
+"id": 141,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 1242,
+"name": "2015 CanAm Challenge - Youngstown Yacht Club",
+"start": "2015-07-25",
+"classes": [
+{
+"id": 8046,
+"name": "J 105",
+"num": 15
+}
+]
+},
+{
+"id": 1525,
+"name": "2015 37th Annual Manhasset Bay Y.C. Fall Series",
+"start": "2015-10-18",
+"classes": [
+{
+"id": 9660,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 1256,
+"name": "2015 American Yacht Club Fall Regatta",
+"start": "2015-09-26",
+"classes": [
+{
+"id": 8724,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 1307,
+"name": "2015 Little Traverse Yacht Club - Tuesday Fall Club Racing",
+"start": "2015-08-18",
+"classes": [
+{
+"id": 8337,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 1308,
+"name": "2015 Rolex Big Boat Series",
+"start": "2015-09-17",
+"classes": [
+{
+"id": 8344,
+"name": "J 105",
+"num": 20
+}
+]
+},
+{
+"id": 1271,
+"name": "2015 Long Island Sound Championship",
+"start": "2015-09-19",
+"classes": [
+{
+"id": 8190,
+"name": "Class 5 J 105",
+"num": 5
+}
+]
+},
+{
+"id": 1485,
+"name": "2015 Aldo Alessio Perpetual Trophy Regatta",
+"start": "2015-08-21",
+"classes": [
+{
+"id": 9371,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 1295,
+"name": "2015 Little Traverse Yacht Club - J 105 Series",
+"start": "2015-06-28",
+"classes": [
+{
+"id": 8306,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 1306,
+"name": "2015 Little Traverse Yacht Club - Tuesday Summer Club Racing",
+"start": "2015-06-30",
+"classes": [
+{
+"id": 8333,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 1493,
+"name": "2015 Annual Regatta for The Dorade Trophy",
+"start": "2015-08-10",
+"classes": [
+{
+"id": 9552,
+"name": "J105",
+"num": 1
+}
+]
+},
+{
+"id": 1232,
+"name": "Helly Hansen Marblehead NOOD Regatta 2015",
+"start": "2015-07-23",
+"classes": [
+{
+"id": 7855,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 1243,
+"name": "2015 69th Annual Red Grant Regatta",
+"start": "2015-07-11",
+"classes": [
+{
+"id": 8142,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 1266,
+"name": "2015 Skyway Yacht Works J/Day Regatta",
+"start": "2015-06-26",
+"classes": [
+{
+"id": 8176,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 1406,
+"name": "2015 84th Stratford Shoal Race",
+"start": "2015-06-27",
+"classes": [
+{
+"id": 8859,
+"name": "J 105s",
+"num": 10
+}
+]
+},
+{
+"id": 394,
+"name": "2011 Key West Race Week",
+"start": "2011-01-17",
+"classes": [
+{
+"id": 1832,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 1252,
+"name": "2015 Cedar Point One Design Regatta",
+"start": "2015-05-16",
+"classes": [
+{
+"id": 8018,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 753,
+"name": "2013 Sperry Top-Sider San Diego NOOD Regatta",
+"start": "2013-03-15",
+"classes": [
+{
+"id": 4457,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 1350,
+"name": "2015 Phyllis Kleinman Swiftsure Regatta",
+"start": "2015-05-16",
+"classes": [
+{
+"id": 8556,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 1255,
+"name": "2015 American Yacht Club Spring Series",
+"start": "2015-04-25",
+"classes": [
+{
+"id": 8796,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 1229,
+"name": "Helly Hansen Annapolis NOOD Regatta 2015",
+"start": "2015-05-01",
+"classes": [
+{
+"id": 7889,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 1228,
+"name": "Helly Hansen San Diego NOOD Regatta 2015",
+"start": "2015-03-13",
+"classes": [
+{
+"id": 7874,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 176,
+"name": "2008 LTYC Regatta - OD Series<br>and<br>2008 ROLEX US-IRC National Championship",
+"start": "2008-07-25",
+"classes": [
+{
+"id": 402,
+"name": "PHRF 4 J105",
+"num": 4
+}
+]
+},
+{
+"id": 1210,
+"name": "2014 36th Annual Manhasset Bay Y.C. Fall Series",
+"start": "2014-10-18",
+"classes": [
+{
+"id": 7659,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 1045,
+"name": "2014 American Yacht Club Fall Regatta",
+"start": "2014-09-27",
+"classes": [
+{
+"id": 7764,
+"name": "J105",
+"num": 3
+}
+]
+},
+{
+"id": 987,
+"name": "2014 J 105 North American Championship",
+"start": "2014-09-24",
+"classes": [
+{
+"id": 6054,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 1203,
+"name": "2014 Raritan Yacht Club Fall Regatta",
+"start": "2014-09-20",
+"classes": [
+{
+"id": 7668,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 1041,
+"name": "2014 Long Island Sound Championship",
+"start": "2014-09-13",
+"classes": [
+{
+"id": 6348,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 1097,
+"name": "2014 Rolex Big Boat Series",
+"start": "2014-09-11",
+"classes": [
+{
+"id": 6771,
+"name": "J 105",
+"num": 16
+}
+]
+},
+{
+"id": 1004,
+"name": "2014 Little Traverse Yacht Club - Tuesday Night Fall Series",
+"start": "2014-08-19",
+"classes": [
+{
+"id": 6092,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 1190,
+"name": "2014 Aldo Alessio Perpetual Trophy Regatta",
+"start": "2014-08-22",
+"classes": [
+{
+"id": 7413,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 1187,
+"name": "2014 Annual Regatta for The Dorade Trophy",
+"start": "2014-08-07",
+"classes": [
+{
+"id": 7399,
+"name": "PHRF 2 (J 105)",
+"num": 2
+}
+]
+},
+{
+"id": 1001,
+"name": "2014 Little Traverse Yacht Club - Tuesday Summer Club Racing",
+"start": "2014-07-01",
+"classes": [
+{
+"id": 6086,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 1007,
+"name": "2014 Little Traverse Yacht Club Regatta - Ugotta Regatta",
+"start": "2014-07-25",
+"classes": [
+{
+"id": 6099,
+"name": "J 105",
+"num": 2
+}
+]
+},
+{
+"id": 1046,
+"name": "2014 Whidbey Island Race Week",
+"start": "2014-07-19",
+"classes": [
+{
+"id": 6356,
+"name": "P6 J 105",
+"num": 3
+}
+]
+},
+{
+"id": 941,
+"name": "2014 Sperry Top-Sider Marblehead NOOD Regatta",
+"start": "2014-07-24",
+"classes": [
+{
+"id": 7111,
+"name": "J 105",
+"num": 18
+}
+]
+},
+{
+"id": 1122,
+"name": "2014 68th Annual Red Grant Regatta",
+"start": "2014-07-12",
+"classes": [
+{
+"id": 6914,
+"name": "J 105 OD  (Purple Streamer)",
+"num": 3
+}
+]
+},
+{
+"id": 1140,
+"name": "2014 83rd Stratford Shoal Race",
+"start": "2014-06-28",
+"classes": [
+{
+"id": 7290,
+"name": "J105s",
+"num": 5
+}
+]
+},
+{
+"id": 1021,
+"name": "2014 Skyway Yacht Works J/Day Regatta",
+"start": "2014-06-28",
+"classes": [
+{
+"id": 7311,
+"name": "J-105",
+"num": 2
+}
+]
+},
+{
+"id": 1029,
+"name": "2014 Leukemia Cup Regatta - The Cleveland Yachting Club",
+"start": "2014-06-27",
+"classes": [
+{
+"id": 6275,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 1018,
+"name": "2014 Columbia Y.C. Goose Island COLORS Regatta",
+"start": "2014-05-31",
+"classes": [
+{
+"id": 6221,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 1069,
+"name": "22nd Annual Annapolis Leukemia Cup Regatta",
+"start": "2014-05-31",
+"classes": [
+{
+"id": 7070,
+"name": "J 105",
+"num": 22
+}
+]
+},
+{
+"id": 874,
+"name": "2013 Little Traverse Yacht Club - Tuesday Spring Club Racing",
+"start": "2013-06-04",
+"classes": [
+{
+"id": 5154,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 1115,
+"name": "2014 Phyllis Kleinman Swiftsure Regatta",
+"start": "2014-05-17",
+"classes": [
+{
+"id": 6853,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 858,
+"name": "2014 The Manhattan Regatta",
+"start": "2014-05-17",
+"classes": [
+{
+"id": 5822,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 937,
+"name": "2014 Sperry Top-Sider San Diego NOOD Regatta",
+"start": "2014-03-14",
+"classes": [
+{
+"id": 6202,
+"name": "J/105",
+"num": 11
+}
+]
+},
+{
+"id": 938,
+"name": "2014 Sperry Top-Sider Annapolis NOOD Regatta",
+"start": "2014-05-02",
+"classes": [
+{
+"id": 6385,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 1044,
+"name": "2014 American Yacht Club Spring Series",
+"start": "2014-04-26",
+"classes": [
+{
+"id": 6344,
+"name": "J 105 Div 3",
+"num": 3
+}
+]
+},
+{
+"id": 1059,
+"name": "2014 J/Fest",
+"start": "2014-04-05",
+"classes": [
+{
+"id": 6468,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 1050,
+"name": "2014 Spring One Design Invitational",
+"start": "2014-03-15",
+"classes": [
+{
+"id": 6370,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 160,
+"name": "2012 Cedar Point One Design Regatta",
+"start": "2012-06-03",
+"classes": [
+{
+"id": 3286,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 256,
+"name": "2009 American Yacht Club Spring Series",
+"start": "2009-04-25",
+"classes": [
+{
+"id": 984,
+"name": "J/105 Div 3",
+"num": 3
+}
+]
+},
+{
+"id": 257,
+"name": "2009 American Yacht Club Fall Series",
+"start": "2009-09-19",
+"classes": [
+{
+"id": 1349,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 780,
+"name": "2013 American Yacht Club Fall Regatta",
+"start": "2013-09-28",
+"classes": [
+{
+"id": 5857,
+"name": "J 105 Div 3",
+"num": 8
+}
+]
+},
+{
+"id": 813,
+"name": "2013 Whidbey Island Race Week",
+"start": "2013-07-15",
+"classes": [
+{
+"id": 4778,
+"name": "P6 J 105",
+"num": 9
+}
+]
+},
+{
+"id": 945,
+"name": "2013 Storm Trysail Foundation - Intercollegiate Offshore Regatta",
+"start": "2013-10-12",
+"classes": [
+{
+"id": 5876,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 876,
+"name": "2013 Little Traverse Yacht Club - Tuesday Fall Club Racing",
+"start": "2013-08-13",
+"classes": [
+{
+"id": 5162,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 882,
+"name": "2013 Little Traverse Yacht Club - J 105 Series",
+"start": "2013-06-23",
+"classes": [
+{
+"id": 5150,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 928,
+"name": "2013 Annual Regatta for The Dorade Trophy",
+"start": "2013-08-12",
+"classes": [
+{
+"id": 5578,
+"name": "PHRF-3 J105",
+"num": 3
+}
+]
+},
+{
+"id": 875,
+"name": "2013 Little Traverse Yacht Club - Tuesday Summer Club Racing",
+"start": "2013-07-02",
+"classes": [
+{
+"id": 5158,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 867,
+"name": "2013 LYRA Annual Regatta",
+"start": "2013-08-02",
+"classes": [
+{
+"id": 5083,
+"name": "J 105",
+"num": 12
+}
+]
+},
+{
+"id": 816,
+"name": "2013 I-LYA Bayweek Regatta",
+"start": "2013-08-02",
+"classes": [
+{
+"id": 4815,
+"name": "J 105",
+"num": 23
+}
+]
+},
+{
+"id": 900,
+"name": "2013 YRALIS PHRF and One-Design Championships",
+"start": "2013-08-03",
+"classes": [
+{
+"id": 5340,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 926,
+"name": "2013 Phyllis Kleinman Swiftsure Regatta",
+"start": "2013-08-03",
+"classes": [
+{
+"id": 5555,
+"name": "J 105",
+"num": 15
+}
+]
+},
+{
+"id": 757,
+"name": "2013 Sperry Top-Sider Marblehead NOOD Regatta",
+"start": "2013-07-25",
+"classes": [
+{
+"id": 5180,
+"name": "J 105",
+"num": 10
+}
+]
+},
+{
+"id": 750,
+"name": "2013 Little Traverse Yacht Club Regatta - Ugotta Regatta",
+"start": "2013-07-26",
+"classes": [
+{
+"id": 4557,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 871,
+"name": "2013 Leukemia Cup Regatta",
+"start": "2013-07-18",
+"classes": [
+{
+"id": 5389,
+"name": "J 105",
+"num": 11
+}
+]
+},
+{
+"id": 799,
+"name": "159th NYYC Annual Regatta presented by Rolex",
+"start": "2013-06-14",
+"classes": [
+{
+"id": 5419,
+"name": "White Class 3 - J/105",
+"num": 3
+}
+]
+},
+{
+"id": 790,
+"name": "2013 Skyway Yacht Works J/Day Regatta",
+"start": "2013-06-29",
+"classes": [
+{
+"id": 4682,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 773,
+"name": "2013 Columbia Y.C. Goose Island COLORS Regatta",
+"start": "2013-06-01",
+"classes": [
+{
+"id": 4474,
+"name": "J 105",
+"num": 15
+}
+]
+},
+{
+"id": 811,
+"name": "2013 Aldo Alessio Perpetual Trophy Regatta",
+"start": "2013-05-17",
+"classes": [
+{
+"id": 4763,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 779,
+"name": "2013 American Yacht Club Spring Series",
+"start": "2013-04-27",
+"classes": [
+{
+"id": 4732,
+"name": "J 105 Div 4",
+"num": 4
+}
+]
+},
+{
+"id": 754,
+"name": "2013 Sperry Top-Sider Annapolis NOOD Regatta",
+"start": "2013-05-03",
+"classes": [
+{
+"id": 4619,
+"name": "J 105",
+"num": 13
+}
+]
+},
+{
+"id": 788,
+"name": "2013 J/Fest San Francisco",
+"start": "2013-04-20",
+"classes": [
+{
+"id": 4674,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 783,
+"name": "2013 Spring One Design Invitational",
+"start": "2013-03-16",
+"classes": [
+{
+"id": 4629,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 717,
+"name": "2012 34th Annual Manhasset Bay Y.C. Fall Series",
+"start": "2012-10-20",
+"classes": [
+{
+"id": 4179,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 733,
+"name": "2012 Storm Trysail Foundation - Intercollegiate Offshore Regatta",
+"start": "2012-10-06",
+"classes": [
+{
+"id": 4212,
+"name": "Class 5 - J 105",
+"num": 5
+}
+]
+},
+{
+"id": 582,
+"name": "2012 American Yacht Club Fall Regatta",
+"start": "2012-09-22",
+"classes": [
+{
+"id": 3168,
+"name": "J 105 Div 3",
+"num": 3
+}
+]
+},
+{
+"id": 661,
+"name": "2012 Sheldon Clark Regatta",
+"start": "2012-09-08",
+"classes": [
+{
+"id": 3682,
+"name": "J 105",
+"num": 8
+}
+]
+},
+{
+"id": 691,
+"name": "2012 Rolex Big Boat Series / IRC North American Championship",
+"start": "2012-09-06",
+"classes": [
+{
+"id": 3784,
+"name": "J 105",
+"num": 10
+}
+]
+},
+{
+"id": 660,
+"name": "2012 Verve Cup Offshore Regatta",
+"start": "2012-08-10",
+"classes": [
+{
+"id": 3670,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 588,
+"name": "2012 Little Traverse Yacht Club Regatta - Ugotta Regatta",
+"start": "2012-07-27",
+"classes": [
+{
+"id": 3313,
+"name": "J 105",
+"num": 6
+}
+]
+},
+{
+"id": 700,
+"name": "2012 Aldo Alessio Perpetual Trophy Regatta",
+"start": "2012-07-27",
+"classes": [
+{
+"id": 3916,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 643,
+"name": "2012 YRALIS PHRF and One-Design Championships",
+"start": "2012-08-04",
+"classes": [
+{
+"id": 3551,
+"name": "J 105",
+"num": 25
+}
+]
+},
+{
+"id": 633,
+"name": "NYYC Race Week at Newport presented by Rolex - PART III - One-Design and Handicap",
+"start": "2012-07-14",
+"classes": [
+{
+"id": 3646,
+"name": "Class 10 - J/105",
+"num": 10
+}
+]
+},
+{
+"id": 400,
+"name": "2012 Whidbey Island Race Week",
+"start": "2012-07-15",
+"classes": [
+{
+"id": 3503,
+"name": "P5 J-105",
+"num": 5
+}
+]
+},
+{
+"id": 554,
+"name": "2011 33rd Annual Manhasset Bay Y.C. Fall Series",
+"start": "2011-10-21",
+"classes": [
+{
+"id": 3032,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 629,
+"name": "2012 Stratford Shoal Race",
+"start": "2012-06-30",
+"classes": [
+{
+"id": 3893,
+"name": "J 105 One Design",
+"num": 3
+}
+]
+},
+{
+"id": 614,
+"name": "2012 Phyllis Kleinman Swiftsure Regatta",
+"start": "2012-05-19",
+"classes": [
+{
+"id": 3390,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 583,
+"name": "2012 Columbia Yacht Club COLORS Regatta",
+"start": "2012-06-02",
+"classes": [
+{
+"id": 3181,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 581,
+"name": "2012 American Yacht Club Spring Series",
+"start": "2012-04-28",
+"classes": [
+{
+"id": 3601,
+"name": "J 105 Div 3",
+"num": 3
+}
+]
+},
+{
+"id": 615,
+"name": "2012 J/Fest San Francisco",
+"start": "2012-04-21",
+"classes": [
+{
+"id": 3394,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 616,
+"name": "2012 Spring One Design / Spring Keel Invitational",
+"start": "2012-03-17",
+"classes": [
+{
+"id": 3398,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 464,
+"name": "2011 J/Fest San Francisco",
+"start": "2011-04-09",
+"classes": [
+{
+"id": 2374,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 562,
+"name": "2011 Storm Trysail Foundation - Intercollegiate Offshore Regatta",
+"start": "2011-10-08",
+"classes": [
+{
+"id": 3044,
+"name": "J/105",
+"num": 5
+}
+]
+},
+{
+"id": 524,
+"name": "2011 Sheldon Clark Regatta",
+"start": "2011-09-17",
+"classes": [
+{
+"id": 2984,
+"name": "J/105",
+"num": 8
+}
+]
+},
+{
+"id": 527,
+"name": "2011 Rolex Big Boat Series / Farr 30 World Championship",
+"start": "2011-09-08",
+"classes": [
+{
+"id": 2618,
+"name": "J 105",
+"num": 10
+}
+]
+},
+{
+"id": 496,
+"name": "2011 Aldo Alessio Perpetual Trophy Regatta",
+"start": "2011-08-26",
+"classes": [
+{
+"id": 2813,
+"name": "J 105",
+"num": 7
+}
+]
+},
+{
+"id": 436,
+"name": "2011 J 105 North American Championship",
+"start": "2011-08-10",
+"classes": [
+{
+"id": 2146,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 465,
+"name": "2011 Little Traverse Yacht Club Regatta - Ugotta Regatta",
+"start": "2011-07-29",
+"classes": [
+{
+"id": 2279,
+"name": "Class G J 105",
+"num": 6
+}
+]
+},
+{
+"id": 447,
+"name": "2011 American Yacht Club Fall Regatta",
+"start": "2011-09-24",
+"classes": [
+{
+"id": 3006,
+"name": "J 105 Div 3",
+"num": 3
+}
+]
+},
+{
+"id": 433,
+"name": "2011 Block Island Race Week XXIV",
+"start": "2011-06-19",
+"classes": [
+{
+"id": 2125,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 463,
+"name": "157th NYYC Annual Regatta presented by Rolex",
+"start": "2011-06-10",
+"classes": [
+{
+"id": 2663,
+"name": "J/105",
+"num": 7
+}
+]
+},
+{
+"id": 244,
+"name": "2009 Columbia Yacht Club COLORS Regatta",
+"start": "2009-06-13",
+"classes": [
+{
+"id": 1173,
+"name": "J105",
+"num": 7
+}
+]
+},
+{
+"id": 521,
+"name": "2011 Chicago Yacht Club Racing Yacht Fleets Series",
+"start": "2011-05-21",
+"classes": [
+{
+"id": 2556,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 484,
+"name": "2011 Frank Stone Cup Invitational",
+"start": "2011-05-14",
+"classes": [
+{
+"id": 2394,
+"name": "J 105",
+"num": 5
+}
+]
+},
+{
+"id": 446,
+"name": "2011 American Yacht Club Spring Series",
+"start": "2011-04-23",
+"classes": [
+{
+"id": 2339,
+"name": "J 105 Div 3",
+"num": 3
+}
+]
+},
+{
+"id": 98,
+"name": "2006 Detroit NOOD Regatta",
+"start": "2006-06-01",
+"classes": [
+{
+"id": 37,
+"name": "J105",
+"num": 5
+}
+]
+},
+{
+"id": 487,
+"name": "2011 The Manhattan Regatta",
+"start": "2011-05-14",
+"classes": [
+{
+"id": 2400,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 462,
+"name": "2011 Spring One Design",
+"start": "2011-03-19",
+"classes": [
+{
+"id": 2252,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 455,
+"name": "2011 Columbia Yacht Club COLORS Regatta",
+"start": "2011-06-04",
+"classes": [
+{
+"id": 2285,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 347,
+"name": "2010 American Yacht Club Fall Regatta",
+"start": "2010-09-25",
+"classes": [
+{
+"id": 2020,
+"name": "J/105",
+"num": 4
+}
+]
+},
+{
+"id": 343,
+"name": "2010 Rolex Big Boat Series",
+"start": "2010-09-16",
+"classes": [
+{
+"id": 1579,
+"name": "J 105",
+"num": 4
+}
+]
+},
+{
+"id": 370,
+"name": "2010 J/105 North American Championship",
+"start": "2010-09-13",
+"classes": [
+{
+"id": 1682,
+"name": "J 105",
+"num": 1
+}
+]
+},
+{
+"id": 314,
+"name": "2010 Little Traverse Yacht Club Regatta - Ugotta Regatta",
+"start": "2010-07-30",
+"classes": [
+{
+"id": 1454,
+"name": "J 105 Class G",
+"num": 6
+}
+]
+},
+{
+"id": 377,
+"name": "2010 Aldo Alessio Perpetual Trophy Regatta",
+"start": "2010-07-30",
+"classes": [
+{
+"id": 1945,
+"name": "J 105",
+"num": 3
+}
+]
+},
+{
+"id": 346,
+"name": "2010 American Yacht Club Spring Series",
+"start": "2010-04-24",
+"classes": [
+{
+"id": 1616,
+"name": "J/105",
+"num": 3
+}
+]
+},
+{
+"id": 281,
+"name": "2009 Rolex Big Boat Series and Rolex US-IRC National Championship",
+"start": "2009-09-10",
+"classes": [
+{
+"id": 1111,
+"name": "J 105",
+"num": 9
+}
+]
+},
+{
+"id": 294,
+"name": "2009 Sheldon Clark Regatta",
+"start": "2009-09-12",
+"classes": [
+{
+"id": 1372,
+"name": "J105",
+"num": 4
+}
+]
+},
+{
+"id": 260,
+"name": "2009 Little Traverse Yacht Club Regatta - Ugotta Regatta",
+"start": "2009-07-31",
+"classes": [
+{
+"id": 1213,
+"name": "Class E (J/105)",
+"num": 5
+}
+]
+},
+{
+"id": 230,
+"name": "2009 Block Island Race Week XXIII",
+"start": "2009-06-21",
+"classes": [
+{
+"id": 1139,
+"name": "J-105",
+"num": 5
+}
+]
+},
+{
+"id": 183,
+"name": "2008 American Yacht Club Fall Series",
+"start": "2008-09-20",
+"classes": [
+{
+"id": 543,
+"name": "J/105 Div 4",
+"num": 4
+}
+]
+},
+{
+"id": 213,
+"name": "2008 YRALIS PHRF and One-Design Championships",
+"start": "2008-08-09",
+"classes": [
+{
+"id": 754,
+"name": "Class 5   W/L Spinnaker J 105",
+"num": 5
+}
+]
+},
+{
+"id": 182,
+"name": "2008 American Yacht Club Spring Series",
+"start": "2008-04-26",
+"classes": [
+{
+"id": 506,
+"name": "J/105 Div 4",
+"num": 4
+}
+]
+},
+{
+"id": 122,
+"name": "2007 Detroit NOOD Regatta",
+"start": "2007-06-01",
+"classes": [
+{
+"id": 168,
+"name": "J 105",
+"num": 4
+}
+]
+}
+]

@@ -1,0 +1,313 @@
+<title>Puget Sound J/105 Fleet History</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column — header, view switch, then either the year-over-year hull grid + hull detail, or one season's events side by side */
+:root{
+  --bg:#f5f7f9; --panel:#ffffff; --ink:#0f1d2b; --muted:#5d6b78; --rule:#d9e0e6; --line:#b9c4ce; --day:#eef2f5;
+  --base:#d6402b; --c1:#1f6fb2; --c2:#2a8a57; --c3:#8a4fbf; --c4:#b7791f; --c5:#0f8a8a; --c6:#b5487a;
+  --heat:#16507f; --heatink:#ffffff; --mark:#d6402b;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
+  --base:#ff6a4d; --c1:#5fb0f0; --c2:#54c48a; --c3:#b78cf0; --c4:#e8b04a; --c5:#4fd0cf; --c6:#f07fb0;
+  --heat:#3c8fd4; --heatink:#06121c; --mark:#ff6a4d; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
+  --base:#ff6a4d; --c1:#5fb0f0; --c2:#54c48a; --c3:#b78cf0; --c4:#e8b04a; --c5:#4fd0cf; --c6:#f07fb0;
+  --heat:#3c8fd4; --heatink:#06121c; --mark:#ff6a4d; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;gap:26px}
+header{display:grid;gap:10px}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(30px,5vw,44px)/1 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance}
+h2{font:600 22px/1.1 var(--display);margin:0;letter-spacing:.02em}
+h3{font:600 18px/1.1 var(--display);margin:0;letter-spacing:.02em}
+.lede{color:var(--muted);max-width:74ch;margin:0}
+.summary{display:flex;flex-wrap:wrap;gap:12px 32px;font-variant-numeric:tabular-nums}
+.summary b{font:600 26px/1 var(--display)}
+.summary span{display:grid;gap:3px;color:var(--muted);font-size:13px;max-width:30ch}
+.controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:5px;overflow:hidden;background:var(--panel)}
+.seg button{font:500 13px var(--body);color:var(--muted);background:var(--panel);border:0;border-left:1px solid var(--rule);padding:6px 12px;cursor:pointer}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.lab{font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+button:focus-visible,tr:focus-visible,a:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+section{display:grid;gap:10px}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+.hint{color:var(--muted);font-size:13px}
+.card{background:var(--panel);border:1px solid var(--rule);border-radius:6px;overflow-x:auto}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+svg .grid{stroke:var(--rule);stroke-width:1}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{font:600 11.5px/1.2 var(--body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--panel)}
+td{font:13px/1.2 var(--mono)}
+td.name,th.name{text-align:left;font-family:var(--body)}
+th.c,td.c{text-align:center}
+.sticky{position:sticky;left:0;background:var(--panel);z-index:1;box-shadow:1px 0 0 var(--rule)}
+.hull b{font-weight:600}
+.hull small{display:block;color:var(--muted);font-size:11.5px;white-space:normal;max-width:34ch;margin-top:2px}
+#grid td.y{padding:3px;min-width:44px}
+#grid .cell{display:block;border-radius:3px;padding:6px 2px;font-size:11.5px;text-align:center;position:relative}
+#grid .cell.chg{box-shadow:inset 3px 0 0 var(--mark)}
+#grid .cell i{position:absolute;top:2px;right:3px;width:6px;height:6px;border-radius:50%;background:var(--mark)}
+#grid tr{cursor:pointer}
+#grid tr.sel td.sticky{box-shadow:inset 3px 0 0 var(--base),1px 0 0 var(--rule)}
+#grid tr.sel td.sticky b{color:var(--base)}
+.legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:13px;color:var(--muted)}
+.ramp{display:inline-flex;align-items:center;gap:6px;font:12px var(--mono)}
+.ramp i{display:inline-block;width:120px;height:10px;border-radius:2px;background:linear-gradient(90deg,color-mix(in srgb,var(--heat) 8%,var(--panel)),var(--heat))}
+.sw{display:inline-block;width:12px;height:12px;border-radius:2px;vertical-align:middle;margin-right:6px}
+.dot{display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--mark);vertical-align:middle;margin-right:6px}
+.bar{display:inline-block;width:3px;height:14px;background:var(--mark);vertical-align:middle;margin-right:6px}
+.detail{display:grid;gap:14px;padding:14px}
+.detail .top{display:flex;flex-wrap:wrap;justify-content:space-between;gap:8px;align-items:baseline}
+.detail table td{white-space:normal;vertical-align:top}
+.detail td.res{font-size:12px;text-align:left;font-family:var(--mono)}
+.pill{display:inline-block;font:500 11px/1 var(--mono);padding:3px 5px;border-radius:3px;margin:1px 2px 1px 0}
+a{color:var(--c1)}
+.empty{color:var(--muted);padding:16px}
+td.ev{padding:3px;min-width:58px}
+td.ev .cell{display:block;border-radius:3px;padding:6px 2px;text-align:center;font-size:12px}
+th.ev a{color:inherit;text-decoration:none;border-bottom:1px dotted var(--muted)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.check{display:inline-flex;gap:6px;align-items:center;font-size:13px;color:var(--muted)}
+footer{color:var(--muted);font-size:13px;max-width:80ch;display:grid;gap:6px}
+footer p{margin:0}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">J/105 · Puget Sound · __YEARS__</div>
+    <h1>Fleet history</h1>
+    <p class="lede">Every J/105 result we could find from Seattle-area racing: CYC Wednesdays, the Ballard Cup, the Puget Sound Spring Regatta, J/Fest, Race Week, PSSC and the 2026 North Americans. Boats are followed by sail number, so a hull keeps its row when it changes name or skipper. A season score is the share of the fleet a boat beat, averaged over the events it sailed that year.</p>
+    <div class="summary" id="summary"></div>
+  </header>
+
+  <div class="controls">
+    <span class="lab">View</span>
+    <div class="seg" role="group" aria-label="View"><button type="button" data-tab="yoy" aria-pressed="true">Year over year</button><button type="button" data-tab="season" aria-pressed="false">One season</button></div>
+    <span class="lab">Boats</span>
+    <div class="seg" role="group" aria-label="Boats" id="who"></div>
+  </div>
+
+  <div id="tabYoy" class="tab">
+    <section>
+      <div class="head"><h2>The fleet each year</h2><span class="hint">Distinct J/105s in the results, and which events have results online</span></div>
+      <div class="card"><svg id="fleet" role="img" aria-label="Number of J/105s racing each year and event coverage"></svg></div>
+    </section>
+    <section>
+      <div class="head"><h2>Every hull, every year</h2>
+        <div class="controls"><span class="lab">Sort</span><div class="seg" role="group" aria-label="Sort" id="sorts"></div></div></div>
+      <p class="hint" style="margin:0">Each cell is the season score: the share of the fleet beaten, averaged over that year's events. Tap a row for its names, skippers and results.</p>
+      <div class="card"><table id="grid"></table></div>
+      <div class="legend"><span>Season score</span><span class="ramp">0%<i></i>100%</span><span><span class="bar"></span>renamed</span><span><span class="dot"></span>new skipper of record</span></div>
+    </section>
+    <section id="detailSec">
+      <div class="card"><div class="detail" id="detail"></div></div>
+    </section>
+  </div>
+
+  <div id="tabSeason" class="tab" hidden>
+    <section>
+      <div class="head"><h2 id="seasonTitle">Season</h2><label class="check"><input type="checkbox" id="minTwo"> Only boats with 2 or more events</label></div>
+      <div class="controls"><span class="lab">Year</span><div class="seg" role="group" aria-label="Year" id="years"></div></div>
+      <p class="hint" style="margin:0" id="seasonHint"></p>
+      <div class="card"><table id="season"></table></div>
+      <div class="legend"><span>Share of fleet beaten</span><span class="ramp">0%<i></i>100%</span></div>
+    </section>
+  </div>
+
+  <footer>
+    <p>Sources: Ballard Cup results from Sloop Tavern YC (2014 to 2026, Series I and II not sailed in 2020; before 2018 the J/105s raced in mixed handicap classes and are ranked here among the J/105s only). CYC Sound Wednesday Night Series, CYC Puget Sound Spring Regatta (2024 Big Boat weekend, 2025, 2026), PSSC Big Boat, the 2026 PSSC Small Boat &amp; J/Fest and the 2026 North Americans from Clubspot (2024 onward). Race Week from Yacht Scoring: Whidbey Island 2012 to 2019 (no J/105 class in 2015), Anacortes 2021 to 2024 and Bellingham 2025 and 2026, plus J/Fest Seattle 2024. CYC Wednesdays and the Spring Regatta before 2024 were scored somewhere we have not found yet.</p>
+    <p>The 2026 NA visitors filter covers the eight boats that came from out of town for the North Americans (Niuhi, Ne*Ne, Arbitrage, Deja Voodoo, Chao Pescao, Blue Flash, Kinetic #401 and Kinderspel²). Filtering hides boats but keeps the official places, so a score still reflects the whole fleet that raced.</p>
+    <p>Places are final series places after throwouts. Names and skippers are as entered in each event's results; the skipper of record for a year is the one named most often, so club and shared boats change skipper often. Owners are not published, so ownership changes are inferred from renames and new skippers. A few sail numbers were entered inconsistently and are merged: Creative (51911, 686, 422), LiftOff (403, 404) and Cyrano (253, 255, 258).</p>
+  </footer>
+</div>
+
+<script>
+const DATA=__DATA__;
+const FAMCOL={"CYC Wednesdays":"var(--c1)","Ballard Cup":"var(--c2)","Spring Regatta":"var(--c6)","J/Fest":"var(--c4)","Race Week":"var(--c3)","PSSC":"var(--c5)","North Americans":"var(--base)"};
+const EV=DATA.events, FAM=DATA.families;
+const YEARS=[...new Set(EV.map(e=>e.year))].sort((a,b)=>a-b);
+const Y0=YEARS[0],Y1=YEARS[YEARS.length-1],ALLY=Array.from({length:Y1-Y0+1},(_,i)=>Y0+i);
+const pct=(place,fleet)=>fleet>1?(fleet-place)/(fleet-1):1;
+const P=v=>Math.round(v*100)+"%";
+
+// hull -> year -> {entries:[{e,place,name,skipper,p}], score, name, skipper}
+const H={};
+EV.forEach(e=>e.results.forEach(r=>{
+  const h=H[r.hull]||(H[r.hull]={id:r.hull,years:{}});
+  const y=h.years[e.year]||(h.years[e.year]={entries:[]});
+  y.entries.push({e,place:r.place,name:r.name,skipper:r.skipper,p:pct(r.place,e.fleet)});
+}));
+const mode=a=>{const c={};a.forEach(x=>{if(x)c[x]=(c[x]||0)+1});return Object.entries(c).sort((a,b)=>b[1]-a[1])[0]?.[0]||""};
+const surname=s=>(s.replace(/\(.*?\)/g,"").split(/[,&/]| and /)[0].trim().split(/\s+/).pop()||"").toLowerCase();
+Object.values(H).forEach(h=>{
+  const ys=Object.keys(h.years).map(Number).sort((a,b)=>a-b);
+  let prev=null;
+  ys.forEach(y=>{
+    const Y=h.years[y];
+    Y.score=Y.entries.reduce((a,x)=>a+x.p,0)/Y.entries.length;
+    Y.name=mode(Y.entries.map(x=>x.name));Y.skipper=mode(Y.entries.map(x=>x.skipper));
+    Y.skippers=[...new Set(Y.entries.map(x=>x.skipper).filter(Boolean))];
+    if(prev){Y.renamed=Y.name.toLowerCase()!==prev.name.toLowerCase();Y.newSkipper=!Y.renamed&&surname(Y.skipper)!==surname(prev.skipper)&&!prev.skippers.some(s=>surname(s)===surname(Y.skipper))}
+    prev=Y;
+  });
+  // A new skipper only counts if they are still skipper of record the next season (or it is the latest season).
+  ys.forEach((y,i)=>{const Y=h.years[y],N=h.years[ys[i+1]];if(Y.newSkipper&&N&&surname(N.skipper)!==surname(Y.skipper))Y.newSkipper=false});
+  h.first=ys[0];h.last=ys[ys.length-1];h.name=h.years[h.last].name;
+  // name eras, e.g. Usawi 2012–14 → Corvo 105 2017–26
+  const eras=[];ys.forEach(y=>{const n=h.years[y].name;const l=eras[eras.length-1];if(l&&l.n.toLowerCase()===n.toLowerCase())l.to=y;else eras.push({n,from:y,to:y})});
+  h.eras=eras;
+});
+// The eight boats that came from out of town for the 2026 North Americans (Kinetic #401, not the local Kinetic #440).
+const VISITORS=new Set(["27","3","116","130","382","124","401","430"]);
+const WHO={all:"All boats",local:"Puget Sound fleet",visit:"2026 NA visitors"};
+let who="all";
+const ALLH=Object.values(H);
+const shown=h=>who==="all"||(who==="local"?!VISITORS.has(h.id):VISITORS.has(h.id));
+let HULLS=ALLH;
+const yr=(a,b)=>a===b?String(a):a+"–"+String(b).slice(2);
+
+function heat(v){const pc=Math.round(8+80*v);return `background:color-mix(in srgb,var(--heat) ${pc}%,var(--panel));color:${pc>48?"var(--heatink)":"var(--ink)"}`}
+
+let tab="yoy",sortKey="latest",selHull=null,seasonYear=Y1;
+const NS="http://www.w3.org/2000/svg";
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e};
+
+function drawSummary(){
+  const counts=ALLY.map(y=>HULLS.filter(h=>h.years[y]).length);
+  const renamed=HULLS.filter(h=>h.eras.length>1).length;
+  const peak=Math.max(...counts),peakY=ALLY[counts.indexOf(peak)];
+  document.getElementById("summary").innerHTML=
+    `<span><b>${HULLS.length}</b>${who==="visit"?"Out-of-town boats at the 2026 North Americans":"J/105 hulls in the results since "+Y0}</span>`+
+    `<span><b>${EV.filter(e=>e.results.some(r=>HULLS.includes(H[r.hull]))).length}</b>Events with results for these boats</span>`+
+    `<span><b>${peak} in ${peakY}</b>Most J/105s racing in one year</span>`+
+    `<span><b>${renamed}</b>Hulls that raced under more than one name</span>`;
+}
+
+function drawFleet(){
+  const svg=document.getElementById("fleet"),cw=60,m={l:120,r:20,t:24},bh=110,W=m.l+m.r+cw*ALLY.length,H2=m.t+bh+30+FAM.length*18+10;
+  svg.setAttribute("viewBox",`0 0 ${W} ${H2}`);svg.style.minWidth=Math.min(W,900)+"px";svg.innerHTML="";
+  const counts=ALLY.map(y=>HULLS.filter(h=>h.years[y]).length),max=Math.max(...counts);
+  ALLY.forEach((y,i)=>{
+    const x=m.l+i*cw,h=counts[i]/max*bh;
+    if(counts[i]){el("rect",{x:x+12,y:m.t+bh-h,width:cw-24,height:h,rx:2,fill:"var(--heat)"},svg);
+      el("text",{x:x+cw/2,y:m.t+bh-h-6,"text-anchor":"middle",fill:"var(--ink)"},svg).textContent=counts[i]}
+    el("text",{x:x+cw/2,y:m.t+bh+16,"text-anchor":"middle"},svg).textContent=y;
+  });
+  el("text",{x:8,y:m.t+bh-4},svg).textContent="J/105s racing";
+  FAM.forEach((f,j)=>{
+    const yy=m.t+bh+36+j*18;
+    el("text",{x:8,y:yy+4},svg).textContent=f;
+    el("line",{x1:m.l,x2:W-m.r,y1:yy,y2:yy,class:"grid"},svg);
+    ALLY.forEach((y,i)=>{const n=EV.filter(e=>e.year===y&&e.family===f).length;
+      if(n){const c=el("circle",{cx:m.l+i*cw+cw/2,cy:yy,r:4+Math.min(n,3),fill:FAMCOL[f]},svg);el("title",{},c).textContent=`${f} ${y}: ${n} event${n>1?"s":""}`}});
+  });
+}
+
+function hullCell(h){
+  return `<b>${h.name}</b> <span style="color:var(--muted);font-family:var(--mono);font-size:12px">#${h.id}</span>`+
+    (h.eras.length>1?`<small>${h.eras.map(e=>`${e.n} ${yr(e.from,e.to)}`).join(" → ")}</small>`:"");
+}
+function drawGrid(){
+  const sorts={latest:"Latest season",first:"First seen",years:"Most seasons",sail:"Sail number"};
+  document.getElementById("sorts").innerHTML=Object.entries(sorts).map(([k,v])=>`<button type="button" data-sort="${k}" aria-pressed="${k===sortKey}">${v}</button>`).join("");
+  const key={
+    latest:h=>[-h.last,-(h.years[h.last].score)],
+    first:h=>[h.first,-h.last],
+    years:h=>[-Object.keys(h.years).length,-h.last],
+    sail:h=>[+h.id||1e9,0]}[sortKey];
+  const rows=[...HULLS].sort((a,b)=>{const A=key(a),B=key(b);return A[0]-B[0]||A[1]-B[1]});
+  let t=`<thead><tr><th class="name sticky">Hull</th>${ALLY.map(y=>`<th class=c>${y}</th>`).join("")}</tr></thead><tbody>`;
+  rows.forEach(h=>{
+    t+=`<tr data-hull="${h.id}" tabindex="0" class="${h.id===selHull?"sel":""}"><td class="name sticky hull">${hullCell(h)}</td>`+
+      ALLY.map(y=>{const Y=h.years[y];if(!Y)return `<td class=y></td>`;
+        const tip=`${Y.name} ${y} · ${Y.skipper} · ${Y.entries.map(x=>`${x.e.short} ${x.place}/${x.e.fleet}`).join(", ")}`;
+        return `<td class=y><span class="cell${Y.renamed?" chg":""}" style="${heat(Y.score)}" title="${tip.replace(/"/g,"&quot;")}">${Math.round(Y.score*100)}${Y.newSkipper?"<i></i>":""}</span></td>`}).join("")+`</tr>`;
+  });
+  document.getElementById("grid").innerHTML=t+"</tbody>";
+}
+
+function drawDetail(){
+  const box=document.getElementById("detail");
+  const h=H[selHull];
+  if(!h){box.innerHTML=`<div class=empty>Tap a hull in the grid to see its names, skippers and results year by year.</div>`;return}
+  const ys=Object.keys(h.years).map(Number).sort((a,b)=>a-b);
+  // trend chart: one line per event family + season score
+  const W=760,Hh=230,m={l:44,r:130,t:16,b:28},x=y=>m.l+(y-Y0)*(W-m.l-m.r)/Math.max(1,Y1-Y0),yv=v=>m.t+(1-v)*(Hh-m.t-m.b);
+  let svg=`<svg viewBox="0 0 ${W} ${Hh}" style="min-width:560px" role="img" aria-label="Share of fleet beaten by year">`;
+  [0,.25,.5,.75,1].forEach(v=>svg+=`<line x1="${m.l}" x2="${W-m.r}" y1="${yv(v)}" y2="${yv(v)}" class="grid"/><text x="${m.l-8}" y="${yv(v)+4}" text-anchor="end">${v*100}%</text>`);
+  ALLY.forEach(y=>{if((y-Y0)%2===0||y===Y1)svg+=`<text x="${x(y)}" y="${Hh-8}" text-anchor="middle">${y}</text>`});
+  h.eras.forEach((e,i)=>{if(i)svg+=`<line x1="${x(e.from)-8}" x2="${x(e.from)-8}" y1="${m.t}" y2="${Hh-m.b}" stroke="var(--mark)" stroke-dasharray="3 3"/><text x="${x(e.from)-4}" y="${m.t+10}" style="fill:var(--mark);font-family:var(--body)">${e.n}</text>`});
+  let ly=m.t+8;
+  FAM.forEach(f=>{
+    const pts=ys.map(y=>{const xs=h.years[y].entries.filter(z=>z.e.family===f);return xs.length?[y,xs.reduce((a,z)=>a+z.p,0)/xs.length]:null}).filter(Boolean);
+    if(!pts.length)return;
+    svg+=`<path d="${pts.map((p,i)=>(i?"L":"M")+x(p[0])+" "+yv(p[1])).join(" ")}" fill="none" stroke="${FAMCOL[f]}" stroke-width="1.6" opacity=".85"/>`;
+    pts.forEach(p=>svg+=`<circle cx="${x(p[0])}" cy="${yv(p[1])}" r="3" fill="var(--panel)" stroke="${FAMCOL[f]}" stroke-width="2"/>`);
+    svg+=`<rect x="${W-m.r+14}" y="${ly-8}" width="10" height="10" rx="2" fill="${FAMCOL[f]}"/><text x="${W-m.r+30}" y="${ly+1}" style="font-family:var(--body)">${f}</text>`;ly+=18;
+  });
+  const sp=ys.map(y=>[y,h.years[y].score]);
+  svg+=`<path d="${sp.map((p,i)=>(i?"L":"M")+x(p[0])+" "+yv(p[1])).join(" ")}" fill="none" stroke="var(--ink)" stroke-width="2.6"/>`;
+  svg+=`<rect x="${W-m.r+14}" y="${ly-6}" width="10" height="4" fill="var(--ink)"/><text x="${W-m.r+30}" y="${ly+1}" style="font-family:var(--body);fill:var(--ink)">Season score</text></svg>`;
+  let t=`<table><thead><tr><th class=name>Year</th><th class=name>Name</th><th class=name>Skippers of record</th><th class=name>Results</th><th>Season</th></tr></thead><tbody>`;
+  ys.slice().reverse().forEach(y=>{const Y=h.years[y];
+    t+=`<tr><td class=name>${y}</td><td class=name>${Y.renamed?`<b style="color:var(--mark)">${Y.name}</b>`:Y.name}</td>`+
+      `<td class=name>${[Y.skipper,...Y.skippers.filter(s=>s!==Y.skipper)].map((s,i)=>i?`<span style="color:var(--muted)">${s}</span>`:(Y.newSkipper?`<b style="color:var(--mark)">${s}</b>`:s)).join(", ")}</td>`+
+      `<td class=res>${Y.entries.map(z=>`<a class=pill href="${z.e.url}" target="_blank" rel="noopener" style="${heat(z.p)};text-decoration:none" title="${z.e.label} ${y}">${z.e.short} ${z.place}/${z.e.fleet}</a>`).join("")}</td>`+
+      `<td>${P(Y.score)}</td></tr>`});
+  box.innerHTML=`<div class=top><h3>${h.name} · sail ${h.id}</h3><span class=hint>${h.eras.map(e=>`${e.n} ${yr(e.from,e.to)}`).join(" → ")} · ${ys.length} season${ys.length>1?"s":""}</span></div>`+
+    `<div class=card style="border:0">${svg}</div><div class=card style="border:0">${t}</tbody></table></div>`;
+}
+
+function drawSeason(){
+  document.getElementById("years").innerHTML=YEARS.map(y=>`<button type="button" data-year="${y}" aria-pressed="${y===seasonYear}">${y}</button>`).join("");
+  const evs=EV.filter(e=>e.year===seasonYear).sort((a,b)=>FAM.indexOf(a.family)-FAM.indexOf(b.family)||a.label.localeCompare(b.label));
+  const min2=document.getElementById("minTwo").checked;
+  let hs=HULLS.filter(h=>h.years[seasonYear]&&(!min2||h.years[seasonYear].entries.length>=2));
+  hs.sort((a,b)=>b.years[seasonYear].score-a.years[seasonYear].score||b.years[seasonYear].entries.length-a.years[seasonYear].entries.length);
+  document.getElementById("seasonTitle").textContent=`The ${seasonYear} season`;
+  document.getElementById("seasonHint").textContent=`${evs.length} event${evs.length>1?"s":""} with J/105 results · place / fleet size in each · sorted by season score`;
+  let t=`<thead><tr><th>#</th><th class="name sticky">Boat</th><th class=name>Skipper of record</th>${evs.map(e=>`<th class="c ev"><a href="${e.url}" target="_blank" rel="noopener" title="${e.label} ${e.year} official results">${e.short}</a></th>`).join("")}<th>Events</th><th>Season</th></tr></thead><tbody>`;
+  hs.forEach((h,i)=>{const Y=h.years[seasonYear];
+    t+=`<tr data-hull="${h.id}" tabindex="0"><td>${i+1}</td><td class="name sticky"><b>${Y.name}</b> <span style="color:var(--muted);font-size:12px;font-family:var(--mono)">#${h.id}</span></td><td class=name>${Y.skipper}</td>`+
+      evs.map(e=>{const z=Y.entries.find(z=>z.e===e);return z?`<td class=ev><span class=cell style="${heat(z.p)}">${z.place}/${e.fleet}</span></td>`:`<td class="ev c" style="color:var(--muted)">–</td>`}).join("")+
+      `<td>${Y.entries.length}</td><td><b>${P(Y.score)}</b></td></tr>`});
+  document.getElementById("season").innerHTML=t+"</tbody>";
+}
+
+function render(){
+  HULLS=ALLH.filter(shown);
+  document.getElementById("who").innerHTML=Object.entries(WHO).map(([k,v])=>`<button type="button" data-who="${k}" aria-pressed="${k===who}">${v}</button>`).join("");
+  drawSummary();
+  document.querySelectorAll("[data-tab]").forEach(b=>b.setAttribute("aria-pressed",b.dataset.tab===tab));
+  document.getElementById("tabYoy").hidden=tab!=="yoy";document.getElementById("tabSeason").hidden=tab!=="season";
+  if(tab==="yoy"){drawFleet();drawGrid();drawDetail()}else drawSeason();
+  try{history.replaceState(null,"","#"+(tab==="yoy"?(selHull?"hull-"+selHull:"yoy"):"season-"+seasonYear))}catch(e){}
+}
+document.addEventListener("click",e=>{
+  const t=e.target.closest("[data-tab]");if(t){tab=t.dataset.tab;render();return}
+  const w=e.target.closest("[data-who]");if(w){who=w.dataset.who;if(selHull&&!shown(H[selHull]))selHull=null;render();return}
+  const s=e.target.closest("[data-sort]");if(s){sortKey=s.dataset.sort;render();return}
+  const y=e.target.closest("[data-year]");if(y){seasonYear=+y.dataset.year;render();return}
+  if(e.target.closest("a"))return;
+  const h=e.target.closest("[data-hull]");if(h){selHull=h.dataset.hull;tab="yoy";render();document.getElementById("detailSec").scrollIntoView({behavior:matchMedia("(prefers-reduced-motion: reduce)").matches?"auto":"smooth",block:"start"})}
+});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("tr[data-hull]")){e.preventDefault();e.target.click()}});
+document.getElementById("minTwo").addEventListener("change",render);
+const hsh=(location.hash||"").slice(1);
+if(hsh.startsWith("hull-")&&H[hsh.slice(5)])selHull=hsh.slice(5);
+else if(hsh.startsWith("season-")&&YEARS.includes(+hsh.slice(7))){tab="season";seasonYear=+hsh.slice(7)}
+render();
+</script>

@@ -1,0 +1,385 @@
+<title>__TITLE__</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: one column — header + series picker + boat picker, then position chart, points chart, head-to-head, points heatmap */
+:root{
+  --bg:#f5f7f9; --panel:#ffffff; --ink:#0f1d2b; --muted:#5d6b78; --rule:#d9e0e6; --line:#b9c4ce; --day:#eef2f5;
+  --base:#d6402b; --c1:#1f6fb2; --c2:#2a8a57; --c3:#8a4fbf; --c4:#b7791f; --c5:#0f8a8a;
+  --heat:#16507f; --heatink:#ffffff;
+  --display:"Barlow Condensed","Arial Narrow",sans-serif;
+  --body:"IBM Plex Sans",system-ui,sans-serif;
+  --mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){
+  --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
+  --base:#ff6a4d; --c1:#5fb0f0; --c2:#54c48a; --c3:#b78cf0; --c4:#e8b04a; --c5:#4fd0cf;
+  --heat:#3c8fd4; --heatink:#06121c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0c141c; --panel:#121c26; --ink:#e6edf3; --muted:#90a0ae; --rule:#24323f; --line:#3a4a59; --day:#16222d;
+  --base:#ff6a4d; --c1:#5fb0f0; --c2:#54c48a; --c3:#b78cf0; --c4:#e8b04a; --c5:#4fd0cf;
+  --heat:#3c8fd4; --heatink:#06121c; color-scheme:dark}
+body{background:var(--bg);color:var(--ink);font:15px/1.5 var(--body)}
+.wrap{max-width:1180px;margin:0 auto;padding-block:28px 48px;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));
+  display:grid;gap:28px}
+header{display:grid;gap:10px}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+h1{font:700 clamp(30px,5vw,44px)/1 var(--display);letter-spacing:.01em;margin:0;text-wrap:balance}
+h2{font:600 22px/1.1 var(--display);margin:0;letter-spacing:.02em}
+.lede{color:var(--muted);max-width:72ch;margin:0}
+.summary{display:flex;flex-wrap:wrap;gap:12px 32px;font-variant-numeric:tabular-nums;min-height:52px}
+.summary b{font:600 26px/1 var(--display)}
+.summary span{display:grid;gap:3px;color:var(--muted);font-size:13px}
+.summary .hl b{color:var(--base)}
+.controls{display:grid;gap:10px;background:var(--panel);border:1px solid var(--rule);border-radius:6px;padding:12px}
+.ctlrow{display:flex;flex-wrap:wrap;align-items:center;gap:8px 14px}
+.ctlrow .lab{font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);min-width:64px}
+.views{display:flex;flex-wrap:wrap;gap:8px 16px}
+.seg{display:inline-flex;flex-wrap:wrap;border:1px solid var(--rule);border-radius:5px;overflow:hidden}
+.seg .grp{font:600 10.5px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:9px 10px;background:var(--day);display:flex;align-items:center}
+.seg button{font:500 13px var(--body);color:var(--muted);background:var(--panel);border:0;border-left:1px solid var(--rule);padding:6px 12px;cursor:pointer}
+.seg button:first-child{border-left:0}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--bg)}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.chip{font:500 12.5px/1 var(--body);color:var(--ink);background:var(--bg);border:1px solid var(--rule);border-radius:999px;padding:6px 10px;cursor:pointer;display:inline-flex;gap:6px;align-items:center}
+.chip .sw{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.chip[aria-pressed="true"]{border-color:var(--sel);box-shadow:inset 0 0 0 1px var(--sel)}
+.chip[aria-pressed="true"] .sw{background:var(--sel)}
+.chip em{font:600 9.5px/1 var(--body);font-style:normal;letter-spacing:.08em;text-transform:uppercase;color:var(--sel)}
+button.clear{font:500 13px var(--body);color:var(--ink);background:var(--panel);border:1px solid var(--rule);border-radius:4px;padding:5px 10px;cursor:pointer}
+button:focus-visible,tr:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+.note{color:var(--muted);font-size:13px;margin:0}
+.official{display:flex;flex-wrap:wrap;gap:6px 16px;font-size:13.5px}
+.official a{color:var(--c1);text-decoration:none;border-bottom:1px solid color-mix(in srgb,var(--c1) 40%,transparent)}
+.official a:hover{border-bottom-color:var(--c1)}
+.official a:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+.official span{color:var(--muted)}
+section{display:grid;gap:10px}
+.head{display:flex;flex-wrap:wrap;align-items:baseline;justify-content:space-between;gap:8px}
+.hint{color:var(--muted);font-size:13px}
+.chart{background:var(--panel);border:1px solid var(--rule);border-radius:6px;overflow-x:auto}
+svg{display:block;width:100%;height:auto}
+svg text{font-family:var(--mono);font-size:11px;fill:var(--muted)}
+svg .lbl{font-family:var(--body);font-size:11.5px;cursor:pointer}
+svg .lbl.sel{font-weight:600}
+svg .lbl.dim{opacity:.45}
+svg .day{fill:var(--day)}
+svg .dayt{font-family:var(--display);font-size:13px;font-weight:600;letter-spacing:.06em;fill:var(--muted)}
+svg .netcol{fill:var(--day)}
+svg .grid{stroke:var(--rule);stroke-width:1}
+svg .zero{stroke:var(--ink);stroke-width:1;opacity:.5}
+svg path.boat{fill:none;stroke:var(--line);stroke-width:1.3}
+svg path.boat.dim{opacity:.35}
+svg path.boat.sel{stroke-width:2.6}
+svg path.netseg{stroke-dasharray:3 3}
+svg path.hit{fill:none;stroke:transparent;stroke-width:10;cursor:pointer}
+svg circle{fill:var(--panel);stroke-width:2}
+svg .leadt{font-family:var(--body);font-size:11px;fill:var(--ink)}
+svg .side{font-family:var(--body);font-size:11px;font-weight:600;letter-spacing:.08em;fill:var(--muted)}
+.h2h{background:var(--panel);border:1px solid var(--rule);border-radius:6px;overflow-x:auto}
+.tablewrap{overflow-x:auto;background:var(--panel);border:1px solid var(--rule);border-radius:6px}
+table{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums}
+th,td{padding:6px 8px;text-align:right;border-bottom:1px solid var(--rule);white-space:nowrap}
+th{font:600 11.5px/1.2 var(--body);letter-spacing:.05em;text-transform:uppercase;color:var(--muted);background:var(--panel)}
+td{font:13px/1.2 var(--mono)}
+td.name,th.name{text-align:left;font-family:var(--body)}
+#sheet td.pl,#sheet th.pl{position:sticky;left:0;background:var(--panel);z-index:1;min-width:34px}
+#sheet td.name,#sheet th.name{position:sticky;left:34px;background:var(--panel);z-index:1;box-shadow:1px 0 0 var(--rule)}
+#sheet tr{cursor:pointer}
+#sheet tr.dim td{opacity:.4}
+#sheet tr.sel td.name,#sheet tr.sel td.total,#sheet tr.sel td.pl{color:var(--sel);font-weight:600}
+#sheet tr.sel td.name{box-shadow:inset 3px 0 0 var(--sel),1px 0 0 var(--rule)}
+td.total{font-weight:600}
+td.cell{text-align:center;min-width:30px;padding:6px 3px;font-size:12px}
+td.cell.out{text-decoration:line-through;text-decoration-thickness:1px}
+td.cell small{display:block;font-size:8px;line-height:1;margin-top:2px;opacity:.85}
+th.r{text-align:center;padding:6px 3px;font-size:10.5px}
+th.r span{display:block;font-weight:500;letter-spacing:0;opacity:.8}
+.h2h td.name b{color:var(--sel)}
+.h2h .w{color:var(--c2)} .h2h .l{color:var(--base)}
+.legend{display:flex;flex-wrap:wrap;align-items:center;gap:6px 18px;font-size:13px;color:var(--muted)}
+.ramp{display:inline-flex;align-items:center;gap:6px;font:12px var(--mono)}
+.ramp i{display:inline-block;width:120px;height:10px;border-radius:2px;background:linear-gradient(90deg,var(--heat),color-mix(in srgb,var(--heat) 8%,var(--panel)))}
+.strike{text-decoration:line-through}
+footer{color:var(--muted);font-size:13px;max-width:80ch;display:grid;gap:6px}
+footer p{margin:0}
+@media (prefers-reduced-motion:no-preference){svg path.boat,#sheet tr td{transition:opacity .15s}}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="eyebrow">__EYEBROW__</div>
+    <h1>__HEADING__ <span id="yearLabel"></span></h1>
+    <p class="lede">__LEDE__</p>
+    <div class="summary" id="summary"></div>
+  </header>
+
+  <div class="controls">
+    <div class="ctlrow" id="yearRow"><span class="lab">Year</span><div class="views" id="years"></div></div>
+    <div class="ctlrow" id="viewRow"><span class="lab">Series</span><div class="views" id="views"></div></div>
+    <div class="ctlrow"><span class="lab">Official</span><div class="official" id="official"></div></div>
+    <div class="ctlrow"><span class="lab">Boats</span><div class="chips" id="chips"></div></div>
+    <div class="ctlrow"><p class="note" id="pickNote"></p><button class="clear" id="clear" type="button">Clear picks</button></div>
+  </div>
+
+  <section>
+    <div class="head"><h2>Position in the series</h2><span class="hint" id="rankHint"></span></div>
+    <div class="chart"><svg id="rank" role="img" aria-label="Series position of each boat after each race"></svg></div>
+  </section>
+
+  <section>
+    <div class="head"><h2 id="ptsTitle">Points behind the leader</h2><span class="hint" id="ptsHint"></span></div>
+    <div class="chart"><svg id="points" role="img" aria-label="Points gap after each race"></svg></div>
+  </section>
+
+  <section id="h2hSec" hidden>
+    <div class="head"><h2 id="h2hTitle">Head to head</h2><span class="hint" id="h2hHint"></span></div>
+    <div class="h2h"><table id="h2h"></table></div>
+  </section>
+
+  <section>
+    <div class="head"><h2>Points, race by race</h2><span class="hint" id="heatHint"></span></div>
+    <div class="tablewrap"><table id="sheet"></table></div>
+    <div class="legend"><span>Points</span><span class="ramp" id="ramp"></span><span><span class="strike">12</span> thrown out</span><span>– not entered in that series</span></div>
+  </section>
+
+  <footer>__FOOTER__</footer>
+</div>
+
+<script>
+const DATA=__DATA__;
+const VIEWS=__VIEWS__;
+const COLORS=["var(--base)","var(--c1)","var(--c2)","var(--c3)","var(--c4)","var(--c5)"];
+const SER=Object.fromEntries(DATA.series.map(s=>[s.key,s]));
+const fmt=v=>String(+(+v).toFixed(1));
+const ord=n=>n+(n%100>=11&&n%100<=13?"th":({1:"st",2:"nd",3:"rd"}[n%10]||"th"));
+const slug=n=>n.toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-|-$/g,"");
+const MON=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const md=d=>{const [,m,dd]=d.split("-");return MON[+m-1]+" "+(+dd)};
+
+// Build one view: one or more series, races in date order. A boat missing from a series
+// takes that series' DNC score in each race and the series' usual number of throwouts.
+function build(keys){
+  const list=keys.map(k=>SER[k]);
+  const races=[];list.forEach(s=>s.races.forEach((r,i)=>races.push({...r,s:s.key,i,short:s.short||""})));
+  if(list.length>1)races.sort((a,b)=>a.date.localeCompare(b.date)||a.n-b.n);
+  const names=[...new Set(list.flatMap(s=>s.boats.map(b=>b.name)))].sort();
+  const per={};
+  list.forEach(s=>{
+    const by=Object.fromEntries(s.boats.map(b=>[b.name,b]));
+    const absent=s.races.map((_,i)=>{const d=s.boats.filter(b=>b.code[i]==="DNC").map(b=>b.pts[i]);return d.length?Math.max(...d):s.boats.length+1});
+    const tc=s.boats.map(b=>b.thrown.filter(Boolean).length).sort((a,b)=>a-b);const throws=tc[Math.floor(tc.length/2)];
+    per[s.key]={by,absent,throws};
+  });
+  const boats=names.map(name=>{
+    const pts=[],code=[],thrown=[];
+    races.forEach(r=>{
+      const P=per[r.s],b=P.by[name];
+      if(b){pts.push(b.pts[r.i]);code.push(b.code[r.i]);thrown.push(b.thrown[r.i])}
+      else{pts.push(P.absent[r.i]);code.push("ABS");thrown.push(r.i>=SER[r.s].races.length-P.throws)}
+    });
+    let c=0;const cum=pts.map(p=>(c=+(c+p).toFixed(1)));
+    const net=+pts.reduce((a,p,i)=>a+(thrown[i]?0:p),0).toFixed(1);
+    const sailed=code.filter(x=>x!=="DNC"&&x!=="ABS").length;
+    return {name,pts,code,thrown,cum,net,sailed};
+  });
+  const R=races.length;
+  const tie=(a,b,k)=>{
+    const d=a.cum[k]-b.cum[k];if(Math.abs(d)>1e-9)return d;
+    const sa=a.pts.slice(0,k+1).sort((x,y)=>x-y),sb=b.pts.slice(0,k+1).sort((x,y)=>x-y);
+    for(let i=0;i<sa.length;i++)if(sa[i]!==sb[i])return sa[i]-sb[i];
+    for(let i=k;i>=0;i--)if(a.pts[i]!==b.pts[i])return a.pts[i]-b.pts[i];return 0};
+  const netTie=(a,b)=>{
+    if(Math.abs(a.net-b.net)>1e-9)return a.net-b.net;
+    const ka=a.pts.filter((_,i)=>!a.thrown[i]).sort((x,y)=>x-y),kb=b.pts.filter((_,i)=>!b.thrown[i]).sort((x,y)=>x-y);
+    for(let i=0;i<Math.min(ka.length,kb.length);i++)if(ka[i]!==kb[i])return ka[i]-kb[i];
+    for(let i=R-1;i>=0;i--)if(a.pts[i]!==b.pts[i])return a.pts[i]-b.pts[i];return 0};
+  boats.forEach(b=>b.rank=[]);
+  for(let k=0;k<R;k++)[...boats].sort((a,b)=>tie(a,b,k)).forEach((b,i)=>b.rank[k]=i+1);
+  [...boats].sort(netTie).forEach((b,i)=>b.final=i+1);
+  return {keys,races,boats,R,multi:list.length>1};
+}
+
+let V=null,viewKey=VIEWS[0].key,picks=[];
+const colorOf=b=>{const i=picks.indexOf(b.name);return i<0?null:COLORS[i%COLORS.length]};
+const baseline=()=>V.boats.find(b=>b.name===picks[0])||null;
+const finalOrder=()=>[...V.boats].sort((a,b)=>a.final-b.final);
+
+const NS="http://www.w3.org/2000/svg";
+const el=(tag,attrs,parent)=>{const e=document.createElementNS(NS,tag);for(const k in attrs)e.setAttribute(k,attrs[k]);parent&&parent.appendChild(e);return e};
+
+// x axis: one slot per race plus a final "after throwouts" slot.
+function frame(svg,H,m){
+  const R=V.R,slot=R>14?22:62,W=m.l+m.r+slot*R+40;
+  svg.setAttribute("viewBox",`0 0 ${W} ${H}`);svg.style.minWidth=Math.min(W,R>14?W:760)+"px";svg.innerHTML="";
+  const x=i=>m.l+i*slot+(i>=R?40:0);
+  // Shade alternate groups: race nights for short series, months for long ones.
+  const groups=[];V.races.forEach((r,i)=>{const g=R>14?r.date.slice(0,7):r.date;if(!groups.length||groups[groups.length-1].g!==g)groups.push({g,from:i,to:i});else groups[groups.length-1].to=i});
+  groups.forEach((g,j)=>{
+    const x0=x(g.from)-slot/2,x1=x(g.to)+slot/2;
+    if(j%2===0)el("rect",{x:x0,y:m.t-26,width:x1-x0,height:H-m.t-m.b+26,class:"day"},svg);
+    const label=R>14?MON[+g.g.slice(5,7)-1].toUpperCase():md(g.g).toUpperCase();
+    if(x1-x0>=34)el("text",{x:(x0+x1)/2,y:m.t-10,"text-anchor":"middle",class:"dayt"},svg).textContent=label;
+  });
+  el("rect",{x:x(R)-slot/2-6,y:m.t-26,width:slot+12,height:H-m.t-m.b+26,class:"netcol"},svg);
+  el("text",{x:x(R),y:m.t-10,"text-anchor":"middle",class:"dayt"},svg).textContent="NET";
+  V.races.forEach((r,i)=>{if(R<=14||i%5===0||i===R-1)el("text",{x:x(i),y:H-m.b+18,"text-anchor":"middle"},svg).textContent=V.multi?(r.short+r.n):"R"+r.n});
+  el("text",{x:x(R),y:H-m.b+18,"text-anchor":"middle"},svg).textContent="final";
+  return {x,W};
+}
+function spread(items,gap,lo,hi){
+  items.sort((a,b)=>a.y-b.y);
+  for(let i=1;i<items.length;i++)if(items[i].y<items[i-1].y+gap)items[i].y=items[i-1].y+gap;
+  const over=items.length?items[items.length-1].y-hi:0;
+  if(over>0){items[items.length-1].y-=over;for(let i=items.length-2;i>=0;i--)if(items[i].y>items[i+1].y-gap)items[i].y=items[i+1].y-gap}
+  return items;
+}
+// Running values for races 0..R-1, then the net value in the final slot (drawn dashed).
+function lines(svg,x,run,fin,yOf){
+  const any=picks.length>0,R=V.R;
+  [...V.boats].sort((a,b)=>(colorOf(a)?1:0)-(colorOf(b)?1:0)||picks.indexOf(b.name)-picks.indexOf(a.name)).forEach(b=>{
+    const v=run(b),f=fin(b),col=colorOf(b),cls="boat "+(col?"sel":any?"dim":"");
+    const d=v.map((val,i)=>(i?"L":"M")+x(i)+" "+yOf(val)).join(" ");
+    const p=el("path",{d,class:cls},svg),q=el("path",{d:`M${x(R-1)} ${yOf(v[R-1])}L${x(R)} ${yOf(f)}`,class:cls+" netseg"},svg);
+    if(col){p.style.stroke=col;q.style.stroke=col;
+      if(R<=14)v.forEach((val,i)=>el("circle",{cx:x(i),cy:yOf(val),r:3,stroke:col},svg));
+      el("circle",{cx:x(R),cy:yOf(f),r:3.6,stroke:col},svg)}
+    el("path",{d:d+`L${x(R)} ${yOf(f)}`,class:"hit","data-boat":b.name},svg);
+  });
+}
+function endLabel(svg,x,b,y,text){
+  const col=colorOf(b),t=el("text",{x:x(V.R)+16,y,class:"lbl "+(col?"sel":picks.length?"dim":""),"data-boat":b.name},svg);
+  t.style.fill=col||"var(--ink)";t.textContent=text;
+}
+
+function drawRank(){
+  const svg=document.getElementById("rank"),n=V.boats.length,H=Math.max(380,n*22+80),m={l:40,r:170,t:44,b:30};
+  const {x,W}=frame(svg,H,m),y=r=>m.t+(r-1)*(H-m.t-m.b)/(n-1);
+  [...new Set([1,5,10,15,20,n])].filter(r=>r<=n).forEach(r=>{el("line",{x1:m.l-14,x2:W-m.r+14,y1:y(r),y2:y(r),class:"grid"},svg);el("text",{x:m.l-22,y:y(r)+4,"text-anchor":"end"},svg).textContent=r});
+  lines(svg,x,b=>b.rank,b=>b.final,y);
+  finalOrder().forEach(b=>endLabel(svg,x,b,y(b.final)+4,b.final+"  "+b.name));
+  document.getElementById("rankHint").textContent="Place on running total after each race · final column is the official standing after throwouts";
+}
+
+function drawPoints(){
+  const svg=document.getElementById("points"),n=V.boats.length,H=Math.max(400,n*22+90),m={l:56,r:170,t:64,b:30},base=baseline(),R=V.R;
+  const {x,W}=frame(svg,H,m);
+  if(base){
+    const diff=b=>b.cum.map((v,k)=>+(v-base.cum[k]).toFixed(1)),fd=b=>+(b.net-base.net).toFixed(1);
+    const ext=Math.max(10,...V.boats.flatMap(b=>[...diff(b),fd(b)].map(Math.abs)));
+    const step=ext>200?100:ext>100?50:ext>40?20:10,lim=Math.ceil(ext/step)*step,y=v=>m.t+(H-m.t-m.b)*((v+lim)/(2*lim));
+    for(let v=-lim;v<=lim;v+=step){el("line",{x1:m.l-14,x2:W-m.r+14,y1:y(v),y2:y(v),class:v?"grid":"zero"},svg);el("text",{x:m.l-22,y:y(v)+4,"text-anchor":"end"},svg).textContent=v?(v<0?"−"+(-v):"+"+v):"0"}
+    el("text",{x:m.l,y:m.t+12,class:"side"},svg).textContent="AHEAD OF "+base.name.toUpperCase();
+    el("text",{x:m.l,y:H-m.b-6,class:"side"},svg).textContent="BEHIND";
+    lines(svg,x,diff,fd,y);
+    spread(finalOrder().map(b=>({b,y:y(fd(b))+4})),13,m.t,H-m.b).forEach(({b,y:yy})=>{const d=fd(b);endLabel(svg,x,b,yy,(d?(d<0?"−"+fmt(-d):"+"+fmt(d)):"0")+"  "+b.name)});
+    document.getElementById("ptsTitle").textContent="Points vs "+base.name;
+    document.getElementById("ptsHint").textContent="Running total gained or lost against the baseline · final column after throwouts · fewer points is better";
+  }else{
+    const lead=Array.from({length:R},(_,k)=>Math.min(...V.boats.map(b=>b.cum[k]))),nl=Math.min(...V.boats.map(b=>b.net));
+    const gap=b=>b.cum.map((v,k)=>+(v-lead[k]).toFixed(1)),fg=b=>+(b.net-nl).toFixed(1);
+    const ext=Math.max(...V.boats.flatMap(b=>[...gap(b),fg(b)])),step=ext>300?100:ext>120?50:ext>50?20:10,top=Math.ceil(ext/step)*step,y=v=>m.t+(H-m.t-m.b)*(v/top);
+    for(let v=0;v<=top;v+=step){el("line",{x1:m.l-14,x2:W-m.r+14,y1:y(v),y2:y(v),class:"grid"},svg);el("text",{x:m.l-22,y:y(v)+4,"text-anchor":"end"},svg).textContent=v?"+"+v:"0"}
+    lines(svg,x,gap,fg,y);
+    spread(finalOrder().map(b=>({b,y:y(fg(b))+4})),13,m.t,H-m.b).forEach(({b,y:yy})=>{const g=fg(b);endLabel(svg,x,b,yy,(g?"+"+fmt(g):"0")+"  "+b.name)});
+    document.getElementById("ptsTitle").textContent="Points behind the leader";
+    document.getElementById("ptsHint").textContent="Running total behind whoever led after each race · final column after throwouts";
+  }
+}
+
+function drawH2H(){
+  const sec=document.getElementById("h2hSec"),base=baseline();
+  const others=picks.slice(1).map(n=>V.boats.find(b=>b.name===n)).filter(Boolean);
+  if(!base||!others.length){sec.hidden=true;return}
+  sec.hidden=false;
+  document.getElementById("h2hTitle").textContent="Head to head with "+base.name;
+  document.getElementById("h2hHint").textContent="Only races both boats sailed · final gap after throwouts";
+  let h=`<thead><tr><th class=name>Boat</th><th>Both sailed</th><th>Beat ${base.name}</th><th>Lost to</th><th>Net points</th><th>Gap</th><th>Place</th></tr></thead><tbody>`;
+  others.forEach(b=>{
+    let w=0,l=0,both=0;
+    for(let k=0;k<V.R;k++){if(["DNC","ABS"].includes(b.code[k])||["DNC","ABS"].includes(base.code[k]))continue;both++;if(b.pts[k]<base.pts[k])w++;else if(b.pts[k]>base.pts[k])l++}
+    const d=+(b.net-base.net).toFixed(1);
+    h+=`<tr style="--sel:${colorOf(b)}"><td class=name><b>${b.name}</b></td><td>${both}</td><td class=w>${w}</td><td class=l>${l}</td><td>${fmt(b.net)}</td>`+
+      `<td>${d===0?"level":(d<0?fmt(-d)+" ahead":fmt(d)+" behind")}</td><td>${ord(b.final)}</td></tr>`;
+  });
+  document.getElementById("h2h").innerHTML=h+"</tbody>";
+}
+
+function heat(p,max){const pct=Math.round(88-80*Math.min(1,(p-1)/Math.max(1,max-1)));return `background:color-mix(in srgb,var(--heat) ${pct}%,var(--panel));color:${pct>48?"var(--heatink)":"var(--ink)"}`}
+function drawSheet(){
+  const max=Math.max(...V.boats.flatMap(b=>b.pts));
+  document.getElementById("heatHint").textContent="Points in each race (place, or the penalty score) · darker is better · scroll sideways for every race";
+  document.getElementById("ramp").innerHTML=`1<i></i>${fmt(max)}`;
+  let h="<thead><tr><th class=pl>Pl</th><th class=name>Boat</th><th>Sailed</th>"+V.races.map(r=>`<th class=r>${V.multi?r.short:"R"}${r.n}<span>${md(r.date)}</span></th>`).join("")+"<th>Total</th><th>Net</th></tr></thead><tbody>";
+  finalOrder().forEach(b=>{
+    const col=colorOf(b);
+    h+=`<tr class="${col?"sel":picks.length?"dim":""}" style="${col?"--sel:"+col:""}" data-boat="${b.name}" tabindex="0"><td class=pl>${b.final}</td><td class=name>${b.name}</td><td>${b.sailed}/${V.R}</td>`+
+      b.pts.map((p,i)=>b.code[i]==="ABS"?`<td class="cell" title="Not entered in this series" style="color:var(--muted)">–</td>`
+        :`<td class="cell${b.thrown[i]?" out":""}" style="${heat(p,max)}">${fmt(p)}${b.code[i]?`<small>${b.code[i]}</small>`:""}</td>`).join("")+
+      `<td>${fmt(b.cum[V.R-1])}</td><td class=total>${fmt(b.net)}</td></tr>`;
+  });
+  document.getElementById("sheet").innerHTML=h+"</tbody>";
+}
+
+const YEARS=[...new Set(VIEWS.map(v=>v.year))];
+const curView=()=>VIEWS.find(v=>v.key===viewKey);
+function drawViews(){
+  const year=curView().year,mine=VIEWS.filter(v=>v.year===year);
+  document.getElementById("yearRow").hidden=YEARS.length<2;
+  document.getElementById("years").innerHTML=`<div class="seg" role="group" aria-label="Year">${YEARS.map(y=>`<button type="button" data-year="${y}" aria-pressed="${y===year}">${y}</button>`).join("")}</div>`;
+  const row=document.getElementById("viewRow");row.hidden=mine.length<2;
+  const groups=[];mine.forEach(v=>{let g=groups.find(x=>x.name===v.group);if(!g)groups.push(g={name:v.group,items:[]});g.items.push(v)});
+  document.getElementById("views").innerHTML=groups.map(g=>`<div class="seg" role="group" aria-label="${g.name}">${g.name?`<span class="grp">${g.name}</span>`:""}${g.items.map(v=>`<button type="button" data-view="${v.key}" aria-pressed="${v.key===viewKey}">${v.label}</button>`).join("")}</div>`).join("");
+}
+function drawChips(){
+  document.getElementById("chips").innerHTML=finalOrder().map(b=>{
+    const col=colorOf(b),i=picks.indexOf(b.name);
+    return `<button type="button" class="chip" data-boat="${b.name}" aria-pressed="${!!col}" style="${col?"--sel:"+col:""}"><span class="sw"></span>${b.name}${i===0?"<em>baseline</em>":""}</button>`;
+  }).join("");
+  const hidden=picks.filter(n=>!V.boats.find(b=>b.name===n));
+  document.getElementById("pickNote").textContent=!picks.length
+    ?"Tap a boat here, on a chart line, or in the table. The first boat you pick becomes the baseline."
+    :(hidden.length?hidden.join(", ")+" did not sail in this series. ":"")+"Tap a picked boat again to drop it.";
+}
+function drawSummary(){
+  const base=baseline(),box=document.getElementById("summary"),fo=finalOrder(),view=VIEWS.find(v=>v.key===viewKey);
+  if(!base){
+    let changes=0;for(let k=1;k<V.R;k++)if(V.boats.find(b=>b.rank[k]===1)!==V.boats.find(b=>b.rank[k-1]===1))changes++;
+    box.innerHTML=`<span><b>${fo[0].name}</b>Winner · ${fmt(fo[0].net)} pts net, ${fmt(fo[1].net-fo[0].net)} ahead of ${fo[1].name}</span>`+
+      `<span><b>${V.R}</b>Races in ${view.label.toLowerCase()==="all"?"all "+view.group:view.title||view.label}</span>`+
+      `<span><b>${V.boats.length}</b>Boats</span>`+
+      `<span><b>${changes}</b>Changes of leader on running total</span>`;
+    return;
+  }
+  const top=Math.min(...base.pts.filter((_,i)=>!["DNC","ABS"].includes(base.code[i]))),wins=base.pts.filter((p,i)=>p===1&&!base.code[i]).length;
+  box.innerHTML=`<span class=hl><b>${ord(base.final)} of ${V.boats.length}</b>${base.name} · ${fmt(base.net)} pts net</span>`+
+    `<span><b>${base.sailed} of ${V.R}</b>Races sailed</span>`+
+    `<span><b>${wins}</b>Race win${wins===1?"":"s"}</span>`+
+    `<span><b>${Number.isFinite(top)?fmt(top):"–"}</b>Best score</span>`;
+}
+
+function redraw(){
+  V=build(VIEWS.find(v=>v.key===viewKey).series);
+  drawViews();drawSummary();drawChips();drawRank();drawPoints();drawH2H();drawSheet();
+  document.getElementById("yearLabel").textContent=curView().year;
+  document.getElementById("official").innerHTML=curView().series.map(k=>SER[k]).map(s=>`<a href="${s.url}" target="_blank" rel="noopener">${s.label} ${curView().year} ↗</a> <span>${s.source}</span>`).join("");
+  try{const parts=[...(VIEWS.length>1?[viewKey]:[]),...picks.map(slug)];history.replaceState(null,"",parts.length?"#"+parts.join("~"):location.pathname+location.search)}catch(e){}
+}
+function toggle(name){const i=picks.indexOf(name);i<0?picks.push(name):picks.splice(i,1);redraw()}
+document.addEventListener("click",e=>{
+  const y=e.target.closest("[data-year]");
+  if(y){const kind=curView().kind,same=VIEWS.find(v=>v.year===y.dataset.year&&v.kind===kind)||VIEWS.find(v=>v.year===y.dataset.year);viewKey=same.key;redraw();return}
+  const v=e.target.closest("[data-view]");if(v){viewKey=v.dataset.view;redraw();return}
+  const n=e.target.closest("[data-boat]");if(n)toggle(n.getAttribute("data-boat"));
+});
+document.addEventListener("keydown",e=>{if((e.key==="Enter"||e.key===" ")&&e.target.matches("tr[data-boat]")){e.preventDefault();toggle(e.target.dataset.boat)}});
+document.getElementById("clear").addEventListener("click",()=>{picks=[];redraw()});
+// Link state: #<view>~<boat>~<boat>, e.g. #bc~corvo-105~puff
+const parts=decodeURIComponent((location.hash||"").slice(1)).split("~").filter(Boolean);
+if(parts.length&&VIEWS.some(v=>v.key===parts[0]))viewKey=parts.shift();
+const allNames=[...new Set(DATA.series.flatMap(s=>s.boats.map(b=>b.name)))];
+picks=parts.map(p=>allNames.find(n=>slug(n)===p)).filter(Boolean);
+redraw();
+</script>
