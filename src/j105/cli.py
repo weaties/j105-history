@@ -31,10 +31,10 @@ def counts(source: str | None = None) -> None:
         if not evs:
             print(f"{name}: no events collected")
             continue
-        sails = {r["sail"] for e in evs for r in e["results"] if r["sail"]}
+        sails = {hull(r["sail"], boat=r["boat"]) for e in evs for r in e["results"] if r["sail"]}
         print(
             f"\n{name}: {len(evs)} scored J/105 events, "
-            f"{sum(e['fleet'] for e in evs)} boat results, {len(sails)} sail numbers"
+            f"{sum(e['fleet'] for e in evs)} boat results, {len(sails)} hulls (by sail number)"
         )
         _table("year", evs, lambda e: (e.get("start") or "????")[:4])
         _table("region", evs, lambda e: region(event_state(e)) or "unknown")
