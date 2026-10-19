@@ -78,8 +78,8 @@ def test_event_state_from_source_or_host_table() -> None:
     # Generic name pinned per event: this Corinthian YC event is in San Francisco, not MA.
     assert event_state({**ev, "event_id": "16428", "host": "Corinthian Yacht Club"}) == "CA"
     assert event_state({**ev, "host": "Corinthian Yacht Club"}) == "MA"
-    # Proposed rows are not applied until confirmed.
-    assert event_state({**ev, "host": "Shearwater Sailing Club"}) == ""
+    # Proposed rows (here an organizer with no state) are not applied.
+    assert event_state({**ev, "host": "Sailing World"}) == ""
 
 
 def test_host_table_rows_are_complete() -> None:
