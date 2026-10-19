@@ -1,4 +1,4 @@
-"""Command line: ``j105 discover|collect <source>``, ``j105 counts|hosts|identity|verify``."""
+"""Command line: ``j105 discover|collect <source>``, ``j105 counts|hosts|identity|hull|verify``."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from collections.abc import Callable
 from typing import Any
 
 from j105.http import RAW, read_json
-from j105.identity import candidates
+from j105.identity import candidates, hull
 from j105.regions import event_state, host_key, host_table, in_scope, region, state_code
 from j105.sources import clubspot, j105org, regattanetwork, sailwave, styc, yachtscoring
 from j105.verify import verify
@@ -38,6 +38,27 @@ def counts(source: str | None = None) -> None:
         )
         _table("year", evs, lambda e: (e.get("start") or "????")[:4])
         _table("region", evs, lambda e: region(event_state(e)) or "unknown")
+
+
+def show_hull(sail: str) -> None:
+    """Every result for one hull across all sources, oldest first."""
+    want = hull(sail)
+    rows = []
+    for name in SOURCES:
+        for e in read_json(RAW / f"{_short(name)}_events.json", []):
+            if not in_scope(e):
+                continue
+            for r in e["results"]:
+                if r["sail"] and hull(r["sail"], boat=r["boat"]) == want:
+                    rows.append((e, r))
+    rows.sort(key=lambda er: er[0].get("start") or "")
+    print(f"hull {want}: {len(rows)} results")
+    for e, r in rows:
+        mixed = f" (J/105s in {e.get('division_size')}-boat {e['class']})" if e.get("mixed") else ""
+        print(
+            f"  {e.get('start', '')[:10]} {r['place']:>2}/{e['fleet']:<2} {r['boat'][:22]:22} "
+            f"{r['skipper'][:24]:24} {e['name'][:44]}{mixed}  [{e['source']}]"
+        )
 
 
 def identity_report() -> None:
@@ -125,6 +146,7 @@ def main() -> None:
     c.add_argument("source", nargs="?", choices=list(SOURCES))
     sub.add_parser("hosts")
     sub.add_parser("identity")
+    sub.add_parser("hull").add_argument("sail")
     sub.add_parser("verify")
     a = p.parse_args()
     logging.basicConfig(
@@ -134,6 +156,9 @@ def main() -> None:
     )
     if a.cmd == "counts":
         counts(a.source)
+        return
+    if a.cmd == "hull":
+        show_hull(a.sail)
         return
     if a.cmd == "identity":
         identity_report()
