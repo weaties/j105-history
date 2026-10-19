@@ -7,6 +7,8 @@ numbers (e.g. Fleet 1 = San Francisco) go in ``data/identity/fleets.csv`` once c
 from __future__ import annotations
 
 import re
+from functools import cache
+from typing import Any
 
 NAMES = {
     "alabama": "AL", "california": "CA", "connecticut": "CT", "delaware": "DE", "florida": "FL",
@@ -47,3 +49,41 @@ def state_code(state: str) -> str:
 
 def region(state: str) -> str:
     return _BY_STATE.get(state_code(state), "")
+
+
+# ``data/identity/host_clubs.csv`` statuses that are applied. ``proposed`` rows wait for review.
+APPLIED = {"source", "printed", "confirmed"}
+
+
+def host_key(host: str) -> str:
+    """``"Hosted by The Houston Yacht Club"`` -> ``"houston yacht club"``."""
+    h = re.sub(r"[^a-z0-9 ]", " ", host.lower())
+    h = re.sub(r"\s+", " ", h).strip()
+    return re.sub(r"^(hosted by )?(the )?", "", h)
+
+
+@cache
+def host_table() -> tuple[dict[str, str], dict[str, str]]:
+    """Reviewed host -> state rows, as ``(by host key, by "source:event_id")``."""
+    from j105.identity import _rows
+
+    by_host: dict[str, str] = {}
+    by_event: dict[str, str] = {}
+    for r in _rows("host_clubs.csv"):
+        if r["status"] not in APPLIED:
+            continue
+        if r["event"]:
+            by_event[r["event"]] = r["state"]
+        else:
+            by_host[host_key(r["host"])] = r["state"]
+    return by_host, by_event
+
+
+def event_state(e: dict[str, Any]) -> str:
+    """The event's state code: as the source printed it, else from the reviewed host table."""
+    if e.get("state"):
+        return state_code(e["state"])
+    by_host, by_event = host_table()
+    return by_event.get(f"{e['source']}:{e['event_id']}") or by_host.get(
+        host_key(e.get("host") or ""), ""
+    )

@@ -21,7 +21,7 @@ from typing import Any
 from bs4 import BeautifulSoup, Tag
 
 from j105.http import RAW, Fetcher, pmap, read_json, write_json
-from j105.schema import Event, Result
+from j105.schema import TEST_EVENT, Event, Result
 
 log = logging.getLogger(__name__)
 
@@ -268,7 +268,7 @@ def parse_page(html: bytes | str, meta: dict[str, Any]) -> list[Event]:
 def standings() -> list[Event]:
     """Parse every cached J/105 page listed in the index. Fetches any page not yet cached."""
     f = _fetcher()
-    idx = read_json(INDEX, [])
+    idx = [m for m in read_json(INDEX, []) if not TEST_EVENT.search(m["title"])]
 
     def one(meta: dict[str, Any]) -> list[Event]:
         body = f.bytes(RESULTS, {"regatta_id": meta["id"]}, cache=page_path(meta["id"]))

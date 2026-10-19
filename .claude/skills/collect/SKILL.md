@@ -37,4 +37,9 @@ requests in flight, retries with exponential backoff, and raw replies cached und
 - Yacht Scoring: ~96 indexed events have no J/105 block in `cumulative-result` (cancelled,
   unscored, or a listed class nobody entered). Classes named for PHRF etc. can contain J/105s
   (each boat has a `design` field) — not yet collected.
-- Regatta Network: no city/state on the page; dates come from the year list.
+- Regatta Network: no city/state on the page; dates come from the year list. The state comes
+  from `data/identity/host_clubs.csv` at build time and in `j105 counts`. After collecting,
+  run `uv run j105 hosts`: it prints `source` rows for hosts whose state Clubspot/Yacht Scoring
+  print consistently, and the events still without a state. Add new hosts as `proposed` with
+  the evidence (e.g. where the event's boats usually race) and ask the user to confirm. A
+  generic name (Corinthian Yacht Club: Marblehead MA and San Francisco) gets an `event` row.

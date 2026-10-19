@@ -1,4 +1,4 @@
-"""Command line: ``j105 discover|collect <source>``, ``j105 counts``, ``j105 verify``."""
+"""Command line: ``j105 discover|collect <source>`` and ``j105 counts|hosts|verify``."""
 
 from __future__ import annotations
 
@@ -9,7 +9,7 @@ from collections.abc import Callable
 from typing import Any
 
 from j105.http import RAW, read_json
-from j105.regions import region
+from j105.regions import event_state, host_key, host_table, region, state_code
 from j105.sources import clubspot, regattanetwork, yachtscoring
 from j105.verify import verify
 
@@ -33,7 +33,41 @@ def counts(source: str | None = None) -> None:
             f"{sum(e['fleet'] for e in evs)} boat results, {len(sails)} sail numbers"
         )
         _table("year", evs, lambda e: (e.get("start") or "????")[:4])
-        _table("region", evs, lambda e: region(e.get("state") or "") or "unknown")
+        _table("region", evs, lambda e: region(event_state(e)) or "unknown")
+
+
+def hosts() -> None:
+    """Seed rows for ``host_clubs.csv`` and the scored events whose state is still unknown.
+
+    A host gets a ``source`` row only when every Clubspot/Yacht Scoring event it ran prints the
+    same state. Review the rows before adding them: a generic name ("Corinthian Yacht Club")
+    can belong to clubs in several states; pin such events with an ``event`` row instead.
+    """
+    evs = [e for name in SOURCES for e in read_json(RAW / f"{_short(name)}_events.json", [])]
+    seen: dict[str, collections.Counter[str]] = collections.defaultdict(collections.Counter)
+    printed: dict[str, str] = {}
+    for e in evs:
+        if e.get("host") and e.get("state"):
+            seen[host_key(e["host"])][state_code(e["state"])] += 1
+            printed.setdefault(host_key(e["host"]), e["host"])
+    by_host, _ = host_table()
+    print("host,event,state,status,note")
+    for key, states in sorted(seen.items()):
+        if key in by_host:
+            continue
+        note = ", ".join(f"{s} {n}" for s, n in states.most_common())
+        if len(states) == 1:
+            print(f'"{printed[key]}",,{next(iter(states))},source,"Clubspot/YS events: {note}"')
+        else:
+            print(f'"{printed[key]}",,,proposed,"Clubspot/YS disagree: {note}"')
+    missing: dict[str, list[dict[str, Any]]] = collections.defaultdict(list)
+    for e in evs:
+        if _usable(e) and not event_state(e):
+            missing[e.get("host") or ""].append(e)
+    print(f"\n{sum(map(len, missing.values()))} scored events with no state, by host:")
+    for host, es in sorted(missing.items(), key=lambda kv: -len(kv[1])):
+        ex = es[0]
+        print(f"  {len(es):3} {host!r}  e.g. {ex['source']}:{ex['event_id']} {ex['name']!r}")
 
 
 def _usable(e: dict[str, Any]) -> bool:
@@ -62,6 +96,7 @@ def main() -> None:
         s.add_argument("source", choices=[*SOURCES, "all"])
     c = sub.add_parser("counts")
     c.add_argument("source", nargs="?", choices=list(SOURCES))
+    sub.add_parser("hosts")
     sub.add_parser("verify")
     a = p.parse_args()
     logging.basicConfig(
@@ -71,6 +106,9 @@ def main() -> None:
     )
     if a.cmd == "counts":
         counts(a.source)
+        return
+    if a.cmd == "hosts":
+        hosts()
         return
     if a.cmd == "verify":
         raise SystemExit(1 if verify() else 0)

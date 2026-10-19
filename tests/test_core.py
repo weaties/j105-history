@@ -66,3 +66,26 @@ def test_clubspot_location_drops_phone_numbers() -> None:
     assert PHONE.sub("", "102 West Strand, Oxford, MD 21654  410.226.5269") == (
         "102 West Strand, Oxford, MD 21654"
     )
+
+
+def test_event_state_from_source_or_host_table() -> None:
+    from j105.regions import event_state, host_key
+
+    assert host_key("Hosted by The Houston Yacht Club") == "houston yacht club"
+    ev = {"source": "regattanetwork", "event_id": "0", "state": "", "host": "TRED AVON YACHT CLUB"}
+    assert event_state(ev) == "MD"
+    assert event_state({**ev, "state": "Virginia"}) == "VA"  # the source's own state wins
+    # Generic name pinned per event: this Corinthian YC event is in San Francisco, not MA.
+    assert event_state({**ev, "event_id": "16428", "host": "Corinthian Yacht Club"}) == "CA"
+    assert event_state({**ev, "host": "Corinthian Yacht Club"}) == "MA"
+    # Proposed rows are not applied until confirmed.
+    assert event_state({**ev, "host": "Shearwater Sailing Club"}) == ""
+
+
+def test_host_table_rows_are_complete() -> None:
+    from j105.regions import APPLIED
+
+    rows = identity._rows("host_clubs.csv")
+    assert rows and all(r["note"] for r in rows)
+    assert all(r["state"] for r in rows if r["status"] in APPLIED)
+    assert {r["status"] for r in rows} <= APPLIED | {"proposed"}

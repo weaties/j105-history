@@ -14,6 +14,7 @@ uv sync                              # install
 uv run j105 discover <source|all>    # find events with a J/105 class (resumable, cached)
 uv run j105 collect <source|all>     # standings -> data/raw/<src>_events.json, then counts
 uv run j105 counts [source]          # events / boat results per year and region
+uv run j105 hosts                    # host -> state seed rows; events still without a state
 uv run j105 verify                   # consistency checks + random events to spot-check by hand
 uv run pytest && uv run ruff check . && uv run ruff format --check .
 ```
@@ -29,7 +30,9 @@ Sources: `clubspot`, `yachtscoring`, `regattanetwork`. Skills in `.claude/skills
 - `src/j105/schema.py` (common event schema), `identity.py` (hulls, names, opt-outs),
   `regions.py` (state codes → regions), `verify.py`, `cli.py`.
 - `data/raw/*_index.json` (discovery) and `*_events.json` (standings) are committed outputs.
-- `data/identity/*.csv` — human-reviewed tables: `aliases`, `nicknames`, `shared_boats`, `optout`.
+- `data/identity/*.csv` — human-reviewed tables: `aliases`, `nicknames`, `shared_boats`, `optout`,
+  `host_clubs` (host or one event → state; only `source`/`printed`/`confirmed` rows are applied,
+  `proposed` rows wait for the user; the source's own state always wins).
 - `data/raw/puget_sound/` — verified Puget Sound-era data. `collect/legacy/` — Puget Sound
   scripts, reference only (some import `helmlog`); port code out, don't edit. Not linted.
 - `site/reference/` — local copies of four earlier artifacts (style reference; see `publish`).
@@ -40,10 +43,11 @@ Sources: `clubspot`, `yachtscoring`, `regattanetwork`. Skills in `.claude/skills
 |---|---|---|
 | Clubspot | 2019– | No place field: rank by net, then total (tiebreaks hidden). Skip test/"CLONED". |
 | Yacht Scoring | 2006– | `cumulative-result` boats are in official order; `/boats` adds club, build year, `boatId`. |
-| Regatta Network | 2006– | HTML; no city/state (infer from host club). J/105s can be mixed into PHRF. |
+| Regatta Network | 2006– | HTML; no city/state (state via `host_clubs.csv`). J/105s can be mixed into PHRF. |
 | STYC, j105.org archive (1996–2008), Jibeset, Sailwave | — | Not yet collected. |
 
-Unscored events (0 races, cancelled, entry list only) are kept with `scored: false`.
+Unscored events (0 races, cancelled, entry list only) are kept with `scored: false`. Test and
+cloned events (`schema.TEST_EVENT`) are skipped.
 
 ## Common event schema (`src/j105/schema.py`)
 

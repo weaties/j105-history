@@ -12,14 +12,13 @@ import re
 from typing import Any
 
 from j105.http import RAW, Fetcher, pmap, read_json, write_json
-from j105.schema import Event, Result, is_recent, rank
+from j105.schema import TEST_EVENT, Event, Result, is_recent, rank
 
 log = logging.getLogger(__name__)
 
 PARSE = "https://theclubspot.com/parse/classes"
 RESULTS = "https://results.theclubspot.com/clubspot-results-v4"
 J105_REGEX = r"(?i)j\s*/?\s*-?\s*105"
-SKIP = re.compile(r"(?i)\btest\b|cloned")
 PHONE = re.compile(r"\s*\(?\b\d{3}\)?[-. ]\d{3}[-. ]\d{4}\b")
 INDEX = RAW / "clubspot_index.json"
 EVENTS = RAW / "clubspot_events.json"
@@ -133,7 +132,7 @@ def standings() -> list[Event]:
     todo = []
     for x in read_json(INDEX, []):
         key = (x["regatta"], x["class_id"])
-        if SKIP.search(x["name"]) or key in seen:
+        if TEST_EVENT.search(x["name"]) or key in seen:
             continue
         seen.add(key)
         todo.append(x)

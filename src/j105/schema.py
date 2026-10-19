@@ -3,7 +3,11 @@
 from __future__ import annotations
 
 import datetime as dt
+import re
 from typing import NotRequired, TypedDict
+
+# Scorers' practice and copied events, e.g. RN "Test Rosenblum" (skippers "Kim Kardashian" ...).
+TEST_EVENT = re.compile(r"(?i)\btest\b|cloned")
 
 
 class Result(TypedDict):
