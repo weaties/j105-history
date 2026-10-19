@@ -18,6 +18,7 @@ git-ignored cache; derived standings link back to the official page.
 from __future__ import annotations
 
 import datetime as dt
+import html as htmllib
 import logging
 import re
 import urllib.parse
@@ -107,8 +108,13 @@ def _date(s: str) -> str:
 def _title(soup: BeautifulSoup) -> tuple[str, str]:
     """Event name and date (``""`` on series pages, which carry no date)."""
     t = soup.find(class_="racetitle") or soup.find("h1")
-    d = soup.find(class_="racedate")
-    return (_text(t) if t else ""), (_date(_text(d)) if d else "")
+    # New pages: <p class=racedate>; older ones: <h1>2022 Fresh Water Race<br><font>Feb 26, 2022
+    d = soup.find(class_="racedate") or (t.find("font") if isinstance(t, Tag) else None)
+    date = _date(_text(d)) if d else ""
+    name = _text(t) if t else ""
+    if d and t and t.name == "h1":
+        name = name.replace(_text(d), "").strip()
+    return name, date
 
 
 def _class_label(table: Tag) -> tuple[str, str]:
@@ -221,7 +227,7 @@ def standings() -> list[Event]:
     def one(meta: dict[str, Any]) -> list[Event]:
         refresh = meta["year"] >= this_year  # this season's pages still change
         html = _get(f, meta["url"], refresh)
-        if not J105.search(html):
+        if not J105.search(htmllib.unescape(html)):  # older pages print "J&#47;105"
             return []
         if meta["url"].endswith("/series.htm"):
             meta = {**meta}

@@ -25,7 +25,7 @@ from bs4 import BeautifulSoup, NavigableString, Tag
 
 from j105.http import RAW, Fetcher, read_json, write_json
 from j105.regions import NAMES, state_code
-from j105.schema import Event, Result
+from j105.schema import Event, Result, race_cell
 
 log = logging.getLogger(__name__)
 
@@ -277,6 +277,10 @@ def header_roles(cells: list[str]) -> list[str] | None:
     pl = [i for i, r in enumerate(roles) if r == "place"]
     for i in pl[:-1] if len(pl) > 2 else []:
         roles[i] = "race"
+    # "Total | Nett": the gross total is not the score.
+    nett = [i for i, c in enumerate(cells) if re.fullmatch(r"(?i)\s*nett?\s*", c)]
+    if nett:
+        roles = ["" if r == "total" and i not in nett else r for i, r in enumerate(roles)]
     names = {"boat", "skipper"} & set(roles)
     if names and ("total" in roles or roles.count("race") >= 2) and roles.count("?") <= 3:
         # A leading "No." is the place; elsewhere it is a race count (Block Island "NO").
@@ -491,6 +495,7 @@ class Section:
             nonlocal rows, names
             if rows:
                 _sail_first(rows)
+                _sail_column(rows)
                 start = 0
                 for i in range(1, len(rows) + 1):
                     if i == len(rows) or (rows[i]["place"] == 1 and rows[i - 1]["place"] > 1):
@@ -501,6 +506,9 @@ class Section:
             for r in rows:
                 r.pop("_alt", None)  # type: ignore[misc]
                 r.pop("_sf", None)  # type: ignore[misc]
+                r.pop("_ssail", None)  # type: ignore[misc]
+                r.pop("_maybe_sail", None)  # type: ignore[misc]
+                r.pop("_unknown_sail", None)  # type: ignore[misc]
             rows, names = [], []
 
         if any(k == "t" and "SKIPPER, ETC" in v[0] for k, *v in self.items):
@@ -568,7 +576,8 @@ class Section:
         rows: list[Result] = []
         rec: list[str] = []
 
-        recs: list[tuple[str, str, str, str, float | None, int, int]] = []
+        recs: list[tuple[str, str, str, str, float | None, int, int, list[str]]] = []
+        throw = any(k == "t" and "THROW" in v[0].upper() for k, *v in self.items)
 
         def flush() -> None:
             if len(rec) >= 2:
@@ -578,10 +587,16 @@ class Section:
                 l3 = rec[2].split("|")[0].strip() if len(rec) > 2 else ""
                 tail = rec[1].split("||")[-1].split("|") if "||" in rec[1] else []
                 races = [c.strip() for c in rec[0].split("||")[0].split("|")[1:]]
+                # Line 1 holds finishing places; line 3, when present, the points scored.
+                pts = rec[2].split("||")[0].split("|")[1:] if len(rec) > 2 else []
+                if len(pts) == len(races):
+                    races = [c.strip() for c in pts]
                 place = _place(tail[1].strip()) if len(tail) >= 2 else None
                 if place and l1:
                     n = sum(1 for c in races if re.fullmatch(r"\d+(\.\d+)?", c))
-                    recs.append((l1, l2, l3, sail, _num(tail[0]), place, n))
+                    if throw:  # last column before "||" is the discarded race's number
+                        races = races[:-1]
+                    recs.append((l1, l2, l3, sail, _num(tail[0]), place, n, races))
             rec.clear()
 
         for kind, *val in self.items:
@@ -599,7 +614,7 @@ class Section:
         # Line order varies by scorer: skipper / sail / boat, or boat (or skipper) / skipper
         # (or boat) + sail / home. Decide per block which of lines 1 and 2 is the person.
         vote = sum(_person_score(l1) - _person_score(l2) for l1, l2, *_ in recs if l2)
-        for l1, l2, l3, sail, net, place, n in recs:
+        for l1, l2, l3, sail, net, place, n, races in recs:
             if not l2:
                 skipper, boat, home = l1, l3, ""
             elif vote > 0:
@@ -610,6 +625,9 @@ class Section:
                          "club": "", "net": net, "place": place, "races_sailed": n}  # fmt: skip
             if home:
                 r["home"] = home
+            scores = race_list(races)
+            if scores:
+                r["race_scores"] = scores
             rows.append(r)
         if rows:
             out.append((label or "J/105", rows))
@@ -690,6 +708,9 @@ class Section:
             res["races_sailed"] = sum(
                 1 for c in races if re.fullmatch(r"[\(\[]?\d+(\.\d+)?[\)\]]?", c)
             )
+            scores = race_list([c for r, c in zip(roles, row, strict=True) if r == "race"])
+            if scores:
+                res["race_scores"] = scores
         return res, [], get.get("class", "")
 
     def _positional(self, line: str, spans: list[tuple[int, str, int]]) -> Any:
@@ -708,8 +729,12 @@ class Section:
             cols.setdefault(i, []).append(m.group(0))
         get: dict[str, str] = {}
         races: list[str] = []
-        for i, (_, role, _) in enumerate(spans):
+        race_cells: list[str] = []
+        for i, (_, role, end) in enumerate(spans):
             words = cols.get(i, [])
+            if role == "race":
+                # One column per race under a word header; a dashed group may hold them all.
+                race_cells += _split_scores(words) if end >= 0 else [" ".join(words)]
             if not words:
                 continue
             text = " ".join(words)
@@ -763,6 +788,9 @@ class Section:
         if get.get("home"):
             res["home"] = get["home"]
         res["races_sailed"] = sum(1 for w in races if re.fullmatch(r"\d+(\.\d+)?", w))
+        scores = race_list(race_cells)
+        if scores:
+            res["race_scores"] = scores
         return res, [], ""
 
     def _text_row(self, line: str, pre: bool, hint: list[str] | None) -> Any:
@@ -783,9 +811,11 @@ class Section:
         m = re.search(r"\s[-–]\s*([\d\s,/()-]+);\s*([\d.]+)\s*$", rest) or re.search(
             r",\s*([\d-]+);\s*([\d.]+)\s*$", rest
         )
+        cells: list[str] = []
         if m:
             total = float(m.group(2))
-            races = len(re.findall(r"\d+", m.group(1)))
+            cells = re.findall(r"[\(\[]?\d+(?:\.\d+)?[\)\]]?", m.group(1))
+            races = len(cells)
             rest = rest[: m.start()]
         m2 = re.search(r"=\s*([\d.]+)", rest)
         if total is None and m2:
@@ -830,6 +860,9 @@ class Section:
             res["home"] = home
         if races:
             res["races_sailed"] = races
+            scores = race_list(cells)
+            if scores:
+                res["race_scores"] = scores
         return res, [], ""
 
     def _heuristic(self, cells: list[str], hint: list[str] | None, tokens: bool = False) -> Any:
@@ -841,6 +874,7 @@ class Section:
         body = cells[1:]
         first_sail = _sail(cells[0]) if place is None else None
         sail_first = False
+        drop_last = 0
         if place is None and not fin and not first_sail:
             return None
         # Trailing scores.
@@ -848,6 +882,7 @@ class Section:
         while i > 0 and is_score(body[i - 1]):
             i -= 1
         scores, mid = body[i:], body[:i]
+        scores = _split_scores(scores)  # "71 10" under a 2-space split: sail, then a race
         nums = [s for s in scores if _num(s) is not None and s.strip() not in ("-", "--")]
         if place is None:
             if len(nums) < 2:
@@ -858,10 +893,12 @@ class Section:
             nums = nums[:-1]
             mid = cells[: len(cells) - len(scores)]
             sail_first = True
+            drop_last = 1
             if len(nums) < 1:
                 return None
         elif fin and len(nums) >= 2 and _place(nums[-1]) == place:
             nums = nums[:-1]
+            drop_last = 1
         if not nums or not mid:
             return None
         # Header "Boat Skipper Sail Pts 1 2 …": the sail is the first number after the names.
@@ -875,6 +912,24 @@ class Section:
             and not any(_sail(c) is not None for c in mid)
         ):
             suffix_sail, nums = nums[0].strip(), nums[1:]
+        elif (
+            not hint
+            and len(nums) >= 3
+            and re.fullmatch(r"\d{3,6}|\?\?\?", nums[0].strip())
+            and not any(_sail(c) is not None for c in mid)
+        ):
+            # "Thomas Carruthers  Clouseau  275  2 1 1 6 2 - 12": no race scores 100+.
+            suffix_sail, nums = nums[0].strip(), nums[1:]
+        maybe_sail = (
+            not hint
+            and not suffix_sail
+            and len(nums) >= 3
+            and bool(re.fullmatch(r"\d{1,2}", nums[0].strip()))
+            and not any(_sail(c) is not None for c in mid)
+        )
+        races = race_list(
+            _races_from(scores, drop_last, 1 if suffix_sail else 0, "total_first" in hint)
+        )
         if "total_first" in hint:
             total = _num(nums[0])
             race_cells = nums[1:]
@@ -943,7 +998,7 @@ class Section:
                 sail = m.group(2)
                 c = m.group(1)
             name_parts.append(c)
-        sail = sail or suffix_sail
+        sail = sail or (suffix_sail if suffix_sail != "???" else "")
         unsure = tokens and len(name_parts) > 2 and not ({"home", "club"} & set(hint))
         if len(name_parts) == 1 and (
             {"boat", "skipper"} <= set(hint) or (tokens and len(name_parts[0].split()) >= 3)
@@ -965,8 +1020,16 @@ class Section:
         if home:
             res["home"] = home
         res["races_sailed"] = sum(1 for c in race_cells if re.fullmatch(r"\d+(\.\d+)?", c.strip()))
+        if races:
+            res["race_scores"] = races
         if sail_first:
             res["_sf"] = True  # type: ignore[typeddict-unknown-key]
+        if not hint and any(c.strip() == "???" for c in mid):
+            res["_unknown_sail"] = True  # type: ignore[typeddict-unknown-key]
+        if suffix_sail and not hint:
+            res["_ssail"] = True  # type: ignore[typeddict-unknown-key]
+        if maybe_sail:
+            res["_maybe_sail"] = nums[0].strip()  # type: ignore[typeddict-unknown-key]
         if unsure:
             res["_unsure"] = True  # type: ignore[typeddict-unknown-key]
         # Rows may instead read "sail … total place": kept for _sail_first() to check per block.
@@ -1149,6 +1212,72 @@ def _sail_first(rows: list[Result]) -> None:
         return
     for r, (sail, place, total) in zip(rows, alts, strict=True):  # type: ignore[misc]
         r["sail"], r["place"], r["net"] = sail, place, total
+        if r.get("races_sailed"):
+            r["races_sailed"] -= 1
+        if r.get("race_scores") and not r.get("_sf"):
+            r["race_scores"] = r["race_scores"][:-1]  # its last "race" was the total
+
+
+def _split_scores(cells: list[str]) -> list[str]:
+    """One printed race score per item: "4 13.00" (race, total) splits; "8 DSQ", "- 11 dns",
+    "14 p20" stay whole; separators ("-", "--", "=", ";") go."""
+    out: list[str] = []
+    for c in cells:
+        for t in c.split():
+            joins = re.fullmatch(r"(?i)[a-z]{2,5}|p\d+", t) or (out and out[-1] in "-([")
+            if out and joins and (out[-1] == "-" or not re.fullmatch(r"[-=;.]+", out[-1])):
+                out[-1] = f"{out[-1]} {t}"
+                continue
+            out.append(t)
+    return [t for t in out if not re.fullmatch(r"[-=;.|]+|--+", t)]
+
+
+def race_list(cells: list[str]) -> list[list[Any]] | None:
+    """``race_cell`` for each printed race, in order; a leading "-" marks a discard ("- 9")."""
+    out = []
+    for c in cells:
+        t = re.sub(r"(?<![\d.])\.(\d)", r"0.\1", c.strip())  # ".75" is 0.75 points
+        if re.match(r"^-\s*\d", t):
+            cell = race_cell(t.lstrip("- "))
+            cell[2] = True
+        else:
+            cell = race_cell(t)
+        out.append(cell)
+    while out and out[-1][0] is None and not out[-1][1]:
+        out.pop()  # races not sailed
+    # "… 5  [13]  21.0": a trailing bracketed cell repeating a race is the discard column.
+    if len(out) > 1 and out[-1][2] and cells[-1].strip().startswith("["):
+        same = [x for x in out[:-1] if x[0] == out[-1][0] and not x[2]]
+        if same:
+            same[-1][2] = True
+            out.pop()
+    return out or None
+
+
+def _races_from(scores: list[str], drop_last: int, drop_first: int, total_first: bool) -> list[str]:
+    """The race cells among a row's trailing scores, without total, place and sail."""
+    cells = _split_scores(scores)
+    numeric = [i for i, c in enumerate(cells) if _num(c) is not None]
+    gone = set(numeric[len(numeric) - drop_last :] if drop_last else [])
+    numeric = [i for i in numeric if i not in gone]
+    gone |= set(numeric[:drop_first])
+    numeric = numeric[drop_first:]
+    if numeric:
+        gone.add(numeric[0] if total_first else numeric[-1])
+    return [c for i, c in enumerate(cells) if i not in gone]
+
+
+def _sail_column(rows: list[Result]) -> None:
+    """Unlabelled rows with a sail after the names: when most rows show a 3+ digit sail
+    there, the 1–2 digit number in the same place on the other rows is a sail too ("45")."""
+    sure = sum(1 for r in rows if r.get("_ssail") or r.get("_unknown_sail"))
+    rest = [r for r in rows if not (r.get("_ssail") or r.get("_unknown_sail"))]
+    if sure * 2 < len(rows) or not all(r.get("_maybe_sail") for r in rest):
+        return
+    for r in rest:
+        r["sail"] = r.pop("_maybe_sail")  # type: ignore[typeddict-item]
+        if r.get("race_scores"):
+            r["race_scores"] = r["race_scores"][1:]
         if r.get("races_sailed"):
             r["races_sailed"] -= 1
 

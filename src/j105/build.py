@@ -54,6 +54,17 @@ def _skipper(s: str) -> str:
     return person(" ".join(words))
 
 
+def _races_add_up(results: list[dict[str, Any]], share: float = 0.8) -> bool:
+    checked = ok = 0
+    for r in results:
+        rs, net = r.get("race_scores"), r.get("net")
+        if not rs or net is None:
+            continue
+        checked += 1
+        ok += abs(sum(p for p, _, d in rs if p is not None and not d) - net) < 0.05
+    return checked > 0 and ok >= share * checked
+
+
 def _races(scores: list[list[Any]]) -> str:
     """Race scores as one compact string: ``"1 2 (3) 9/DNF"``; parentheses mark throwouts."""
     out = []
@@ -91,6 +102,9 @@ def _load() -> list[dict[str, Any]]:
 
 def _event(e: dict[str, Any]) -> dict[str, Any]:
     st = event_state(e)
+    # Race scores are shown only where they add up to the official totals for most boats
+    # (pages that don't mark throwouts, or score some races differently, don't).
+    trust = _races_add_up(e["results"])
     results = []
     for r in e["results"]:
         sail = r["sail"].strip()
@@ -103,7 +117,7 @@ def _event(e: dict[str, Any]) -> dict[str, Any]:
                 r["place"],
                 r.get("net"),
                 _clean(r.get("club") or ""),
-                _races(r.get("race_scores") or []),
+                _races(r.get("race_scores") or []) if trust else "",
             ]
         )
     fleet = e["fleet"]

@@ -226,3 +226,56 @@ def test_boat_named_like_a_sail_number_is_kept() -> None:
         "USA 370",
         "Petkovic",
     )
+
+
+def test_race_scores_with_discards_codes_and_a_discard_column() -> None:
+    (table,) = parse(
+        "<h2>Key West Race Week January 17-21, 2005</h2><table>"
+        + _tr("Place", "Sail", "Boat Name", "Owner", "R 1", "R 2", "R 3", "R 4", "Total")
+        + _tr("1", "17", "Masquerade", "Thomas Coates", "1", "- 9", "(3)", ".75", "1.75")
+        + _tr("2", "281", "Flame", "James Doane", "2", "8 DSQ", "1", "", "11")
+        + "</table>",
+        2005,
+    )
+    first, second = table["results"]
+    assert first["race_scores"] == [
+        [1.0, "", False], [9.0, "", True], [3.0, "", True], [0.75, "", False],
+    ]  # fmt: skip
+    assert second["race_scores"] == [[2.0, "", False], [8.0, "DSQ", False], [1.0, "", False]]
+    for r in (first, second):
+        kept = sum(p for p, _, dropped in r["race_scores"] if p is not None and not dropped)
+        assert kept == r["net"]
+    # Unlabelled rows ending "[13] | | 21.0": the bracketed cell repeats the discarded race.
+    (rows,) = parse(
+        "<h2>Block Island Race Week June 18-22, 2007</h2><table>"
+        + _tr(
+            "",
+            "",
+            "1.",
+            "USA 526",
+            "Savasana",
+            "Brian Keane",
+            "",
+            "1",
+            "13",
+            "7",
+            "[13]",
+            "",
+            "8.0",
+        )
+        + _tr(
+            "", "", "2.", "USA 324", "Kincsem", "Joerg Esdorn", "", "6", "7", "3", "[7]", "", "9.0"
+        )
+        + "</table>",
+        2007,
+    )
+    assert rows["results"][0]["race_scores"] == [
+        [1.0, "", False],
+        [13.0, "", True],
+        [7.0, "", False],
+    ]
+    assert rows["results"][1]["race_scores"] == [
+        [6.0, "", False],
+        [7.0, "", True],
+        [3.0, "", False],
+    ]
