@@ -109,7 +109,7 @@ const pct = x => x == null ? "–" : Math.round(x * 100) + "%";
 // Same person across spellings ("Dan" / "Daniel Weatbrook"): surname + first initial.
 const personKey = s => { const w = String(s || "").toLowerCase().replace(/[^a-z ,]/g, "").split(/[ ,]+/).filter(Boolean); return w.length > 1 ? w.at(-1) + " " + w[0][0] : norm(s); };
 const tok = k => String(k).replace(/[^A-Za-z0-9._~-]/g, "_");
-let D, EV, BYID, H, HTOK, SRC, YEARS, REGIONS;
+let D, EV, BYID, H, HTOK, SRC, YEARS, RECENT, REGIONS;
 
 function mode(list, key = norm) {
   const c = new Map();
@@ -133,6 +133,7 @@ function prep(d) {
     }
   }
   YEARS = [...new Set(EV.map(e => e.year))].sort((a, b) => a - b);
+  RECENT = YEARS.slice().reverse();  // year axes run newest first, on the left
   REGIONS = [...new Set(EV.map(e => e.region))].filter(r => r !== "Unknown").sort().concat(["Unknown"]);
   for (const h of H.values()) {
     h.res.sort((a, b) => a.e.date.localeCompare(b.e.date));
@@ -214,13 +215,13 @@ function overview() {
     </div>
   </section>
   <section>
-    <div class="head"><h2>Boats racing each year</h2><span class="hint">Distinct sail numbers with a scored result that year</span></div>
-    <div class="card" data-chart>${barChart(YEARS.map(y => ({x: y, v: hy.get(y).size})), {max: nice, fmt: v => Math.round(v), tip: p => `${p.x}: ${p.v} boats in ${evy.get(p.x)} scored fleets`})}</div>
+    <div class="head"><h2>Boats racing each year</h2><span class="hint">Distinct sail numbers with a scored result that year, newest first</span></div>
+    <div class="card" data-chart>${barChart(RECENT.map(y => ({x: y, v: hy.get(y).size})), {max: nice, fmt: v => Math.round(v), tip: p => `${p.x}: ${p.v} boats in ${evy.get(p.x)} scored fleets`})}</div>
   </section>
   <section>
     <div class="head"><h2>Where they raced</h2><span class="hint">Boats per region and year. Tap a year for that season's rankings.</span></div>
-    <div class="card"><table class="heat"><thead><tr><th class="t">Region</th>${YEARS.map(y => `<th><a href="#season-${y}">${String(y).slice(2)}</a></th>`).join("")}</tr></thead><tbody>
-      ${REGIONS.map(rg => `<tr><td class="t">${esc(rg)}</td>${YEARS.map(y => { const n = ry.get(rg).get(y).size; return `<td class="c"><span class="cell" style="${n ? heat(n / regMax) : ""}" title="${esc(rg)} ${y}: ${n} boats">${n || ""}</span></td>`; }).join("")}</tr>`).join("")}
+    <div class="card"><table class="heat"><thead><tr><th class="t">Region</th>${RECENT.map(y => `<th><a href="#season-${y}">${String(y).slice(2)}</a></th>`).join("")}</tr></thead><tbody>
+      ${REGIONS.map(rg => `<tr><td class="t">${esc(rg)}</td>${RECENT.map(y => { const n = ry.get(rg).get(y).size; return `<td class="c"><span class="cell" style="${n ? heat(n / regMax) : ""}" title="${esc(rg)} ${y}: ${n} boats">${n || ""}</span></td>`; }).join("")}</tr>`).join("")}
     </tbody></table></div>
     <div class="legend"><span>Boats</span><span class="ramp">1<i></i>${regMax}</span></div>
   </section>`;
@@ -229,7 +230,7 @@ function overview() {
 function hullView(key) {
   const h = H.get(key);
   if (!h) return `<p class="empty">No results for sail number ${esc(key)}.</p>`;
-  const yrs = []; for (let y = h.first; y <= h.last; y++) yrs.push(y);
+  const yrs = []; for (let y = h.last; y >= h.first; y--) yrs.push(y);  // newest first
   const yi = new Map(h.years.map(y => [y.year, y]));
   const names = []; for (const y of h.years) { const l = names.at(-1); if (l && norm(l.name) === norm(y.name)) l.to = y.year; else names.push({name: y.name, from: y.year, to: y.year}); }
   const best = h.res.filter(r => r.e.counts).sort((a, b) => b.score - a.score || b.e.fleet - a.e.fleet)[0];
@@ -360,8 +361,8 @@ function coverageView() {
     <h1>Where the results come from</h1>
     <p class="lede">Scored J/105 fleets per source and year. ${merged} events held by two sources are shown once, with both links.</p>
   </section>
-  <section><div class="card"><table class="heat"><thead><tr><th class="t">Source</th>${YEARS.map(y => `<th>${String(y).slice(2)}</th>`).join("")}<th>Total</th></tr></thead><tbody>
-    ${srcs.map(s => `<tr><td class="t"><a href="${esc(SRC[s].home)}" target="_blank" rel="noopener">${esc(SRC[s].name)}</a></td>${YEARS.map(y => { const n = c.get(s).get(y) || 0; return `<td class="c"><span class="cell" style="${n ? heat(n / max) : ""}" title="${esc(SRC[s].name)} ${y}: ${n}">${n || ""}</span></td>`; }).join("")}<td>${[...c.get(s).values()].reduce((a, b) => a + b, 0)}</td></tr>`).join("")}
+  <section><div class="card"><table class="heat"><thead><tr><th class="t">Source</th>${RECENT.map(y => `<th>${String(y).slice(2)}</th>`).join("")}<th>Total</th></tr></thead><tbody>
+    ${srcs.map(s => `<tr><td class="t"><a href="${esc(SRC[s].home)}" target="_blank" rel="noopener">${esc(SRC[s].name)}</a></td>${RECENT.map(y => { const n = c.get(s).get(y) || 0; return `<td class="c"><span class="cell" style="${n ? heat(n / max) : ""}" title="${esc(SRC[s].name)} ${y}: ${n}">${n || ""}</span></td>`; }).join("")}<td>${[...c.get(s).values()].reduce((a, b) => a + b, 0)}</td></tr>`).join("")}
   </tbody></table></div></section>
   <section>
     <h2>Known gaps</h2>
