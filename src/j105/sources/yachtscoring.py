@@ -21,6 +21,7 @@ import re
 from typing import Any
 
 from j105.http import RAW, Fetcher, pmap, read_json, write_json
+from j105.identity import sail_key
 from j105.schema import Event, Result, is_recent
 
 log = logging.getLogger(__name__)
@@ -225,14 +226,17 @@ def standings_for(f: Fetcher, x: dict[str, Any]) -> list[Event]:
             seen.add(key)
             blocks.append((kind, bl))
     one_design = {
-        str(b.get("sailNumber")) for kind, bl in blocks if kind == "one-design" for b in bl["boats"]
+        sail_key(str(b.get("sailNumber") or ""))
+        for kind, bl in blocks
+        if kind == "one-design"
+        for b in bl["boats"]
     }
     for kind, bl in blocks:
         mixed = kind == "mixed"
         boats = [b for b in bl.get("boats") or [] if not mixed or _is_j105(b)]
         # J/105s scored in their own class and again in a handicap class: count them once.
-        if mixed and {str(b.get("sailNumber")) for b in boats} & one_design:
-            if not {str(b.get("sailNumber")) for b in boats} <= one_design:
+        if mixed and {sail_key(str(b.get("sailNumber") or "")) for b in boats} & one_design:
+            if not {sail_key(str(b.get("sailNumber") or "")) for b in boats} <= one_design:
                 log.info("skipped %s %r: some J/105s also in a J/105 class", eid, bl["className"])
             continue
         rows: list[Result] = []
