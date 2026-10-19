@@ -31,7 +31,7 @@ def counts(source: str | None = None) -> None:
         if not evs:
             print(f"{name}: no events collected")
             continue
-        sails = {r["sail"] for e in evs for r in e["results"]}
+        sails = {r["sail"] for e in evs for r in e["results"] if r["sail"]}
         print(
             f"\n{name}: {len(evs)} scored J/105 events, "
             f"{sum(e['fleet'] for e in evs)} boat results, {len(sails)} sail numbers"
