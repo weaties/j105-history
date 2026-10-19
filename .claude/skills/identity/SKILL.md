@@ -38,5 +38,4 @@ Across all `data/raw/*_events.json`, group results by `sail_key(sail)` and look 
   Write the reason. Run `uv run pytest` (a test requires reasons).
 - Anything ambiguous: list it for the user with the evidence (events, years, URLs) and leave the
   records separate.
-- Open questions already known: Creative's true hull number (aliases point to its PHRF number
-  51911 from the Puget Sound work).
+- Confirmed by the user: Creative is hull 422 (it also races as PHRF 51911).
