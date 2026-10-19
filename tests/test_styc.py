@@ -61,3 +61,11 @@ def test_race_mixed_with_tie() -> None:
 def test_unsailed_race_is_not_scored() -> None:
     [e] = parse_page(UNSAILED, meta("Fall Regatta/2025/race1.htm"))
     assert not e["scored"]
+
+
+def test_dates() -> None:
+    from j105.sources.styc import _date
+
+    assert _date("Nov 1, 2025") == "2025-11-01"
+    assert _date("May 3 & 4, 2025") == "2025-05-03"
+    assert _date("9/16/2018") == "2018-09-16"

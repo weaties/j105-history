@@ -99,10 +99,14 @@ def _num(s: str) -> float | None:
 
 
 def _date(s: str) -> str:
-    try:
-        return dt.datetime.strptime(s.strip(), "%b %d, %Y").date().isoformat()
-    except ValueError:
-        return ""
+    """``"Nov 1, 2025"``, ``"May 3 & 4, 2025"`` (first day) or ``"9/16/2018"``."""
+    s = re.sub(r"\s*&\s*\d{1,2}(?=,)", "", s.strip())
+    for fmt in ("%b %d, %Y", "%B %d, %Y", "%m/%d/%Y"):
+        try:
+            return dt.datetime.strptime(s, fmt).date().isoformat()
+        except ValueError:
+            pass
+    return ""
 
 
 def _title(soup: BeautifulSoup) -> tuple[str, str]:
