@@ -94,6 +94,12 @@ def main() -> None:
     for cmd in ("discover", "collect"):
         s = sub.add_parser(cmd)
         s.add_argument("source", choices=[*SOURCES, "all"])
+    sub.choices["discover"].add_argument(
+        "--designs",
+        action="store_true",
+        help="yachtscoring: instead of the splits scan, scan unindexed events' results for "
+        "J/105-design boats in PHRF/ORC/mixed classes",
+    )
     c = sub.add_parser("counts")
     c.add_argument("source", nargs="?", choices=list(SOURCES))
     sub.add_parser("hosts")
@@ -115,7 +121,10 @@ def main() -> None:
     for name in SOURCES if a.source == "all" else [a.source]:
         mod = SOURCES[name]
         if a.cmd == "discover":
-            mod.discover()
+            if a.designs and name == "yachtscoring":
+                yachtscoring.discover_designs()
+            else:
+                mod.discover()
         else:
             mod.standings()
             counts(name)

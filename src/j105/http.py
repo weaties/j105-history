@@ -42,13 +42,18 @@ class Fetcher:
         headers: dict[str, str] | None = None,
         retries: int = 4,
         timeout: float = 60,
+        delay: float = 0.0,
     ) -> None:
+        """``delay``: minimum seconds between this fetcher's requests (a site's crawl-delay)."""
         self.cache_dir = CACHE / source
         self.headers = {"User-Agent": USER_AGENT, **(headers or {})}
         self.retries = retries
         self.timeout = timeout
         self.failures: list[str] = []
         self.network_hits = 0
+        self.delay = delay
+        self._turn = threading.Lock()
+        self._last = 0.0
 
     def bytes(
         self,
@@ -99,6 +104,10 @@ class Fetcher:
     def _get(self, url: str) -> bytes | None:
         req = urllib.request.Request(url, headers=self.headers)
         for attempt in range(self.retries):
+            if self.delay:
+                with self._turn:
+                    time.sleep(max(0.0, self._last + self.delay - time.monotonic()))
+                    self._last = time.monotonic()
             try:
                 with _slots, urllib.request.urlopen(req, timeout=self.timeout) as r:
                     self.network_hits += 1

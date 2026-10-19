@@ -12,6 +12,7 @@ clear messages; no secrets.
 ```bash
 uv sync                              # install
 uv run j105 discover <source|all>    # find events with a J/105 class (resumable, cached)
+uv run j105 discover yachtscoring --designs  # J/105s in PHRF/ORC classes of other YS events
 uv run j105 collect <source|all>     # standings -> data/raw/<src>_events.json, then counts
 uv run j105 counts [source]          # events / boat results per year and region
 uv run j105 hosts                    # host -> state seed rows; events still without a state
@@ -42,7 +43,7 @@ Sources: `clubspot`, `yachtscoring`, `regattanetwork`. Skills in `.claude/skills
 | Source | Coverage | Notes |
 |---|---|---|
 | Clubspot | 2019– | No place field: rank by net, then total (tiebreaks hidden). Skip test/"CLONED". |
-| Yacht Scoring | 2006– | `cumulative-result` boats are in official order; `/boats` adds club, build year, `boatId`. |
+| Yacht Scoring | 2006– | `cumulative-result` boats are in official order, each with a `design`; `/boats` adds club, build year, `boatId`. J/105s in PHRF/ORC classes: `discover yachtscoring --designs`. The event listing shifts while paging: dedupe ids. |
 | Regatta Network | 2006– | HTML; no city/state (state via `host_clubs.csv`). J/105s can be mixed into PHRF. |
 | STYC, j105.org archive (1996–2008), Jibeset, Sailwave | — | Not yet collected. |
 

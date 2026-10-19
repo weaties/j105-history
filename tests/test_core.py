@@ -89,3 +89,18 @@ def test_host_table_rows_are_complete() -> None:
     assert rows and all(r["note"] for r in rows)
     assert all(r["state"] for r in rows if r["status"] in APPLIED)
     assert {r["status"] for r in rows} <= APPLIED | {"proposed"}
+
+
+def test_yachtscoring_class_kinds() -> None:
+    from j105.sources.yachtscoring import J105, _kind
+
+    def bl(name: str, *designs: str) -> dict:
+        return {"className": name, "boats": [{"design": d} for d in designs]}
+
+    assert J105.search("J105s") and not J105.search("J1050")
+    assert _kind(bl("J/105", "J 105", "J105", "J106")) == "one-design"  # lone typo
+    assert _kind(bl("J/88 + J/105", "J 105", "J 88")) == "mixed"
+    assert _kind(bl("J105 & 36.7", "J105", "Beneteau First 36.7", "Beneteau First 36.7")) == "mixed"
+    assert _kind(bl("PHRF A", "J/105", "J 109")) == "mixed"
+    assert _kind(bl("PHRF A", "J 109", "Farr 30")) == ""
+    assert _kind(bl("PHRF-3 J105", "J105", "J/105")) == "one-design"

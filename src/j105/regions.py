@@ -25,7 +25,8 @@ REGIONS = {
     "Pacific Northwest": {"WA", "OR", "BC"},
     "California": {"CA", "HI"},
     "Gulf & Texas": {"TX", "LA", "AL"},
-    "Great Lakes": {"IL", "IN", "MI", "MN", "OH", "WI", "ON", "PA"},
+    # "LAKE ERIE": Yacht Scoring's state for I-LYA races that sail between ports.
+    "Great Lakes": {"IL", "IN", "MI", "MN", "OH", "WI", "ON", "PA", "LAKE ERIE"},
     "New England": {"MA", "ME", "NH", "RI"},
     "Long Island Sound & NY/NJ": {"CT", "NY", "NJ"},
     "Chesapeake": {"MD", "VA", "DE"},

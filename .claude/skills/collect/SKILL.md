@@ -34,9 +34,15 @@ requests in flight, retries with exponential backoff, and raw replies cached und
 
 ## Known gaps
 
-- Yacht Scoring: ~96 indexed events have no J/105 block in `cumulative-result` (cancelled,
-  unscored, or a listed class nobody entered). Classes named for PHRF etc. can contain J/105s
-  (each boat has a `design` field) — not yet collected.
+- Yacht Scoring: ~65 indexed events have no J/105 block in `cumulative-result` (cancelled,
+  unscored, or a listed class nobody entered). J/105s also race in PHRF/ORC classes (each boat
+  has a `design`): `uv run j105 discover yachtscoring --designs` scans every unindexed North
+  American event since 2006 (~5,700 requests the first time; checked ids in
+  `cache/yachtscoring/design_checked.json`) and writes `data/raw/ys_design_index.json`.
+  `collect yachtscoring` reads both indexes. Mixed blocks keep only J/105s, re-ranked
+  (`mixed`, `division_size`); a class that is all J/105s counts as one-design; a mixed block
+  sharing boats with the event's J/105 class is skipped (no double counting).
+- The YS event listing is paged while events are added, so ids can repeat: always dedupe.
 - Regatta Network: no city/state on the page; dates come from the year list. The state comes
   from `data/identity/host_clubs.csv` at build time and in `j105 counts`. After collecting,
   run `uv run j105 hosts`: it prints `source` rows for hosts whose state Clubspot/Yacht Scoring
