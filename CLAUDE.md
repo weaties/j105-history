@@ -42,7 +42,7 @@ Sources: `clubspot`, `yachtscoring`, `regattanetwork`, `styc`, `sailwave`, `j105
   scripts, reference only (some import `helmlog`); port code out, don't edit. Not linted.
 - `site/reference/` — local copies of four earlier artifacts (style reference; see `publish`).
 - `src/j105/build.py` (`j105 build`) → `site/data/events.json`; `site/index.html` reads it. Published
-  (private) as https://claude.ai/artifact/6oLL8NvvMpLP1QhCeUYE8D — update in place, never a new URL.
+  (public, linked from the README) as https://claude.ai/artifact/6oLL8NvvMpLP1QhCeUYE8D — update in place, never a new URL.
 
 ## Sources (status and quirks: see the `collect` and `add-source` skills for detail)
 

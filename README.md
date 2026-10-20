@@ -7,6 +7,9 @@ boats and seasons, and see how the class has grown region by region.
 Results are gathered from public scoring sites, checked against each event's official totals,
 and every event links back to its official results page.
 
+**See the results:** https://claude.ai/artifact/6oLL8NvvMpLP1QhCeUYE8D. Look up any boat by
+sail number, name, skipper or club, or browse seasons, events and inactive boats.
+
 ## Shared freely
 
 This started as a history of the Puget Sound fleet and grew to cover the whole class. The code,
