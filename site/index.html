@@ -91,7 +91,7 @@ footer p{margin:0}
     <div class="eyebrow" id="eyebrow">J/105 · North America · results history</div>
     <div class="bar-row">
       <nav class="seg" aria-label="Views" id="nav">
-        <a href="#overview">Overview</a><a href="#seasons">Seasons</a><a href="#events">Events</a><a href="#coverage">Sources</a>
+        <a href="#overview">Overview</a><a href="#seasons">Seasons</a><a href="#events">Events</a><a href="#inactive">Inactive</a><a href="#coverage">Sources</a>
       </nav>
       <input type="search" id="q" placeholder="Sail number, boat, skipper or club" aria-label="Search boats, skippers, clubs and events" autocomplete="off">
     </div>
@@ -181,6 +181,7 @@ const official = e => `<a href="${esc(e.url)}" target="_blank" rel="noopener">${
 const placeCell = (r) => `${r.place}<small>of ${r.e.fleet}</small>`;
 const mixedPill = e => e.mixed ? `<span class="pill" title="J/105s raced in a mixed class of ${e.division} boats and are ranked among J/105s only">mixed · ${e.fleet} of ${e.division}</span>` : "";
 const notCounted = e => !e.counts && e.fleet > 1 ? `<span class="pill" title="Mixed class with fewer than ${D.min_mixed} J/105s: listed, not in season scores">not scored</span>` : "";
+const regTok = r => r.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
 const years = (a, b) => a === b ? `${a}` : `${a}–${b}`;
 const heat = x => x == null ? "" : `background:color-mix(in srgb,var(--heat) ${Math.round(8 + 92 * x)}%,var(--panel));color:${x > .55 ? "var(--heatink)" : "var(--ink)"}`;
 
@@ -362,6 +363,48 @@ function eventsView() {
   ${list.length > EF.shown ? `<button type="button" class="more" id="more">Show ${Math.min(150, list.length - EF.shown)} more of ${(list.length - EF.shown).toLocaleString()}</button>` : ""}</section>`;
 }
 
+// Inactive boats: no result for at least IN.quiet seasons, up to the newest season in the data.
+const IN = {quiet: 3, region: "All", where: "last"};
+function inactiveView() {
+  const latest = YEARS.at(-1), cutoff = latest - IN.quiet;
+  // Names still racing: an inactive number whose last name matches one may be a renumber or typo.
+  // Only in the same region: a common name ("Javelin") elsewhere is another boat.
+  const live = new Map();
+  for (const h of H.values()) if (h.last > cutoff) for (const y of h.years) if (y.year > cutoff) {
+    const k = norm(y.name) + "|" + y.region; if (!live.has(k)) live.set(k, new Set()); live.get(k).add(h.key);
+  }
+  const rows = [];
+  for (const h of H.values()) {
+    if (h.last > cutoff) continue;
+    const lastR = h.res.at(-1);
+    const regions = new Set(h.res.map(r => r.e.region));
+    if (IN.region !== "All" && (IN.where === "last" ? lastR.e.region !== IN.region : !regions.has(IN.region))) continue;
+    const others = [...new Set(h.years.map(y => y.name))].filter(n => norm(n) !== norm(h.name));
+    const same = norm(h.name) ? [...(live.get(norm(h.name) + "|" + lastR.e.region) || [])].filter(k => k !== h.key) : [];
+    rows.push({h, lastR, others, same, inRegion: IN.region === "All" ? 0 : h.res.filter(r => r.e.region === IN.region).length});
+  }
+  rows.sort((a, b) => b.lastR.e.date.localeCompare(a.lastR.e.date));
+  return `
+  <section>
+    <div class="eyebrow">Inactive boats</div>
+    <h1>${rows.length.toLocaleString()} sail numbers last seen in ${cutoff} or earlier</h1>
+    <div class="bar-row">
+      <span class="lab">Quiet for</span><div class="seg" id="iq">${[1, 2, 3, 5, 10].map(n => `<button type="button" aria-pressed="${n === IN.quiet}" data-n="${n}">${n}</button>`).join("")}</div><span class="lab">seasons</span>
+      <label class="lab" for="ir">Region</label><select id="ir">${["All", ...REGIONS].map(r => `<option${r === IN.region ? " selected" : ""}>${esc(r)}</option>`).join("")}</select>
+      <div class="seg" id="iw">${[["last", "Last seen there"], ["ever", "Ever raced there"]].map(([k, l]) => `<button type="button" aria-pressed="${k === IN.where}" data-w="${k}">${l}</button>`).join("")}</div>
+    </div>
+    <p class="hint">Boats whose newest result in any source is ${cutoff} or earlier (the data runs to ${latest}). No result doesn't mean the boat is gone: it may cruise, race somewhere these sources don't cover (British Columbia has none), or race under another number. Numbers over 1000 are usually PHRF or national numbers, not hull numbers. "Same name racing" points to a boat with the same name racing since in the same region, often the same boat under another number.</p>
+  </section>
+  <section>${rows.length ? `<div class="card"><table><thead><tr><th class="t">Sail</th><th class="t">Boat · last skipper</th><th class="t">Last seen</th><th class="t">Region</th><th class="t">Years</th><th>Results</th>${IN.region !== "All" && IN.where === "ever" ? `<th>There</th>` : ""}<th class="t">Other names</th></tr></thead><tbody>
+    ${rows.map(({h, lastR, others, same, inRegion}) => `<tr><td class="t">${hullLink(h.key, sailShort(h.key))}</td>
+      <td class="t stack">${esc(h.name)}${same.map(k => `<span class="pill" title="A boat with this name raced in ${esc(lastR.e.region)} after ${cutoff}">same name racing: ${hullLink(k, "#" + sailShort(k))}</span>`).join("")}<small>${esc(lastR.sk)}</small></td>
+      <td class="t stack">${lastR.e.date.slice(0, 4)} · ${evLink(lastR.e)}<small>${esc([lastR.e.host, lastR.e.state].filter(Boolean).join(" · "))}</small></td>
+      <td class="t">${esc(lastR.e.region)}</td><td class="t">${years(h.first, h.last)}</td><td>${h.res.length}</td>
+      ${IN.region !== "All" && IN.where === "ever" ? `<td>${inRegion}</td>` : ""}
+      <td class="t stack">${esc(others.join(", "))}</td></tr>`).join("")}
+  </tbody></table></div>` : `<p class="empty">No inactive boats match. Try another region or a shorter quiet spell.</p>`}</section>`;
+}
+
 function coverageView() {
   const srcs = Object.keys(SRC);
   const c = new Map(srcs.map(s => [s, new Map()]));
@@ -406,6 +449,11 @@ function route() {
   else if (hash.startsWith("event-")) { html = eventView(hash.slice(6)); nav = "events"; }
   else if (hash.startsWith("season")) { html = seasonView(+hash.split("-")[1] || 0); nav = "seasons"; }
   else if (hash === "events") { html = eventsView(); nav = "events"; }
+  else if (hash.startsWith("inactive")) {  // #inactive or #inactive-pacific-northwest
+    const want = hash.slice(9);
+    IN.region = REGIONS.find(r => regTok(r) === want) ?? "All";
+    html = inactiveView(); nav = "inactive";
+  }
   else if (hash === "coverage") { html = coverageView(); nav = "coverage"; }
   else html = overview();
   for (const a of $("#nav").children) {
@@ -422,6 +470,11 @@ function wire(hash) {
     sy.onchange = () => location.hash = "season-" + sy.value;
     $("#sr").onchange = e => { ST.region = e.target.value; route(); };
     $("#smin").onclick = e => { const n = e.target.dataset?.n; if (n) { ST.min = +n; route(); } };
+  }
+  const iq = $("#iq"); if (iq) {
+    iq.onclick = e => { const n = e.target.dataset?.n; if (n) { IN.quiet = +n; route(); } };
+    $("#iw").onclick = e => { const w = e.target.dataset?.w; if (w) { IN.where = w; route(); } };
+    $("#ir").onchange = e => { location.hash = "inactive" + (e.target.value === "All" ? "" : "-" + regTok(e.target.value)); };
   }
   const fy = $("#fy"); if (fy) {
     const upd = () => { EF.year = fy.value; EF.region = $("#fr").value; EF.kind = $("#fk").value; EF.source = $("#fs").value; EF.shown = 150; redraw(); };
