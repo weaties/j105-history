@@ -4,7 +4,8 @@ A **North American J/105 results database and website**, keyed by sail number (=
 J/105 Class Association and any skipper or crew. Code, data and the published page are shared
 with the class, so everything must be reproducible from this repo by someone else.
 
-**Never push to GitHub or make anything public without asking the user.** Commit locally with
+Public repo: https://github.com/weaties/j105-history (shared freely with the class). **Ask the user
+before every push and before sharing anything new.** Commit locally with
 clear messages; no secrets.
 
 ## Commands
@@ -23,7 +24,7 @@ uv run j105 verify                   # consistency checks + random events to spo
 uv run pytest && uv run ruff check . && uv run ruff format --check .
 ```
 
-Sources: `clubspot`, `yachtscoring`, `regattanetwork`. Skills in `.claude/skills/`: `collect`,
+Sources: `clubspot`, `yachtscoring`, `regattanetwork`, `styc`, `sailwave`, `j105org`. Skills in `.claude/skills/`: `collect`,
 `add-source`, `identity`, `verify`, `publish`, `privacy`.
 
 ## Layout

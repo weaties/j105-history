@@ -1,6 +1,6 @@
 # Contributing
 
-Thanks for helping build the J/105 class's results history.
+Thanks for helping build the J/105 class's results history. Questions are welcome too: open an issue.
 
 ## Ways to help
 
